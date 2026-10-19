@@ -1,7 +1,7 @@
 ---
 title: Judging
 nav_order: 6
-description: "How projects are scored: the leaderboard-vs-judges decision, the rubric, demo checklist, and winner marking."
+description: "How projects are scored: operational rubric, scoring anchors, tie-breakers, 5 AM judge workflow, and winner marking."
 ---
 
 # Judging
@@ -14,11 +14,11 @@ description: "How projects are scored: the leaderboard-vs-judges decision, the r
 
 ## Leaderboard vs. judge sheet: the decision
 
-When planning this event, we weighed two models for evaluating submissions: a **fully automated leaderboard** that ranks repositories by commit counts or automated test metrics, or a **judge sheet**—a published qualitative rubric scored by a human panel during live demos. Here is why we chose a human panel with an automated eligibility gate.
+When planning this event, we evaluated two distinct evaluation models: a **fully automated leaderboard** (ranking repositories by commit counts, lines of code, or static test metrics), and a **judge sheet** (a published qualitative rubric evaluated by a human panel during live demonstrations). Here is why we chose a human panel with an automated preliminary hygiene gate.
 
 ### Automated leaderboard
 
-**Pros:** Feels fast, scales without recruiting judges, can run continuously during the hackathon.
+**Pros:** Instantaneous feedback, operates continuously overnight without recruiting a human judge panel.
 
 **Cons, specific to this event:**
 - MLH's official [winner-selection guidance](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) for the mandatory Best Open-Source AI Project challenge is explicitly qualitative: judges assess whether a project *solves a clear problem*, *demonstrates original technical work*, and *explains itself clearly*. None of these can be determined by an automated script.
@@ -26,112 +26,196 @@ When planning this event, we weighed two models for evaluating submissions: a **
 - Our 5 challenge tracks represent distinct technical disciplines (agent skill standards, offline edge quantization, multimodal perception, agentic dev harnesses, and retrieval-augmented generation). A single automated formula that evaluates all five fairly does not exist.
 - "Does it actually work in a live demo" and "can the team explain what they built" settle credibility in two minutes, which no static analysis script can replicate.
 
-### Our approach: judge sheet, with a lightweight automated gate
+### Our approach: human judge sheet with a preliminary hygiene gate
 
 {: .important }
-> **Primary mechanism: A published 100-point rubric, evaluated by a human judge panel during live demos.** In front of it, an **automated eligibility checker** runs against submitted GitHub repositories before demos to verify baseline hygiene (public repository, OSI license, `README.md`, Gemma mention). This automates basic structure checks without pretending software can evaluate human creativity or usefulness.
+> **Primary evaluation mechanism:** A published **100-point rubric** scored independently by a human judge panel during live, time-boxed 2-minute demonstrations.  
+> **Preliminary hygiene gate:** Before live demos, an **automated eligibility checker** runs against submitted GitHub repositories to verify basic open-source hygiene (public repo, OSI license, `README.md`, Gemma mention). This automates administrative checks without pretending software can evaluate human creativity or usefulness.
 
 ---
 
-## The 100-point score sheet
+## The 100-point operational rubric
 
 Every project is evaluated out of 100 points against this universal base rubric:
 
-| Criterion | Points | What judges are looking for |
+| Criterion | Points | Summary of Evaluation |
 |---|---|---|
-| **Problem & impact** | 20 | Is the problem real and clearly stated? Does this solve a genuine campus, community, or developer need? |
-| **Use of Gemma / open-weight AI** | 25 | Is Gemma an *important, functional part* of how the project works—not bolted on as an afterthought? Could the project function without Gemma? (Weighted highest because this is the core challenge requirement). |
-| **Technical execution & working demo** | 25 | Does the application work live in front of judges? How much substantial technical logic was achieved during the event window? Are errors handled gracefully? |
-| **Originality & creativity** | 15 | Does the project offer a thoughtful, creative approach to the problem? (A well-executed fresh take on an established idea scores high; novelty is valued but execution is prioritized). |
-| **Open-source quality** | 15 | Is the repository public with a clear OSI-approved `LICENSE`? Is the `README.md` thorough, documenting model names, run instructions, architecture, and team member contributions? |
+| **Problem & impact** | 20 | Does the project solve a real, clearly articulated campus, community, or developer need? |
+| **Use of Gemma / open-weight AI** | 25 | Is Gemma an essential, functional part of the solution rather than a superficial afterthought? |
+| **Technical execution & working demo** | 25 | Does the application work live in front of judges? Is substantial technical logic achieved during the event window? |
+| **Originality & creativity** | 15 | Does the project offer a thoughtful, creative approach to the problem? |
+| **Open-source quality** | 15 | Is the repository public with a valid OSI license, thorough cold-start docs, model attribution, and transparent AI tool disclosures? |
 | **Total** | **100** | |
 
-A ready-to-use template is in [`templates/judge-score-sheet.csv`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/templates/judge-score-sheet.csv) for importing into Google Sheets or Excel.
-
-### How challenge-specific notes supplement the rubric
-
-Each of the 5 challenge pages contains **Challenge-Specific Evaluation Notes**. These do **not** add extra points or silently alter the 100-point maximum; instead, they give judges objective guidance when scoring the universal criteria:
-- **Track 1 (Agent Skill):** Open-source quality directly checks conformance to the [Agent Skills standard](https://agentskills.io/specification) (`name` matching parent folder, descriptive frontmatter).
-- **Track 2 (Offline Edge):** Technical execution requires verifying live that inference runs with **Wi-Fi and mobile data toggled off**.
-- **Track 3 (Multimodal):** Use of Gemma requires verifying that visual or audio input is processed natively by Gemma, not converted via third-party OCR before touching text-only prompts.
-- **Track 4 (Dev Harness):** Technical execution verifies that a genuine tool-calling loop executed with argument validation and explicit safety prompts for destructive actions.
-- **Track 5 (RAG):** Technical execution verifies dynamic chunk retrieval and source citations, rejecting whole-corpus prompt stuffing.
+A ready-to-use template is in [`templates/judge-score-sheet.csv`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/templates/judge-score-sheet.csv) for importing directly into Google Sheets or Excel.
 
 ---
 
-## Standard demo checklist for judges
+## Detailed scoring anchors
 
-Judges will use this concise checklist across all 2-minute project demonstrations:
+To ensure consistent, objective evaluation that **rewards working substance over visual polish**, judges apply these explicit scoring anchors:
 
-- [ ] **Live software demonstration:** Project is demonstrated running live in front of the panel (not a pre-rendered video or slide deck).
-- [ ] **Active Gemma integration verified:** Team demonstrates or shows logs of Gemma processing inputs and generating responses.
-- [ ] **Track acceptance test demonstrated:**
-  - *Track 1:* Skill structure matches standard and executes in an agent or test harness.
-  - *Track 2:* Live demo executes with Wi-Fi/network disabled on local compute.
-  - *Track 3:* Live input of a non-text image or audio file generates grounded response.
-  - *Track 4:* Model autonomously initiates a bounded tool call with safety confirmation.
-  - *Track 5:* Dynamic retrieval returns citations; system admits when information is absent.
-- [ ] **Code understanding:** Team members can clearly explain their architecture, prompts, and code when asked.
-- [ ] **Graceful boundary handling:** Application handles an edge case, invalid input, or missing data cleanly.
+### 1. Problem & impact (0–20 points)
+- **0 points (Missing / Not Demonstrated):** No clear problem identified; target user is unstated or completely undefined.
+- **1–5 points (Low / Largely Incomplete):** Vague, generic problem statement; minimal connection to campus life, community needs, or real developer workflows.
+- **6–11 points (Middle / Partially Working):** Genuine problem identified, but target audience is broad, assumptions are untested, or practical impact is weakly substantiated.
+- **12–17 points (High / Strong Evidence):** Clear, practical, and well-scoped problem solving a real campus, community, or developer bottleneck with compelling impact.
+- **18–20 points (Full / Exceptional):** Deeply relevant problem with outstanding clarity; immediate practical value to Zetech students, developers, or the broader community with demonstrable user empathy.
+
+### 2. Use of Gemma / open-weight AI (0–25 points)
+- **0 points (Missing / Not Demonstrated):** Gemma is not integrated, or replaced with an unrelated proprietary model; non-functional mock.
+- **1–6 points (Low / Largely Incomplete):** Superficial wrapper or static prompt; Gemma could be removed entirely without affecting the core functionality of the product.
+- **7–14 points (Middle / Partially Working):** Gemma is connected and invoked, but prompts are unoptimized, model parameters are unexamined, or reasoning is superficial.
+- **15–21 points (High / Strong Evidence):** Substantive, functional integration; Gemma actively powers the core analytical, perceptual, or generative reasoning required by the application.
+- **22–25 points (Full / Exceptional):** Outstanding, indispensable integration; model choice, prompt/tool architecture, parameter handling, and fallback behavior are deeply understood and defended by the team.
+
+### 3. Technical execution & working demo (0–25 points)
+- **0 points (Missing / Not Demonstrated):** Application does not run; demo relies solely on static slides or pre-rendered video; crashes on launch.
+- **1–6 points (Low / Largely Incomplete):** Fragile build that crashes frequently; heavily scripted happy-path demo with no error handling or recovery.
+- **7–14 points (Middle / Partially Working):** Core workflow works live, but suffers from noticeable bugs, unhandled edge cases, or minimal code written during the event.
+- **15–21 points (High / Strong Evidence):** Solid, stable live demonstration; handles basic edge cases cleanly; substantial, demonstrable engineering completed during the 8-hour window.
+- **22–25 points (Full / Exceptional):** Flawless live execution; robust error handling; passes all declared primary track acceptance tests cleanly under live inspection.
+
+### 4. Originality & creativity (0–15 points)
+- **0 points (Missing / Not Demonstrated):** Direct copy of a starter tutorial or existing public repository with zero original thinking.
+- **1–4 points (Low / Largely Incomplete):** Minor cosmetic re-skin of boilerplate code; predictable idea with minimal personal insight.
+- **5–9 points (Middle / Partially Working):** Standard, well-known concept executed with some novel local adaptation or practical twist.
+- **10–13 points (High / Strong Evidence):** Fresh, thoughtful perspective on a real problem; clever technical adaptation or unique user workflow.
+- **14–15 points (Full / Exceptional):** Highly inventive solution combining technical insight with unique creativity; creates a memorable, standout experience.
+
+### 5. Open-source quality & transparency (0–15 points)
+- **0 points (Missing / Not Demonstrated):** Missing license file, broken repository, or private repository after the submission deadline.
+- **1–4 points (Low / Largely Incomplete):** License present but `README.md` is empty or lacks setup steps; no attribution of model terms or AI tools.
+- **5–9 points (Middle / Partially Working):** Standard README with basic setup steps, but incomplete cold-start instructions, missing role breakdown, or vague disclosures.
+- **10–13 points (High / Strong Evidence):** Clear OSI-approved `LICENSE`, reproducible cold-start instructions, declared primary track, accurate model terms citation, and transparent AI tool disclosures.
+- **14–15 points (Full / Exceptional):** Pristine repository hygiene; effortless cold-start installation; clear architecture diagrams; comprehensive attribution; clean git history reflecting active hackathon collaboration.
 
 ---
 
-## Automated eligibility check
+## Score calculation & aggregation
 
-Before demos begin, organizers run [`scripts/check_submission.py`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/scripts/check_submission.py) against submitted repository URLs:
+1. **Judge Total:** Each judge rates all 5 categories for a team. The sum of the 5 criteria produces that judge's score out of 100.
+2. **Team Final Score:** The final score for a team is the **arithmetic mean (average)** of the completed judge totals across all panel members who evaluated that team.
+3. **Minimum Judge Panel:** Every team must be evaluated by **at least 2, and preferably 3, judges**.
+4. **Handling Missing or Incomplete Score Sheets:**
+   - If a judge fails to score all 5 categories or must step away mid-session, their incomplete sheet is discarded.
+   - The team's score is computed as the mean of the remaining valid, completed score sheets, provided at least 2 completed sheets remain.
+   - If an unexpected judge absence leaves a team with fewer than 2 completed sheets, an alternate neutral judge immediately reviews the team's live recorded demo and repository before final tabulation.
+
+---
+
+## Deterministic tie-breakers
+
+To prevent arbitrary decisions or subjective re-voting at 5:00 AM, ties in overall aggregated scores are broken using this pre-agreed deterministic hierarchy:
+
+1. **Tie-Breaker 1:** Highest aggregated score in **Use of Gemma / open-weight AI** (out of 25).
+2. **Tie-Breaker 2:** Highest aggregated score in **Technical execution & working demo** (out of 25).
+3. **Tie-Breaker 3:** Highest aggregated score in **Problem & impact** (out of 20).
+4. **Tie-Breaker 4:** Highest aggregated score in **Open-source quality** (out of 15).
+5. **Tie-Breaker 5:** Structured consensus conference led by the Lead Organizer, reviewing code commit history and demo integrity.
+
+---
+
+## One primary track per team
+
+Each team must declare **one primary preset track** (Track 1, 2, 3, 4, or 5) in their repository `README.md` and submission description.
+
+- **No Double-Dipping:** Teams cannot submit the same project to multiple local tracks. This ensures fair, peer-level comparison among projects tackling the same domain.
+- **Acceptance Checks Inform the Rubric:** The challenge-specific acceptance tests on each track page provide objective benchmarks for scoring the **Technical execution & working demo** (0–25) and **Use of Gemma** (0–25) categories. They are **not** hidden bonus points and cannot push category scores above their published maximums.
+
+---
+
+## Award structure: Local Top 3 vs. Official MLH Award
+
+To avoid confusion among judges and participants, understand how local recognition relates to the official MLH challenge:
+
+1. **Local iTech Club Recognition (Top Three Overall):**
+   - All eligible submissions across all 5 preset tracks are ranked together on a single leaderboard using the universal 100-point rubric.
+   - The top three ranked teams are awarded **1st Place, 2nd Place, and 3rd Place Overall**.
+   - Preset tracks provide structured focus areas and peer comparison; individual track excellence may be acknowledged with honorable mentions at the organizer's discretion, but the primary competitive podium is the Top Three Overall.
+2. **Official MLH Challenge (Best Open-Source AI Project):**
+   - [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official MLH Hack Day competition on OrganizerHQ with **one winning team**.
+   - The winning project is selected by the organizing panel according to [MLH Hack Day guidelines](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) and marked directly in OrganizerHQ.
+   - While the locally highest-scoring project is a very strong candidate, the MLH winner must be evaluated and marked in OrganizerHQ following official MLH requirements. The local #1 is not automatically guaranteed to be the MLH winner if MLH-specific eligibility requirements differ or if separate criteria apply.
+3. **Partner Prize Policy:**
+   - If an official partner challenge (such as a Google Gemma partner prize) has not been verified in OrganizerHQ for event 14735, it is **not** awarded or named as a confirmed category in participant-facing materials.
+
+---
+
+## Governance, ethics & appeals
+
+- **Conflicts of Interest:** No judge may evaluate a project if they contributed code, provided intense non-neutral mentoring, or have an immediate personal/academic conflict with team members. Conflicted judges must recuse themselves; the team's score will be the average of the remaining non-conflicted judges (minimum 2).
+- **Independent Scoring:** Judges enter ratings independently during the demonstration without discussing scores or attempting to influence other judges before individual sheets are submitted.
+- **Strict Submission Deadline:** The submission deadline is **5:00 AM EAT**. Submissions after 5:00 AM are marked late. A grace period (up to 10 minutes) is granted only for verified platform outages (e.g. GitHub or OrganizerHQ downtime). Late projects may demo for mentor feedback but are ineligible for awards.
+- **Confidentiality of Scoring:** Individual judge score sheets, raw numerical marks, internal notes, and provisional rankings are **strictly confidential**. They are never published on the public website or disclosed to participants. Only final validated winners and high-level constructive comments are shared publicly.
+- **Final Authority:** The Lead Event Organizer (Faculty/iTech Club advisor), in consultation with the MLH representative, holds final authority for resolving any rule interpretation, edge case, or dispute.
+
+---
+
+## Preliminary eligibility gate vs. scoring
+
+Before live demos begin, organizers run [`scripts/check_submission.py`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/scripts/check_submission.py) against submitted repository URLs:
 
 ```bash
 python3 scripts/check_submission.py https://github.com/team-one/project https://github.com/team-two/project
 ```
 
-It checks basic repository readiness:
-1. Repository is public.
-2. A valid OSI-approved open-source `LICENSE` is present at the repo root.
-3. A `README.md` exists and documents the project and Gemma usage.
-4. For Track 1 entries: A valid `SKILL.md` is present.
+The script categorizes each submission into one of four operational states:
 
-This is an **eligibility gate, not a ranking tool**. A repository that fails a check is flagged so organizers can help the team fix administrative issues (such as a missing license file) before judges review the submission.
+1. **ELIGIBLE (PASS):** Meets baseline repository hygiene (public repo, OSI license, `README.md`, Gemma mention). Proceed directly to live demo.
+2. **NEEDS MANUAL REVIEW:** Minor administrative oversight (e.g. non-standard license filename, README layout variation). Organizers give the team until 5:00 AM to resolve the issue.
+3. **CLEARLY INELIGIBLE:** Fatal baseline failure (e.g. repository 404/non-existent, repository remained private after deadline, proven pre-built codebase).
+4. **CHECK UNAVAILABLE:** Automated check encountered a network error or GitHub API rate limit (HTTP 403/429).  
+   {: .warning }
+   > **Critical Rule:** Automated API rate limits or network failures must **NEVER** be interpreted as evidence of noncompliance. In such cases, an organizer performs an immediate manual inspection of the repository in a web browser.
 
 ---
 
-## The judging & winner marking process
+## Standard demo checklist for judges
 
-1. **Judging panel:** 3–5 judges comprising faculty, mentors, sponsor representatives, and senior iTech Club leaders. Judges recuse themselves from scoring any project they directly mentored.
-2. **Time-boxed demos:** Each team receives approximately 2 minutes to demo live, followed by 1 minute of judge Q&A.
-3. **Independent scoring:** Judges enter scores on their individual score sheets. Scores are averaged across judges for each team.
-4. **Track recognition & overall rankings:**
-   - Teams are evaluated against the specific acceptance criteria of their declared **primary preset track**.
-   - The top-scoring project in each primary track receives iTech Club local track honors.
-   - The overall highest-scoring project across the entire event is recommended for the official MLH award.
-   - Ties are broken by the **Use of Gemma** score first, followed by judge panel consensus.
-5. **Marking winners in MLH OrganizerHQ:**  
-   In compliance with [official MLH Hack Day requirements](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day#mark-every-winner), organizers complete the following before announcing results:
-   - Keep the **Announce Winners** toggle set to **PRIVATE** while evaluating submissions.
-   - Open **Manage Submissions** in OrganizerHQ.
+Judges use this 5-point checklist during each 2-minute demonstration:
+
+- [ ] **Live software demonstration:** Project runs live in front of the panel (not a pre-recorded video or slide deck).
+- [ ] **Active Gemma integration verified:** Team demonstrates or shows logs of Gemma processing inputs and generating responses.
+- [ ] **Track acceptance test demonstrated:**
+  - *Track 1:* Skill structure matches open standard and executes in an agent or test harness.
+  - *Track 2:* Live demo executes with Wi-Fi/network completely disabled on local compute.
+  - *Track 3:* Live input of a non-text image or audio file generates grounded response.
+  - *Track 4:* Model autonomously initiates a bounded tool call with safety confirmation.
+  - *Track 5:* Dynamic retrieval returns citations; system admits when information is absent.
+- [ ] **Code understanding & tool transparency:** Team members clearly explain their architecture, prompts, and disclose any AI coding tools used.
+- [ ] **Graceful boundary handling:** Application handles an edge case, invalid input, or missing data cleanly.
+
+---
+
+## Compact 5:00 AM judge decision flow
+
+When judging begins at 5:00 AM EAT, follow this streamlined 6-step workflow:
+
+1. **Confirm Eligibility Gate:** Verify that all teams scheduled for demos have status `ELIGIBLE (PASS)` or cleared manual review.
+2. **Time-Box Demos & Score Independently:** Conduct each demo (2 minutes demo + 1 minute Q&A). Judges score silently and independently on individual sheets across all 5 criteria (sum out of 100). Recuse if conflicted.
+3. **Audit Score Sheets:** Tabulator collects sheets, verifies at least 2 completed sheets per team, and discards any incomplete sheets.
+4. **Compute Averages & Apply Tie-Breakers:** Calculate the arithmetic mean of judge totals for each team. Apply deterministic tie-breakers (Gemma → Tech Execution → Impact → Open Source) if totals are tied.
+5. **Review Top Three Overall:** Validate that the top three overall teams meet all hackathon rules (fresh build, valid license, functioning demo).
+6. **Mark Winners in MLH OrganizerHQ:**  
+   In compliance with [official MLH requirements](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day#mark-every-winner):
+   - Keep the **Announce Winners** toggle set to **PRIVATE** during evaluation.
+   - Go to **Manage Submissions** in OrganizerHQ.
    - Filter by **Best Open-Source AI Project**, select the winning project, click **Mark Winner → Winner**, and verify the gold **WINNER** badge.
-   - If an official partner challenge (e.g. Best Use of Gemma) was active and verified in OrganizerHQ, filter by that challenge and mark the corresponding winner.
-   - Once all winners are marked and verified, switch **Announce Winners** to **PUBLIC** to publish the official event project gallery.
-6. **Announcing:** Winners are announced live in the venue matching the published OrganizerHQ gallery.
+   - If an official partner challenge was verified and active, mark its corresponding winner.
+   - Switch **Announce Winners** to **PUBLIC** to publish the official gallery.
+   - Announce the local Top Three Overall and the official MLH winner live in the venue.
 
 {: .note }
 > `[ORGANISER CONFIRMATION REQUIRED]`  
 > **Pre-Event Organizer Action Items for Event 14735:**  
 > Prior to the hacking window opening, the lead organizer must log in to OrganizerHQ and complete these checks:  
 > 1. Open **OrganizerHQ → Challenges** and confirm whether **Best Open-Source AI Project** is the sole challenge, or whether an additional partner challenge (such as a Google Gemma partner prize) is enabled for event 14735.  
-> 2. Confirm the exact track-recording mechanism (e.g. participant declaration in `README.md` and submission description) so judges have a unified list of teams per preset track before demos start.
+> 2. Confirm the roster of 3–5 confirmed judges and assign judge numbers before 5:00 AM.  
+> 3. Confirm physical prizes/trophies/swag designated for the local Top Three Overall.
 
 ---
 
-## Organiser-maintained source-of-truth register
+## Organiser-maintained source register
 
-This table documents the primary source references governing the event rules, submission processes, and technical tracks.
-
-| Source Document | Primary URL | Scope / Authority | Last Reviewed |
-|---|---|---|---|
-| **MLH Event Registration** | [events.mlh.com/events/14735](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) | Official event listing, venue, date, audience restrictions | October 2026 |
-| **MLH Hack Day Handbook** | [hacktoberfest-handbook.mlh.com/fest-planning-guide/](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/) | Core Hack Day structure, team recommendations | October 2026 |
-| **MLH Open Source Prize Categories** | [hacktoberfest-handbook.mlh.com/.../open-source-prize-categories](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) | Official "Best Open-Source AI Project" requirements | October 2026 |
-| **MLH Submissions & Judging** | [hacktoberfest-handbook.mlh.com/.../submissions-and-judging](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) | OrganizerHQ submission rules, private/public winner marking | October 2026 |
-| **MLH Standard Rules & Conduct** | [mlh.io/code-of-conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf) | Safety, harassment policy, baseline hackathon rules | October 2026 |
-| **Agent Skills Open Standard** | [agentskills.io/specification](https://agentskills.io/specification) | Track 1 skill structure, frontmatter format, discovery | October 2026 |
-| **Google Gemma Documentation** | [ai.google.dev/gemma](https://ai.google.dev/gemma) | Model specifications, terms of use, local runtime guides | October 2026 |
+For the complete verification log, testing constraints, and licensing matrix, see the dedicated [Organiser Source Register](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/references/source-register.md).

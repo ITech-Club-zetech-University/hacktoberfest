@@ -27,13 +27,14 @@ When your team submits its project on [MLH OrganizerHQ](https://events.mlh.com/e
 {: .note }
 > **Understanding the Award Structure:**
 > - **One Official MLH Challenge:** "Best Open-Source AI Project" is the confirmed, official Hack Day challenge on OrganizerHQ, with one winning team selected across the event.
-> - **iTech Club Preset Tracks:** The 5 tracks below are iTech Club's curated, structured ways for teams to approach that broader challenge. They represent technical specializations—they are **not** five separate MLH prize categories by default.
+> - **Local iTech Club Recognition (Top Three Overall):** All eligible submissions across all 5 preset tracks are evaluated together on a common leaderboard using our published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet), naming the **Top Three Overall (1st, 2nd, and 3rd Place)**.
+> - **iTech Club Preset Tracks:** The 5 tracks below are iTech Club's curated, structured ways for teams to approach that broader challenge. They represent technical specializations—they are **not** five separate MLH prize categories by default. Challenge-specific acceptance tests inform rubric scoring (specifically Technical Execution and Use of Gemma); they are **not** hidden bonus points.
 > - **Partner Prize Availability:** An additional partner challenge (such as a Google Gemma partner prize) is an optional module in OrganizerHQ. It is available only if confirmed in the event's actual OrganizerHQ configuration. Organizers will confirm on-site whether a separate partner challenge is active; event sponsorship alone does not guarantee a separate prize category.
 
 {: .important }
 > **Submission Procedure for All Teams:**
-> 1. Submit your project on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) to **Best Open-Source AI Project** (and any verified partner challenge if confirmed on-site).
-> 2. In your repository `README.md` and project description, declare **one primary iTech Club challenge track** (Track 1–5). Local judging and track awards evaluate your project against the criteria of your declared primary track.
+> 1. Submit your project on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) to **Best Open-Source AI Project** (and any verified partner challenge if confirmed on-site) by 5:00 AM EAT.
+> 2. In your repository `README.md` and project description, declare **one primary iTech Club challenge track** (Track 1–5). Local judging evaluates your project against the criteria of your declared primary track.
 
 ---
 

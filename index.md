@@ -25,15 +25,16 @@ An overnight, open-source AI hack day hosted by **iTech Club, Zetech University*
 | **Where** | Zetech University Technology Park, Mang'u Campus, Off Thika Road, Nairobi 00200, Kenya |
 | **Who** | Exclusive to Zetech University students and iTech Club members |
 | **Format** | Overnight hack day · build with Gemma |
-| **Team Size** | Teams of 3–4 for iTech Club local track awards (solo hackers and pairs welcome to attend and hack) |
+| **Team Size** | Teams of 3–4 for local iTech Club awards (solo hackers and pairs welcome to attend and hack) |
 | **Sponsor / tech partner** | [Gemma](https://ai.google.dev/gemma) (Google's open-weight model family) |
 | **Official MLH challenge** | [Best Open-Source AI Project]({{ site.baseurl }}/challenges/#the-official-mlh-challenge) |
 
 {: .important }
 > **Award Structure at a Glance:**
-> - **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official MLH Hack Day competition on OrganizerHQ, with one winning team.
-> - **iTech Club Preset Tracks:** The 5 tracks on this site are our local, guided approaches to that broader challenge. They are not five separate MLH prize categories on OrganizerHQ by default.
-> - **Submission:** All teams submit their project to "Best Open-Source AI Project" on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) and declare **one primary iTech Club track** in their repository `README.md` for local judging.
+> - **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official MLH Hack Day competition on OrganizerHQ, with **one winning team** across the event.
+> - **Local iTech Club Recognition:** All eligible submissions across all 5 preset tracks are evaluated with our universal 100-point rubric during live demos, naming the **Top Three Overall (1st, 2nd, and 3rd Place)**.
+> - **iTech Club Preset Tracks:** The 5 tracks on this site are our local, guided approaches to that broader challenge. Teams declare **one primary track** for focused evaluation. Track acceptance tests inform rubric scoring (not hidden bonus points).
+> - **Submission:** All teams submit their project to "Best Open-Source AI Project" on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) by 5:00 AM EAT and declare their primary track in `README.md`.
 
 ## What's on this site
 
@@ -43,7 +44,7 @@ An overnight, open-source AI hack day hosted by **iTech Club, Zetech University*
 - **[Starter Kit]({{ site.baseurl }}/starter-kit/)** — step-by-step setup: get a Gemma API key, run Gemma locally, scaffold your repo.
 - **[Resources]({{ site.baseurl }}/resources/)** — curated, official Gemma and MLH documentation, organized by what you're trying to do.
 - **[Challenges]({{ site.baseurl }}/challenges/)** — 5 preset challenge tracks. Pick **one primary track** for local evaluation instead of inventing an idea from scratch.
-- **[Judging]({{ site.baseurl }}/judging/)** — the 100-point rubric, judge demo checklist, and how winners are selected and marked.
+- **[Judging]({{ site.baseurl }}/judging/)** — the 100-point operational rubric, scoring anchors, tie-breakers, 5 AM judge workflow, and winner marking.
 - **[FAQ]({{ site.baseurl }}/faq/)** — quick answers to common questions.
 
 </div>

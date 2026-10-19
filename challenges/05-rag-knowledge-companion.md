@@ -74,7 +74,7 @@ Your public GitHub repository must include:
 - [ ] A `README.md` containing:
   - User problem, campus scenario, target audience, and explicit declaration of this track as your team's primary iTech Club challenge track.
   - Description of the corpus and proof that it contains only public or permissible data.
-  - Exact embedding model used (e.g. `EmbeddingGemma` or sentence-transformers).
+  - Exact embedding model used (e.g. `EmbeddingGemma 2`, `EmbeddingGemma 1`, or sentence-transformers).
   - Exact generative Gemma model used (e.g. `gemma-4-31b-it` via Gemini API or local Ollama) and acknowledgment of the [Gemma Terms of Use](https://ai.google.dev/gemma/terms).
   - Chunking strategy (chunk size, overlap) and vector store choice (Chroma, FAISS, in-memory array, etc.).
   - Step-by-step instructions to index the corpus and run the query interface.
@@ -93,7 +93,7 @@ These optional enhancements will distinguish advanced entries but are **not** re
 
 ## 9. Starter resources
 
-- [EmbeddingGemma Overview](https://ai.google.dev/gemma/docs/embeddinggemma) — Google's official text embedding model for retrieval
+- [EmbeddingGemma 2 Overview](https://ai.google.dev/gemma/docs/embeddinggemma) — Google's official text and multimodal embedding model for retrieval
 - [EmbeddingGemma Sentence-Transformers Guide](https://ai.google.dev/gemma/docs/embeddinggemma/inference-embeddinggemma-with-sentence-transformers) — Quick vectorization in Python
 - [Gemma Quickstart via Gemini API](https://mlh.link/gemma-quickstart) — Generative Gemma setup
 - [Gemma Cookbook `tutorials/`](https://github.com/google-gemma/cookbook/tree/main/tutorials) — Runnable RAG notebooks

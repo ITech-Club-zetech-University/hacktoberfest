@@ -1,25 +1,27 @@
 #!/usr/bin/env python3
 """
-check_submission.py — lightweight, automated ELIGIBILITY check for Hacktoberfest
-Hack Day Nairobi x iTech Club submissions.
+check_submission.py — lightweight, automated PRELIMINARY ELIGIBILITY gate for
+Hacktoberfest Hack Day Nairobi x iTech Club submissions.
 
-This is NOT a scoring or ranking tool. It does not judge project quality, how
-well Gemma is used, or how good a demo is — that's what the human judge panel
-and the rubric in judging.md are for. All this script does is flag the basic,
-objectively-checkable requirements from rules.md, so judges don't spend their
-limited time discovering a missing license or README during judging.
+This is a preliminary administrative gate, NOT an automated quality score or
+ranking tool. It does NOT judge project quality, utility, architecture, or how
+well Gemma is used — that is solely the role of the human judge panel and the
+rubric in judging.md. All this script does is verify baseline repository hygiene
+so organizers and teams can resolve administrative oversights before live demos.
+
+Outcomes are strictly categorized into four operational states:
+1. ELIGIBLE (PASS) — Meets preliminary repository hygiene requirements.
+2. NEEDS MANUAL REVIEW — Administrative issue or nuance requiring human check.
+3. CLEARLY INELIGIBLE — Critical failure after deadline (e.g. invalid repo, 404).
+4. CHECK UNAVAILABLE — Network timeout or GitHub API rate limit.
+   IMPORTANT: API rate limits and network errors must NEVER be interpreted as
+   evidence of team noncompliance or project failure!
 
 Usage:
     python3 scripts/check_submission.py <github-repo-url> [<github-repo-url> ...]
 
-Example:
-    python3 scripts/check_submission.py \
-        https://github.com/some-team/gemma-offline-notes \
-        https://github.com/some-team/gemma-agent-skill
-
-Optional: set a GITHUB_TOKEN environment variable to raise the GitHub API rate
-limit from 60 requests/hour (unauthenticated) to 5000/hour. Not required for a
-typical night's worth of submissions.
+Optional:
+    export GITHUB_TOKEN="ghp_xxx"  # Raises GitHub API limit from 60 to 5000 req/hr
 """
 
 from __future__ import annotations
@@ -50,19 +52,28 @@ class RepoReport:
     has_readme: bool | None = None
     readme_mentions_gemma: bool | None = None
     has_skill_md: bool | None = None
+    is_rate_limited: bool = False
+    is_network_error: bool = False
     errors: list[str] = field(default_factory=list)
 
     @property
-    def passed_baseline(self) -> bool:
-        """The core, required checks — everything except SKILL.md, which is
-        only required for Challenge 1 (Agent Skill) submissions."""
-        return bool(
+    def status_category(self) -> str:
+        """Categorize the preliminary check outcome into one of four states."""
+        if self.is_rate_limited or self.is_network_error:
+            return "CHECK UNAVAILABLE"
+        if not self.repo_slug or "Not a recognizable" in " ".join(self.errors):
+            return "CLEARLY INELIGIBLE"
+        if self.is_public is False and any("404" in e for e in self.errors):
+            return "NEEDS MANUAL REVIEW"  # Could be private; team needs to flip public
+        if (
             self.is_public
             and self.has_license
             and self.has_readme
             and self.readme_mentions_gemma
             and not self.errors
-        )
+        ):
+            return "ELIGIBLE (PASS)"
+        return "NEEDS MANUAL REVIEW"
 
 
 def _api_get(path: str) -> tuple[int, dict | None]:
@@ -77,8 +88,6 @@ def _api_get(path: str) -> tuple[int, dict | None]:
         with urllib.request.urlopen(req, timeout=15) as resp:
             return resp.status, json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
-        if e.code == 404:
-            return 404, None
         if e.code in (403, 429):
             return e.code, None
         return e.code, None
@@ -87,8 +96,7 @@ def _api_get(path: str) -> tuple[int, dict | None]:
 
 
 def _parse_repo_slug(url: str) -> str | None:
-    """Turn a GitHub repo URL into 'owner/repo', or None if it doesn't look
-    like one."""
+    """Turn a GitHub repo URL into 'owner/repo', or None if it doesn't look like one."""
     parsed = urlparse(url.strip())
     if "github.com" not in parsed.netloc:
         return None
@@ -101,8 +109,7 @@ def _parse_repo_slug(url: str) -> str | None:
 
 
 def _file_exists(repo_slug: str, filename: str) -> tuple[bool, str | None]:
-    """Check whether a file exists at the repo root. Returns
-    (exists, decoded_text_or_none)."""
+    """Check whether a file exists at the repo root. Returns (exists, decoded_text_or_none)."""
     status, data = _api_get(f"/repos/{repo_slug}/contents/{filename}")
     if status == 200 and data and "content" in data:
         try:
@@ -123,28 +130,38 @@ def check_repo(url: str) -> RepoReport:
     report = RepoReport(repo_slug=slug)
 
     status, data = _api_get(f"/repos/{slug}")
-    if status == 404:
-        report.errors.append("Repository not found (404) — check the URL, or it may be private.")
-        return report
     if status in (403, 429):
-        report.errors.append(
-            "GitHub API rate-limited this request. Set a GITHUB_TOKEN env var and re-run."
-        )
+        report.is_rate_limited = True
+        report.errors.append("GitHub API rate limit reached (HTTP 403/429).")
+        return report
+    if status == 0:
+        report.is_network_error = True
+        report.errors.append("Network timeout or connection error reaching GitHub API.")
+        return report
+    if status == 404:
+        report.is_public = False
+        report.errors.append("Repository not found (HTTP 404). Check URL or verify if repository is private.")
         return report
     if status != 200 or data is None:
-        report.errors.append(f"Could not reach the repository (HTTP {status}).")
+        report.errors.append(f"Could not reach repository (HTTP {status}).")
         return report
 
     report.is_public = not data.get("private", True)
 
+    # Check license
     status, license_data = _api_get(f"/repos/{slug}/license")
     if status == 200 and license_data:
         spdx = (license_data.get("license") or {}).get("spdx_id", "") or ""
         report.license_id = spdx
         report.has_license = spdx.lower() in OSI_LICENSE_IDS or bool(spdx)
     else:
-        report.has_license = False
+        # Fallback check for root LICENSE file
+        has_lic, _ = _file_exists(slug, "LICENSE")
+        if not has_lic:
+            has_lic, _ = _file_exists(slug, "LICENSE.md")
+        report.has_license = has_lic
 
+    # Check README.md
     has_readme, readme_text = _file_exists(slug, "README.md")
     report.has_readme = has_readme
     if has_readme and readme_text:
@@ -152,6 +169,7 @@ def check_repo(url: str) -> RepoReport:
     else:
         report.readme_mentions_gemma = False
 
+    # Check SKILL.md (Track 1)
     has_skill, _ = _file_exists(slug, "SKILL.md")
     report.has_skill_md = has_skill
 
@@ -165,19 +183,34 @@ def _mark(value: bool | None) -> str:
 
 
 def print_report(report: RepoReport) -> None:
+    category = report.status_category
     print(f"\n=== {report.repo_slug} ===")
+    print(f"  Preliminary Status : [{category}]")
+
+    if report.is_rate_limited or report.is_network_error:
+        for err in report.errors:
+            print(f"  NOTICE: {err}")
+        print("  --> ACTION REQUIRED: Do NOT penalize team. Perform immediate visual manual review in browser.")
+        return
+
     if report.errors:
         for err in report.errors:
-            print(f"  ERROR: {err}")
-        return
+            print(f"  ISSUE: {err}")
+
     print(f"  [{_mark(report.is_public)}] Public repository")
-    license_note = f" ({report.license_id})" if report.license_id else ""
-    print(f"  [{_mark(report.has_license)}] Open-source license present{license_note}")
+    lic_str = f" ({report.license_id})" if report.license_id else ""
+    print(f"  [{_mark(report.has_license)}] Open-source LICENSE file present{lic_str}")
     print(f"  [{_mark(report.has_readme)}] README.md present")
-    print(f"  [{_mark(report.readme_mentions_gemma)}] README mentions Gemma (manual check still needed — judges confirm depth of use)")
+    print(f"  [{_mark(report.readme_mentions_gemma)}] README mentions Gemma (substantive depth verified by judges)")
     skill_note = "present" if report.has_skill_md else "not found"
-    print(f"  [i] SKILL.md: {skill_note} (only required for Challenge 1 — Agent Skill)")
-    print(f"  --> Baseline eligibility: {'PASS' if report.passed_baseline else 'NEEDS FOLLOW-UP'}")
+    print(f"  [i] SKILL.md: {skill_note} (only required for Track 1: Agent Skill)")
+
+    if category == "ELIGIBLE (PASS)":
+        print("  --> Outcome: Baseline eligibility confirmed. Proceed to live demo.")
+    elif category == "NEEDS MANUAL REVIEW":
+        print("  --> Outcome: Flagged for manual review. Allow team to resolve before demos start.")
+    elif category == "CLEARLY INELIGIBLE":
+        print("  --> Outcome: Disqualifying issue detected. Confirm with Lead Organizer.")
 
 
 def main() -> int:
@@ -190,8 +223,9 @@ def main() -> int:
     for report in reports:
         print_report(report)
 
-    needs_followup = [r for r in reports if not r.passed_baseline]
-    print(f"\n{len(reports)} repo(s) checked, {len(needs_followup)} need follow-up before judging.")
+    needs_review = [r for r in reports if r.status_category in ("NEEDS MANUAL REVIEW", "CHECK UNAVAILABLE")]
+    ineligible = [r for r in reports if r.status_category == "CLEARLY INELIGIBLE"]
+    print(f"\nSummary: {len(reports)} repo(s) checked | {len(reports) - len(needs_review) - len(ineligible)} eligible | {len(needs_review)} need manual review | {len(ineligible)} clearly ineligible.")
     return 0
 
 

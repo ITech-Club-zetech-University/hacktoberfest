@@ -92,7 +92,7 @@ These optional enhancements will distinguish advanced entries but are **not** re
 - [llama.cpp Integration Guide](https://ai.google.dev/gemma/docs/integrations/llamacpp) — High-performance C/C++ CPU/GPU local inference
 - [LM Studio Integration](https://ai.google.dev/gemma/docs/integrations/lmstudio) — Local desktop GUI runner for quick prompt testing
 - [LiteRT-LM Overview](https://ai.google.dev/edge/litert-lm/overview) — Google's lightweight edge runtime for mobile and embedded devices
-- [Gemma 2 Model Overview](https://ai.google.dev/gemma/docs/core) — Specifications and memory requirements for lightweight models
+- [Gemma 4 Model Overview](https://ai.google.dev/gemma/docs/core) — Specifications and memory requirements for lightweight models
 
 ## 10. Privacy, safety & licensing
 

@@ -7,7 +7,7 @@ description: "Step-by-step setup: get Gemma running before the hack day starts."
 # Starter Kit
 {: .no_toc }
 
-Get this done **before** you arrive — venue Wi-Fi on an overnight hack day with 50+ laptops downloading multi-gigabyte model weights is not where you want to be doing your first `pip install`.
+Get this done **before** you arrive—venue Wi-Fi on an overnight hack day with 50+ laptops downloading multi-gigabyte dependencies is not where you want to be running your first setup command.
 {: .fs-6 .fw-300 }
 
 1. TOC
@@ -15,101 +15,349 @@ Get this done **before** you arrive — venue Wi-Fi on an overnight hack day wit
 
 ---
 
-## 1. Prerequisites checklist
+## Quick path decision matrix
 
-Bring a laptop with the following installed. Tick these off before 30 Oct:
+Find the setup path that matches your laptop hardware and chosen challenge track:
 
-- [ ] **Git** and a **GitHub account** ([github.com](https://github.com/join))
-- [ ] **Python 3.10+** (`python3 --version`) — most Gemma tooling is Python-first
-- [ ] **Node.js 18+**, if your track needs a web frontend
-- [ ] A code editor (VS Code, or your preferred one)
-- [ ] You've **registered and checked the event page** on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club)
-- [ ] You've read the [Rules]({{ site.baseurl }}/rules/) and picked a [Challenge]({{ site.baseurl }}/challenges/) (or shortlisted 2)
-- [ ] At least **10 GB free disk space** if you plan to run Gemma locally (small variants are a few GB; see sizing table below)
+| If your team goal is... | Recommended Path | Setup Section | Declared iTech Club Track |
+|---|---|---|---|
+| **Fastest path (minimal setup, student laptop)** | Hosted Gemini API (`gemma-4-26b-a4b-it`) | [Option A](#option-a--hosted-gemma-via-the-gemini-api) | [Track 1]({{ site.baseurl }}/challenges/01-agent-skill/), [Track 3]({{ site.baseurl }}/challenges/03-multimodal-assistant/), [Track 4]({{ site.baseurl }}/challenges/04-dev-harness/), or [Track 5]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/) |
+| **Must work offline (no Wi-Fi/signal dependency)** | Local quantized model via Ollama (`gemma4:e2b` or `gemma2:2b`) | [Option B](#option-b--local-offline-gemma-with-ollama) | **[Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)** |
+| **Need image or audio input** | Hosted Gemini API or local multimodal model | [Option A](#option-a--hosted-gemma-via-the-gemini-api) | **[Track 3: Multimodal Campus Companion]({{ site.baseurl }}/challenges/03-multimodal-assistant/)** |
+| **Need retrieval / RAG over documents** | Hosted Gemma 4 + EmbeddingGemma 2 | [Option A & RAG](#retrieval--embeddings-with-embeddinggemma) | **[Track 5: Campus Knowledge Companion (RAG)]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/)** |
+| **Need custom model / tool harness control** | Function calling via Gemini API or local FunctionGemma / Ollama | [Option A](#option-a--hosted-gemma-via-the-gemini-api) or [Option C](#option-c--open-weight-checkpoints-for-custom-harnesses) | **[Track 4: Gemma-Powered Dev Harness]({{ site.baseurl }}/challenges/04-dev-harness/)** |
 
-## 2. Pick how you'll run Gemma
+---
 
-There are three realistic paths. Most teams should set up **both** Option A and Option B — use the API when you have signal, fall back to local when you don't.
+## 1. Core concepts & distinctions
 
-### Option A — Gemma via the Gemini API (fastest to start, needs internet)
+Before installing packages, understand the architecture:
 
-1. Go to [Google AI Studio](https://aistudio.google.com) and sign in with a Google account.
-2. Create an **API key**.
-3. Follow the official [Run Gemma with the Gemini API quickstart](https://mlh.link/gemma-quickstart) to make your first call.
-4. Store your key as an environment variable — **never commit it to your repo**:
-   ```bash
-   export GEMINI_API_KEY="your-key-here"
-   ```
-5. Add a `.env` file to your project for local secrets, and add `.env` to `.gitignore` immediately — before your first commit.
+- **Hosted API vs. Local Inference:**
+  - **Hosted API (Option A):** Model compute runs on Google's cloud servers via the Gemini API. You only send HTTP requests with an API key. This is the fastest, lowest-resource path for standard student laptops.
+  - **Local Inference (Option B & C):** Model weights sit on your laptop's hard drive and execute on local CPU/GPU compute. **Mandatory for Track 2 (Offline Edge)**, but optional for all other tracks.
+- **Model-Hosting Runtimes:** Tools like [Ollama](https://ollama.com) or [llama.cpp](https://github.com/ggerganov/llama.cpp) manage local weights, quantize memory, and expose local endpoints.
+- **Embeddings vs. Generative Models:**
+  - **Embedding models** (e.g. `EmbeddingGemma 2`) convert text, code, or images into vector numbers for search. They do *not* generate conversational text.
+  - **Generative models** (e.g. `Gemma 4`, `Gemma 2`) read retrieved context and generate the final answer.
+- **Gemma vs. Gemini:** This hackathon requires building with the **Gemma family** (Google's open-weight model family). Do not substitute a proprietary Gemini-branded model (such as Gemini 1.5 Pro) for Gemma.
 
-### Option B — Gemma 4 running locally with Ollama (works offline, good backup)
+---
 
-Best for the **[Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)** challenge, and as a safety net if venue Wi-Fi gets congested.
+## 2. Prerequisites & version checks
 
-1. Install [Ollama](https://ollama.com/download).
-2. Pull a small Gemma 4 variant (E2B is the lightest — download this at home, not at the venue):
-   ```bash
-   ollama pull gemma4:e2b
-   # or, for a bit more capability:
-   ollama pull gemma4:e4b
-   ```
-3. Test it:
-   ```bash
-   ollama run gemma4:e2b "Give me 3 ideas for an offline campus assistant."
-   ```
-4. Call it from Python with the `ollama` package, or hit its local OpenAI-compatible endpoint at `http://localhost:11434`.
+Check that your machine has the baseline development tools installed:
 
-Prefer a GUI? [LM Studio](https://ai.google.dev/gemma/docs/integrations/lmstudio) works the same way and is friendlier for quick prompt testing.
+```bash
+# Check Git version
+git --version          # Recommended: 2.30+
 
-### Option C — Hugging Face / Kaggle weights (for fine-tuning or custom harnesses)
+# Check Python version (primary SDK language)
+python3 --version      # Required: Python 3.10, 3.11, or 3.12
 
-Needed for the **[Gemma-Powered Dev Harness]({{ site.baseurl }}/challenges/04-dev-harness/)** and **[Build an Agent Skill]({{ site.baseurl }}/challenges/01-agent-skill/)** tracks if you want to run Gemma yourself rather than through the Gemini API.
+# Check Node.js version (if building a JavaScript/TypeScript frontend)
+node -v                # Recommended: Node 18+ or 20 LTS
+```
 
-1. Create accounts on [Hugging Face](https://huggingface.co/) and/or [Kaggle](https://www.kaggle.com/).
-2. Browse available checkpoints: [Gemma 4 on Hugging Face](https://huggingface.co/collections/google/gemma-4) · [Gemma 4 on Kaggle](https://www.kaggle.com/models?query=gemma-4&publisher=google).
-3. For quantized, laptop-friendly weights, look for the `-qat-q4_0-gguf` checkpoints — they run on CPU/consumer GPU via `llama.cpp` or LM Studio.
-4. Full setup and inference examples: [ai.google.dev/gemma/docs/get_started](https://ai.google.dev/gemma/docs/get_started).
+If you plan to run models locally (Option B), verify free disk space:
+- Minimum **5–10 GB free disk space** for lightweight quantized models (e.g. `gemma4:e2b` or `gemma2:2b`).
+- Check available disk space in terminal: `df -h .` (Linux/macOS) or File Explorer (Windows).
 
-### Which Gemma 4 size should you use?
+---
+
+## 3. Progressive setup: Option A — Hosted Gemma via Gemini API
+
+The hosted path is recommended for all tracks except Track 2. Google provides free-tier compute for Gemma models, requiring zero local GPU hardware.
+
+### Step 1: Obtain your API key
+1. Sign in to [Google AI Studio](https://aistudio.google.com/apikey) with your Google account.
+2. Click **Create API Key**.
+3. Copy the key.
+
+### Step 2: Set up a clean project and virtual environment
+Open your terminal and initialize your project folder:
+
+```bash
+mkdir my-gemma-app && cd my-gemma-app
+python3 -m venv .venv
+
+# Activate the virtual environment:
+# On Linux/macOS:
+source .venv/bin/activate
+# On Windows (cmd):
+# .venv\Scripts\activate
+# On Windows (PowerShell):
+# .venv\Scripts\Activate.ps1
+```
+
+### Step 3: Install the official Google GenAI SDK
+Install the current, official Google GenAI SDK and `python-dotenv`:
+
+```bash
+pip install --upgrade google-genai python-dotenv
+```
 
 {: .note }
-> Gemma 4 ships as 5 sizes. "SLM" and "LLM" below follow MLH's own definition for this challenge: **10B parameters or fewer = small (SLM)**, **more than 10B = large (LLM)**.
+> **Package Note:** Use `google-genai` (imported as `from google import genai`). Do not use the legacy `google-generativeai` package, which has been superseded.
 
-| Size | Class | Good for | Runs on |
-|---|---|---|---|
-| E2B | SLM | Ultra-light, on-device, fast iteration | Laptop CPU, phone |
-| E4B | SLM | A step up in quality, still edge-friendly | Laptop CPU/GPU, phone |
-| 12B | LLM | Multimodal "Unified" model (text, image, audio in one) | Single consumer GPU |
-| 26B A4B | LLM | Mixture-of-experts, fast high-throughput reasoning | Single 24–48 GB GPU |
-| 31B | LLM | Dense, highest quality, best for fine-tuning | Single 80 GB GPU (H100-class) or API |
+### Step 4: Configure secrets safely
+Never commit API keys to version control. Follow this strict hygiene:
 
-If you don't have a beefy GPU, use **E2B/E4B locally** or the **larger sizes through the Gemini API**, where Google hosts the compute for you.
+1. Create a `.gitignore` file before making any commits:
+   ```bash
+   cat << 'EOF' > .gitignore
+   .venv/
+   .env
+   .env.local
+   __pycache__/
+   *.pyc
+   node_modules/
+   EOF
+   ```
+2. Create a safe `.env.example` template for your repository:
+   ```bash
+   cat << 'EOF' > .env.example
+   # Copy this file to .env and fill in your real key
+   GEMINI_API_KEY=your_gemini_api_key_here
+   EOF
+   ```
+3. Create your local `.env` file containing your actual secret:
+   ```bash
+   echo "GEMINI_API_KEY=AIzaSyYourActualKeyHere" > .env
+   ```
+4. Verify `.env` is ignored by Git:
+   ```bash
+   git status --ignored
+   # Ensure .env appears under "Ignored files", not "Untracked files"
+   ```
 
-## 3. Scaffold your repository
+{: .important }
+> **Accidental Key Exposure:** If you ever commit an API key to GitHub, treat it as compromised immediately. Delete or rotate it at [Google AI Studio API Keys](https://aistudio.google.com/apikey).
 
-Do this in the first 15 minutes of hacking, not the last 15 minutes before submission:
+---
+
+## 4. Smoke test: Proving the API call works
+
+Create a minimal script `smoke_test.py` to verify end-to-end connectivity:
+
+```python
+import os
+import sys
+from dotenv import load_dotenv
+from google import genai
+
+# Load environment variables from .env
+load_dotenv()
+
+api_key = os.environ.get("GEMINI_API_KEY")
+if not api_key or api_key == "your_gemini_api_key_here":
+    print("ERROR: GEMINI_API_KEY is not set. Add your key to .env", file=sys.stderr)
+    sys.exit(1)
+
+# Initialize the GenAI client
+client = genai.Client(api_key=api_key)
+
+try:
+    # Use the official hosted Gemma 4 model
+    response = client.models.generate_content(
+        model="gemma-4-26b-a4b-it",
+        contents="Say hello to Zetech University students in exactly one sentence.",
+    )
+    print("=== SMOKE TEST PASSED ===")
+    print("Model output:")
+    print(response.text)
+except Exception as e:
+    print(f"ERROR: API call failed: {e}", file=sys.stderr)
+    sys.exit(1)
+```
+
+Run the smoke test:
+
+```bash
+python3 smoke_test.py
+```
+
+### Expected output shape
+If successful, the script exits with code `0` and prints non-empty text similar to:
+```text
+=== SMOKE TEST PASSED ===
+Model output:
+Hello students of Zetech University, welcome to the hackathon and happy building!
+```
+
+---
+
+## 5. Option B — Local offline Gemma with Ollama
+
+Required for **[Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)**, and an excellent local backup for all teams if venue connectivity drops.
+
+### Step 1: Install Ollama
+Download and install [Ollama](https://ollama.com/download) for your operating system (Linux, macOS, Windows).
+
+### Step 2: Pre-download model weights at home
+Download your chosen model **before coming to the venue**. Choose a size that matches your laptop's memory:
+
+```bash
+# Recommended for standard student laptops (approx. 1.5–2.5 GB download):
+ollama pull gemma4:e2b
+
+# Alternative lightweight option (approx. 1.6 GB download):
+ollama pull gemma2:2b
+
+# For laptops with 16 GB RAM and dedicated GPU (approx. 3.5 GB download):
+ollama pull gemma4:e4b
+```
+
+### Step 3: Test local inference in terminal
+Verify that inference executes locally:
+
+```bash
+ollama run gemma4:e2b "Name three key considerations for offline application design."
+```
+
+### Step 4: Python smoke test for local Ollama
+You can query Ollama from Python without any extra external packages using standard `urllib`:
+
+```python
+import json
+import urllib.request
+
+url = "http://localhost:11434/api/generate"
+payload = {
+    "model": "gemma4:e2b",
+    "prompt": "Respond with 'Local Gemma is working' and nothing else.",
+    "stream": False
+}
+
+req = urllib.request.Request(
+    url,
+    data=json.dumps(payload).encode("utf-8"),
+    headers={"Content-Type": "application/json"}
+)
+
+try:
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        result = json.loads(resp.read().decode("utf-8"))
+        print("=== LOCAL SMOKE TEST PASSED ===")
+        print("Model response:", result.get("response"))
+except Exception as e:
+    print(f"ERROR: Could not connect to local Ollama daemon: {e}")
+```
+
+{: .tip }
+> **Offline Validation Test:** Turn off your Wi-Fi and rerun the script above. It should execute with zero network access.
+
+---
+
+## 6. JavaScript / TypeScript minimal example
+
+If your team is building a Node.js backend or web application, install the official package:
+
+```bash
+npm install @google/genai dotenv
+```
+
+Create `test_gemma.mjs`:
+
+```javascript
+import { GoogleGenAI } from "@google/genai";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const apiKey = process.env.GEMINI_API_KEY;
+if (!apiKey) {
+  console.error("ERROR: GEMINI_API_KEY is not set in .env");
+  process.exit(1);
+}
+
+const ai = new GoogleGenAI({ apiKey });
+
+try {
+  const response = await ai.models.generateContent({
+    model: "gemma-4-26b-a4b-it",
+    contents: "Respond in 10 words: What is open-source software?",
+  });
+  console.log("=== JS SMOKE TEST PASSED ===");
+  console.log(response.text);
+} catch (error) {
+  console.error("API error:", error);
+  process.exit(1);
+}
+```
+
+Run with: `node test_gemma.mjs`
+
+---
+
+## 7. Model hardware requirements & sizing guide
+
+Memory requirements vary significantly depending on **quantization format**, **runtime overhead**, and **workload context length**. Below is Google's official baseline memory reference:
+
+### Gemma 4 approximate memory requirements (Official Reference)
+
+| Model Size | Parameters | Unquantized BF16 | 8-bit (SFP8) | 4-bit (Q4_0) | Mobile (LiteRT-LM) | Recommended Target Hardware |
+|---|---|---|---|---|---|---|
+| **E2B** | ~2B effective | 11.4 GB | 5.7 GB | **2.9 GB** | 1.1 GB (0.84 GB text) | Standard student laptop (4–8 GB RAM), CPU or mobile |
+| **E4B** | ~4B effective | 17.9 GB | 8.9 GB | **4.5 GB** | 2.5 GB (2.2 GB text) | Consumer laptop (8–16 GB RAM), CPU or integrated GPU |
+| **12B Unified** | 12B multimodal | 26.7 GB | 13.4 GB | **6.7 GB** | — | Workstation laptop (16 GB RAM) or consumer GPU (8 GB VRAM) |
+| **26B A4B (MoE)**| 26B (4B active) | 57.7 GB | 28.8 GB | **14.4 GB** | — | High-end workstation (24 GB VRAM / 32 GB Unified RAM) or **Gemini API** |
+| **31B** | 31B dense | 69.9 GB | 34.9 GB | **17.5 GB** | — | Workstation GPU (24 GB VRAM) or **Gemini API** |
+
+{: .note }
+> **Key Takeaway for Students:** You do **not** need expensive GPU workstations. If your laptop has 4–8 GB RAM, use the **free hosted Gemini API** (`gemma-4-26b-a4b-it`) or run **`gemma4:e2b` / `gemma2:2b` locally in 4-bit quantization** on your CPU.
+
+---
+
+## 8. Option C — Open-weight checkpoints for custom harnesses
+
+Needed only if you are downloading raw weights for fine-tuning, Hugging Face Transformers, or custom llama.cpp harnesses:
+
+- **Hugging Face Hub:** [huggingface.co/collections/google/gemma-4](https://huggingface.co/collections/google/gemma-4)
+- **Kaggle Models:** [kaggle.com/models?query=gemma-4&publisher=google](https://www.kaggle.com/models?query=gemma-4&publisher=google)
+- **Lightweight GGUF weights:** Look for community or official GGUF weights tagged with `Q4_K_M` or `Q4_0` to run locally via `llama.cpp` or LM Studio.
+
+---
+
+## 9. Common troubleshooting
+
+| Error / Symptom | Likely Cause | Fix |
+|---|---|---|
+| `ValueError: GEMINI_API_KEY is not set` | Script did not find API key in environment or `.env` | Ensure `.env` exists in working directory and contains `GEMINI_API_KEY=...`, and verify `load_dotenv()` was called. |
+| `HTTP 403 Forbidden` / `API_KEY_INVALID` | API key was copied with extra spaces or revoked | Re-generate key at [Google AI Studio](https://aistudio.google.com/apikey) and re-paste into `.env`. |
+| `HTTP 429 RESOURCE_EXHAUSTED` | Exceeded free-tier per-minute rate limits | Add a short sleep delay (`time.sleep(2)`) between requests or retry with exponential backoff. |
+| `HTTP 404 NOT_FOUND` (Model ID) | Misspelled model string | Verify exact model string: use `gemma-4-26b-a4b-it` or `gemma-4-31b-it`. |
+| `CUDA out of memory` / Process killed (OOM) | Local model exceeded available system RAM or VRAM | Switch to a smaller quantized model (e.g. `gemma4:e2b` instead of 12B/31B) or use the hosted API. |
+| Ollama download stalled / partial weights | Interrupted network connection during `ollama pull` | Re-run `ollama pull <model-tag>`; Ollama automatically resumes from the last completed layer. |
+
+---
+
+## 10. Repository scaffolding checklist
+
+Scaffold your repo cleanly during the first 30 minutes of the event:
 
 ```bash
 mkdir my-team-project && cd my-team-project
 git init
-# Pick a license — see Rules → Submission for the list of OSI-approved choices
+
+# Download an OSI-approved license (e.g. MIT)
 curl -sL https://raw.githubusercontent.com/github/choosealicense.com/gh-pages/_licenses/mit.txt -o LICENSE
-touch README.md .gitignore
-echo ".env" >> .gitignore
-echo "__pycache__/" >> .gitignore
-git add -A && git commit -m "Initial commit"
-gh repo create <your-team-name>-<challenge-slug> --public --source=. --push
+
+# Create essential files
+touch README.md .env.example
+echo "GEMINI_API_KEY=your_key_here" > .env.example
+
+# Set up .gitignore BEFORE committing
+cat << 'EOF' > .gitignore
+.venv/
+.env
+.env.local
+__pycache__/
+*.pyc
+EOF
+
+git add -A
+git commit -m "Initial commit: scaffold project with license and gitignore"
 ```
 
-Your `README.md` should answer, from the top: what the project does, which Gemma model/variant you used, which challenge you're entering, how to run it, and who built it. See the [submission checklist]({{ site.baseurl }}/judging/#automated-eligibility-check) — judges and the automated checker both look for this.
-
-## 4. Go build
-
-Head to the [Challenges]({{ site.baseurl }}/challenges/) page, pick your track, and check that track's specific requirements and starter links. Each challenge page links straight to the relevant Gemma Cookbook notebook or guide to fork from.
-
-## Where to get help
-
-- **At the venue**: flag a mentor — that's what they're there for.
-- **Official docs**: start at the [Resources]({{ site.baseurl }}/resources/) page.
-- **Community**: the [Gemma Discord](https://ai.google.dev/gemma/docs/discord) and the [Gemma developer forum](https://discuss.ai.google.dev/c/gemma/10).
-- **Stuck on rules or submissions**: ask an organizer, or see the [FAQ]({{ site.baseurl }}/faq/).
+Now head to the [Challenges]({{ site.baseurl }}/challenges/) page and start building!
