@@ -1,50 +1,48 @@
 # Hacktoberfest Hack Day Nairobi x iTech Club
 
-Event docs, rules, starter kit, and preset Gemma challenges for the [Hacktoberfest Hack Day Nairobi x iTech Club](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) — **Friday 30 October 2026, 7:00 PM – Saturday 31 October 2026, 6:00 AM EAT**, at Zetech University Technology Park, hosted by iTech Club in partnership with MLH, sponsored by Gemma.
+Documentation site, rules, starter kit, and preset Gemma challenge tracks for the [Hacktoberfest Hack Day Nairobi x iTech Club](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) — **Friday 30 October 2026, 7:00 PM – Saturday 31 October 2026, 6:00 AM EAT**, at Zetech University Technology Park, Mang'u Campus. Hosted by iTech Club in partnership with Major League Hacking (MLH), sponsored by Gemma.
 
-📖 **Read the full site:** `https://itech-club-zetech-university.github.io/hacktoberfest/` (live once GitHub Pages is enabled — see below)
+📖 **Live Site:** `https://itech-club-zetech-university.github.io/hacktoberfest/` (hosted via GitHub Pages)
 
-## What's in this repo
+---
+
+## Event & Award Structure
+
+- **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official competition on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club), with **one winning team** across the event.
+- **iTech Club Preset Tracks:** 5 guided technical tracks designed for an ~8-hour build on consumer laptops using Gemma. Teams declare **one primary track** for local evaluation and track honors.
+- **Team Size:** Teams of **3–4 members** for local track award eligibility; solo hackers and pairs are welcome to attend, build, and submit to the general MLH competition.
+- **Submissions:** All projects are submitted to "Best Open-Source AI Project" on OrganizerHQ, with the primary preset track declared in the project `README.md`.
+
+---
+
+## What's in this repository
 
 | Path | Purpose |
 |---|---|
-| `index.md` | Home page |
-| `rules.md` | General rules & regulations (eligibility, teams, timeline, submission, code of conduct) |
-| `starter-kit.md` | Step-by-step Gemma setup guide |
-| `resources.md` | Curated Gemma + MLH resource links |
-| `challenges/` | The 5 preset challenge tracks |
-| `judging.md` | The leaderboard-vs-judges decision, the rubric, and the judging process |
-| `code-of-conduct.md` | MLH Code of Conduct adoption + how to report a concern on-site |
-| `faq.md` | Quick answers |
-| `templates/judge-score-sheet.csv` | Importable judge scoring sheet |
-| `templates/submission-checklist.md` | Checklist teams can paste into their own README |
-| `scripts/check_submission.py` | Automated **eligibility** checker (not a scoring/ranking tool — see `judging.md`) |
-| `_config.yml` | Jekyll / [Just the Docs](https://just-the-docs.com/) site configuration |
+| `index.md` | Home page and overview of the hack day |
+| `rules.md` | Official MLH rules, local award policies, teams, timeline, and submission guidelines |
+| `starter-kit.md` | Step-by-step Gemma setup guide (Gemini API and local Ollama) |
+| `resources.md` | Curated documentation links for Gemma, Agent Skills, and MLH |
+| `challenges/` | The 5 preset challenge briefs and comparison index |
+| `judging.md` | The 100-point rubric, judge demo checklist, winner marking, and source register |
+| `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
+| `faq.md` | Frequently asked questions |
+| `templates/judge-score-sheet.csv` | Ready-to-import scoring sheet for judges |
+| `templates/submission-checklist.md` | Participant checklist to copy into project repositories |
+| `scripts/check_submission.py` | Automated eligibility checker for basic repo hygiene |
+| `_config.yml` | Jekyll / Just the Docs theme configuration |
 
-## For organizers: publishing this with GitHub Pages
+---
 
-This site uses the [Just the Docs](https://github.com/just-the-docs/just-the-docs) Jekyll theme via `remote_theme`, which GitHub Pages builds automatically — **no local Ruby install or Gemfile needed.**
+## For organizers: publishing with GitHub Pages
 
-1. Push this repo to `github.com/ITech-Club-zetech-University/hacktoberfest` (see commands below).
-2. On GitHub: **Settings → Pages**.
+This site uses the [Just the Docs](https://github.com/just-the-docs/just-the-docs) Jekyll theme via `remote_theme`, which GitHub Pages builds automatically without local Ruby setup:
+
+1. Push this repository to `github.com/ITech-Club-zetech-University/hacktoberfest`.
+2. On GitHub, navigate to **Settings → Pages**.
 3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-4. Branch: **`main`**, folder: **`/ (root)`** → **Save**.
-5. Wait 1–2 minutes, then the site is live at `https://itech-club-zetech-university.github.io/hacktoberfest/`.
-
-If your org has GitHub Pages restricted, an org owner needs to allow Pages for this repository first (**Organization settings → Pages**).
-
-### Pushing this repo for the first time
-
-From inside this folder:
-
-```bash
-git init
-git add -A
-git commit -m "Set up Hacktoberfest Hack Day Nairobi x iTech Club site"
-git branch -M main
-git remote add origin https://github.com/ITech-Club-zetech-University/hacktoberfest.git
-git push -u origin main
-```
+4. Set Branch to **`main`** and folder to **`/ (root)`**, then click **Save**.
+5. The site will publish at `https://itech-club-zetech-university.github.io/hacktoberfest/`.
 
 ### Previewing locally (optional)
 
@@ -55,7 +53,7 @@ echo 'gem "jekyll"' >> Gemfile
 echo 'gem "just-the-docs"' >> Gemfile
 bundle install
 bundle exec jekyll serve
-# open http://localhost:4000/hacktoberfest/
+# Open http://localhost:4000/hacktoberfest/
 ```
 
 ### Running the eligibility checker
@@ -64,12 +62,10 @@ bundle exec jekyll serve
 python3 scripts/check_submission.py https://github.com/some-team/their-repo
 ```
 
-See `judging.md` for what this script does and doesn't do.
+See `judging.md` for details on the automated checks versus human qualitative judging.
 
-## Updating content
-
-Every page is plain Markdown with [Just the Docs front matter](https://just-the-docs.com/docs/navigation-structure/) (`title`, `nav_order`, `parent`, etc.) at the top. Edit the `.md` file, commit, and push — GitHub Pages rebuilds automatically within a minute or two.
+---
 
 ## License
 
-The contents of this repository (docs, templates, scripts) are MIT-licensed — see `LICENSE`. Hackathon participants' own projects are separate works under their own chosen open-source license.
+The contents of this documentation repository are licensed under the MIT License — see [`LICENSE`](./LICENSE). Participant hackathon projects are independent works licensed under their authors' chosen open-source licenses.

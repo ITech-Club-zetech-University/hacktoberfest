@@ -1,7 +1,7 @@
 ---
 title: Rules & Regulations
 nav_order: 2
-description: "General rules for the iTech Club x MLH Hacktoberfest Hack Day: eligibility, teams, timeline, submission, and conduct."
+description: "Rules for the iTech Club x MLH Hacktoberfest Hack Day: official MLH policies, local award rules, teams, timeline, and submission."
 ---
 
 # Rules & Regulations
@@ -14,98 +14,138 @@ description: "General rules for the iTech Club x MLH Hacktoberfest Hack Day: eli
 
 ## Spirit of the event
 
-This is a learning-first, overnight hack day. You're here to ship something real with Gemma, learn from mentors and each other, and leave with an open-source project you're proud of. Competing for prizes is part of the fun, but it's not the point — helping a struggling team next to you is worth more than guarding your lead.
+This is a learning-first, overnight hack day. You are here to ship something real with open-weight AI, learn from mentors and each other, and leave with an open-source project you are proud of. Competing for prizes is part of the fun, but it is not the main point—helping a struggling team next to you is worth more than guarding your lead.
 
 These rules extend the [MLH Standard Hackathon Rules](https://github.com/MLH/mlh-policies/blob/main/standard-hackathon-rules.md) and the [MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf), which every participant, mentor, judge, and organizer agrees to by attending. See [Code of Conduct]({{ site.baseurl }}/code-of-conduct/).
 
+{: .note }
+> **Three types of guidelines on this page:**
+> 1. **Official MLH Requirements:** Mandatory rules governing participation, open-source licensing, and submission via [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
+> 2. **iTech Club Local Award Rules:** Additional criteria (such as team size and primary track declaration) governing eligibility for local iTech Club track prizes and recognition.
+> 3. **Practical Recommendations:** Best-practice suggestions (such as pre-downloading model weights) to help your team succeed.
+
+---
+
 ## Who can take part
 
-- Open **exclusively to Zetech University students and iTech Club members**, per the [official MLH event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
-- You must **register on MLH OrganizerHQ** and **check in at the venue** the night of the event to be eligible for any prize.
-- Organizers, volunteers, mentors, judges, and sponsor representatives may help teams but may not compete as hackers themselves — this follows the standard MLH rule.
+- **Official MLH Requirement:** Open **exclusively to Zetech University students and iTech Club members**, per the [official MLH event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
+- **Official MLH Requirement:** You must **register on MLH** and **check in at the venue** the night of the event to be eligible for any prize.
+- **Official MLH Requirement:** Organizers, volunteers, mentors, judges, and sponsor representatives may help teams but may not compete as hackers themselves.
 
-## Team size
+---
 
-{: .important }
-> **Teams competing in the 5 preset Challenges must have 3–4 members.**
+## Team size & formation
 
-Why 3–4: it's small enough to stay nimble over one overnight session, but large enough to realistically split the work a Gemma project needs — someone on the model/prompting side, someone on the app/UI, and someone on integration, testing, and the README/demo. Teams of 1–2 tend to run out of hours; teams of 5+ tend to have idle members on a single-night build.
+### Official MLH Policy
+Under [MLH Hack Day guidelines](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/), individuals and teams (typically up to 4 hackers) are welcome to register, attend, and build. No student is excluded from attending or learning as a solo hacker or pair.
 
-- **Solo hackers and pairs are welcome at the event** — MLH's general listing welcomes solo hacking — but to enter one of the 5 Challenges below (and therefore the iTech Club prizes and leaderboard/judging), you need to find teammates and form a 3–4 person team.
-- Team formation happens in the **first 30 minutes** after doors open (7:00–7:30 PM). Organizers will run a quick round of "what do you want to build / what can you do" to help solo hackers pair up.
-- A team may **not** split into two teams to double-submit the same idea.
-- Every team member must actively participate — this is checked informally by mentors during the night and explicitly during demos (every member should be able to speak to some part of the project).
+### iTech Club Local Track Rule
+To compete for the **5 preset iTech Club challenge track awards**, teams must consist of **3–4 members**.
 
-## What you can and can't bring in
+**Why 3–4 members:** An overnight hackathon is intense. Building an open-weight AI application requires splitting substantial work across an ~8-hour build window:
+- Model integration & prompt engineering
+- Application logic & user interface (CLI, web, or mobile)
+- Testing, documentation, open-source licensing, and demo preparation
+
+Teams of 1–2 frequently run out of hours to complete all facets; teams of 5+ often leave members with too little hands-on code.
+
+### Solo Hackers and Pairs
+- Solo hackers and pairs are completely welcome at the event, can attend all workshops, and may submit their projects to the broad MLH competition on OrganizerHQ.
+- To enter one of the 5 preset iTech Club tracks and qualify for local track awards, solo hackers and pairs are strongly encouraged to team up during the **team formation session (7:00–7:30 PM)** right after check-in. Organizers will facilitate matching based on technical interests.
+- A team may not split into multiple sub-teams to submit the same codebase.
+- Every team member must actively participate and be prepared to explain their contribution during the live demo.
+
+---
+
+## What you can and cannot bring in
 
 Following the [MLH Standard Hackathon Rules](https://github.com/MLH/mlh-policies/blob/main/standard-hackathon-rules.md):
 
-- ✅ You can pitch up with an **idea** you already had.
-- ✅ You can use open-source libraries, frameworks, boilerplate, and Gemma itself.
-- ✅ You can work on an idea that's "already been done" — originality isn't required, execution is judged.
-- ❌ You **cannot** bring in a codebase you (or your team) already built, including code you open-sourced just before the event specifically to reuse it here.
-- ❌ You cannot re-use code or project material from a past project you personally worked on.
-- **All project work must happen during the event window**: Friday 30 Oct, 7:00 PM EAT → Saturday 31 Oct, 6:00 AM EAT.
+- ✅ **Fresh Builds:** All project code must be written during the event window: **Friday 30 October 2026, 7:00 PM EAT → Saturday 31 October 2026, 6:00 AM EAT**.
+- ✅ **Ideas & Tools:** You may arrive with an idea in mind, and you may use open-source libraries, public packages, boilerplate templates, and public model weights.
+- ✅ **Re-implementations:** You may build a fresh take on an established concept; execution, utility, and learning are judged rather than pure novelty.
+- ❌ **No Pre-built Projects:** You **cannot** bring in a codebase you (or your team) built before the event, including personal repos open-sourced right before the hackathon specifically for reuse.
+- ❌ **No Plagiarism:** You cannot claim another author's work or upstream code as your own original hackathon build.
 
-### Using AI coding tools
+---
 
-You're encouraged to use AI pair-programming tools (Claude Code, Gemini CLI, GitHub Copilot, Cursor, etc.) — in fact, several of the challenge tracks are *about* building with AI agents. Two rules:
+## AI coding tools vs. Open-weight models
 
-1. **Be transparent.** List the AI tools you used in your README and be ready to explain, in your own words, what your team built versus what a tool scaffolded.
-2. **The open-weight AI requirement is separate from "I used an AI coding assistant."** Using Copilot to write code doesn't satisfy the Best Open-Source AI Project requirement — Gemma (or another open-weight model) has to be an *important part of what the project does*, not just how you wrote it. See [Judging]({{ site.baseurl }}/judging/).
+### Using AI Coding Assistants
+You are welcome to use AI pair-programming assistants (such as Gemini CLI, GitHub Copilot, Claude Code, or Cursor) to help write, debug, and scaffold code during the night:
+- **Be transparent:** List any AI coding assistants used in your `README.md`.
+- **Code understanding:** Every team member must understand and be able to explain the submitted code to judges.
+
+### Open-Source Software vs. Open-Weight AI
+It is essential to distinguish your application's software license from the AI model's terms:
+- **Your Application Code (OSI License Required):** Your team's source code must be published under an [OSI-approved open-source license](https://opensource.org/licenses) (such as MIT or Apache-2.0).
+- **The Model Weights (Open-Weight Terms):** Open-weight models (like Google's Gemma) are released with open weights under model-specific licenses (such as the [Gemma Terms of Use](https://ai.google.dev/gemma/terms)). These are responsible open-weight terms rather than traditional OSI-approved software licenses. Your `README.md` must state the model name and acknowledge its terms of use.
+- **AI Tool Usage Alone Does Not Qualify:** Using Copilot to write code for a standard web app does not satisfy the open-source AI requirement. Gemma (or a compatible open-weight model) must be a functional component of what the product *does*.
+
+---
 
 ## The hacking timeline
 
-| Time (EAT) | What's happening |
-|---|---|
-| 7:00 – 7:30 PM | Check-in, registration confirmation, welcome |
-| 7:30 – 8:00 PM | Opening talk, challenge briefing, team formation |
-| 8:00 – 8:30 PM | Gemma setup workshop (bring a laptop with the [starter kit]({{ site.baseurl }}/starter-kit/) prerequisites installed) |
-| 8:30 PM – 4:30 AM | **Hacking** (8 hours) — mentors circulate throughout |
-| 4:30 – 5:00 AM | Submissions close — final commit, push, and MLH OrganizerHQ submission |
-| 5:00 – 5:45 AM | Demos (all teams, time-boxed) |
-| 5:45 – 6:00 AM | Judging wrap-up and winners announced |
+| Time (EAT) | Stage | Details |
+|---|---|---|
+| 7:00 – 7:30 PM | Check-in & Team Formation | Venue doors open, registration confirmation, matching solo hackers into 3–4 person teams |
+| 7:30 – 8:00 PM | Opening & Challenge Briefing | Welcome remarks, track briefing, rules, and rubric review |
+| 8:00 – 8:30 PM | Gemma Setup Workshop | Hands-on setup clinic (API keys, Ollama, local scaffolding) |
+| 8:30 PM – 4:30 AM | **Building Window** (~8 hours) | Active development; technical mentors circulate across tables |
+| 4:30 – 5:00 AM | Submission Window | Final commits, pushes to GitHub, and submission via MLH OrganizerHQ |
+| 5:00 – 5:45 AM | Live Project Demos | Time-boxed 2-minute demos + 1-minute Q&A in front of the judge panel |
+| 5:45 – 6:00 AM | Judging Wrap-Up & Closing | Winner marking on OrganizerHQ, announcement, and wrap-up |
 
-Organizers reserve the right to adjust this timeline on the night and will announce any change to every team at once.
+Organizers will announce any minor timing adjustments directly to the room.
+
+---
 
 ## Submitting your project
 
-Every team that wants to be considered for a prize — iTech Club challenge prizes **or** the MLH Best Open-Source AI Project prize — must do **both** of the following before the submission deadline:
+To be considered for awards, every team must complete **both** submission steps before the 5:00 AM EAT deadline:
 
-### 1. Open-source your repository
+### Step 1: Open-source your GitHub repository
+1. Ensure your repository is **public** on GitHub.
+2. Include an OSI-approved `LICENSE` file at the root of the repository (e.g. MIT, Apache-2.0, or GPL-3.0).
+3. Provide a thorough `README.md` containing:
+   - What the project does and who it serves (2–3 sentences).
+   - Your team's **single declared primary iTech Club track** (Track 1, 2, 3, 4, or 5).
+   - The exact Gemma model/variant used, its runtime environment, and a reference to its license/terms.
+   - Step-by-step cold-start instructions for running the project.
+   - Team members and roles.
+   - Disclosure of any AI coding assistants used.
+4. Run the automated eligibility checker (`python3 scripts/check_submission.py <repo-url>`) to catch administrative oversights.
 
-- Your project's source code must be in a **public GitHub repository**.
-- The repository must carry a **clear open-source license** — [MIT](https://opensource.org/license/mit), [Apache-2.0](https://opensource.org/license/apache-2.0), [GPL-3.0](https://opensource.org/license/gpl-3.0), or another license from the [OSI list](https://opensource.org/licenses). Put the license as a `LICENSE` file at the repo root.
-- Your `README.md` must clearly state: what the project does, which Gemma model/variant you used and how, which challenge track you're entering, how to run it, and which team members built it.
-- Run the [submission eligibility checker]({{ site.baseurl }}/judging/#automated-eligibility-check) against your own repo before the deadline — it catches the easy misses (missing license, missing README, etc.) before a judge ever sees it.
+### Step 2: Submit through MLH OrganizerHQ
+[MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) is the official platform for Hacktoberfest Hack Day submissions:
+1. Log in to OrganizerHQ with the account used for event registration.
+2. Go to **Challenges** on the event page and select **Add Submission**.
+3. Fill in your project name, repository URL, tech stack, and short description.
+4. **Challenge selection in OrganizerHQ:**
+   - Select **Best Open-Source AI Project** (the official MLH Hack Day challenge).
+   - *Note on Partner Prizes:* If a specific partner challenge (such as a Google Gemma partner prize) is active on the OrganizerHQ dashboard for this event, select it as directed by event staff.
+5. In your project description and repository `README.md`, explicitly declare your **one primary iTech Club challenge track**.
 
-### 2. Submit through MLH OrganizerHQ
+{: .important }
+> **Why one primary track for local judging?**  
+> Teams must declare exactly **one primary preset track** for local evaluation. This ensures fair, apples-to-apples comparison among projects tackling the same technical problem. Teams are free to incorporate ideas from other tracks (e.g. adding offline fallback to a RAG project), but judges will evaluate the submission against the rubric notes and acceptance tests of the declared primary track.
 
-{: .note }
-> OrganizerHQ is MLH's mandatory submission platform for Hacktoberfest Hack Day — it isn't optional and can't be replaced by a separate form, even though we also run our own challenge tracks and judge sheet on this site.
-
-1. Sign in to OrganizerHQ with the account you registered with.
-2. Open **Challenges** from the event page.
-3. Select **Add Submission** and fill in your project link, name, description, technologies used, and a demo link if you have one.
-4. Under **"Which challenge(s) are you submitting to?"**, select:
-   - **Best Open-Source AI Project** (the mandatory MLH challenge — every team should select this), **and**
-   - The specific **iTech Club challenge track** you built for (e.g. "Challenge 2: Gemma Off the Grid").
-5. Submit before the deadline. One team member submits on behalf of the whole team.
-
-You can enter **more than one** challenge with the same project if it genuinely fits — just select every challenge it's eligible for.
+---
 
 ## How winners are chosen
 
-Full detail, including the judge sheet, is on the [Judging]({{ site.baseurl }}/judging/) page. In short:
+1. **Official MLH Challenge:**
+   - The official [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) challenge has **one winning team**.
+   - The winner is selected by the organizing panel according to [MLH Hack Day guidelines](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) and marked directly in OrganizerHQ.
+2. **iTech Club Local Track Awards:**
+   - Evaluated by a human judge panel using the published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet) during live, 2-minute demos.
+   - Top-scoring projects within each primary track receive local track honors.
+3. **No Pull-Request Counting:**
+   - Per official MLH rules: **Hacktoberfest Hack Day does not use pull-request counts for judging or prizes.** Scoring is based entirely on project merit, technical execution, working demonstration, and open-source quality.
 
-- The 5 iTech Club challenge tracks are judged by a **human judge panel using a published rubric**, informed by a lightweight automated check that confirms each repo meets the baseline eligibility rules above.
-- The MLH **Best Open-Source AI Project** winner is selected and marked through MLH OrganizerHQ, following [MLH's official winner-selection guidance](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day), by the organizing team.
-- **Hacktoberfest does not use pull-request counts as the basis for any prize here** — this is a build night, not a PR-counting challenge.
+---
 
-## Disqualification
+## Disqualification & Ownership
 
-Organizers may disqualify a team at their discretion for breaking these rules, the MLH Code of Conduct, or for other unsporting behavior (e.g. plagiarizing another team's work, misrepresenting what was built during the event, or submitting a pre-built project).
-
-## Ownership
-
-Teams retain full ownership of what they build. Open-sourcing your repo under a permissive license means others can use and build on it — it does not transfer ownership to iTech Club, MLH, or Google.
+- **Disqualification:** Organizers reserve the right to disqualify any entry for Code of Conduct violations, plagiarism, pre-building code before the event, or misrepresenting model functionality.
+- **Ownership:** Teams retain full intellectual property ownership of their code. Open-sourcing under a permissive license allows the community to learn from your work without transferring ownership to iTech Club, MLH, or sponsors.

@@ -24,26 +24,36 @@ An overnight, open-source AI hack day hosted by **iTech Club, Zetech University*
 | **When** | Friday, 30 October 2026 · 7:00 PM EAT — Saturday, 31 October 2026 · 6:00 AM EAT |
 | **Where** | Zetech University Technology Park, Mang'u Campus, Off Thika Road, Nairobi 00200, Kenya |
 | **Who** | Exclusive to Zetech University students and iTech Club members |
-| **Format** | Overnight hack day · teams of 3–4 · build with Gemma |
-| **Sponsor / tech partner** | [Gemma](https://ai.google.dev/gemma) (Google's open model family) |
-| **Official MLH challenge** | [Best Open-Source AI Project]({{ site.baseurl }}/challenges/#the-mandatory-mlh-challenge) |
+| **Format** | Overnight hack day · build with Gemma |
+| **Team Size** | Teams of 3–4 for iTech Club local track awards (solo hackers and pairs welcome to attend and hack) |
+| **Sponsor / tech partner** | [Gemma](https://ai.google.dev/gemma) (Google's open-weight model family) |
+| **Official MLH challenge** | [Best Open-Source AI Project]({{ site.baseurl }}/challenges/#the-official-mlh-challenge) |
 
 {: .important }
-> This site documents the **iTech Club preset challenges, rules, and starter kit** for the hack day. Official registration, check-in, and project submission still happen through [MLH OrganizerHQ]({{ site.baseurl }}/rules/#how-to-submit-your-project) — this site doesn't replace that.
+> **Award Structure at a Glance:**
+> - **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official MLH Hack Day competition on OrganizerHQ, with one winning team.
+> - **iTech Club Preset Tracks:** The 5 tracks on this site are our local, guided approaches to that broader challenge. They are not five separate MLH prize categories on OrganizerHQ by default.
+> - **Submission:** All teams submit their project to "Best Open-Source AI Project" on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) and declare **one primary iTech Club track** in their repository `README.md` for local judging.
 
 ## What's on this site
 
 <div class="code-example" markdown="1">
 
-- **[Rules & Regulations]({{ site.baseurl }}/rules/)** — eligibility, team size, the hacking timeline, submission requirements, and code of conduct.
+- **[Rules & Regulations]({{ site.baseurl }}/rules/)** — official MLH requirements, local award rules, team size guidelines, submission process, and code of conduct.
 - **[Starter Kit]({{ site.baseurl }}/starter-kit/)** — step-by-step setup: get a Gemma API key, run Gemma locally, scaffold your repo.
 - **[Resources]({{ site.baseurl }}/resources/)** — curated, official Gemma and MLH documentation, organized by what you're trying to do.
-- **[Challenges]({{ site.baseurl }}/challenges/)** — 5 preset challenge tracks. Pick one (or more) instead of inventing an idea from scratch.
-- **[Judging]({{ site.baseurl }}/judging/)** — how projects are scored, the judge sheet, and the selection process.
+- **[Challenges]({{ site.baseurl }}/challenges/)** — 5 preset challenge tracks. Pick **one primary track** for local evaluation instead of inventing an idea from scratch.
+- **[Judging]({{ site.baseurl }}/judging/)** — the 100-point rubric, judge demo checklist, and how winners are selected and marked.
 - **[FAQ]({{ site.baseurl }}/faq/)** — quick answers to common questions.
 
 </div>
 
 ## Why preset challenges?
 
-Instead of showing up and staring at a blank idea board, every team at this hack day picks from **5 Gemma-powered challenge tracks** designed around what Gemma is actually good at — agentic tool use, on-device/offline inference, multimodal understanding, and retrieval. Each challenge is written so that a strong entry automatically satisfies MLH's **Best Open-Source AI Project** requirements. See the [Challenges]({{ site.baseurl }}/challenges/) page to get started.
+Instead of showing up and staring at a blank idea board, every team at this hack day picks from **5 Gemma-powered challenge tracks** designed around what Gemma is actually good at—agentic tool use, on-device/offline inference, multimodal understanding, developer harnesses, and retrieval.
+
+- **[Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories)** is the official MLH Hack Day challenge with one winning team.
+- The 5 tracks are iTech Club's preset ways for teams to approach that challenge. Building a strong project in any of the 5 tracks automatically satisfies the official MLH open-source AI criteria.
+- For local judging and awards, each team selects **one primary track** so that projects can be evaluated fairly against peers in the same domain.
+
+See the [Challenges]({{ site.baseurl }}/challenges/) page to explore the tracks.
