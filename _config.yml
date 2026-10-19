@@ -1,0 +1,55 @@
+title: Hacktoberfest Hack Day Nairobi x iTech Club
+description: >-
+  Preset challenges, rules, and a Gemma starter kit for the iTech Club x MLH
+  Hacktoberfest Hack Day at Zetech University — Friday 30 October 2026.
+baseurl: "/hacktoberfest"
+url: "https://itech-club-zetech-university.github.io"
+
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+color_scheme: dark
+
+search_enabled: true
+heading_anchors: true
+
+nav_sort: case_insensitive
+
+aux_links:
+  "Event page (MLH)":
+    - "https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club"
+  "iTech Club":
+    - "https://itechclubzetech.vercel.app/"
+  "GitHub repo":
+    - "https://github.com/ITech-Club-zetech-University/hacktoberfest"
+aux_links_new_tab: true
+
+footer_content: >-
+  Hosted by iTech Club, Zetech University, in partnership with Major League
+  Hacking (MLH). Sponsored by Gemma.
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+callouts:
+  important:
+    title: Important
+    color: red
+  note:
+    title: Note
+    color: blue
+  tip:
+    title: Tip
+    color: green
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+exclude:
+  - scripts/
+  - README.md
+  - LICENSE
