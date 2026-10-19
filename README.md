@@ -58,13 +58,32 @@ bundle exec jekyll serve
 # Open http://localhost:4000/hacktoberfest/
 ```
 
-### Running the eligibility checker
+### Running the preliminary eligibility checker
+
+The repository includes a lightweight, automated preliminary hygiene gate for submissions:
 
 ```bash
-python3 scripts/check_submission.py https://github.com/some-team/their-repo
+# Check one or more repositories
+python3 scripts/check_submission.py https://github.com/team-one/repo https://github.com/team-two/repo
+
+# Check specifically for Challenge 1 (enforces SKILL.md presence)
+python3 scripts/check_submission.py --track 1 https://github.com/team-one/agent-skill
+
+# Run the complete automated test suite (offline, mocked)
+python3 -m unittest discover -s tests -v
 ```
 
-See `judging.md` for details on the automated checks versus human qualitative judging.
+**What it checks:** Genuine GitHub repository URL parsing (`github.com` and `www.github.com` only), public repository visibility, root `README.md`, open-source software license validated against canonical OSI-approved SPDX identifiers from `scripts/data/osi-approved-licenses.json` (sourced from [SPDX License List v3.26](https://spdx.org/licenses/) and [OSI](https://opensource.org/licenses/), last reviewed 20 October 2026), Gemma mentions in the README (labeled as a weak signal only), and `SKILL.md` presence when `--track 1` is specified.
+
+**What it does NOT check:** It does not score code quality, evaluate model performance, verify whether Gemma generated outputs, or serve as an automated leaderboard. It never clones or executes participant code.
+
+**Exit codes:**
+- `0`: All checked repositories are `ELIGIBLE (PASS)`.
+- `1`: At least one repository is `CLEARLY INELIGIBLE`.
+- `2`: At least one repository is `NEEDS MANUAL REVIEW` or `CHECK UNAVAILABLE`.
+- `3`: Usage or syntax error.
+
+Inconclusive results (such as network timeouts or GitHub API 403/429 rate limits) must **never** be treated as noncompliance; organizers inspect repositories manually in a browser. See [`judging.md`]({{ site.baseurl }}/judging/#preliminary-eligibility-gate-vs-scoring) for complete operational details.
 
 ---
 

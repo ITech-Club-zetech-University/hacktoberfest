@@ -29,6 +29,7 @@ This document serves as the internal source-of-truth register for event organise
 | **Agent Skills Specification** | [agentskills.io/specification](https://agentskills.io/specification) | Agent Skills Community | `SKILL.md` YAML frontmatter requirements, directory structure | 19 Oct 2026 | **Verified** | Track version updates to the specification |
 | **MLH Hack Day Handbook: Submissions** | [hacktoberfest-handbook.mlh.com/...](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) | Major League Hacking | OrganizerHQ submission steps, private/public winner marking workflow | 19 Oct 2026 | **Verified** | Ensure compliance during submission window |
 | **MLH Prize Categories** | [hacktoberfest-handbook.mlh.com/...](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) | Major League Hacking | Best Open-Source AI Project challenge requirements | 19 Oct 2026 | **Verified** | Re-verify single-winner criteria |
+| **OSI Approved License Dataset** | [spdx.org/licenses](https://spdx.org/licenses/) / [opensource.org](https://opensource.org/licenses) | SPDX / Open Source Initiative | Canonical SPDX identifiers in `scripts/data/osi-approved-licenses.json` for eligibility checker | 20 Oct 2026 | **Verified** | Update dataset if new OSI licenses are approved |
 
 ---
 
