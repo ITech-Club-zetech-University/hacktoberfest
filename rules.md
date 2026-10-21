@@ -107,14 +107,15 @@ To be considered for awards, every team must complete **both** submission steps 
 ### Step 1: Open-source your GitHub repository
 1. Ensure your repository is **public** on GitHub.
 2. Include an OSI-approved `LICENSE` file at the root of the repository (e.g. MIT, Apache-2.0, or GPL-3.0).
-3. Provide a thorough `README.md` containing:
+3. Provide a thorough `README.md` (teams can copy our ready-to-use [Project README Template]({{ site.baseurl }}/templates/project-readme-template.md)):
    - What the project does and who it serves (2–3 sentences).
    - Your team's **single declared primary iTech Club track** (Track 1, 2, 3, 4, or 5).
    - The exact Gemma model/variant used, its runtime environment, and a reference to its license/terms.
    - Step-by-step cold-start instructions for running the project.
    - Team members and roles.
    - Proportionate disclosure of any AI coding assistants used.
-4. Run the automated eligibility checker (`python3 scripts/check_submission.py <repo-url>`) to catch administrative oversights.
+4. Verify your repository against our [Submission Checklist]({{ site.baseurl }}/templates/submission-checklist.md) and prepare your presentation using the [Live Demo Script Template]({{ site.baseurl }}/templates/demo-script.md).
+5. Run the automated eligibility checker (`python3 scripts/check_submission.py <repo-url>`) to catch administrative oversights.
    - If flagged as `NEEDS MANUAL REVIEW` (e.g. non-standard license filename), use the 4:30–5:00 AM window to resolve it before demos start.
    - Note: Automated rate-limit or network errors do not penalize your team.
 

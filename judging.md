@@ -207,7 +207,7 @@ The script categorizes each submission into one of four operational states and e
 
 ## Standard demo checklist for judges
 
-Judges use this 5-point checklist during each 2-minute demonstration:
+Judges use this 5-point checklist during each 2-minute demonstration (participants should follow the [Live Demo Script Template]({{ site.baseurl }}/templates/demo-script.md)):
 
 - [ ] **Live software demonstration:** Project runs live in front of the panel (not a pre-recorded video or slide deck).
 - [ ] **Active Gemma integration verified:** Team demonstrates or shows logs of Gemma processing inputs and generating responses.

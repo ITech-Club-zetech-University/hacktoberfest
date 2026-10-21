@@ -9,7 +9,7 @@ Copy this checklist into your team repository's `README.md` or a tracking GitHub
 - [ ] **Public Repository**: Repository is set to public on GitHub before 5:00 AM EAT.
 - [ ] **Open-Source Software License**: An OSI-approved license (`LICENSE` file at repo root, e.g., MIT, Apache-2.0, or GPL-3.0) for your application source code.
 - [ ] **Open-Weight Model Terms**: The `README.md` documents which Gemma model/variant was used and acknowledges the [Gemma Terms of Use](https://ai.google.dev/gemma/terms).
-- [ ] **Clear README.md**:
+- [ ] **Clear README.md** (Use our copy-and-fill [Project README Template](./project-readme-template.md)):
   - [ ] 2–3 sentence overview of what the project does and who it serves.
   - [ ] Declared **single primary iTech Club challenge track** (Track 1, 2, 3, 4, or 5).
   - [ ] Specific Gemma model/variant used and how it runs (e.g., Gemma 4 26B A4B via Gemini API, or Gemma 4 E2B / Gemma 2 2B via Ollama).
@@ -71,7 +71,7 @@ Complete the section matching your declared **primary** iTech Club challenge tra
 
 ---
 
-## 4. 2-Minute Demo Preparation
+## 4. 2-Minute Demo Preparation (See [Live Demo Script Template](./demo-script.md))
 
 - [ ] **30 seconds — Problem & User**: Clearly state the problem, target campus user, and declared primary track.
 - [ ] **60 seconds — Core Gemma Workflow**: Show the live input, model execution, and output on screen.

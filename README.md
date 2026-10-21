@@ -28,15 +28,32 @@ Documentation site, rules, starter kit, and preset Gemma challenge tracks for th
 | `judging.md` | The 100-point operational rubric, scoring anchors, tie-breakers, 5 AM workflow, and winner marking |
 | `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
 | `faq.md` | Frequently asked questions |
-| `templates/judge-score-sheet.csv` | Ready-to-import scoring sheet for judges |
-| `templates/submission-checklist.md` | Participant checklist to copy into project repositories |
+| `organizer-runbook.md` | Public event runbook, operational checklists, staff roles, and MLH winner marking workflow |
+| `organizer-checklist.md` | Chronological quick-reference checklist for event leads and mentors |
+| `templates/project-readme-template.md` | Copy-and-fill `README.md` template for participant repositories |
+| `templates/demo-script.md` | Structured 2.5-minute presentation script and track-specific demo prompts |
+| `templates/submission-checklist.md` | Participant checklist to copy into project repositories before 5:00 AM |
+| `templates/judge-score-sheet.csv` | Ready-to-import scoring sheet for judges (keep completed scores in private drive) |
 | `references/source-register.md` | Organiser source register, verification status, and review log |
 | `scripts/check_submission.py` | Automated preliminary eligibility checker for baseline repo hygiene |
+| `scripts/data/osi-approved-licenses.json` | Canonical OSI-approved SPDX license database |
+| `tests/test_check_submission.py` | Comprehensive offline unit test suite (43 tests) |
 | `_config.yml` | Jekyll / Just the Docs theme configuration |
 
 ---
 
-## For organizers: publishing with GitHub Pages
+## For Organisers
+
+Operational documentation and administrative tools for running the hackathon:
+
+- **[Organiser Runbook](./organizer-runbook.md):** Complete master timeline, staff roles, offline contingency procedures, score tabulation, and official MLH winner marking steps.
+- **[Organiser Quick-Reference Checklist](./organizer-checklist.md):** Chronological checklist from T-minus 24 hours through doors opening (6:30 PM) to post-event reporting.
+- **[Source-of-Truth Register](./references/source-register.md):** Verified reference log for event policies, API endpoints, model tags, and license terms.
+- **Privacy & Access Control:** Completed judge scoring sheets, internal deliberation notes, and incident records must be maintained exclusively in an internal, access-controlled organizer drive. Never commit completed scores or private attendee data to git.
+
+---
+
+## For Organisers: publishing with GitHub Pages
 
 This site uses the [Just the Docs](https://github.com/just-the-docs/just-the-docs) Jekyll theme via `remote_theme`, which GitHub Pages builds automatically without local Ruby setup:
 

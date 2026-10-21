@@ -78,6 +78,17 @@ Ask yourself: *If we removed Gemma from our project, would the core product stil
 
 Venue Wi-Fi is provided, but with dozens of students downloading dependencies simultaneously, network congestion can occur. We strongly recommend downloading model weights (if running locally) and Python/Node libraries **at home before arriving**. If you want an experience that is completely immune to network slowdowns, choose [Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/).
 
+#### Are there starter templates for our project README and live demo?
+
+Yes! We provide copy-ready templates to save your team time:
+- **[Project README Template]({{ site.baseurl }}/templates/project-readme-template.md)** — copy-and-fill template covering problem, architecture, model specifications, `.env.example`, and disclosures.
+- **[Live Demo Script Template]({{ site.baseurl }}/templates/demo-script.md)** — a 2–3 minute presentation structure with track-specific live demo prompts.
+- **[Submission Checklist]({{ site.baseurl }}/templates/submission-checklist.md)** — pre-submission verification checklist to copy into your repository before 5:00 AM.
+
+#### Where can organizers and mentors find the event runbook?
+
+Organizers and mentors can refer to the **[Organiser Runbook]({{ site.baseurl }}/organizer-runbook/)** and the **[Organiser Quick-Reference Checklist]({{ site.baseurl }}/organizer-checklist.md)** for timelines, staff roles, offline contingency kits, score tabulation, and official MLH winner marking workflows.
+
 #### Who do I ask if I'm stuck on a rule or a submission question?
 
 Approach any organizer wearing an iTech Club badge or MLH lanyard at the venue, or check the [Resources]({{ site.baseurl }}/resources/) page for guidance.

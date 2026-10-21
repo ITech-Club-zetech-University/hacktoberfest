@@ -2,7 +2,8 @@
 title: "1. Build a Gemma Agent Skill"
 parent: Challenges
 nav_order: 1
-description: "Package a reusable capability for AI coding agents according to the Agent Skills open standard, powered by Gemma."
+description: "Package a reusable capability for AI coding agents according to the Agent Skills open standard, powered by Gemma.
+"
 ---
 
 # Challenge 1: Build a Gemma Agent Skill
