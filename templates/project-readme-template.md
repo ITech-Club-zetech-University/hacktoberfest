@@ -1,3 +1,10 @@
+---
+title: Project README Template
+nav_exclude: true
+permalink: /templates/project-readme-template/
+description: "Standard copy-and-fill README template for participant repositories."
+---
+
 # [Project Name]
 
 > [One-sentence summary: What does your application do, who is it for, and what real campus or developer problem does it solve?]

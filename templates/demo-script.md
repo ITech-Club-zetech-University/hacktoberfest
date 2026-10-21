@@ -1,3 +1,10 @@
+---
+title: Demo Script Template
+nav_exclude: true
+permalink: /templates/demo-script/
+description: "Structured 2.5-minute presentation script and track-specific demo prompts."
+---
+
 # 2–3 Minute Live Demo Script Template
 
 This guide provides a time-boxed, structured script for presenting your hackathon project to the judge panel during the live demo session (5:00–5:45 AM EAT).

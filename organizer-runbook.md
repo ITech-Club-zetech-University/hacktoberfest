@@ -1,6 +1,8 @@
 ---
 title: Organiser Runbook
 nav_order: 9
+has_children: true
+permalink: /organizer-runbook/
 description: "Operational event runbook, organizer checklists, roles, timeline, and winner marking workflow."
 ---
 

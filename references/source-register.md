@@ -1,3 +1,11 @@
+---
+title: "Source-of-Truth Register"
+parent: Organiser Runbook
+nav_order: 2
+permalink: /references/source-register/
+description: "Organiser source register, technical verification status, and review log."
+---
+
 # Organiser Source Register & Technical Verification Log
 
 This document serves as the internal source-of-truth register for event organisers and documentation maintainers. It records the primary documentation sources, their verified status, dates checked, and review notes for fast-evolving model checkpoints and SDK releases.

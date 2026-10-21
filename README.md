@@ -55,24 +55,44 @@ Operational documentation and administrative tools for running the hackathon:
 
 ## For Organisers: publishing with GitHub Pages
 
-This site uses the [Just the Docs](https://github.com/just-the-docs/just-the-docs) Jekyll theme via `remote_theme`, which GitHub Pages builds automatically without local Ruby setup:
+This documentation site is built with Jekyll and the [Just the Docs](https://github.com/just-the-docs/just-the-docs) theme, deployed automatically via **GitHub Actions**:
 
-1. Push this repository to `github.com/ITech-Club-zetech-University/hacktoberfest`.
-2. On GitHub, navigate to **Settings → Pages**.
-3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-4. Set Branch to **`main`** and folder to **`/ (root)`**, then click **Save**.
-5. The site will publish at `https://itech-club-zetech-university.github.io/hacktoberfest/`.
+1. **Verify Git State First:** Before pushing, inspect your local repository state to avoid overwriting existing history:
+   ```bash
+   git status
+   git remote -v
+   git branch
+   ```
+   Ensure you are on the `main` branch connected to `https://github.com/ITech-Club-zetech-University/hacktoberfest.git`. Never force-push (`git push --force`) or reinitialize an existing repository.
+2. **Push to GitHub:**
+   ```bash
+   git push origin main
+   ```
+3. **Configure GitHub Pages Source:**
+   - In your repository on GitHub, navigate to **Settings → Pages**.
+   - Under **Build and deployment → Source**, select **GitHub Actions** (do *not* select "Deploy from a branch").
+   - Once selected, pushes to `main` automatically run the [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) workflow, run the test suite and QA link checks, compile the site, and publish the artifact.
+4. **Site Address:**
+   The site publishes at `https://itech-club-zetech-university.github.io/hacktoberfest/`.
 
 ### Previewing locally (optional)
 
+To preview the documentation site locally on your workstation, you need Ruby 3.x with development headers (`ruby-dev` and `build-essential` on Debian/Ubuntu):
+
 ```bash
-gem install bundler jekyll
-bundle init
-echo 'gem "jekyll"' >> Gemfile
-echo 'gem "just-the-docs"' >> Gemfile
+# 1. Install dependencies specified in Gemfile
 bundle install
+
+# 2. Start the local Jekyll preview server
 bundle exec jekyll serve
-# Open http://localhost:4000/hacktoberfest/
+
+# 3. Open in your browser:
+# http://localhost:4000/hacktoberfest/
+```
+
+*Note on local environment headers:* If your local system lacks Ruby development headers (e.g., `mkmf` missing `ruby.h` when compiling native extensions like `http_parser`), you can run the test build using the containerized command or rely on the GitHub Actions pipeline:
+```bash
+docker run --rm -v "$(pwd)":/app -w /app ruby:3.2-alpine sh -c "apk add --no-cache build-base && bundle install && bundle exec jekyll build"
 ```
 
 ### Running the preliminary eligibility checker
@@ -100,7 +120,7 @@ python3 -m unittest discover -s tests -v
 - `2`: At least one repository is `NEEDS MANUAL REVIEW` or `CHECK UNAVAILABLE`.
 - `3`: Usage or syntax error.
 
-Inconclusive results (such as network timeouts or GitHub API 403/429 rate limits) must **never** be treated as noncompliance; organizers inspect repositories manually in a browser. See [`judging.md`]({{ site.baseurl }}/judging/#preliminary-eligibility-gate-vs-scoring) for complete operational details.
+Inconclusive results (such as network timeouts or GitHub API 403/429 rate limits) must **never** be treated as noncompliance; organizers inspect repositories manually in a browser. See [`judging.md`](./judging.md#preliminary-eligibility-gate-vs-scoring) for complete operational details.
 
 ---
 

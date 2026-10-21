@@ -35,6 +35,7 @@ When planning this event, we evaluated two distinct evaluation models: a **fully
 ---
 
 ## The 100-point operational rubric
+{: #the-100-point-score-sheet #the-100-point-operational-rubric }
 
 Every project is evaluated out of 100 points against this universal base rubric:
 
@@ -207,7 +208,7 @@ The script categorizes each submission into one of four operational states and e
 
 ## Standard demo checklist for judges
 
-Judges use this 5-point checklist during each 2-minute demonstration (participants should follow the [Live Demo Script Template]({{ site.baseurl }}/templates/demo-script.md)):
+Judges use this 5-point checklist during each 2-minute demonstration (participants should follow the [Live Demo Script Template]({{ site.baseurl }}/templates/demo-script/)):
 
 - [ ] **Live software demonstration:** Project runs live in front of the panel (not a pre-recorded video or slide deck).
 - [ ] **Active Gemma integration verified:** Team demonstrates or shows logs of Gemma processing inputs and generating responses.

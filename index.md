@@ -12,7 +12,7 @@ permalink: /
 An overnight, open-source AI hack day hosted by **iTech Club, Zetech University**, in partnership with **Major League Hacking (MLH)**, sponsored by **Gemma**.
 {: .fs-6 .fw-300 }
 
-[See the Challenges](./challenges/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[See the Challenges]({{ site.baseurl }}/challenges/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Register on MLH](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---

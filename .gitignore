@@ -5,7 +5,6 @@ _site/
 .jekyll-metadata
 vendor/
 .bundle/
-Gemfile.lock
 
 # Python
 __pycache__/

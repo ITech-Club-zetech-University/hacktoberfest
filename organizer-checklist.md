@@ -1,3 +1,11 @@
+---
+title: "Quick-Reference Checklist"
+parent: Organiser Runbook
+nav_order: 1
+permalink: /organizer-checklist/
+description: "Chronological operational checklist for event hosts, leads, and mentors running Hack Day."
+---
+
 # Hack Day Organiser Quick-Reference Checklist
 
 A chronological operational checklist for event hosts, leads, and mentors running the **Hacktoberfest Hack Day Nairobi × iTech Club**.

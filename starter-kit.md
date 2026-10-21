@@ -24,7 +24,7 @@ Find the setup path that matches your laptop hardware and chosen challenge track
 | **Fastest path (minimal setup, student laptop)** | Hosted Gemini API (`gemma-4-26b-a4b-it`) | [Option A](#option-a--hosted-gemma-via-the-gemini-api) | [Track 1]({{ site.baseurl }}/challenges/01-agent-skill/), [Track 3]({{ site.baseurl }}/challenges/03-multimodal-assistant/), [Track 4]({{ site.baseurl }}/challenges/04-dev-harness/), or [Track 5]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/) |
 | **Must work offline (no Wi-Fi/signal dependency)** | Local quantized model via Ollama (`gemma4:e2b` or `gemma2:2b`) | [Option B](#option-b--local-offline-gemma-with-ollama) | **[Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)** |
 | **Need image or audio input** | Hosted Gemini API or local multimodal model | [Option A](#option-a--hosted-gemma-via-the-gemini-api) | **[Track 3: Multimodal Campus Companion]({{ site.baseurl }}/challenges/03-multimodal-assistant/)** |
-| **Need retrieval / RAG over documents** | Hosted Gemma 4 + EmbeddingGemma 2 | [Option A & RAG](#retrieval--embeddings-with-embeddinggemma) | **[Track 5: Campus Knowledge Companion (RAG)]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/)** |
+| **Need retrieval / RAG over documents** | Hosted Gemma 4 + EmbeddingGemma 2 | [Option A](#option-a--hosted-gemma-via-the-gemini-api) & [Track 5]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/) | **[Track 5: Campus Knowledge Companion (RAG)]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/)** |
 | **Need custom model / tool harness control** | Function calling via Gemini API or local FunctionGemma / Ollama | [Option A](#option-a--hosted-gemma-via-the-gemini-api) or [Option C](#option-c--open-weight-checkpoints-for-custom-harnesses) | **[Track 4: Gemma-Powered Dev Harness]({{ site.baseurl }}/challenges/04-dev-harness/)** |
 
 ---
@@ -66,6 +66,7 @@ If you plan to run models locally (Option B), verify free disk space:
 ---
 
 ## 3. Progressive setup: Option A — Hosted Gemma via Gemini API
+{: #option-a #option-a--hosted-gemma-via-the-gemini-api }
 
 The hosted path is recommended for all tracks except Track 2. Google provides free-tier compute for Gemma models, requiring zero local GPU hardware.
 
@@ -188,6 +189,7 @@ Hello students of Zetech University, welcome to the hackathon and happy building
 ---
 
 ## 5. Option B — Local offline Gemma with Ollama
+{: #option-b #option-b--local-offline-gemma-with-ollama }
 
 Required for **[Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)**, and an excellent local backup for all teams if venue connectivity drops.
 
@@ -310,6 +312,7 @@ Memory requirements vary significantly depending on **quantization format**, **r
 ---
 
 ## 8. Option C — Open-weight checkpoints for custom harnesses
+{: #option-c #option-c--open-weight-checkpoints-for-custom-harnesses }
 
 Needed only if you are downloading raw weights for fine-tuning, Hugging Face Transformers, or custom llama.cpp harnesses:
 

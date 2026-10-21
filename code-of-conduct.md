@@ -55,4 +55,4 @@ Organizers reserve the right to take any necessary action to maintain a safe and
 - Expulsion from the venue without refund or recourse.
 - Referral to university administration or security where appropriate.
 
-See also [Rules → Disqualification & Ownership]({{ site.baseurl }}/rules/#disqualification--ownership).
+See also [Rules → Disqualification & Ownership]({{ site.baseurl }}/rules/#governance-disqualification-ownership).

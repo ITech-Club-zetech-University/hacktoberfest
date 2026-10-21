@@ -4,10 +4,10 @@ description: >-
   Hacktoberfest Hack Day at Zetech University — Friday 30 October 2026.
 baseurl: "/hacktoberfest"
 url: "https://itech-club-zetech-university.github.io"
+permalink: pretty
 
-remote_theme: just-the-docs/just-the-docs
+theme: "just-the-docs"
 plugins:
-  - jekyll-remote-theme
   - jekyll-seo-tag
 
 color_scheme: dark
@@ -51,5 +51,10 @@ kramdown:
 
 exclude:
   - scripts/
+  - tests/
   - README.md
   - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
