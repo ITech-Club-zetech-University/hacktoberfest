@@ -1,12 +1,15 @@
 ---
 title: "3. Multimodal Campus Companion"
-parent: Challenges
-nav_order: 3
+nav_exclude: true
+search_exclude: true
 description: "Build an assistant that uses Gemma's native vision or audio understanding to solve a real physical campus challenge."
 ---
 
 # Challenge 3: Multimodal Campus Companion
 {: .no_toc }
+
+{: .important }
+> **Historical brief — not current rules.** The event is now open-ended. This archived brief's track choice, team size, time estimate, model conditions and acceptance checklist are not participant requirements. Read the [current project brief]({{ site.baseurl }}/challenges/) or [optional inspiration]({{ site.baseurl }}/inspiration/) instead.
 
 **Track focus:** Native vision or audio understanding · **Target window:** ~8 hours · **Team size:** 3–4
 {: .fs-5 .fw-300 }
@@ -45,12 +48,12 @@ Gemma is the multimodal perceptual engine:
 - **What Gemma does:** Gemma receives the image or audio input alongside the user prompt, performs feature extraction and visual reasoning internally, and outputs synthesized, grounded text.
 - **How judges inspect it:** Judges will inspect the API call or model inference loop in your source code to confirm that media data (base64 image bytes, file URI, or audio buffer) is directly passed to the Gemma model. Judges will submit a real test image during the demo to confirm that the model's output changes based on the visual contents of the uploaded file.
 
-## 5. Mandatory acceptance criteria
+## 5. Minimum implementation acceptance criteria
 
-Every valid entry in this track must pass these four observable tests:
+These four observable checks define a working baseline. Missing checks inform the published rubric, not automatic local disqualification or fixed deductions; see [incomplete prototypes and cross-track fairness]({{ site.baseurl }}/judging/#fair-cross-track-evaluation).
 
 1. **Active non-text modality:** The application successfully ingests at least one genuine non-text input format (e.g. image or audio) and passes it directly to a multimodal Gemma model.
-2. **Grounded multimodal response:** The generated response accurately references concrete, verifiable visual elements from the input file (such as specific text on a whiteboard, colors of wires, or labels on a chart).
+2. **Grounded multimodal response:** The generated response accurately references concrete, verifiable elements from the chosen modality (such as text or labels in an image, or spoken content and audible events in an audio clip). Audio-only entries do not need an image workflow.
 3. **Graceful invalid-input handling:** When supplied with an unsupported file extension, a corrupted image, or an excessively large file, the application displays a friendly, clear error message without crashing.
 4. **Transparent limitation disclosure:** The repository `README.md` clearly lists the exact supported file formats (e.g. JPEG, PNG), maximum file size (e.g. 10 MB), exact Gemma model name, and documented operational limitations (e.g., poor performance in low-light photography or complex handwriting).
 
@@ -62,6 +65,8 @@ When presenting your multimodal companion to judges, follow this demo flow:
 - **0:30 – 1:15 (The Primary Media Demo):** Upload or capture a real campus test image (e.g. a photo of a handwritten lecture schedule, code error screenshot, or circuit diagram included in your repo's `examples/` folder). Submit the query and show Gemma generating a grounded, structured answer.
 - **1:15 – 1:45 (Fallback & Edge Case):** Submit an invalid input (e.g., a text file renamed to `.png`, a completely black/blurry image, or an oversized file). Show that the application catches the error gracefully and guides the user on how to fix it.
 - **1:45 – 2:00 (Code Inspection):** Show judges the 10–20 lines of code where the image file is encoded and sent to the Gemma API, proving that the multimodal reasoning is performed natively by Gemma.
+
+For an audio-only entry, substitute a permitted sample audio clip and verifiable spoken content for the image example, then demonstrate invalid/unsupported audio handling and the code that passes audio directly to Gemma. Judges use the same rubric and time limit for either modality.
 
 ## 7. Required repository & README evidence
 

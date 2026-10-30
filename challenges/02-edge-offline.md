@@ -1,12 +1,15 @@
 ---
 title: "2. Gemma Off the Grid"
-parent: Challenges
-nav_order: 2
+nav_exclude: true
+search_exclude: true
 description: "Build an edge application that runs Gemma entirely on-device, with zero network connectivity required at runtime."
 ---
 
 # Challenge 2: Gemma Off the Grid
 {: .no_toc }
+
+{: .important }
+> **Historical brief — not current rules.** The event is now open-ended. This archived brief's track choice, team size, time estimate, model conditions and acceptance checklist are not participant requirements. Local-only inference does not automatically qualify for the Gemma 4 prize. Read the [current project brief]({{ site.baseurl }}/challenges/) or [optional inspiration]({{ site.baseurl }}/inspiration/) instead.
 
 **Track focus:** On-device edge inference & offline-first design · **Target window:** ~8 hours · **Team size:** 3–4
 {: .fs-5 .fw-300 }
@@ -21,7 +24,7 @@ description: "Build an edge application that runs Gemma entirely on-device, with
 In many regions across Kenya and sub-Saharan Africa, dependable high-speed internet is neither guaranteed nor affordable. From rural clinics and field research stations to campus computer labs during power outages or packed venue Wi-Fi networks, real people need intelligent tools that work completely disconnected from the cloud. In this track, your team builds a working, practical application where **Gemma runs 100% locally on-device**.
 
 - **Target user:** Field healthcare workers, agricultural extension officers, rural students with limited data bundles, or anyone operating in environments where cloud APIs are unavailable, costly, or unreliable.
-- **The golden rule:** A cloud API call to Google AI Studio, OpenAI, or any remote server is **strictly disqualified** from being presented as offline inference. The model weights must sit on your local hard drive and execute on local compute.
+- **The golden rule:** A cloud API call to any remote server does **not** satisfy offline inference. The model weights must sit on your local hard drive and execute on local compute. Record an unmet offline check under the rubric; deliberately misrepresenting cloud inference as local is handled under the published integrity rules.
 
 ## 2. Problem to solve
 
@@ -42,11 +45,11 @@ A successful MVP for this track requires:
 
 Gemma is the local cognitive engine powering the application:
 - **What Gemma does:** Gemma generates answers, structures field notes, or categorizes symptoms directly on your laptop's CPU or consumer GPU.
-- **How judges inspect it:** Judges will ask you to **turn off your laptop's Wi-Fi and Bluetooth live**. You will launch the app, enter a prompt, and observe the model generating tokens. Judges will verify via local process monitoring (such as `top`, Activity Monitor, or Ollama CLI status) that inference is happening locally on your hardware with zero outgoing network packets.
+- **How judges inspect it:** Disable external network connections (Wi-Fi, Ethernet, Bluetooth tethering and cellular hotspots) live; keep loopback available for a local UI or Ollama. Launch the app and submit a prompt. Show cached weights, the local runtime and CPU/GPU activity. Process monitors alone do not prove zero external traffic; use adapter state and, where available, network monitoring as supporting evidence.
 
-## 5. Mandatory acceptance criteria
+## 5. Minimum implementation acceptance criteria
 
-Every valid entry in this track must pass these four observable tests:
+These four observable checks define a working baseline. Missing checks inform the published rubric, not automatic local disqualification or fixed deductions; see [incomplete prototypes and cross-track fairness]({{ site.baseurl }}/judging/#fair-cross-track-evaluation).
 
 1. **Complete offline operation:** 100% of runtime inference, prompt processing, and UI display functions normally with Wi-Fi, Ethernet, and cellular hotspot adapters disabled. (External web scraping and remote API calls are strictly disallowed during inference).
 2. **Documented cold-start instructions:** The repository `README.md` provides exact, copy-pasteable commands explaining how to launch the local model runtime and the application from a clean boot.
@@ -106,7 +109,7 @@ These optional enhancements will distinguish advanced entries but are **not** re
 These notes guide judges when assessing projects in this track against the general 100-point rubric in [`judging.md`]({{ site.baseurl }}/judging/). They do not constitute bonus points or separate scoring categories:
 
 - **What the team must demonstrate (under Technical Execution):** The live demo MUST be conducted with all network interfaces (Wi-Fi, Ethernet, and mobile hotspot) completely disabled in front of judges. The user workflow must run end-to-end on local compute, ingesting an input and streaming/displaying model output with zero connectivity.
-- **What evidence judges should inspect (under Technical Execution & Open-Source Quality):** Judges will inspect terminal process monitors (`top`, Activity Monitor, or Task Manager) showing local runtime execution (e.g. Ollama, llama.cpp, LiteRT-LM), zero network socket I/O, local RAM consumption (~4–8 GB), and locally cached model weights. README cold-start instructions must clearly state required quantization formats.
-- **What constitutes a working implementation:** A software build that launches and executes Gemma inferences entirely on consumer laptop hardware without connecting to remote cloud APIs. Any background ping or fallback to hosted endpoints violates track constraints and drops the Technical Execution score.
+- **What evidence judges should inspect (under Technical Execution & Open-Source Quality):** Inspect disabled external adapters, cached weights, local runtime activity and measured RAM use. Local loopback sockets are permitted. README instructions must state hardware, quantization, test input, output length and measured end-to-end latency so the under-30-second baseline can be checked on the demonstrated device, not assumed from CPU specifications.
+- **What constitutes a working implementation:** A software build that launches and executes Gemma inference on local hardware without remote dependencies. A hosted fallback fails the offline check; use that evidence with the general Technical Execution anchors, without an extra fixed penalty.
 - **How Gemma must contribute to the solution (under Meaningful Gemma Integration):** A local quantized Gemma model (e.g. Gemma 4 E2B, Gemma 2 2B) must actively generate the diagnostic, analytical, or generative response. Hardcoded lookup tables, regex scripts, or static canned outputs fail this requirement.
 - **Relevant limitations and safety considerations (under Responsible AI & Safety):** Teams must highlight the inherent privacy advantages of local on-device processing for sensitive data. If the app addresses health, legal, or crisis triage, an explicit user disclaimer must state that the model provides informational assistance, not professional care. Teams should openly state quantitative hardware limits (e.g., token generation speeds on CPU).

@@ -7,7 +7,7 @@ description: "Curated, verified official Gemma and MLH resources, organized by c
 # Resources
 {: .no_toc }
 
-Every link below has been verified against official Google, MLH, and open-source documentation. Use the one-line descriptions to find the right guide for your challenge track.
+Use these official resources for your chosen problem and architecture. There are no mandatory technical tracks; check the current model/runtime documentation before relying on a capability.
 {: .fs-6 .fw-300 }
 
 1. TOC
@@ -16,6 +16,8 @@ Every link below has been verified against official Google, MLH, and open-source
 ---
 
 ## Official MLH event resources (start here)
+
+Choose your own project; the two [live prize categories]({{ site.baseurl }}/challenges/#the-official-mlh-challenge) are awards, not project prompts. The [idea framework]({{ site.baseurl }}/challenges/) and [optional inspiration]({{ site.baseurl }}/inspiration/) help you get started.
 
 These four verified links were provided directly by MLH for this Hacktoberfest Hack Day:
 
@@ -41,10 +43,10 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 ## Capabilities & prompt engineering
 
 - **[Thinking Modes Guide](https://ai.google.dev/gemma/docs/capabilities/thinking)** — *Use this when* configuring multi-step reasoning for logically demanding tasks or complex code analysis.
-- **[Function Calling with Gemma](https://ai.google.dev/gemma/docs/capabilities/text/function-calling-gemma4)** — *Use this when* building autonomous agent harnesses that execute structured tools in [Challenge 4]({{ site.baseurl }}/challenges/04-dev-harness/).
+- **[Function Calling with Gemma](https://ai.google.dev/gemma/docs/capabilities/text/function-calling-gemma4)** — *Use this when* your project needs bounded, structured tool calls.
 - **[Prompt Formatting Guide](https://ai.google.dev/gemma/docs/core/prompt-formatting-gemma4)** — *Use this when* structuring turn-based chat templates (user, model, system) for raw open weights.
-- **[Image Understanding Guide](https://ai.google.dev/gemma/docs/capabilities/vision/image)** — *Use this when* sending images, diagrams, or whiteboard photos to Gemma in [Challenge 3]({{ site.baseurl }}/challenges/03-multimodal-assistant/).
-- **[Audio Processing Guide](https://ai.google.dev/gemma/docs/capabilities/audio)** — *Use this when* processing spoken campus announcements or audio memos in [Challenge 3]({{ site.baseurl }}/challenges/03-multimodal-assistant/).
+- **[Image Understanding Guide](https://ai.google.dev/gemma/docs/capabilities/vision/image)** — Check model and endpoint support before sending images.
+- **[Audio Processing Guide](https://ai.google.dev/gemma/docs/capabilities/audio)** — Check the exact model/runtime; family-level audio support does not establish hosted API support.
 
 ---
 
@@ -58,7 +60,7 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 
 ## Local runtimes & edge inference
 
-- **[Ollama Integration Guide](https://ai.google.dev/gemma/docs/integrations/ollama)** — *Use this when* running lightweight quantized models (`gemma4:e2b`, `gemma2:2b`) offline with a single CLI command in [Challenge 2]({{ site.baseurl }}/challenges/02-edge-offline/).
+- **[Ollama Integration Guide](https://ai.google.dev/gemma/docs/integrations/ollama)** — Optional local inference; technical support does not prove partner-prize eligibility.
 - **[llama.cpp Integration Guide](https://ai.google.dev/gemma/docs/integrations/llamacpp)** — *Use this when* optimizing high-performance CPU/GPU local execution with GGUF checkpoints.
 - **[LM Studio Integration](https://ai.google.dev/gemma/docs/integrations/lmstudio)** — *Use this when* you prefer a visual desktop GUI runner to test prompts locally without writing code.
 - **[LiteRT-LM Overview](https://ai.google.dev/edge/litert-lm/overview)** — *Use this when* deploying ultra-compact quantized models to mobile devices or embedded hardware.
@@ -67,8 +69,8 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 
 ## Specialized model variants
 
-- **[EmbeddingGemma 2 Documentation](https://ai.google.dev/gemma/docs/embeddinggemma)** — *Use this when* generating vector embeddings for text, images, or audio in [Challenge 5 (RAG)]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/) (licensed under Apache 2.0).
-- **[FunctionGemma Model Card](https://ai.google.dev/gemma/docs/functiongemma)** — *Use this when* fine-tuning a compact 270M model specifically for deterministic local function calling in [Challenge 4]({{ site.baseurl }}/challenges/04-dev-harness/).
+- **[EmbeddingGemma Documentation](https://ai.google.dev/gemma/docs/embeddinggemma)** — Check the exact embedding model's supported inputs, licence and runtime when building retrieval.
+- **[FunctionGemma Model Card](https://ai.google.dev/gemma/docs/functiongemma)** — Optional specialised function calling; an older model is not a substitute for Gemma 4 prize evidence.
 - **[ShieldGemma 2 Documentation](https://ai.google.dev/gemma/docs/shieldgemma)** — *Use this when* evaluating prompt safety and filtering abusive or harmful model outputs.
 - **[PaliGemma 2 Overview](https://ai.google.dev/gemma/docs/paligemma)** — *Use this when* needing fine-grained visual question answering and spatial image captioning.
 - **[Gemma 3n Architecture](https://ai.google.dev/gemma/docs/3n)** — *Use this when* exploring mobile-first, edge-optimized models from Google's earlier release wave.
@@ -78,9 +80,9 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 ## Agent standards & developer harnesses
 
 - **[Agent Skills Open Standard](https://agentskills.io/)** — *Use this when* understanding the principles and ecosystem behind portable agent skills.
-- **[Agent Skills Specification](https://agentskills.io/specification)** — *Use this when* authoring and validating your `SKILL.md` frontmatter and directory layout for [Challenge 1]({{ site.baseurl }}/challenges/01-agent-skill/).
+- **[Agent Skills Specification](https://agentskills.io/specification)** — Required conformance if your entry is an agent skill, not a requirement to build a skill.
 - **[Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart)** — *Use this when* creating, testing, and packaging your first reusable agent skill.
-- **[OpenCode Architecture](https://github.com/sst/opencode)** — *Use this when* inspecting an open-source reference implementation of a tool-calling agent harness for [Challenge 4]({{ site.baseurl }}/challenges/04-dev-harness/).
+- **[OpenCode Architecture](https://github.com/sst/opencode)** — An optional reference for bounded harness designs; attribute upstream work and document your original contribution.
 
 ---
 
@@ -91,7 +93,17 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 - **[MLH Standard Hackathon Rules](https://github.com/MLH/mlh-policies/blob/main/standard-hackathon-rules.md)** — *Use this when* verifying event integrity, timing guidelines, and team conduct.
 - **[MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf)** — *Use this when* reviewing community standards and safety reporting procedures.
 - **[Open Source Initiative (OSI) Approved Licenses](https://opensource.org/licenses)** — *Use this when* choosing an open-source license (such as MIT, Apache-2.0, or GPL-3.0) for your team's application code.
-- **[Gemma Terms of Use](https://ai.google.dev/gemma/terms)** — *Use this when* reviewing the responsible-use terms governing Google's open-weight model weights.
+- **[Gemma 4 Model Card and Apache 2.0 Licence](https://ai.google.dev/gemma/docs/core/model_card_4)** — Verify Gemma 4 licensing separately from your code and hosted-service terms.
+- **[Earlier Gemma Terms](https://ai.google.dev/gemma/terms)** — Check applicability for older model generations; do not apply these terms indiscriminately to Gemma 4.
+
+## Optional DigitalOcean resources
+
+DigitalOcean supports **Best Open-Source AI Project** but is **not mandatory**. Use any suitable deployment approach, including a working local application. No provider use alone establishes open-source AI eligibility or earns bonus points.
+
+- [MLH DigitalOcean partner hub](https://www.mlh.com/partners/digitalocean) — General partner resources, not additional category rules.
+- [DigitalOcean Inference](https://docs.digitalocean.com/products/inference/) — Optional hosted model services; verify whether the selected model meets your category requirements.
+- [App Platform](https://docs.digitalocean.com/products/app-platform/) — Optional application deployment.
+- [Inference pricing](https://docs.digitalocean.com/products/inference/details/pricing/) — Check usage charges, credit/balance requirements and account access before spending. Event credits are not assumed.
 
 ---
 

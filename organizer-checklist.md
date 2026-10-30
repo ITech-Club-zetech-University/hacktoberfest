@@ -15,9 +15,10 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 ## 1. Pre-Event Setup & Verification (T-Minus 24 Hours)
 
 - [ ] **Verify Event Listing:** Confirm venue, timing (**Friday 30 Oct 2026, 7:00 PM – Saturday 31 Oct 2026, 6:00 AM EAT**), and registration at [events.mlh.com/events/14735](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
-- [ ] **OrganizerHQ Configuration Check:** Log in to OrganizerHQ and confirm whether **Best Open-Source AI Project** is the sole challenge or if an additional partner challenge is active.
-- [ ] **Test Automated Checker:** Run `python3 -m unittest discover -s tests -v` on organizer workstation (ensure 43 tests pass).
-- [ ] **Prepare Private Judge Sheet:** Import [`templates/judge-score-sheet.csv`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/templates/judge-score-sheet.csv) into an access-controlled Google Sheet / Excel workbook.
+- [ ] **OrganizerHQ Configuration Check:** Both **Best Open-Source AI Project** and **Best Use of Gemma 4** are publicly listed. Verify them in authenticated HQ, including actual requirements and multiple-category winner policy.
+- [ ] **Test Automated Checker:** Run `python3 -m unittest discover -s tests -v` on the organiser workstation; all tests must pass.
+- [ ] **Prepare Private Judge Sheets:** Import the [judge score sheet CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv), delete fictional examples and duplicate the blank row. It has no formulas; verify manual arithmetic using the conversion table. Wrap and expand criterion evidence cells and keep judges' scores independent.
+- [ ] **Reconcile Schedule:** Public categories close at **6:00 AM EAT on 31 October**, also the event end. Confirm coding start/stop, submission opening and feasible demos/awards with the lead and in HQ; announce one schedule. Do not enforce the previous 5:00 AM cutoff or assume eight coding hours.
 - [ ] **Emergency Offline USB Drives:** Pre-load 2–3 USB drives with Ollama installers, quantized GGUF weights (`gemma4:e2b`, `gemma2:2b`), and common Python wheels.
 - [ ] **Confirm Judge Panel:** Confirm 3–5 faculty, mentor, or alumni judges and distribute rubric scoring anchors.
 
@@ -36,37 +37,37 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 ## 3. Check-In & Kickoff (7:00 PM – 8:30 PM EAT)
 
 - [ ] **7:00 PM:** Open venue doors; check in registered students on OrganizerHQ.
-- [ ] **7:15 PM (Team Formation):** Match solo hackers and pairs into **3–4 person teams** for local award eligibility.
-- [ ] **7:30 PM (Opening Remarks):** Welcome attendees, explain the 5 preset tracks, review the 100-point rubric, and emphasize code of conduct.
+- [ ] **Team Formation:** Match collaborators by interests and skills; confirm numerical limits and any separate local award restrictions.
+- [ ] **Opening Remarks:** Explain own-problem projects, the idea worksheet, optional inspiration, both prize categories, meaningful open AI, the 100-point human rubric and code of conduct. No primary track.
 - [ ] **8:00 PM (Gemma Clinic):** Walk through Gemini API key creation, safe `.env` management, and local Ollama setup using the [Starter Kit]({{ site.baseurl }}/starter-kit/).
 
 ---
 
-## 4. Overnight Hacking (8:30 PM – 4:30 AM EAT)
+## 4. Overnight Hacking (Confirmed Build Period)
 
 - [ ] **Mentorship Rounds:** Ensure technical mentors circulate every 60–90 minutes to unblock model setup and prompt architecture.
 - [ ] **Hourly Announcements:** Maintain energy; announce remaining hours at 12:00 AM, 2:00 AM, and 4:00 AM.
-- [ ] **Network Monitoring:** If venue Wi-Fi slows down, guide teams to [Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/) or provide USB drive packages.
+- [ ] **Network Monitoring:** Assist with suitable local runtime or connectivity options; disclose fallbacks and do not promise local-only Gemma prize eligibility.
 
 ---
 
-## 5. Submission & Preliminary Review (4:30 AM – 5:00 AM EAT)
+## 5. Submission & Preliminary Review (Confirmed Window)
 
-- [ ] **4:00 AM:** 1-hour submission warning announced to the room.
-- [ ] **4:30 AM:** Submission window opens. Remind teams:
-  - Submit repository URL on OrganizerHQ under **Best Open-Source AI Project**.
+- [ ] **Deadline Warnings:** Announce only timings verified against the saved live window.
+- [ ] **Submission Reminder:** One team member submits once and selects every qualifying category:
+  - **Best Open-Source AI Project** and/or **Best Use of Gemma 4**, as eligible.
   - Repository must be public with an OSI-approved `LICENSE` file.
-  - Project `README.md` must declare their **single primary iTech Club track**.
-- [ ] **4:45 AM:** Run automated eligibility checker:
+  - README describes the problem, user, models, licences, setup, original contribution and test evidence; no track declaration.
+- [ ] **Before cutoff:** Run administrative repository checker:
   ```bash
   python3 scripts/check_submission.py <repo-urls...>
   ```
-- [ ] **4:50 AM:** Address any flagged `NEEDS MANUAL REVIEW` submissions (e.g. asking team to toggle repo public).
-- [ ] **5:00 AM:** **Strict Submission Cutoff.** Lock submission queue.
+- [ ] **Manual Review:** Resolve actual hygiene issues; a legacy missing-Gemma warning does not exclude other open models from the broad category.
+- [ ] **Cutoff:** Verify the saved submissions and enforce only the reconciled, announced window.
 
 ---
 
-## 6. Live Project Demos (5:00 AM – 5:45 AM EAT)
+## 6. Live Project Demos (Confirmed Session)
 
 - [ ] **Judge Briefing:** Review 100-point rubric anchors (6 criteria, 0–5 scale, weighted conversion), time limits (2 min demo + 1 min Q&A), and mandatory conflict recusal rule.
 - [ ] **Timekeeping:** Enforce strict 2-minute demonstration limit per team (no slide decks; live code only).
@@ -74,20 +75,20 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 
 ---
 
-## 7. Score Tabulation & Winner Marking (5:45 AM – 6:00 AM EAT)
+## 7. Score Tabulation & Winner Marking (After Evaluation)
 
-- [ ] **Audit Sheets:** Ensure at least 3 completed independent score sheets per team where judging capacity allows (minimum 2 valid sheets required); discard any incomplete sheets.
-- [ ] **Compute Averages:** Tabulate arithmetic mean of completed judge totals in private organiser sheet (no automated ranking software).
+- [ ] **Audit Sheets:** Follow the [tabulation procedure]({{ site.baseurl }}/judging/#score-tabulation-process): ask original judges to correct missing fields or arithmetic; exclude conflicted, duplicate or uncorrected incomplete sheets with a reason. Arrange another independent evaluation if fewer than two valid sheets remain (three preferred).
+- [ ] **Compute Averages:** Average valid judge totals privately; use the same sheets for criterion averages and tie-breakers. Compare full precision and round only displayed means to two decimals. No automated ranking software.
 - [ ] **Apply Tie-Breakers (if needed):**
-  1. Higher Meaningful Gemma/open-weight AI integration score (out of 20)
-  2. Higher Technical execution and working demonstration score (out of 25)
+  1. Higher average Meaningful open-source/open-weight AI integration score (out of 20)
+  2. Higher average Technical execution and working demonstration score (out of 25)
   3. Deliberation by the judging panel, with decision and rationale documented
 - [ ] **Mark Official MLH Winner in OrganizerHQ:**
   1. Set **Announce Winners** toggle to **PRIVATE**.
-  2. Filter by **Best Open-Source AI Project**, select winner, click **Mark Winner → Winner**, verify gold badge.
-  3. If partner prize confirmed and active, mark partner winner.
-  4. Switch toggle to **PUBLIC**.
-- [ ] **Record Local Top 3 Overall:** Note First Place – Overall Winner, Second Place – Overall Runner-up, and Third Place – Overall Third Place for iTech Club awards.
+  2. Filter by **Best Open-Source AI Project**, select winner, click **Mark Winner → Winner**, verify gold badge and **Winner saved**.
+  3. Verify and mark **Best Use of Gemma 4** separately, following the confirmed multiple-category winner policy.
+  4. Preview the public view, switch to **PUBLIC**, and verify the published gallery before announcing in the room.
+- [ ] **Local Awards:** Confirm whether separate Top Three recognition/prizes remain before recording or announcing them.
 - [ ] **Closing Ceremony:** Announce winners live; present awards and certificates.
 
 ---

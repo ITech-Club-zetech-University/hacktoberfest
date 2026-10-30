@@ -1,73 +1,119 @@
 ---
-title: Challenges
+title: Build Your Own Open-Source AI Project
 nav_order: 5
-has_children: true
-description: "5 preset Gemma challenge tracks — pick one primary track instead of inventing an idea from scratch."
+description: "Choose your own problem, develop an original solution, and build a focused open-source AI MVP."
 ---
 
-# Challenges
+# Build Your Own Open-Source AI Project
 {: .no_toc }
 
-Pick a track below instead of staring at a blank whiteboard. Each track is designed for an **approximately eight-hour build window** by a 3–4 person student team, with clear baselines and no expensive infrastructure required.
+**Identify a real problem. Imagine a better solution. Build it with open-source AI. Explore what Gemma 4 makes possible. Publish your work for others to use and improve.**
 {: .fs-6 .fw-300 }
+
+There are **no fixed project prompts, mandatory tracks or required application domains**. Choose your own problem, target users, domain, product concept and technical implementation. You can combine techniques or invent a different approach entirely.
 
 1. TOC
 {: toc }
 
----
+## Prize categories are awards, not project prompts
+{: #the-official-mlh-challenge }
 
-## The official MLH challenge
+The live MLH event lists two categories:
 
-When your team submits its project on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club), you are submitting to the **official MLH Hack Day competition**:
+| Official category | What your project needs to demonstrate |
+|---|---|
+| **[Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3)** — DigitalOcean-supported | An original project with open-source/open-weight AI central to a useful working solution; public GitHub source and a suitable open-source code licence. Using an AI coding assistant alone is not enough. Agent skills must follow the Agent Skills Open Standard; a model harness must be original or a meaningful extension. Those conditions apply only if you build that type of project. |
+| **[Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d)** — Gemma / Google DeepMind | Meaningful, working **Gemma 4** integration. Explain its role and show the actual model call in code and the demo. The [MLH partner winner guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma) requires Gemma use through the **Gemini API**; do not assume local-only inference or an older Gemma model qualifies. Ask organisers to resolve any exception against event onboarding. |
 
-- **[Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories)** *(Official MLH Hack Day Challenge)*  
-  - **What it requires:** Build an original project where open-source software or open-weight AI is an important functional component. Your repository must be public under an OSI-approved open-source license.  
-  - **Prize:** Exactly **one winning team** receives official Hacktoberfest Winner DEV Badges on their DEV accounts, plus MLH+DEV swag bags (subject to availability).
+**One project can qualify for both categories. Submit once and select every category it qualifies for.** Permission to enter both does not establish permission to win both; organisers must confirm that policy. Do not submit duplicate forms for the same project.
 
-{: .note }
-> **Understanding the Award Structure:**
-> - **One Official MLH Challenge:** "Best Open-Source AI Project" is the confirmed, official Hack Day challenge on OrganizerHQ, with one winning team selected across the event.
-> - **Local iTech Club Recognition (Top Three Overall):** All eligible submissions across all 5 preset tracks are evaluated together in a single unified pool by appointed human judges using our published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet), naming the **Top Three Overall: First Place (Overall Winner), Second Place (Overall Runner-up), and Third Place (Overall Third Place)**.
-> - **iTech Club Preset Tracks:** The 5 tracks below are iTech Club's curated, structured ways for teams to approach that broader challenge. They represent technical specializations—they are **not** five separate MLH prize categories by default. Challenge-specific acceptance tests guide judges when assessing the universal rubric (specifically Technical Execution, Meaningful Gemma Integration, Responsible AI, and Open-Source Quality); they are **not** hidden bonus points.
-> - **Partner Prize Availability:** An additional partner challenge (such as a Google Gemma partner prize) is an optional module in OrganizerHQ. It is available only if confirmed in the event's actual OrganizerHQ configuration. Organizers will confirm on-site whether a separate partner challenge is active; event sponsorship alone does not guarantee a separate prize category.
+**DigitalOcean is a supported resource, not a mandatory technology choice.** You may build locally or use suitable hosting elsewhere. Provider choice alone does not establish open-source AI eligibility. Check [optional deployment and pricing resources]({{ site.baseurl }}/resources/#optional-digitalocean-resources) before incurring costs; no universal free-credit entitlement is promised.
+
+Appointed **human judges** assess the working project and evidence using the [published rubric]({{ site.baseurl }}/judging/). There is no automated project scoring, ranking or leaderboard. Optional examples and archived briefs do not add eligibility gates, bonus points or mandatory technology choices.
+
+## Develop an idea quickly
+
+Use the following process with your team and a mentor. Write brief answers in the [problem statement worksheet]({{ site.baseurl }}/templates/problem-statement/); it is a planning aid, not a separate idea-approval requirement.
+
+### Step 1 — Identify a real problem
+
+- Who experiences the problem?
+- What are they trying to achieve?
+- What makes the current process difficult, slow, expensive, inaccessible, confusing or unreliable?
+- How do they currently solve it?
+- Can you talk to or observe a potential user during the event, with their consent?
+
+Start with an observed need rather than a model feature looking for a use.
+
+### Step 2 — Define the user and use case
+
+Describe **one primary user and one specific use case**. Name the task, context and expected outcome.
+
+“An AI platform for education” is too broad. “A first-year student checks their attempted solution against a worked example and receives one explanatory hint” is narrow enough to test. You may choose any domain; this example is not a prescribed project.
+
+### Step 3 — Decide whether AI is appropriate
+
+- What task specifically benefits from AI?
+- Why is an open model useful here?
+- Could a normal rule, form, database query or conventional application solve the problem more reliably and cheaply?
+- What will the model do, and what must remain under human control?
+
+Do not add a chatbot or LLM just to appear AI-powered. Use conventional software for deterministic tasks. If the idea does not need AI, narrow or reconsider the idea before entering an AI prize category. Define human review for uncertain or consequential outputs.
+
+### Step 4 — Choose the model and architecture
+
+For **Best Open-Source AI Project**, choose Gemma 4 or another suitable open-source/open-weight model. For **Best Use of Gemma 4**, use Gemma 4 meaningfully and follow its category requirements above.
+
+| Decision | Trade-offs to check before committing |
+|---|---|
+| Local inference | Can work without internet after setup and keep inference on-device, but weights take time to download and require enough RAM/VRAM, disk and runtime support. Test latency on your actual hardware. Local execution alone does not prove complete privacy or partner-prize eligibility. |
+| Hosted API | Reduces local compute needs but depends on connectivity, account access, quotas, service terms and possible charges. Check what data leaves the device and whether you have permission to send it. |
+| Model capability | Verify the exact model and runtime support your inputs, output format, context size and language. Text, image, audio and tool support vary by model and endpoint. |
+| Architecture | Choose the simplest flow that serves the user. Retrieval, agents, fine-tuning, mobile apps and web interfaces are options, not requirements. Limit tool permissions and validate model outputs. |
+| Cost and feasibility | Measure response time, memory and API usage early. A larger model or paid deployment does not earn extra points. Keep a safe failure path for unavailable inference. |
+
+The [starter kit]({{ site.baseurl }}/starter-kit/) explains hosted Gemma through the Gemini API versus local inference. **Gemini API is the hosting service; a proprietary Gemini model is not Gemma 4.**
+
+### Step 5 — Scope the MVP
+
+Choose:
+
+- **One core user journey.**
+- **One important AI capability.**
+- **One working application flow**, from input through validation/model use to a useful output.
+- **A small test dataset or realistic test scenarios**, using public, permitted or synthetic data.
+- **One demonstrable outcome achievable in the organiser-confirmed hack period.**
+
+Aim for a focused, demonstrable minimum viable product, not an unfinished commercial platform. Cut extra personas, dashboards, integrations and deployment work before cutting the core flow or testing.
+
+### Step 6 — Build, test and document
+
+Test and record:
+
+1. Normal inputs with an expected useful result.
+2. Edge cases such as empty, malformed, long or unsupported inputs.
+3. **At least one failure or uncertainty scenario**, such as unavailable inference, insufficient source evidence or an ambiguous request.
+
+Compare actual results with expected behaviour and explain failures honestly. **A model response appearing on screen does not by itself establish that the project works well.** Show whether the result helps the user, how errors surface and when a human should intervene. Do not label an unrun test as passed.
+
+### Step 7 — Publish and submit
+
+- Publish your work in a **public GitHub repository** with a suitable [OSI-approved code licence](https://opensource.org/licenses).
+- Write a useful README: problem, primary user, original contribution, selected prize categories, architecture, exact model/version/runtime, model and dependency licences, data permissions, setup commands, tests and known limitations.
+- Disclose AI coding tools separately from models used by the running application.
+- Keep secrets and personal/sensitive data out of the repository. Provide placeholder configuration and reproducible setup instructions.
+- Prepare a working demo and explain what is implemented versus planned. Use the [README template]({{ site.baseurl }}/templates/project-readme-template/), [submission checklist]({{ site.baseurl }}/templates/submission-checklist/) and [demo guide]({{ site.baseurl }}/templates/demo-script/).
+- Register and check in. One team member submits on behalf of the team through the event's [OrganizerHQ Challenges page](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges). Choose **Add Submission**, provide the repository and project details, and select every eligible category.
+
+## Time and feasibility
+
+**Public listing checked: 30 October 2026.** The [official event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) gives **Friday 30 October, 7:00 PM → Saturday 31 October, 6:00 AM EAT**. Both live category pages display **31 October, 6:00 AM EAT** as the submission close.
 
 {: .important }
-> **Submission Procedure for All Teams:**
-> 1. Submit your project on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) to **Best Open-Source AI Project** (and any verified partner challenge if confirmed on-site) by 5:00 AM EAT.
-> 2. In your repository `README.md` and project description, declare **one primary iTech Club challenge track** (Track 1–5). Local judging evaluates your project against the criteria of your declared primary track.
+> **Event duration is not a confirmed build window.** Earlier local instructions used a 5:00 AM deadline and an eight-hour building session. Those timings conflict with the live submission close and must not be used as current instructions. The Lead Organiser must confirm and announce the coding start/stop, submission window, demo schedule and any approved change to OrganizerHQ. Consult the [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline) before planning; do not assume that all eleven event hours are available for coding.
 
----
+Once the remaining build time is confirmed, work backwards from it. Reserve time for tests, README/setup verification, publishing, submitting and demo rehearsal. Get a thin end-to-end flow running early, then improve reliability. If time is short, reduce features rather than promising a complete platform. Agree a fallback demonstration and disclose what it cannot prove.
 
-## Overview of the 5 preset tracks
+## Need a starting point?
 
-To help you get straight to building, iTech Club has created **5 preset challenge tracks** tailored to Gemma's real strengths. None of these tracks require paid APIs, high-end GPUs, private datasets, or complex cloud infrastructure.
-
-### Quick comparison table for teams
-
-| # | Track Name | Expected Complexity | Technical focus within the MLH challenge | Key Technique | Inference Mode | Likely Laptop Requirements |
-|---|---|---|---|---|---|---|
-| **1** | **[Build a Gemma Agent Skill]({{ site.baseurl }}/challenges/01-agent-skill/)** | Beginner to Intermediate | Packaging reusable agent capabilities | Agent Skills open standard (`SKILL.md`), CLI driver | Flexible (Gemini API or local Ollama) | Standard student laptop (4–8 GB RAM), internet for API or ~3 GB disk for local |
-| **2** | **[Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)** | Intermediate | On-device edge inference & offline execution | Local quantization, edge runtimes, offline-first design | **100% Local Offline** (Ollama, llama.cpp, LiteRT-LM) | Consumer laptop (8–16 GB RAM, ~4–8 GB free disk space for quantized weights); Wi-Fi OFF during demo |
-| **3** | **[Multimodal Campus Companion]({{ site.baseurl }}/challenges/03-multimodal-assistant/)** | Beginner to Intermediate | Multimodal vision or audio reasoning | Multimodal model integration, media upload validation | Flexible (Gemini API recommended; local if model supports) | Standard student laptop (4–8 GB RAM); phone/camera for test photos |
-| **4** | **[Gemma-Powered Dev Harness]({{ site.baseurl }}/challenges/04-dev-harness/)** | Intermediate to Advanced | Agentic control loops & safety boundaries | Structured function calling, bounded tool execution loops | Flexible (Gemini API or local quantized model) | Standard student laptop (8 GB RAM), Python/Node environment |
-| **5** | **[Campus Knowledge Companion (RAG)]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/)** | Intermediate | Retrieval-augmented generation & citations | Document chunking, vector embeddings, similarity search | Flexible (EmbeddingGemma + Gemma API or local) | Standard student laptop (8 GB RAM), ~2 GB disk for local embedding model |
-
----
-
-## How to choose your primary track
-
-Teams must declare **one primary track** for local judging to ensure fair, peer-level comparison:
-
-- **If your team has standard laptops with modest hardware:** Choose **Track 1 (Agent Skill)**, **Track 3 (Multimodal Companion)**, or **Track 5 (RAG)** using the free [Gemini API](https://mlh.link/gemma-quickstart) where Google provides hosted compute.
-- **If your team wants to build without relying on Wi-Fi:** Choose **Track 2 (Gemma Off the Grid)**. Download your small model weights (such as a 2B or edge quantized variant via Ollama) **at home before the event**, and you will not have to worry about venue bandwidth all night.
-- **If your team loves developer tools and software engineering:** Choose **Track 1 (Agent Skill)** or **Track 4 (Dev Harness)** to build tools that help other developers write, review, and test code.
-- **If your team wants to solve a physical campus problem:** Choose **Track 3 (Multimodal Companion)** or **Track 5 (Campus Knowledge RAG)** using real campus notice boards, course notes, or club documents.
-
----
-
-## Official MLH reference links
-
-- [MLH Open Source Prize Categories](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) — Official description of the Best Open-Source AI Project challenge
-- [MLH Hack Day Submissions & Winner Selection](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) — Official rules for project submission and winner marking
-- [MLH Hacktoberfest Planning Guide](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/) — General event format and guidelines
-- [Event Registration Page](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) — Official registration on MLH
+Explore [Project Inspiration]({{ site.baseurl }}/inspiration/) for optional examples across different domains. **Choose none, adapt one, combine ideas or bring a completely different problem.** These examples are not MLH-approved challenge tracks.

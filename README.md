@@ -1,6 +1,6 @@
 # Hacktoberfest Hack Day Nairobi x iTech Club
 
-Documentation site, rules, starter kit, and preset Gemma challenge tracks for the [Hacktoberfest Hack Day Nairobi x iTech Club](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) — **Friday 30 October 2026, 7:00 PM – Saturday 31 October 2026, 6:00 AM EAT**, at Zetech University Technology Park, Mang'u Campus. Hosted by iTech Club in partnership with Major League Hacking (MLH), sponsored by Gemma.
+Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi x iTech Club](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) — **Friday 30 October 2026, 7:00 PM – Saturday 31 October 2026, 6:00 AM EAT**. Hosted by iTech Club, Zetech University, in partnership with Major League Hacking (MLH). Venue, exact build period and demo schedule require organiser reconciliation; see [rules](./rules.md).
 
 📖 **Live Site:** `https://itech-club-zetech-university.github.io/hacktoberfest/` (hosted via GitHub Pages)
 
@@ -8,11 +8,11 @@ Documentation site, rules, starter kit, and preset Gemma challenge tracks for th
 
 ## Event & Award Structure
 
-- **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official competition on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club), with **one winning team** marked across the event.
-- **Local iTech Club Recognition:** All eligible projects across the 5 preset tracks are evaluated by appointed human judges using our standardised 100-point rubric, awarding the **Top Three Overall: First Place – Overall Winner, Second Place – Overall Runner-up, and Third Place – Overall Third Place**.
-- **iTech Club Preset Tracks:** 5 guided technical tracks designed for an ~8-hour build on consumer laptops using Gemma. Teams declare **one primary track** for focused evaluation. Track acceptance tests inform rubric scoring (not hidden bonus points).
-- **Team Size:** Teams of **3–4 members** for local award eligibility; solo hackers and pairs are welcome to attend, build, and submit to the general MLH competition.
-- **Submissions:** All projects are submitted to "Best Open-Source AI Project" on OrganizerHQ by 5:00 AM EAT, with the declared primary preset track documented in the project `README.md`.
+- **Open-ended projects:** Identify a real problem, choose your users and architecture, and build a focused original open-source AI MVP. No fixed prompts or primary tracks.
+- **Two live MLH categories:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3) (DigitalOcean-supported) and [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d) (Gemma / Google DeepMind). These are awards, not project prompts.
+- **Choice:** Other suitable open models are welcome in the broad category. DigitalOcean is optional. Follow Gemma 4/API requirements only when entering that category.
+- **Human judging:** Preserve the six-criterion, 100-point process; no automated project scoring, ranking or leaderboard. Confirm separate local awards and multiple-category winner policy.
+- **Submissions:** Submit once through OrganizerHQ and select every qualifying category. The live pages display **31 October, 6:00 AM EAT**; reconcile earlier local timings before publishing the coding/demo schedule. Team-size policy also requires confirmation.
 
 ---
 
@@ -24,15 +24,17 @@ Documentation site, rules, starter kit, and preset Gemma challenge tracks for th
 | `rules.md` | Official MLH rules, local award policies, teams, timeline, and submission guidelines |
 | `starter-kit.md` | Step-by-step Gemma setup guide (Gemini API and local Ollama) |
 | `resources.md` | Curated documentation links for Gemma, Agent Skills, and MLH |
-| `challenges/` | The 5 preset challenge briefs and comparison index |
+| `challenges/` | Open-ended project brief and five preserved, nav/search-excluded historical briefs |
+| `inspiration.md` | Optional problem-led examples, not mandatory tracks |
+| `templates/problem-statement.md` | Quick idea-development worksheet |
 | `judging.md` | The human-led 100-point rubric, 0–5 rating scales, scoring anchors, tie-breakers, 9-step judging workflow, and MLH winner recording |
 | `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
 | `faq.md` | Frequently asked questions |
 | `organizer-runbook.md` | Public event runbook, operational checklists, staff roles, and MLH winner marking workflow |
 | `organizer-checklist.md` | Chronological quick-reference checklist for event leads and mentors |
 | `templates/project-readme-template.md` | Copy-and-fill `README.md` template for participant repositories |
-| `templates/demo-script.md` | Structured 2.5-minute presentation script and track-specific demo prompts |
-| `templates/submission-checklist.md` | Participant checklist to copy into project repositories before 5:00 AM |
+| `templates/demo-script.md` | Project-neutral 2-minute live demo and 1-minute Q&A |
+| `templates/submission-checklist.md` | Publishing, testing and category-specific submission checks |
 | `templates/judge-score-sheet.csv` | Ready-to-import scoring sheet for judges (keep completed scores in private drive) |
 | `references/source-register.md` | Organiser source register, verification status, and review log |
 | `scripts/check_submission.py` | Automated preliminary eligibility checker for baseline repo hygiene |
@@ -103,9 +105,6 @@ The repository includes a lightweight, automated preliminary hygiene gate for su
 # Check one or more repositories
 python3 scripts/check_submission.py https://github.com/team-one/repo https://github.com/team-two/repo
 
-# Check specifically for Challenge 1 (enforces SKILL.md presence)
-python3 scripts/check_submission.py --track 1 https://github.com/team-one/agent-skill
-
 # Run the complete automated test suite (offline, mocked)
 python3 -m unittest discover -s tests -v
 ```
@@ -113,6 +112,8 @@ python3 -m unittest discover -s tests -v
 **What it checks:** Genuine GitHub repository URL parsing (`github.com` and `www.github.com` only), public repository visibility, root `README.md`, open-source software license validated against canonical OSI-approved SPDX identifiers from `scripts/data/osi-approved-licenses.json` (sourced from [SPDX License List v3.26](https://spdx.org/licenses/) and [OSI](https://opensource.org/licenses/), last reviewed 20 October 2026), Gemma mentions in the README (labeled as a weak signal only), and `SKILL.md` presence when `--track 1` is specified.
 
 **What it does NOT check:** It does not score code quality, evaluate model performance, verify whether Gemma generated outputs, or serve as an automated leaderboard. It never clones or executes participant code.
+
+**Legacy compatibility:** `--track 1` is an old skill-file probe, not a current competition track. The checker can send non-Gemma projects to manual review; absence of Gemma must not exclude an otherwise qualifying open-model project. Review category eligibility manually and do not demand a misleading README keyword.
 
 **Exit codes:**
 - `0`: All checked repositories are `ELIGIBLE (PASS)`.

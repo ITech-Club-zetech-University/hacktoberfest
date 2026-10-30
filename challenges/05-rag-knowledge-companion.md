@@ -1,12 +1,15 @@
 ---
 title: "5. Campus Knowledge Companion (RAG)"
-parent: Challenges
-nav_order: 5
+nav_exclude: true
+search_exclude: true
 description: "Build a retrieval-augmented generation (RAG) assistant that answers questions strictly grounded in a real, inspectable campus corpus with visible citations."
 ---
 
 # Challenge 5: Campus Knowledge Companion (RAG)
 {: .no_toc }
+
+{: .important }
+> **Historical brief — not current rules.** The event is now open-ended. This archived brief's track choice, team size, time estimate, model conditions and acceptance checklist are not participant requirements. Read the [current project brief]({{ site.baseurl }}/challenges/) or [optional inspiration]({{ site.baseurl }}/inspiration/) instead.
 
 **Track focus:** Retrieval-augmented generation, grounding & citation · **Target window:** ~8 hours · **Team size:** 3–4
 {: .fs-5 .fw-300 }
@@ -49,9 +52,9 @@ In a RAG system, two distinct AI roles must be clearly identified:
 - **The generative Gemma model:** Reads the retrieved text chunks, analyzes the user question, synthesizes a clear answer, and produces citations directly referencing the source documents (via Gemini API or local Gemma inference).
 - **How judges inspect it:** Judges will inspect the retrieved context in your logs before Gemma generates its response. They will verify that the answer quotes or references details present in those specific chunks and will ask an unanswerable question to ensure Gemma admits the limit of its retrieved knowledge.
 
-## 5. Mandatory acceptance criteria
+## 5. Minimum implementation acceptance criteria
 
-Every valid entry in this track must pass these five observable tests:
+These five observable checks define a working baseline. Missing checks inform the published rubric, not automatic local disqualification or fixed deductions; see [incomplete prototypes and cross-track fairness]({{ site.baseurl }}/judging/#fair-cross-track-evaluation).
 
 1. **Genuine retrieval pipeline:** Implements active chunking, indexing, and dynamic top-k chunk retrieval. Whole-document prompt stuffing or static context windows will not pass.
 2. **Answerable question with visible citations:** When asked a question present in the corpus, the assistant answers accurately and displays visible citations (document name, section, or chunk number) for every factual claim.
@@ -113,5 +116,5 @@ These notes guide judges when assessing projects in this track against the gener
 - **What the team must demonstrate (under Technical Execution):** The team must submit a live user query against their index, show dynamic retrieval of relevant chunks, demonstrate Gemma synthesizing an accurate grounded response with source citations, and show how the system handles an out-of-domain query (demonstrating it admits what it doesn't know).
 - **What evidence judges should inspect (under Technical Execution & Open-Source Quality):** Judges will inspect the vector store / indexing logic (e.g. EmbeddingGemma, FAISS, ChromaDB, sqlite-vec), verify that query retrieval actually fetches documents dynamically, and spot-check citations against the raw files in the `corpus/` directory to confirm citations are genuine.
 - **What constitutes a working implementation:** An active, functioning retrieval-augmented generation loop. Hardcoding context chunks into the prompt, using static pre-baked responses, or running a plain text chat without an underlying document index fails the working implementation requirement.
-- **How Gemma must contribute to the solution (under Meaningful Gemma Integration):** Gemma must drive the intelligence: EmbeddingGemma powers semantic vectorization/retrieval, and generative Gemma synthesizes grounded answers strictly from retrieved documents. The team must defend their prompt structure and retrieval chunking strategy.
+- **How Gemma must contribute to the solution (under Meaningful Gemma Integration):** Generative Gemma synthesizes grounded answers strictly from dynamically retrieved documents. EmbeddingGemma or another documented embedding model may power retrieval, as allowed by the MVP; using a different embedding model incurs no automatic penalty. The team must explain its prompts and chunking strategy.
 - **Relevant limitations and safety considerations (under Responsible AI & Safety):** Strict privacy and safety compliance is mandatory: the corpus must NEVER include private student grades, disciplinary records, or non-public administrative correspondence. Grounding prompts must prevent hallucinations by instructing the model not to invent facts outside retrieved context. Transparent citations are required.

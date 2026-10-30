@@ -1,13 +1,16 @@
 ---
 title: "1. Build a Gemma Agent Skill"
-parent: Challenges
-nav_order: 1
+nav_exclude: true
+search_exclude: true
 description: "Package a reusable capability for AI coding agents according to the Agent Skills open standard, powered by Gemma.
 "
 ---
 
 # Challenge 1: Build a Gemma Agent Skill
 {: .no_toc }
+
+{: .important }
+> **Historical brief — not current rules.** The event is now open-ended. This archived brief's track choice, team size, time estimate, model conditions and acceptance checklist are not participant requirements. Read the [current project brief]({{ site.baseurl }}/challenges/) or [optional inspiration]({{ site.baseurl }}/inspiration/) instead.
 
 **Track focus:** Packaging reusable agent capabilities · **Target window:** ~8 hours · **Team size:** 3–4
 {: .fs-5 .fw-300 }
@@ -49,12 +52,12 @@ Writing a `SKILL.md` specification file alone does **not** prove Gemma is an ess
 - **What Gemma does:** Gemma (invoked via the Gemini API or run locally via Ollama) must perform the substantive cognitive work—such as evaluating semantic code correctness, synthesizing diffs, or generating rubric-grounded feedback.
 - **How judges inspect it:** Judges will inspect your skill's scripts or execution logs to see the prompt payload sent to Gemma and the response received. If Gemma were removed or replaced with static regex/templates, the core functionality must fail or become trivial. Every team member must be able to explain how Gemma is invoked and how its temperature, prompts, and outputs are handled.
 
-## 5. Mandatory acceptance criteria
+## 5. Minimum implementation acceptance criteria
 
-Every valid submission in this track must satisfy these four observable, testable criteria:
+These four observable checks define a working baseline. Missing checks inform the published rubric, not automatic local disqualification or fixed deductions; see [incomplete prototypes and cross-track fairness]({{ site.baseurl }}/judging/#fair-cross-track-evaluation).
 
 1. **Standard directory and frontmatter conformance:** The skill lives in a directory named to match the skill name (e.g. `code-rubric-reviewer/SKILL.md`). The `SKILL.md` file starts with valid YAML frontmatter containing:
-   - `name`: 1–64 characters, lowercase alphanumeric and hyphens only, no consecutive hyphens, matching the parent folder name.
+   - `name`: 1–64 characters, lowercase alphanumeric and hyphens only, no leading, trailing or consecutive hyphens, matching the parent folder name.
    - `description`: 1–1024 characters, non-empty, clearly explaining both *what* the skill does and *when* an agent should invoke it.
 2. **Gemma-driven execution:** Gemma is directly invoked (either via the Gemini API or a local open-weight runtime) within the skill's workflow to perform the core task, demonstrable in logs or terminal output.
 3. **Concrete, reproducible example invocation:** The repository includes a realistic test input file and step-by-step instructions showing the exact command or prompt used to trigger the skill.
@@ -113,5 +116,5 @@ These notes guide judges when assessing projects in this track against the gener
 - **What the team must demonstrate (under Technical Execution):** The team must execute the skill workflow live during the 2-minute demo. An agent runtime or standalone CLI driver must ingest a real sample file or prompt, trigger the skill, invoke Gemma, and output structured, actionable recommendations on screen.
 - **What evidence judges should inspect (under Open-Source Quality & Technical Execution):** Judges will inspect `SKILL.md` to verify that `name` matches the enclosing directory name, frontmatter is valid YAML, triggering conditions are clear, and driver code handles errors gracefully. Judges also inspect git history to verify original coding overnight.
 - **What constitutes a working implementation:** A functional, runnable harness or agent that dynamically reads the `SKILL.md` prompt instructions and executes Gemma inference. Static text files, hardcoded outputs, or unexecuted markdown specs fail the working implementation threshold.
-- **How Gemma must contribute to the solution (under Meaningful Gemma Integration):** Gemma must perform the actual semantic reasoning, code critique, or instruction execution. If Gemma is merely invoked to reformat a hardcoded string, or if removing Gemma leaves the utility unchanged, the project cannot score above the lower rating tiers for this criterion.
+- **How Gemma must contribute to the solution (under Meaningful Gemma Integration):** Gemma must perform the actual semantic reasoning, code critique, or instruction execution. Superficial reformatting or a removable Gemma call is evidence against substantive integration; apply the published 0–5 anchors without a separate track-specific score cap.
 - **Relevant limitations and safety considerations (under Responsible AI & Safety):** Helper scripts must be restricted to safe, read-only or strictly bounded actions (no destructive shell calls without confirmation). Test fixtures must use synthetic code rather than real student submissions, and API keys must be loaded securely from `.env` (never committed to git). Teams must honestly explain current skill boundaries (e.g. single-file analysis limitations).

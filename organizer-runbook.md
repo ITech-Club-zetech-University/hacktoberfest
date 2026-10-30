@@ -27,11 +27,11 @@ Organizers must verify all event details against the live [MLH Event Registratio
 - **Event Name:** Hacktoberfest Hack Day Nairobi × iTech Club (Event ID: `14735`)
 - **Host Institution:** iTech Club, Zetech University
 - **Date & Timing:** **Friday, 30 October 2026, 7:00 PM EAT → Saturday, 31 October 2026, 6:00 AM EAT**
-- **Venue:** Zetech University Technology Park, Mang'u Campus, Off Thika Road, Nairobi 00200, Kenya
-- **Audience Eligibility:** Exclusive to registered Zetech University students and iTech Club members
-- **Official MLH Challenge Category:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) (1 winning team marked in OrganizerHQ)
-- **Local Awards:** iTech Club Top Three Overall (1st, 2nd, and 3rd Place) evaluated via the published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet)
-- **Team Size Policy:** 3–4 members required for local award eligibility; solo hackers and pairs are welcome to attend, build, and submit to the general MLH competition
+- **Venue / audience:** Reconcile the listing's Ruiru Campus and attendance metadata with earlier local Mang'u/member-only instructions; publish one confirmed answer.
+- **Official MLH Categories:** **Best Open-Source AI Project** and **Best Use of Gemma 4**, with [live links and requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
+- **Project Format:** Open-ended; no mandatory tracks. Brief problem discovery, user definition, appropriate AI and a focused MVP.
+- **Local Awards / Team Size:** Confirm whether separate Top Three recognition and the former 3–4-member local restriction remain; do not present either as universal MLH policy.
+- **Timing:** Public categories close at **6:00 AM EAT on 31 October**. Coding start/stop, submission opening and demos need reconciliation before announcement.
 
 ---
 
@@ -46,7 +46,7 @@ To ensure smooth overnight operations, assign staff members to these distinct ro
 | **Technical Mentorship Lead** | Conducts 8:00 PM Gemma Setup Workshop, coordinates roving technical mentors across tables | Hacking Tables |
 | **Safety & Conduct Officer** | First point of contact for MLH Code of Conduct concerns, manages attendee wellbeing and venue safety | Quiet Space / Desk |
 | **Timekeeper & Operations Lead** | Enforces published schedule, manages announcements, coordinates power strips and venue Wi-Fi | AV Desk |
-| **Submission & Eligibility Checker** | Runs automated baseline checker script (`check_submission.py`) between 4:30–5:00 AM, assists teams with manual reviews | Judge Desk |
+| **Submission & Eligibility Checker** | Reviews repository hygiene and actual category evidence before the confirmed deadline; never excludes a broad-category project merely for lacking Gemma | Judge Desk |
 | **Judge Panel Coordinator** | Distributes score sheets, briefs judges on rubric anchors, times 2-minute live demos and 1-minute Q&A | Judging Area |
 | **Score Tabulator** | Consolidates judge sheets, computes averages, applies deterministic tie-breakers, verifies Top 3 | Private Tabulation Room |
 | **OrganizerHQ Winner Lead** | Executes private/public winner marking in OrganizerHQ following official MLH workflow | Private Tabulation Room |
@@ -58,7 +58,7 @@ To ensure smooth overnight operations, assign staff members to these distinct ro
 ### A. Testing the Automated Checker
 Prior to the submission window, verify the eligibility checker on the organizer workstation:
 ```bash
-# 1. Run the test suite (must show 43 passing tests)
+# 1. Run the full test suite (all tests must pass)
 python3 -m unittest discover -s tests -v
 
 # 2. Verify CLI options and help text
@@ -67,8 +67,8 @@ python3 scripts/check_submission.py --help
 
 ### B. Preparing Scoring Sheets
 - Create a private, access-controlled spreadsheet (Google Sheets or Excel) in the organizer drive.
-- Import [`templates/judge-score-sheet.csv`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/templates/judge-score-sheet.csv).
-- Pre-populate sheets for confirmed judges with columns matching [`templates/judge-score-sheet.csv`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/templates/judge-score-sheet.csv) (Team Name, Track, Repo URL, Judge ID, Date, 6 criteria ratings 0–5, weighted scores, Total 0–100, observed strengths, areas for improvement, evidence notes, final recommendation, and Conflict of Interest declaration).
+- Import the [judge score sheet CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv). Delete the two fictional examples and copy the blank row for each team/judge pair. The CSV has no formulas: enter weighted values from the rubric conversion table and check all totals.
+- Retain all fields, including separate evidence/comments for each criterion. Enable text wrapping and expand row heights. Give each judge a private copy or otherwise prevent access to other judges' scores until submission.
 - **Never store completed score sheets or personal judge notes in the public git repository.**
 
 ### C. Bandwidth & Offline Fallback Contingencies
@@ -77,46 +77,41 @@ python3 scripts/check_submission.py --help
   - Python wheels for common packages (`google-genai`, `fastapi`, `uvicorn`, `sentence-transformers`)
   - Standalone Ollama installers (Linux/macOS/Windows)
   - Common model GGUF files for offline edge testing
-- **Bandwidth Congestion Fallback:** If venue Wi-Fi becomes congested overnight, encourage teams to switch to [Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/) or use mobile hotspots for API token calls.
+- **Bandwidth Congestion Fallback:** Help teams test suitable local inference or connectivity alternatives without changing their problem. Disclose runtime changes; local-only fallback does not automatically meet the Gemma API prize requirement.
 
 ---
 
 ## 4. Master Event Schedule & Run of Show
 
 {: .important }
-> **Schedule Stability:** The published event window is **7:00 PM to 6:00 AM EAT**. Do not alter start, submission cutoff, demo, or closing times without formal approval from the Lead Organizer and announcement to all tables.
+> **Schedule reconciliation required:** The public event is **7:00 PM to 6:00 AM EAT** and public categories close at **6:00 AM**. The former eight-hour build and 5:00 AM cutoff are not confirmed current instructions. Verify OrganizerHQ, confirm actual coding allowances and announce a feasible submission/demo/judging schedule to all tables before enforcing it.
 
 | Time (EAT) | Stage | Organizer Actions |
 |---|---|---|
-| **6:30 – 7:00 PM** | Setup & Venue Prep | Power on AV, test projector, verify registration desk, power strips, and Wi-Fi |
-| **7:00 – 7:30 PM** | Check-in & Team Matching | Check in attendees on OrganizerHQ; match solo/pair hackers into 3–4 person teams |
-| **7:30 – 8:00 PM** | Opening & Briefing | Welcome remarks, review 5 preset tracks, explain 100-pt rubric, code of conduct |
-| **8:00 – 8:30 PM** | Gemma Setup Clinic | Technical walkthrough: Gemini API keys, safe `.env`, local Ollama setup |
-| **8:30 PM – 4:30 AM** | **Building Window** (~8h) | Roving technical mentorship; hourly time checks; distribute water/snacks |
-| **4:00 AM** | 30-Minute Warning | Announce submission deadline: *"1 hour until submission deadline at 5:00 AM"* |
-| **4:30 – 5:00 AM** | Submission & Preliminary Review | Teams submit on OrganizerHQ & push to GitHub; checker runs preliminary hygiene check |
-| **5:00 AM** | **Submission Cutoff** | Submissions locked; eligibility issues addressed; judge briefing conducted |
-| **5:00 – 5:45 AM** | **Live Project Demos** | Time-boxed 2-minute live demos + 1-minute judge Q&A across the panel |
-| **5:45 – 5:55 AM** | Score Consolidation & Winner Marking | Tabulate scores; apply tie-breakers; mark winners in OrganizerHQ |
-| **5:55 – 6:00 AM** | Closing & Awards | Announce local Top Three Overall and official MLH winner; closing remarks |
+| **7:00 PM** | Public event start | Check in registered attendees and confirm collaborator/team policy |
+| **Confirm with lead** | Briefing and setup | Explain own-problem format, both categories, common rubric, safety and optional provider choices |
+| **Confirm start/stop** | Building | Mentors help narrow one user journey; reserve time for tests, documentation and publishing |
+| **Before verified close** | Submission review | One submission, every eligible category; public licensed repo; review flags manually |
+| **6:00 AM, 31 October** | Public category close / event end | Resolve this overlap with demos and awards in OrganizerHQ and announce the approved plan |
+| **Confirmed feasible session** | Demos, judging and awards | Equal two-minute demos plus one-minute Q&A; validate scores and save category winners before announcement |
 
 ---
 
-## 5. Submission Review & Judge Briefing (4:30–5:00 AM)
+## 5. Submission Review & Judge Briefing
 
 ### Preliminary Hygiene Check Procedure
-At 4:30 AM, as teams submit their GitHub URLs, the Eligibility Checker Lead runs:
+Before the confirmed deadline, as teams submit their GitHub URLs, the Eligibility Checker Lead runs:
 ```bash
 python3 scripts/check_submission.py <repo-url-1> <repo-url-2> ...
 ```
 - **`ELIGIBLE (PASS)`**: Team is cleared for demo schedule.
-- **`NEEDS MANUAL REVIEW`**: Organizer immediately visits the team's table to resolve administrative issues (e.g. flipping a private repository to public, adding the missing `LICENSE` file) before 5:00 AM.
-- **`CLEARLY INELIGIBLE`**: Severe failure (no code, non-existent repo). Escalate to Lead Organizer.
+- **`NEEDS MANUAL REVIEW`**: Review before the confirmed deadline. Missing Gemma is not a failure for the broad category; inspect the actual open model and evidence rather than requiring a keyword.
+- **`CLEARLY INELIGIBLE`**: Reported baseline failure (e.g. invalid URL, confirmed private visibility, or missing root README/license). Confirm manually with the Lead Organizer; the checker does not inspect working code.
 - **`CHECK UNAVAILABLE`**: In case of GitHub API rate limit (403/429) or network timeout, **do not penalize the team**. Open the repository in a browser to visually verify baseline hygiene.
 
 ### Judge Briefing Checklist (4:50 AM)
 Before demos begin, brief all judges on these core principles:
-1. **Reward Working Substance Over Polish:** A functional terminal prototype or local CLI that executes real Gemma inference scores higher than a glossy web UI with hardcoded responses.
+1. **Reward Working Substance Over Polish:** A functional terminal prototype using a suitable open model provides stronger evidence than a glossy UI with hardcoded responses. Verify Gemma 4/API evidence separately where entered.
 2. **Independent Scoring:** Judges enter marks on their individual sheets without discussing scores during the demo.
 3. **Mandatory Conflict Recusal:** Judges must recuse themselves from scoring any team they directly mentored or contributed code to.
 4. **Time Limits:** Enforce strict time limits: exactly 2 minutes for demo, 1 minute for Q&A.
@@ -126,39 +121,40 @@ Before demos begin, brief all judges on these core principles:
 ## 6. Score Tabulation, Tie-Breaking & Separation of Notes
 
 ### Aggregation Formula
-$$\text{Judge Weighted Total} = \sum_{j=1}^{6} \left(\frac{\text{Rating}_j}{5} \times \text{Weight}_j\right) \quad [0 \dots 100]$$
-$$\text{Team Final Score} = \frac{1}{N} \sum_{i=1}^{N} \text{Judge Total}_i \quad (N \ge 3 \text{ preferred, } N \ge 2 \text{ minimum})$$
+**Judge total = sum of the six (integer rating / 5 × criterion weight) values**, out of 100.
+
+**Team final score = sum of valid judge totals / number of valid independent judges**, with 3 preferred and 2 required. Use the same valid sheets for criterion averages and tie-breakers. Preserve full precision for comparisons; round displayed averages only, to two decimal places.
 
 - **Judging Capacity:** Each team should receive **at least three independent evaluations** from distinct panel members wherever judging capacity allows (minimum 2 valid sheets required).
 - **No Automated Ranking Software:** Organisers consolidate score sheets manually/arithmetically in an internal, access-controlled workbook. No automated ranking software or leaderboard algorithm is used.
-- **Missing Sheets:** If a judge cannot complete a sheet, discard the incomplete sheet. The score is the average of completed sheets, provided at least 2 valid sheets remain.
+- **Sheet Validation:** Follow the [published tabulation procedure]({{ site.baseurl }}/judging/#score-tabulation-process). Return missing fields or arithmetic errors to the original judge without revealing other scores. Never substitute zero for a blank. Exclude conflicted, duplicate or uncorrected incomplete sheets with a recorded reason. If fewer than two valid independent sheets remain, arrange another non-conflicted evaluation before finalising results.
 - **Deterministic Tie-Breakers:** If team totals are tied, apply tie-breakers in this strict pre-published order:
-  1. Higher average score in **Meaningful Gemma/open-weight AI integration** (out of 20)
+  1. Higher average score in **Meaningful open-source/open-weight AI integration** (out of 20)
   2. Higher average score in **Technical execution and working demonstration** (out of 25)
   3. **Deliberation by the judging panel**, with the decision and rationale formally documented in organiser records
-- **Podium Designations:**
+- **Podium Designations (only if local awards are confirmed):**
   - **First Place – Overall Winner**
   - **Second Place – Overall Runner-up**
   - **Third Place – Overall Third Place**
 
 ### Confidentiality of Judge Notes
 - Individual judge score sheets, raw numerical points, internal deliberation notes, and provisional ranks are **strictly confidential internal records**.
-- Only final validated rankings (Top 3 Overall) and high-level constructive feedback are announced. Personal judge comments must never be posted publicly or shared with participants.
+- Only validated official winners, any confirmed local awards and appropriate high-level feedback are announced. Personal judge comments must never be posted publicly or shared with participants.
 
 ---
 
 ## 7. Winner Marking Workflow in MLH OrganizerHQ
 
-Follow this exact step-by-step procedure to mark the official MLH winner:
+Confirm the live controls in event `14735` and follow this procedure **before announcing results in the room**. Do not create a duplicate MLH challenge or an unassigned partner category; contact MLH if an expected category is missing.
 
 1. Log in to [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
 2. Ensure the **Announce Winners** toggle is set to **PRIVATE**.
 3. Navigate to **Manage Submissions**.
 4. Filter submissions by **Best Open-Source AI Project**.
-5. Select the winning project, click **Mark Winner → Winner**, and verify that the gold **WINNER** badge appears next to the project name.
-6. If an official partner challenge (e.g. Best Use of Gemma) was active and verified in OrganizerHQ, filter by that challenge and mark its winner.
-7. Switch the **Announce Winners** toggle from **PRIVATE** to **PUBLIC** to publish the project gallery.
-8. Announce the local Top Three Overall and official MLH winner live to the room.
+5. Select the winning project, click **Mark Winner → Winner**, and verify the gold **WINNER** badge and **Winner saved** confirmation.
+6. Review **Best Use of Gemma 4** against its actual requirements and mark its winner separately, following the confirmed multiple-category winner policy. Contact MLH if an expected category is missing; do not create a replacement.
+7. Use **Preview public view**, check all projects, then switch **Announce Winners** from **PRIVATE** to **PUBLIC**. Verify **WINNERS ANNOUNCED**, **Submissions are public** and the public gallery. This publishes non-winning submissions too, but never upload confidential judge sheets.
+8. Announce both saved official category winners and only any separately confirmed local awards.
 
 ---
 
@@ -185,10 +181,13 @@ Complete these required tasks within 24–48 hours of event closing:
 
 | Item | Decision Needed | Assigned To | Status |
 |---|---|---|---|
-| **1. Partner Challenge in OrganizerHQ** | Confirm whether an additional partner challenge (e.g. Best Use of Gemma) is enabled in OrganizerHQ for event `14735`, or if Best Open-Source AI Project is the sole challenge. | Lead Organizer | Pending HQ Check |
+| **1. Categories in OrganizerHQ** | Both categories are publicly listed. Verify Best Open-Source AI Project and Best Use of Gemma 4 in authenticated HQ; confirm eligibility, API evidence and multiple-category winner policy. | Lead Organizer | Pending HQ Check |
 | **2. Physical Awards for Local Top 3** | Confirm trophies, medals, certificates, or swag packs designated for the local 1st, 2nd, and 3rd Place Overall teams. | iTech Club Exec | Pending |
-| **3. Track Recording Mechanism** | Confirm whether primary track is recorded via README declaration only, or via check-in sheet at doors. | Registration Lead | Verified (README + Submission) |
+| **3. Open-Ended Format & Teams** | No track declaration. Record actual project and entered categories; confirm team-size/local-award policy and announce it. | Registration Lead | Pending Policy Confirmation |
 | **4. Final Judge Roster** | Confirm roster of 3–5 faculty, mentor, and alumni judges and assign Judge IDs. | Judge Coordinator | Pending Roster |
+| **5. Schedule & Winner Controls** | Reconcile public 6:00 AM close with demos/event end; confirm build start/stop, submission opening, timezone, winner saving and publication. Announce one approved schedule. | OrganizerHQ Winner Lead | Pending HQ Check |
+| **6. Demo Capacity & Calibration** | Rehearse the rubric and sample sheets; confirm non-conflicted assignments. A single 45-minute demo session fits at most 15 three-minute slots before transitions or scoring time; publish any fair parallel-session plan or approved timing change to everyone. | Judge Coordinator | Pending |
+| **7. MLH Prizes & Onboarding** | Confirm DEV account collection, any swag availability and assigned partner conditions against MLH onboarding; confirm local awards separately. | Lead Organizer | Pending HQ / Onboarding Check |
 
 ---
 

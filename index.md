@@ -2,59 +2,54 @@
 title: Home
 layout: home
 nav_order: 1
-description: "Hacktoberfest Hack Day Nairobi x iTech Club — challenges, rules, and a Gemma starter kit."
+description: "An open-ended, problem-driven open-source AI hack day with iTech Club and MLH."
 permalink: /
 ---
 
 # Hacktoberfest Hack Day Nairobi x iTech Club
 {: .fs-9 }
 
-An overnight, open-source AI hack day hosted by **iTech Club, Zetech University**, in partnership with **Major League Hacking (MLH)**, sponsored by **Gemma**.
+An overnight, open-source AI hack day hosted by **iTech Club, Zetech University**, in partnership with **Major League Hacking (MLH)**.
 {: .fs-6 .fw-300 }
 
-[See the Challenges]({{ site.baseurl }}/challenges/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+**Identify a real problem. Imagine a better solution. Build it with open-source AI. Explore what Gemma 4 makes possible. Publish your work for others to use and improve.**
+
+[Build Your Own Project]({{ site.baseurl }}/challenges/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Register on MLH](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club){: .btn .fs-5 .mb-4 .mb-md-0 }
 
----
+## Your problem. Your idea. Your implementation.
+
+There are **no fixed challenges or mandatory tracks**. Choose your users, problem, domain, product concept, model and technical approach. Aim for one useful, demonstrable MVP rather than an unfinished commercial platform.
+
+Use the [seven-step idea framework]({{ site.baseurl }}/challenges/#develop-an-idea-quickly), copy the [problem statement worksheet]({{ site.baseurl }}/templates/problem-statement/), or browse [optional Project Inspiration]({{ site.baseurl }}/inspiration/). You do not need to choose an example.
+
+## Two MLH prize categories
+
+- **[Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3)** — DigitalOcean-supported; open-source/open-weight AI must be central to an original project with public licensed source.
+- **[Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d)** — Gemma / Google DeepMind; demonstrate meaningful Gemma 4 use and follow the category's published requirements.
+
+These are **award categories, not project prompts or technology tracks**. Submit once to every category your project qualifies for. DigitalOcean is an optional supported resource, not mandatory hosting. See the [category requirements and submission steps]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
+
+**Judging is human-led.** Appointed judges assess working software and evidence using the [published 100-point rubric]({{ site.baseurl }}/judging/). There is no automated project scoring, ranking or leaderboard.
 
 ## Event details
 
 | | |
 |---|---|
-| **When** | Friday, 30 October 2026 · 7:00 PM EAT — Saturday, 31 October 2026 · 6:00 AM EAT |
-| **Where** | Zetech University Technology Park, Mang'u Campus, Off Thika Road, Nairobi 00200, Kenya |
-| **Who** | Exclusive to Zetech University students and iTech Club members |
-| **Format** | Overnight hack day · build with Gemma |
-| **Team Size** | Teams of 3–4 for local iTech Club awards (solo hackers and pairs welcome to attend and hack) |
-| **Sponsor / tech partner** | [Gemma](https://ai.google.dev/gemma) (Google's open-weight model family) |
-| **Official MLH challenge** | [Best Open-Source AI Project]({{ site.baseurl }}/challenges/#the-official-mlh-challenge) |
+| **When** | Friday, 30 October 2026, 7:00 PM → Saturday, 31 October 2026, 6:00 AM EAT |
+| **Where** | The live MLH listing names Ruiru Campus; earlier local material names Mang'u Campus. Confirm the venue with organisers before travelling. |
+| **Format** | Open-ended, problem-driven AI hack day; build period and demo schedule require organiser confirmation |
+| **Teams** | Solo hackers and teams are welcome; confirm team-size and any separate local award policies with organisers |
+| **Submission close** | Live category pages display 31 October, **6:00 AM EAT**; organisers must reconcile the previous 5:00 AM schedule |
 
-{: .important }
-> **Award Structure at a Glance:**
-> - **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official MLH Hack Day competition on OrganizerHQ, with **one winning team** across the event.
-> - **Local iTech Club Recognition:** All eligible submissions across all 5 preset tracks are evaluated by appointed human judges using our standardised 100-point rubric during live demos, naming the **Top Three Overall: First Place – Overall Winner, Second Place – Overall Runner-up, and Third Place – Overall Third Place**.
-> - **iTech Club Preset Tracks:** The 5 tracks on this site are our local, guided approaches to that broader challenge. Teams declare **one primary track** for focused evaluation. Track acceptance tests inform rubric scoring (not hidden bonus points).
-> - **Submission:** All teams submit their project to "Best Open-Source AI Project" on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) by 5:00 AM EAT and declare their primary track in `README.md`.
+Public listing checked **30 October 2026**. The eleven-hour event duration is not a confirmed coding allowance. See [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline) and follow a confirmed announcement if organisers update the live window.
 
 ## What's on this site
 
-<div class="code-example" markdown="1">
-
-- **[Rules & Regulations]({{ site.baseurl }}/rules/)** — official MLH requirements, local award rules, team size guidelines, submission process, and code of conduct.
-- **[Starter Kit]({{ site.baseurl }}/starter-kit/)** — step-by-step setup: get a Gemma API key, run Gemma locally, scaffold your repo.
-- **[Resources]({{ site.baseurl }}/resources/)** — curated, official Gemma and MLH documentation, organized by what you're trying to do.
-- **[Challenges]({{ site.baseurl }}/challenges/)** — 5 preset challenge tracks. Pick **one primary track** for local evaluation instead of inventing an idea from scratch.
-- **[Judging]({{ site.baseurl }}/judging/)** — the human-led 100-point rubric, 0–5 rating scales, scoring anchors, deterministic tie-breakers, 9-step judging workflow, and MLH winner recording.
-- **[FAQ]({{ site.baseurl }}/faq/)** — quick answers to common questions.
-
-</div>
-
-## Why preset challenges?
-
-Instead of showing up and staring at a blank idea board, every team at this hack day picks from **5 Gemma-powered challenge tracks** designed around what Gemma is actually good at—agentic tool use, on-device/offline inference, multimodal understanding, developer harnesses, and retrieval.
-
-- **[Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories)** is the official MLH Hack Day challenge with one winning team.
-- The 5 tracks are iTech Club's preset ways for teams to approach that challenge. Building a strong project in any of the 5 tracks automatically satisfies the official MLH open-source AI criteria.
-- For local judging and awards, each team selects **one primary track** so that projects can be evaluated fairly against peers in the same domain.
-
-See the [Challenges]({{ site.baseurl }}/challenges/) page to explore the tracks.
+- **[Build Your Own Open-Source AI Project]({{ site.baseurl }}/challenges/)** — problem discovery, model choice, MVP scope, testing, publishing and both prize categories.
+- **[Project Inspiration]({{ site.baseurl }}/inspiration/)** — optional examples across different domains.
+- **[Rules & Regulations]({{ site.baseurl }}/rules/)** — integrity, teams, schedule status and submission instructions.
+- **[Starter Kit]({{ site.baseurl }}/starter-kit/)** — Gemma hosted/local setup; other suitable open models are welcome for the broad category.
+- **[Resources]({{ site.baseurl }}/resources/)** — official MLH, model, licensing and optional DigitalOcean documentation.
+- **[Judging]({{ site.baseurl }}/judging/)** — human evaluation, evidence, scoring and conflicts.
+- **[FAQ]({{ site.baseurl }}/faq/)** — quick answers and reusable templates.

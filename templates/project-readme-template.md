@@ -2,212 +2,106 @@
 title: Project README Template
 nav_exclude: true
 permalink: /templates/project-readme-template/
-description: "Standard copy-and-fill README template for participant repositories."
+description: "Copy-and-fill README for an original, open-ended AI project."
 ---
 
 # [Project Name]
 
-> [One-sentence summary: What does your application do, who is it for, and what real campus or developer problem does it solve?]
+Copy and adapt the sections below. Replace placeholders with actual facts; remove inapplicable examples. There is no required project track.
 
----
+## Problem, user and solution
 
-## 1. Primary Challenge Track
+- **Problem:** [One specific task and its current difficulty.]
+- **Primary user:** [Who needs the outcome and in what context?]
+- **Current alternative:** [How the user solves it today.]
+- **Why it matters:** [Evidence or clearly labelled assumptions.]
+- **Solution:** For [specific user] who needs [specific outcome], we are building [solution]. The AI component will [specific role], helping the user to [measurable or observable benefit].
 
-- **Declared Primary Track:** [Select exactly ONE: Track 1: Build a Gemma Agent Skill | Track 2: Gemma Off the Grid | Track 3: Multimodal Campus Companion | Track 4: Gemma-Powered Dev Harness | Track 5: Campus Knowledge Companion (RAG)]
-- **Why this track was chosen:** [1–2 sentences explaining why this challenge track fits your team's solution]
+Use the full [problem statement worksheet]({{ site.baseurl }}/templates/problem-statement/) if helpful.
 
----
+## Prize categories
 
-## 2. Problem Statement & Intended Users
+- **Entered categories:** [Best Open-Source AI Project and/or Best Use of Gemma 4, only where eligible.]
+- **Evidence of eligibility:** [Important functional open-source/open-weight AI contribution; if relevant, meaningful Gemma 4 use through the Gemini API, exact model ID and code location.]
+- **Conditional project requirements:** [If an agent skill, standard conformance; if a harness, original implementation or meaningful upstream extension.]
 
-- **Target Audience:** [e.g. Zetech University CS students, campus lab technicians, iTech Club open-source maintainers, commuter students]
-- **The Problem:** [Describe the specific, real-world friction or bottleneck your project addresses]
-- **Why Existing Tools Fall Short:** [Why generic chat bots or standard manual processes are insufficient]
+Read the [official category links and requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge). DigitalOcean is optional. Do not claim that local-only inference automatically meets the Gemma prize requirements.
 
----
+## MVP and original contribution
 
-## 3. What We Built During the Hackathon
+- **Working user journey:** [One end-to-end flow implemented.]
+- **Features completed:** [List working features, not roadmap items.]
+- **Original event contribution:** [What the team built during the organiser-confirmed period.]
+- **Pre-existing/upstream work:** [Links, licences and what was reused or changed.]
+- **Remaining work:** [Clearly labelled limitations and future plans.]
 
-- **Summary of Implementation:** [Describe the application logic, user interface (CLI, web, or mobile), and workflow built during the ~8-hour build window]
-- **Key Features:**
-  - Feature 1: [Description]
-  - Feature 2: [Description]
-  - Feature 3: [Description]
-- **What Was Built Fresh:** [All code written between Friday 7:00 PM and Saturday 5:00 AM EAT]
-- **What Was Pre-existing / Upstream:** [Any boilerplate, starter libraries, or open-source repositories forked]
+## AI role and architecture
 
----
+- **Why AI is appropriate:** [Why a rule, form or ordinary query is insufficient.]
+- **Why an open model:** [The relevant benefit.]
+- **Model task:** [Precise input, processing role and expected output.]
+- **Human control:** [What the model cannot decide or execute unaided.]
+- **Data flow:** [Where inputs go, what is stored, retrieval/tools if used.]
+- **Trade-offs:** [Capability, latency, cost, connectivity, hardware and sensitivity.]
 
-## 4. How Gemma is Used & Why It Is Central
+## Models, dependencies and licences
 
-- **Why Gemma is Indispensable:** [Would the product function if Gemma were removed? Explain why Gemma's reasoning, perceptual capability, or structured outputs are essential to the core value proposition.]
-- **Model Role in Architecture:** [e.g. Cognitive reasoning engine, multimodal image analyzer, structured tool-call dispatcher, or retrieval synthesizer]
-- **Prompting / Tool Design:** [Describe system prompts, temperature settings, function schemas, or context formatting used]
+| Component | Exact name/version | Role and runtime/provider | Licence/terms and source |
+|---|---|---|---|
+| Primary model | [Actual model ID] | [Hosted/local and task] | [Actual model licence link] |
+| Other model, if any | [Actual version] | [Embedding/safety/etc.] | [Licence] |
+| Libraries/services | [Versions] | [Purpose] | [Licence/service terms] |
+| Data | [Origin and date] | [Purpose] | [Permission and redistribution limits] |
 
----
+Gemma 4 uses [Apache 2.0](https://ai.google.dev/gemma/docs/core/model_card_4); verify older generations and other models separately. Application code, model weights, datasets and hosted-service terms are distinct.
 
-## 5. Model Specifications & Inference Path
+## Setup and running
 
-- **Exact Model & Version:** [e.g. `gemma-4-26b-a4b-it`, `gemma-4-31b-it`, `gemma4:e2b`, `gemma4:e4b`, `gemma2:2b`, `EmbeddingGemma 2 (740M)`]
-- **Inference Path:** [Select one: Hosted via Google Gemini API | Local on-device via Ollama | Local via llama.cpp | Local via LiteRT-LM]
-- **Hardware Footprint (if run locally):** [e.g. 4-bit quantized Q4_0, ~2.9 GB RAM utilized, tested on student laptop with 8 GB RAM / CPU-only]
+Replace these placeholders with commands tested by your team:
 
----
+1. [Prerequisites: runtime versions, hardware/disk and any account access.]
+2. [Clone command and working directory.]
+3. [Dependency installation command using the committed manifest/lockfile.]
+4. [Configuration: placeholder-only `.env.example`, how variables are loaded, model download if applicable.]
+5. [Launch command and expected URL or CLI invocation.]
+6. [A realistic sample input and expected behaviour.]
+7. [Test command and how to stop the application.]
 
-## 6. Other Models, Services & Dependencies
+Never commit a real key. For hosted Gemma, document `GEMINI_API_KEY` if used; for local inference, document the actual runtime/model and startup procedure. Do not require providers your project does not use.
 
-- **Secondary Models (if applicable):** [e.g. `EmbeddingGemma 2` for retrieval embeddings, `ShieldGemma 2` for safety filtering]
-- **Runtime & Language Stack:** [e.g. Python 3.11, Node.js 20, FastAPI, React/Vite]
-- **Key Dependencies:**
-  - `google-genai` (v1.0+) or `@google/genai`
-  - [List other key packages from requirements.txt or package.json]
+## Test evidence and demonstration
 
----
+| Scenario | Input / command | Expected behaviour | Actual result and limitations |
+|---|---|---|---|
+| Normal | [Realistic case] | [Observable useful outcome] | [Measured result; not assumed PASS] |
+| Edge case | [Empty/malformed/unsupported input] | [Clear validation or safe boundary] | [Result] |
+| Failure / uncertainty | [Unavailable model, ambiguous request or missing evidence] | [Explicit error/uncertainty and human next step] | [Result] |
 
-## 7. Setup & Cold-Start Instructions
+- **Demo steps:** [Problem and user → live core flow → boundary/failure → repository.]
+- **Code evidence:** [Where inference and validation occur.]
+- **Known limitations:** [Accuracy, supported inputs, runtime, latency and unfinished work.]
+- **Demo URL:** [Optional; does not replace the required working demonstration.]
 
-Follow these step-by-step commands to clone, configure, and launch the project from scratch.
+## Safety and privacy
 
-### Prerequisites
-- Python 3.10+ (or Node.js 18+)
-- [Ollama installed if running locally](https://ollama.com)
-- Git
+[Describe input/output validation, data permissions, retention, what leaves the device, human approval and tool boundaries where applicable. Do not equate offline inference with complete privacy or claim prompts eliminate hallucinations.]
 
-### Installation
-```bash
-# 1. Clone the repository
-git clone https://github.com/[your-org-or-username]/[your-repo-name].git
-cd [your-repo-name]
+For health-related information, use public/synthetic examples, authoritative sources and clear uncertainty. Do not claim unsupported diagnosis or treatment; refer clinical decisions to qualified professionals.
 
-# 2. Set up virtual environment
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+## Team contributions
 
-# 3. Install dependencies
-pip install -r requirements.txt
-```
-
-### Environment Configuration
-Never commit your real API key to version control. Copy the example environment file:
-```bash
-cp .env.example .env
-```
-
-Edit `.env` with your editor:
-```env
-# Required for hosted Gemini API inference
-GEMINI_API_KEY=your_gemini_api_key_here
-
-# Required for local Ollama inference (if applicable)
-OLLAMA_HOST=http://localhost:11434
-```
-
-### Running the Application
-```bash
-# Example run command (CLI or web server)
-python3 main.py
-# Or: npm run dev
-```
-
----
-
-## 8. Safe `.env.example` Template
-
-*(Include this exact format in a `.env.example` file in your repository root with placeholder values only)*:
-
-```env
-# Google Gemini API key for Gemma inference (get from Google AI Studio / MLH Quickstart)
-GEMINI_API_KEY=your_api_key_here
-
-# Optional: Host address for local Ollama daemon
-OLLAMA_HOST=http://localhost:11434
-
-# Application port
-PORT=8000
-```
-
----
-
-## 9. Live Demo Instructions & Known Limitations
-
-### Step-by-Step Demo Flow (2 Minutes)
-1. **The Setup (0:00–0:30):** [Show launching the app and explain the target user problem]
-2. **Core Gemma Workflow (0:30–1:30):** [Input realistic test data; observe Gemma generating response]
-3. **Challenge Acceptance Test (1:30–2:00):** [Demonstrate the specific requirement matching your declared primary track: Wi-Fi toggled off for Track 2, SKILL.md invocation for Track 1, image upload for Track 3, bounded tool confirmation for Track 4, or dynamic chunk citation for Track 5]
-
-### Known Limitations & Incomplete Features
-- **Limitation 1:** [e.g. Local inference token rate is ~8 tokens/sec on CPU]
-- **Limitation 2:** [e.g. UI is currently CLI-based; responsive web interface remains a future roadmap item]
-- **Limitation 3:** [e.g. Corpus currently contains 12 documents; larger corpus ingestion needs batch indexing]
-
----
-
-## 10. Acceptance Criteria & Test Evidence
-
-| Acceptance Test (from Challenge Page) | Verification Command or Action | Result |
+| Contributor | GitHub username | Original work and responsibilities |
 |---|---|---|
-| Test 1: [e.g. SKILL.md frontmatter matches directory] | `head -n 10 my-skill/SKILL.md` | PASS |
-| Test 2: [e.g. Live offline inference with Wi-Fi disabled] | Wi-Fi toggled off, `python3 main.py` | PASS |
-| Test 3: [e.g. Bounded tool schema validation] | `python3 -m unittest tests/` | PASS |
-| Test 4: [e.g. Out-of-corpus query refusal] | Input: "Who won the 1990 world cup?" | PASS (Graceful refusal) |
+| [Name] | [Username] | [Contribution] |
 
----
+Add a row for each actual contributor. Confirm team-size policy with organisers rather than treating this template as an eligibility rule.
 
-## 11. Data Sources & Permission Evidence
+## AI Tools Used
 
-- **Corpus / Dataset Origin:** [e.g. Synthetic course syllabus generated by our team, public Zetech University club constitution, open-source documentation]
-- **Privacy Assurance:** **No private student records, grades, admission numbers, personal phone numbers, or confidential faculty emails are included in this repository.**
-- **Permission Evidence:** [e.g. Public domain data, creative commons documentation, or synthetic mock data created during the hackathon]
+- **Coding assistants:** [Tools used, or None.]
+- **How used:** [Short factual disclosure.]
+- **Our contribution:** [Architecture, implementation, testing and decisions the team can explain.]
 
----
+## Application licence
 
-## 12. Safety, Boundary & Privacy Considerations
-
-- **Safety Guardrails:** [Describe how input validation, system prompts, or ShieldGemma prevent hallucinations or misuse]
-- **Tool Bounding (if Track 4 / Agents):** [Explicit confirmation prompt required before any file write or command execution; no arbitrary shell execution]
-- **Data Privacy:** [Inference prompts do not retain user PII; local edge inference keeps all data on-device]
-
----
-
-## 13. Team Member Contributions
-
-This project was built by a team of [3–4] members during the Hacktoberfest Hack Day Nairobi window:
-
-| Team Member Name | GitHub Username | Role & Contributions |
-|---|---|---|
-| [Member 1] | `@[username]` | Model integration, prompt architecture, and Gemini API / Ollama setup |
-| [Member 2] | `@[username]` | Application logic, backend API endpoints, and data processing |
-| [Member 3] | `@[username]` | Frontend user interface, demo workflow, and testing |
-| [Member 4] | `@[username]` | Open-source licensing, README documentation, and edge-case handling |
-
-*Note: All team members understand the entire codebase and are prepared to explain architecture and prompts during the live demo.*
-
----
-
-## 14. AI-Assisted Coding Tools Disclosure
-
-In compliance with hackathon rules, we disclose the AI pair-programming tools used during development:
-
-- **AI Tools Used:** [e.g. GitHub Copilot, Gemini CLI, Claude Code, Cursor, None]
-- **How Tools Were Used:** [e.g. Autocompleting boilerplate dataclass definitions, generating initial regex patterns, drafting test assertions]
-- **Our Original Contribution:** [e.g. Our team designed the system architecture, authored the domain-specific prompts, integrated the Gemma model loop, and implemented the tool boundary logic from scratch. Every line of code was reviewed, tested, and is understood by the team.]
-
----
-
-## 15. Upstream Attribution (If Forked or Built on Existing Code)
-
-*(If your team built from scratch, delete this section or state: "Built 100% from scratch during the hackathon window.")*
-
-- **Upstream Repository:** [Link to original upstream repository]
-- **Upstream Author & License:** [Original author name, upstream OSI license e.g. MIT]
-- **Substantial Delta Built During Hackathon:** [Describe the concrete new logic, adapters, tools, or UI added by your team overnight]
-- **Clean Git Diff:** [Provide a link to the commit history or diff showing your team's contributions]
-
----
-
-## 16. Licensing & Model Terms
-
-- **Application Source Code License:** This project is open-source software licensed under the **[MIT License / Apache 2.0 License]** — see the [`LICENSE`](./LICENSE) file at repository root.
-- **AI Model Terms of Use:** The underlying AI model weights are governed separately:
-  - Generative Gemma models (Gemma 4, Gemma 2, FunctionGemma) are governed by the [Gemma Terms of Use](https://ai.google.dev/gemma/terms).
-  - Embedding models (EmbeddingGemma 2) are governed by the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+[Chosen OSI-approved licence and link to your project's licence file.] Attribute upstream components and retain required notices. The team retains ownership subject to these granted reuse rights.

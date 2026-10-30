@@ -17,15 +17,17 @@ Get this done **before** you arrive—venue Wi-Fi on an overnight hack day with 
 
 ## Quick path decision matrix
 
-Find the setup path that matches your laptop hardware and chosen challenge track:
+Start with your [own problem and MVP]({{ site.baseurl }}/challenges/), not a prescribed architecture. This kit offers Gemma examples; another suitable open-source/open-weight model is welcome for the broad category.
 
-| If your team goal is... | Recommended Path | Setup Section | Declared iTech Club Track |
-|---|---|---|---|
-| **Fastest path (minimal setup, student laptop)** | Hosted Gemini API (`gemma-4-26b-a4b-it`) | [Option A](#option-a--hosted-gemma-via-the-gemini-api) | [Track 1]({{ site.baseurl }}/challenges/01-agent-skill/), [Track 3]({{ site.baseurl }}/challenges/03-multimodal-assistant/), [Track 4]({{ site.baseurl }}/challenges/04-dev-harness/), or [Track 5]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/) |
-| **Must work offline (no Wi-Fi/signal dependency)** | Local quantized model via Ollama (`gemma4:e2b` or `gemma2:2b`) | [Option B](#option-b--local-offline-gemma-with-ollama) | **[Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)** |
-| **Need image or audio input** | Hosted Gemini API or local multimodal model | [Option A](#option-a--hosted-gemma-via-the-gemini-api) | **[Track 3: Multimodal Campus Companion]({{ site.baseurl }}/challenges/03-multimodal-assistant/)** |
-| **Need retrieval / RAG over documents** | Hosted Gemma 4 + EmbeddingGemma 2 | [Option A](#option-a--hosted-gemma-via-the-gemini-api) & [Track 5]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/) | **[Track 5: Campus Knowledge Companion (RAG)]({{ site.baseurl }}/challenges/05-rag-knowledge-companion/)** |
-| **Need custom model / tool harness control** | Function calling via Gemini API or local FunctionGemma / Ollama | [Option A](#option-a--hosted-gemma-via-the-gemini-api) or [Option C](#option-c--open-weight-checkpoints-for-custom-harnesses) | **[Track 4: Gemma-Powered Dev Harness]({{ site.baseurl }}/challenges/04-dev-harness/)** |
+| Your constraints | Possible path | Check first |
+|---|---|---|
+| Limited local compute; connected application | [Hosted Gemma via Gemini API](#option-a--hosted-gemma-via-the-gemini-api) | Account access, quotas, cost, data permissions and latency |
+| Must operate without internet after setup | [Local inference with Ollama](#option-b--local-offline-gemma-with-ollama) | Download time, disk/RAM, runtime support and actual performance |
+| Need image or audio input | A model and endpoint supporting that exact modality | Hosted Gemma documentation lists 31B and 26B-A4B; native audio is model-specific (E2B/E4B/12B). Do not assume every API supports it. |
+| Need retrieval or tools | Only add these if the user journey needs them | Test evidence grounding, tool permissions and failure handling |
+| Need custom weights/runtime control | [Open-weight checkpoints](#option-c--open-weight-checkpoints-for-custom-harnesses) | Setup time, licence, hardware and reproducibility |
+
+**Prize eligibility is separate from runtime capability:** Best Use of Gemma 4 requires meaningful Gemma 4 use, and MLH partner guidance calls for the Gemini API. Do not assume local-only or older Gemma use qualifies. See [both official category requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge). DigitalOcean and other deployment providers are optional.
 
 ---
 
@@ -35,12 +37,12 @@ Before installing packages, understand the architecture:
 
 - **Hosted API vs. Local Inference:**
   - **Hosted API (Option A):** Model compute runs on Google's cloud servers via the Gemini API. You only send HTTP requests with an API key. This is the fastest, lowest-resource path for standard student laptops.
-  - **Local Inference (Option B & C):** Model weights sit on your laptop's hard drive and execute on local CPU/GPU compute. **Mandatory for Track 2 (Offline Edge)**, but optional for all other tracks.
+  - **Local Inference (Option B & C):** Model weights execute on your local CPU/GPU. This is an optional architecture; test hardware capacity and confirm any category-specific API requirement separately.
 - **Model-Hosting Runtimes:** Tools like [Ollama](https://ollama.com) or [llama.cpp](https://github.com/ggerganov/llama.cpp) manage local weights, quantize memory, and expose local endpoints.
 - **Embeddings vs. Generative Models:**
   - **Embedding models** (e.g. `EmbeddingGemma 2`) convert text, code, or images into vector numbers for search. They do *not* generate conversational text.
   - **Generative models** (e.g. `Gemma 4`, `Gemma 2`) read retrieved context and generate the final answer.
-- **Gemma vs. Gemini:** This hackathon requires building with the **Gemma family** (Google's open-weight model family). Do not substitute a proprietary Gemini-branded model (such as Gemini 1.5 Pro) for Gemma.
+- **Gemma vs. Gemini:** The Gemini API is a hosting service; explicitly select a Gemma model ID when using Gemma. A proprietary Gemini model does not replace Gemma 4 for that prize. Best Open-Source AI Project is not restricted to Gemma.
 
 ---
 
@@ -68,7 +70,7 @@ If you plan to run models locally (Option B), verify free disk space:
 ## 3. Progressive setup: Option A — Hosted Gemma via Gemini API
 {: #option-a #option-a--hosted-gemma-via-the-gemini-api }
 
-The hosted path is recommended for all tracks except Track 2. Google provides free-tier compute for Gemma models, requiring zero local GPU hardware.
+The hosted path avoids local GPU requirements. Check current account availability, quotas and pricing; do not assume unlimited free inference. Use permitted or synthetic inputs, and understand what data leaves your device.
 
 ### Step 1: Obtain your API key
 1. Sign in to [Google AI Studio](https://aistudio.google.com/apikey) with your Google account.
@@ -191,7 +193,7 @@ Hello students of Zetech University, welcome to the hackathon and happy building
 ## 5. Option B — Local offline Gemma with Ollama
 {: #option-b #option-b--local-offline-gemma-with-ollama }
 
-Required for **[Track 2: Gemma Off the Grid]({{ site.baseurl }}/challenges/02-edge-offline/)**, and an excellent local backup for all teams if venue connectivity drops.
+An optional path for projects that need local/offline inference. A local fallback is not equivalent to the Gemini API requirement for the Gemma 4 prize; disclose the runtime actually demonstrated.
 
 ### Step 1: Install Ollama
 Download and install [Ollama](https://ollama.com/download) for your operating system (Linux, macOS, Windows).
@@ -307,7 +309,7 @@ Memory requirements vary significantly depending on **quantization format**, **r
 | **31B** | 31B dense | 69.9 GB | 34.9 GB | **17.5 GB** | — | Workstation GPU (24 GB VRAM) or **Gemini API** |
 
 {: .note }
-> **Key Takeaway for Students:** You do **not** need expensive GPU workstations. If your laptop has 4–8 GB RAM, use the **free hosted Gemini API** (`gemma-4-26b-a4b-it`) or run **`gemma4:e2b` / `gemma2:2b` locally in 4-bit quantization** on your CPU.
+> **Key Takeaway for Students:** Expensive GPU hardware is not required. Compare hosted Gemma (`gemma-4-26b-a4b-it`) against a smaller local quantized model on your actual machine. Allow memory for the OS, context and runtime; hardware recommendations are estimates, not measured guarantees. Check API quota/cost and prize eligibility separately.
 
 ---
 
@@ -363,4 +365,4 @@ git add -A
 git commit -m "Initial commit: scaffold project with license and gitignore"
 ```
 
-Now head to the [Challenges]({{ site.baseurl }}/challenges/) page and start building!
+Now return to the [project brief and MVP framework]({{ site.baseurl }}/challenges/). Test normal inputs, edge cases and at least one failure/uncertainty scenario before publishing.
