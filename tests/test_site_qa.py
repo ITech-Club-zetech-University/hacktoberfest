@@ -82,7 +82,7 @@ class TestJekyllSiteQA(unittest.TestCase):
         for field in (
             "Project name:", "Problem:", "Primary user:", "Why the problem matters:",
             "Current alternative or workaround:", "Proposed solution:",
-            "What the AI model will do:", "Why an open model is appropriate:",
+            "What the AI model will do (if used):", "Why an open model is appropriate:",
             "Why Gemma 4 is being used (if applicable):", "Data and tools required:",
             "Main risks or limitations:", "MVP features for the hack period:",
             "How the team will demonstrate success:",
@@ -108,7 +108,7 @@ class TestJekyllSiteQA(unittest.TestCase):
                 self.assertNotIn("{%", download)
         canvas = (repo_root / "templates" / "downloads" / "project-proposal.md").read_text(encoding="utf-8")
         for text in (
-            "Team name:", "Exact model name and variant:", "Inference method, provider and runtime:",
+            "Team name:", "Exact model name and variant (if used):", "Inference method, provider and runtime:",
             "Data sources and permission/licence status:", "Safety and privacy considerations",
             "How we will test normal inputs", "- [ ] Best Open-Source AI Project",
             "- [ ] Best Use of Gemma 4", "does not replace",
@@ -144,7 +144,7 @@ class TestJekyllSiteQA(unittest.TestCase):
             self.assertNotIn(internal, guide)
         demo = (repo_root / "templates" / "demo-script.md").read_text(encoding="utf-8")
         self.assertEqual(len(re.findall(r"^[1-7]\. \*\*", demo, flags=re.MULTILINE)), 7)
-        for text in ("Working journey", "Actual AI role", "Normal test and limitation",
+        for text in ("Working journey", "Category evidence", "Normal test and limitation",
                      "Built versus unfinished", "Reproduce and contribute"):
             self.assertIn(text, demo)
         for filename in (
