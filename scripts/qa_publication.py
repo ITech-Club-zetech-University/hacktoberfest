@@ -29,6 +29,7 @@ FORBIDDEN_PATHS = (
     "references/source-register/", "QA-REPORT/", "QA-REPORT.md",
     "templates/judge-score-sheet.csv", "scripts/", "tests/",
     "templates/downloads/index.html", "templates/downloads/project-proposal/",
+    "_config.yml", "Gemfile", "Gemfile.lock", "README.md", ".git/", ".github/",
 )
 EDITORIAL_TEXT = re.compile(
     r"organiser confirmation required|awaiting lead organiser confirmation|"
@@ -56,6 +57,8 @@ class PublicationPage(HTMLParser):
         self.navigation = []
         self.stylesheets = []
         self.heading_count = 0
+        self.heading_text = []
+        self.in_heading = False
         self.text = []
         self.nav_depth = 0
 
@@ -67,6 +70,7 @@ class PublicationPage(HTMLParser):
             self.ids.append(attrs["id"])
         if tag == "h1":
             self.heading_count += 1
+            self.in_heading = True
         for attribute in ("href", "src"):
             if attrs.get(attribute):
                 self.references.append(attrs[attribute])
@@ -78,9 +82,13 @@ class PublicationPage(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "nav":
             self.nav_depth -= 1
+        if tag == "h1":
+            self.in_heading = False
 
     def handle_data(self, data):
         self.text.append(data)
+        if self.in_heading:
+            self.heading_text.append(data)
 
 
 def audit_publication(site_root: Path, source_root: Path, baseurl="/hacktoberfest"):
@@ -96,6 +104,8 @@ def audit_publication(site_root: Path, source_root: Path, baseurl="/hacktoberfes
         if forbidden_path(relative):
             errors.append(f"Repository-only or unintended output: {relative}")
         if path.is_file() and path.suffix == ".html":
+            if relative not in PARTICIPANT_PAGES:
+                errors.append(f"Unexpected HTML page: {relative}")
             page = PublicationPage()
             page.feed(path.read_text(encoding="utf-8"))
             pages[relative] = page
@@ -116,6 +126,8 @@ def audit_publication(site_root: Path, source_root: Path, baseurl="/hacktoberfes
             errors.append(f"Missing theme stylesheet: {relative}")
         if page.heading_count != 1:
             errors.append(f"Expected one H1 in {relative}, found {page.heading_count}")
+        if "[Project Name]" in "".join(page.heading_text):
+            errors.append(f"Template placeholder used as page heading: {relative}")
         if EDITORIAL_TEXT.search(" ".join(page.text)):
             errors.append(f"Internal editorial text in participant page: {relative}")
         for identity, count in Counter(page.ids).items():

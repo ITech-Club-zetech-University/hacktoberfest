@@ -103,6 +103,16 @@ class TestPublicationQA(unittest.TestCase):
         self.assertTrue(any("Internal editorial text" in error for error in errors))
         self.assertTrue(any("Missing theme stylesheet" in error for error in errors))
 
+    def test_unexpected_page_and_placeholder_heading_are_rejected(self):
+        extra = self.site / "editorial/index.html"
+        extra.parent.mkdir()
+        extra.write_text("<h1>Internal notes</h1>", encoding="utf-8")
+        portal = self.site / "templates/project-readme-template/index.html"
+        portal.write_text(portal.read_text().replace("Participant guide", "[Project Name]"), encoding="utf-8")
+        errors = self.audit()
+        self.assertIn("Unexpected HTML page: editorial/index.html", errors)
+        self.assertTrue(any("Template placeholder used as page heading" in error for error in errors))
+
     def test_empty_baseurl_is_supported(self):
         for path in self.site.rglob("*.html"):
             path.write_text(path.read_text().replace("/hacktoberfest/", "/"), encoding="utf-8")
