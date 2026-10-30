@@ -181,7 +181,7 @@ Organisers average the completed independent score sheets **separately for each 
 
 Each judge has equal weight. Only complete, valid sheets count; missing marks are not zero. Scores are compared before rounding, and individual score sheets remain private.
 
-Within each eligible category, the highest consolidated score under the approved rubric leads selection, subject to the applicable published award requirements. A local overall score does not determine either MLH category winner.
+Within each eligible category, the highest consolidated score under the approved rubric leads selection, subject to the applicable published award requirements. A local overall score does not determine either MLH category winner. It also does not determine the PrimeCloud winner.
 
 ### Tie-breaking
 {: #deterministic-tie-breaking-protocol }

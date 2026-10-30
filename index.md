@@ -2,7 +2,7 @@
 title: Home
 layout: home
 nav_order: 1
-description: "An open-ended, problem-driven open-source AI hack day with iTech Club and MLH."
+description: "An open-ended software and AI hack day with three prize categories, iTech Club and MLH."
 permalink: /
 ---
 

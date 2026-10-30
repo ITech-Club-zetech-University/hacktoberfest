@@ -12,6 +12,8 @@ description: "Choose your own problem, develop an original solution, and build a
 
 There are **no fixed project prompts, mandatory tracks or required application domains**. Choose your own problem, target users, domain, product concept and technical implementation. You can combine techniques or invent a different approach entirely.
 
+The AI guidance supports the two AI awards. **An original non-AI application is also welcome for Best Project Deployed on PrimeCloud.** Choose technology that serves your users rather than adding an unnecessary model.
+
 1. TOC
 {: toc }
 
