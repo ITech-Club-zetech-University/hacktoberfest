@@ -1,13 +1,15 @@
 ---
 title: Starter Kit
 nav_order: 3
-description: "A practical, optional-stack launchpad for Gemma 4 and original open-source AI projects."
+description: "Optional-stack Gemma 4 setup, original software development and PrimeCloud deployment preparation."
 ---
 
-# Gemma 4 & Open-Source AI Starter Kit
+# Gemma 4, Open-Source AI & Deployment Starter Kit
 {: .no_toc }
 
 Start with your [problem, primary user and focused MVP]({{ site.baseurl }}/challenges/). **Install only what your chosen project needs.** You do not need every language, framework, database or inference runtime on this page.
+
+The AI sections support the AI categories. **PrimeCloud-only projects may skip model setup** and use [Deploying Your Project with PrimeCloud](#deploying-your-project-with-primecloud). AI is not required for that category.
 
 1. TOC
 {: toc }
@@ -285,18 +287,40 @@ Open the **current DigitalOcean promo offer in [My Hacktoberfest](https://hackto
 
 **Billable cloud resources can continue to incur costs after promotional credits expire or are exhausted.** Review [current inference pricing](https://docs.digitalocean.com/products/inference/details/pricing/) and each chosen product's pricing. Serverless inference has its own prepaid-balance rules; do not assume other services stop automatically. Monitor usage, understand whether alerts are hard spending limits, and remove unneeded resources and retained storage after testing.
 
+## Deploying Your Project with PrimeCloud
+{: #deploying-your-project-with-primecloud }
+
+**Required only for Best Project Deployed on PrimeCloud.** Other categories do not require this provider. Start with the [official quickstart](https://primecloud.cloud/docs/quickstart) and [documentation](https://primecloud.cloud/docs).
+
+The quickstart describes account creation, application preparation, optional services, deployment through the Customer Console or CLI, and checking the live application. Its command block is labelled **illustrative**; this handbook does not treat it as a verified installation recipe. Use sponsor guidance for exact commands, supported runtimes/versions and account-specific controls.
+
+1. **Prepare the application.** Get one useful flow working locally. Document its actual build/start commands, input validation, error handling and any storage requirements. Do not deploy private sample data.
+2. **Prepare public GitHub source.** Commit the original code, dependency manifests/lockfiles, README and appropriate open-source licence. Keep secrets and private `.env` files out of files and history.
+3. **Identify runtime and dependencies.** Record the language/runtime version, packages and any database or external service. Before choosing a deployment route, confirm support for that exact stack with [PrimeCloud support](https://primecloud.cloud/support); do not assume local model hardware or every framework is available.
+4. **Plan environment variables.** List required variable names and safe placeholders in the README. Keep real credentials in the platform's supported private configuration, never the public repository, browser bundle, screenshots or logs. Ask support how secrets are configured for your route.
+5. **Connect the project to PrimeCloud.** [Create an account](https://primecloud.cloud/signup), access your workspace and follow the current quickstart for its source connection/upload route. Confirm the repository-access permissions and exact steps with sponsor guidance; no dashboard button names or configuration files are assumed here.
+6. **Configure deployment.** Use the supported controls for the selected runtime, build/start commands and environment. Clarify service connectivity, public routing, persistent storage and plan limits with support before provisioning only what is needed.
+7. **Deploy.** Follow the current Console or sponsor-supported CLI instructions. Check the build/deployment result and resolve reported errors; do not assume that a created service or dashboard badge means the app works.
+8. **Test the live URL.** Open it outside your signed-in platform session. Demonstrate the intended user journey; for an API, document a safe sample request and expected response. Check an invalid input and a failure path too. Submit this **working public URL**, not just a dashboard screenshot.
+9. **Monitor the application.** Use the status/log/usage facilities available for your deployment route, with support guidance on where to find them. Investigate failures, redact secrets and personal data, and check [current pricing](https://primecloud.cloud/pricing) before creating billable services. Do not assume the winner's prize provides free deployment for all entrants.
+10. **Document and submit.** In the README, include the live URL, PrimeCloud usage, architecture, non-secret configuration, setup/deployment steps, technologies, limitations and team contributions. Follow the [PrimeCloud submission details]({{ site.baseurl }}/submission/#primecloud-entry-details).
+
+**Sponsor guidance is needed for platform-specific setup:** exact runtime/version support, repository connection, secret configuration, build/start/public-routing settings, persistence, CLI installation and monitoring controls are not established by the high-level quickstart alone. Use [official support](https://primecloud.cloud/support) before relying on them; do not copy deployment commands from another provider.
+
+The confirmed prize is **PrimeCloud Production Plan – 3 Months**. The winning developer will receive three months of PrimeCloud Production, with access to the standard Production plan features and allowances. Consult the [category requirements]({{ site.baseurl }}/challenges/#best-project-deployed-on-primecloud) and [official resources]({{ site.baseurl }}/resources/#primecloud-resources).
+
 ## 5. Open-source release checklist
 
 - [ ] Create a **public GitHub repository** for the actual project.
 - [ ] Choose an appropriate [OSI-approved application-code licence](https://opensource.org/licenses) and include a real `LICENSE` file. GitHub's licence picker is safer than copying a licence template with unfilled names/placeholders.
-- [ ] Name the exact AI model/version/runtime and link its licence/terms. **Open-weight does not automatically mean open-source.** [Gemma 4 is Apache 2.0 licensed](https://ai.google.dev/gemma/docs/core/model_card_4); other models/generations may differ.
+- [ ] If using AI, name the exact model/version/runtime and link its licence/terms. **Open-weight does not automatically mean open-source.** [Gemma 4 is Apache 2.0 licensed](https://ai.google.dev/gemma/docs/core/model_card_4); other models/generations may differ.
 - [ ] Record important dependencies, versions, licences, upstream work and original team changes.
 - [ ] Document installation, configuration, run commands, tests and expected behaviour; verify a cold start.
-- [ ] Include screenshots or a demo URL where possible, without secrets or private information.
+- [ ] Include screenshots or a demo URL where possible, without secrets or private information. A working public PrimeCloud URL and deployment instructions are required if entering that category.
 - [ ] Never commit API keys, secrets, private user data or unlicensed datasets, including in history.
 - [ ] Record data sources, permissions, acknowledgements and known limitations.
 
-Use the [README template]({{ site.baseurl }}/templates/project-readme-template/), [submission checklist]({{ site.baseurl }}/templates/submission-checklist/) and [demo guide]({{ site.baseurl }}/templates/demo-script/). One project/repository may enter both official categories when it qualifies.
+Use the [README template]({{ site.baseurl }}/templates/project-readme-template/), [submission checklist]({{ site.baseurl }}/templates/submission-checklist/) and [demo guide]({{ site.baseurl }}/templates/demo-script/). One project/repository may enter multiple event categories when it meets each set of requirements.
 
 ## 6. Responsible AI and data
 
@@ -316,12 +340,12 @@ The event is **30 October 2026, 7:00 PM → 31 October, 6:00 AM EAT**, with a **
 
 Work backwards from the time available:
 
-1. **Problem and scope:** one primary user, task, AI role and observable success check; complete the [worksheet]({{ site.baseurl }}/templates/problem-statement/).
-2. **Minimal model test:** choose one execution path and prove a non-empty response with safe test input; check latency, account/hardware and failure behaviour.
-3. **Core application flow:** connect input, validation, model and useful output before adding secondary features.
-4. **Only necessary integration:** add persistence, retrieval, tools or deployment only if the core user journey needs them.
+1. **Problem and scope:** one primary user, task, any AI role and observable success check; complete the [worksheet]({{ site.baseurl }}/templates/problem-statement/).
+2. **Minimal technical test:** prove the core runtime works. If using a model, choose one execution path and check a response with safe input, latency, account/hardware and failure behaviour.
+3. **Core application flow:** connect input, validation, any model and useful output before adding secondary features.
+4. **Only necessary integration:** add persistence, retrieval or tools only if needed. Reserve time for deployment if entering PrimeCloud.
 5. **Testing and refinement:** run the small evaluation set, edge cases, at least one failure/uncertainty case and relevant misuse tests.
-6. **Release and demo preparation:** stop adding features early enough to verify setup, README, licences, configuration, public repo, official submission and rehearsal. Deployment is optional; do not trade a working demonstration for last-minute infrastructure.
+6. **Release and demo preparation:** stop adding features early enough to verify setup, README, licences, configuration, public repo, official submission and rehearsal. Deployment is optional for the AI categories but required on PrimeCloud for its category; scope it early rather than trading a working demonstration for last-minute infrastructure.
 
 ## Before relying on an example
 

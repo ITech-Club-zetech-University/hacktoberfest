@@ -1,6 +1,6 @@
 title: Hacktoberfest Hack Day Nairobi x iTech Club
 description: >-
-  Open-ended open-source AI projects, rules, and a Gemma starter kit for the iTech Club x MLH
+  Open-ended software and AI projects, Gemma resources, and PrimeCloud deployment for the iTech Club x MLH
   Hacktoberfest Hack Day at Zetech University — Friday 30 October 2026.
 baseurl: "/hacktoberfest"
 url: "https://itech-club-zetech-university.github.io"
@@ -42,7 +42,7 @@ aux_links_new_tab: true
 
 footer_content: >-
   Hosted by iTech Club, Zetech University, in partnership with Major League
-  Hacking (MLH). Sponsored by Gemma.
+  Hacking (MLH). Category sponsors: DigitalOcean, Google DeepMind / Gemma, and PrimeCloud.
 
 back_to_top: true
 back_to_top_text: "Back to top"

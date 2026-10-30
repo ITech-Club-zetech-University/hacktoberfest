@@ -24,7 +24,9 @@ Start with a user and a small outcome, not a feature list:
 | Research and knowledge discovery | Help a researcher compare claims in a small collection of openly licensed papers. | Cite passages, distinguish evidence from synthesis and surface conflicting or missing evidence. |
 | Health information organisation or education | Help someone organise public health-education leaflets by topic and source. | Use synthetic/public data, show authoritative sources and uncertainty, and direct clinical questions to qualified professionals. **No unsupported diagnosis, triage, treatment or personalised medical claims.** |
 
-For any idea, identify one user, one AI role, one working flow, test scenarios and a failure boundary using the [problem statement worksheet]({{ site.baseurl }}/templates/problem-statement/).
+For any idea, identify one user, one working flow, test scenarios and a failure boundary using the [problem statement worksheet]({{ site.baseurl }}/templates/problem-statement/). Identify an important AI role if entering an AI category.
+
+**Non-AI projects are welcome for [Best Project Deployed on PrimeCloud]({{ site.baseurl }}/challenges/#best-project-deployed-on-primecloud).** For example, build a small booking application, community-resource directory, inventory API or developer tool and demonstrate it at a working public PrimeCloud URL. These are optional ideas, not new tracks. An AI application may also enter PrimeCloud when independently eligible.
 
 Technical patterns such as retrieval, local inference, multimodal inputs, reusable agent skills and bounded developer tools may help, but none is compulsory. An effective small CLI can be as valuable as a web or mobile app.
 

@@ -5,6 +5,10 @@ the organiser approves the category criteria and award process. Copy one sheet
 per judge, project and eligible entered category into private storage.
 Never commit completed sheets.
 
+This file covers the two AI categories only. Use the separate
+[PrimeCloud sheet](./primecloud-score-sheet.md) for Best Project Deployed on
+PrimeCloud; do not combine category totals.
+
 ## Project and review
 
 - Team/project:

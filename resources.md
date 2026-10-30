@@ -1,7 +1,7 @@
 ---
 title: Resources
 nav_order: 4
-description: "Curated, verified official Gemma and MLH resources, organized by capability."
+description: "Official MLH, Gemma, DigitalOcean, PrimeCloud and open-source development resources."
 ---
 
 # Resources
@@ -17,7 +17,13 @@ Use these official resources for your chosen problem and architecture. There are
 
 ## Official MLH event resources (start here)
 
-Choose your own project; the two [live prize categories]({{ site.baseurl }}/challenges/#the-official-mlh-challenge) are awards, not project prompts. The [idea framework]({{ site.baseurl }}/challenges/) and [optional inspiration]({{ site.baseurl }}/inspiration/) help you get started.
+Choose your own project; the three [event prize categories]({{ site.baseurl }}/challenges/#the-official-mlh-challenge) are awards, not project prompts. The [idea framework]({{ site.baseurl }}/challenges/) and [optional inspiration]({{ site.baseurl }}/inspiration/) help you get started.
+
+| Category | Start with |
+|---|---|
+| Best Open-Source AI Project | MLH open-source guidance, model/licensing resources and optional DigitalOcean resources below |
+| Best Use of Gemma 4 | MLH Gemma links and current hosted Gemma documentation below |
+| Best Project Deployed on PrimeCloud | [PrimeCloud resources](#primecloud-resources) and the [deployment preparation guide]({{ site.baseurl }}/starter-kit/#deploying-your-project-with-primecloud); AI is optional |
 
 These four verified links were provided directly by MLH for this Hacktoberfest Hack Day:
 
@@ -116,3 +122,24 @@ DigitalOcean supports **Best Open-Source AI Project** but is **not mandatory**. 
 - [My Hacktoberfest](https://hacktoberfest.com/my/) — Sign in yourself to inspect the current DigitalOcean promo offer, eligibility, expiry, limits and billing terms. No credit amount is assumed.
 - [Inference pricing](https://docs.digitalocean.com/products/inference/details/pricing/) — Check usage charges, credit/balance requirements and account access before spending. Event credits are not assumed.
 - [General DigitalOcean documentation](https://docs.digitalocean.com/) — Storage, databases and networking only where your project needs them.
+
+## PrimeCloud resources
+{: #primecloud-resources }
+
+**PrimeCloud — Build. Launch. Grow.** These resources support **Best Project Deployed on PrimeCloud**. Deployment on PrimeCloud is required only for that category; Gemma 4 is not required.
+
+| Official resource | Use this for |
+|---|---|
+| [PrimeCloud website](https://primecloud.cloud) | Platform overview and current official navigation |
+| [Documentation](https://primecloud.cloud/docs) | Starting points for deployment, services, security and plans |
+| [Deployment quickstart](https://primecloud.cloud/docs/quickstart) | Account/workspace preparation, application/services, deployment and live verification; its CLI block is labelled illustrative |
+| [Account signup](https://primecloud.cloud/signup) | Create your own account; follow the current account and workspace instructions |
+| [Plans and pricing](https://primecloud.cloud/pricing) | Current Production plan details, limits and billing terms before provisioning |
+| [Support](https://primecloud.cloud/support) | Deployment, account, billing and recovery help; confirm exact runtime/version support and configuration for your stack |
+
+The documentation describes deployment from Git, containers or source code, and the quickstart mentions the Customer Console or CLI. These high-level descriptions are **not a verified runtime/version compatibility matrix or executable CLI recipe**. Confirm the exact supported technologies and workflow with sponsor support. The [starter guide]({{ site.baseurl }}/starter-kit/#deploying-your-project-with-primecloud) separates general preparation from those platform-specific steps.
+
+**PrimeCloud Production Plan – 3 Months**  
+The winning developer will receive three months of PrimeCloud Production, with access to the standard Production plan features and allowances.
+
+This winner's prize is not a promise of free services to every entrant. Use the current plan page for product information; do not infer extra credits, resource allowances or redemption conditions. See the [category requirements]({{ site.baseurl }}/challenges/#best-project-deployed-on-primecloud).

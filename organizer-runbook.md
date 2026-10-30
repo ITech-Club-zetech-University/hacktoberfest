@@ -29,7 +29,9 @@ Organizers must verify all event details against the live [MLH Event Registratio
 - **Date & Timing:** **Friday, 30 October 2026, 7:00 PM EAT → Saturday, 31 October 2026, 6:00 AM EAT**
 - **Venue / audience:** Reconcile the listing's Ruiru Campus and attendance metadata with earlier local Mang'u/member-only instructions; publish one confirmed answer.
 - **Official MLH Categories:** **Best Open-Source AI Project** and **Best Use of Gemma 4**, with [live links and requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
-- **Project Format:** Open-ended; no mandatory tracks. Brief problem discovery, user definition, appropriate AI and a focused MVP.
+- **Third official event category:** **Best Project Deployed on PrimeCloud**, confirmed by the organiser's update request. Verify/configure the actual category, submission window and winner controls with MLH in authenticated HQ; website edits do not create it.
+- **PrimeCloud prize:** **PrimeCloud Production Plan – 3 Months**. The winning developer will receive three months of PrimeCloud Production, with access to the standard Production plan features and allowances. Confirm redemption/activation and account/billing terms with the sponsor; do not invent extra benefits.
+- **Project Format:** Open-ended; no mandatory tracks. Brief problem discovery, user definition, appropriate technology and a focused MVP. PrimeCloud-only projects need no AI. Gemma 4 is required only for its category; PrimeCloud deployment only for its category; DigitalOcean is optional.
 - **Local Awards / Team Size:** Confirm whether separate Top Three recognition and the former 3–4-member local restriction remain; do not present either as universal MLH policy.
 - **Timing:** Public categories close at **6:00 AM EAT on 31 October**. Coding start/stop, submission opening and demos need reconciliation before announcement.
 
@@ -68,6 +70,7 @@ python3 scripts/check_submission.py --help
 ### B. Preparing Scoring Sheets
 - Create a private, access-controlled spreadsheet (Google Sheets or Excel) in the organizer drive.
 - For approved category scoring, copy the [independent category sheet](./_internal/organiser/category-score-sheet.md) into private storage once per judge/project/category. It matches the two proposed category rubrics; approval is required before use.
+- For PrimeCloud, use the separate [five-criterion score sheet](./_internal/organiser/primecloud-score-sheet.md). Approve its 100-point rubric against sponsor requirements and verify the live public deployment, actual PrimeCloud usage, architecture and README deployment steps. No combined category total.
 - For separate local overall assessment only, import the [retained judge CSV](./_internal/organiser/judge-score-sheet.csv). Delete the **three fictional examples** and copy the blank row for each team/judge pair. The CSV has **37 columns and no formulas**, including category eligibility/evidence/notes and actual categories considered; its numerical block is local-only.
 - Set up **Eligible / Pending / Ineligible / Not Entered** status choices per category and **Scored / Not Assessed** for local overall assessment. No category defaults to eligible. Do not force unentered projects into a pool or assign them zero.
 - Retain all evidence fields, wrap text and expand row heights. Keep judges' copies independent until submission. The category-only example has intentional blank numerical/criterion cells: do not confuse **Not Assessed** with an incomplete **Scored** block.
@@ -122,12 +125,14 @@ Before demos begin, brief all judges on these core principles:
 
 ### Distinct category review — organiser approval required
 
-Approve and announce the [proposed category lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) before judging. They are local guidance, **not an official MLH numerical rubric**.
+Approve and announce all three [proposed category rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) before judging. They are organiser guidance, **not official sponsor- or MLH-published weights**.
 
 - **Best Open-Source AI Project:** verify originality, important functional open AI, public GitHub code, code licence and applicable skill/harness conditions. Review usefulness, technical demo, meaningful contribution, README/setup, exact model/model-licence/dependency disclosure, reproducibility and responsible data/limitations. DigitalOcean is optional; skills/harnesses are not the only eligible forms.
 - **Best Use of Gemma 4:** verify actual Gemma 4 model ID and inference path, meaningful product use and the published API requirement. Review variant/route fit, useful capabilities, demo, reliability/tests, privacy, safety and documentation. No mandatory multimodal feature or domain; no credit for a README keyword alone.
-- Record each category status and its evidence. **Pending** requires lead clarification; **Not Entered** and **Ineligible** stay out of that pool. Do not automatically remove an entry from the other pool.
-- Assign category reviews only where eligible; obtain independent non-conflicted notes before discussion. Use one project/demo/repository for dual entry. Confirm whether one team may receive both prizes before decisions.
+- **Best Project Deployed on PrimeCloud:** verify original public licensed code, genuine PrimeCloud use, accessible public URL with working functionality, deployment architecture/configuration, README setup/deployment steps, technologies and contributions. A dashboard screenshot alone is insufficient; AI is not required.
+- Record each category status and its evidence. **Pending** requires lead clarification; **Not Entered** and **Ineligible** stay out of that pool. Do not automatically remove an entry from other pools.
+- Assign category reviews only where eligible; obtain independent non-conflicted notes before discussion. Use one project/demo/repository for multiple-category entry. Confirm whether one team may receive multiple prizes before decisions. Each category is out of 100; do not combine totals.
+- The legacy repository checker is administrative only. Missing AI/Gemma is not a PrimeCloud eligibility failure; its local CSV does not replace the new category sheet.
 - Re-check [hosted model availability and API terms]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check). Local runtime capability does not override published partner requirements.
 - **iTech Club local Top Three awards** retain their own rubric and rules; confirm continuation and inventory rather than silently deleting or inventing prizes. Never award an official category solely from the local total.
 
@@ -167,11 +172,12 @@ Confirm the live controls in event `14735` and follow this procedure **before an
 1. Log in to [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
 2. Ensure the **Announce Winners** toggle is set to **PRIVATE**.
 3. Navigate to **Manage Submissions**.
-4. Confirm and record the dual-prize policy, then review the eligible **Best Open-Source AI Project** pool against official requirements and approved local lenses. Filter that category in HQ.
+4. Confirm and record the multiple-prize policy, then review the eligible **Best Open-Source AI Project** pool against official requirements and approved local lenses. Filter that category in HQ.
 5. Select the winning project, click **Mark Winner → Winner**, and verify the gold **WINNER** badge and **Winner saved** confirmation.
-6. Separately review the eligible **Best Use of Gemma 4** pool and save its human decision/rationale. Mark its winner after checking the actual model/API evidence and confirmed dual-prize policy. Pending eligibility must be resolved first. Contact MLH if an expected category is missing; do not create a replacement.
-7. Use **Preview public view**, check all projects, then switch **Announce Winners** from **PRIVATE** to **PUBLIC**. Verify **WINNERS ANNOUNCED**, **Submissions are public** and the public gallery. This publishes non-winning submissions too, but never upload confidential judge sheets.
-8. Announce both saved official category winners and only any separately confirmed local awards.
+6. Separately review the eligible **Best Use of Gemma 4** pool and save its human decision/rationale. Mark its winner after checking the actual model/API evidence and confirmed multiple-prize policy. Pending eligibility must be resolved first. Contact MLH if an expected category is missing; do not create a replacement.
+7. Separately review **Best Project Deployed on PrimeCloud**, resolve eligibility and save the human decision/rationale. Verify the actual configured category and authorised winner controls with MLH; do not assume those controls exist because the handbook was edited.
+8. Use **Preview public view**, check all projects, then switch **Announce Winners** from **PRIVATE** to **PUBLIC**. Verify **WINNERS ANNOUNCED**, **Submissions are public** and the public gallery. This publishes non-winning submissions too, but never upload confidential judge sheets.
+9. Announce the three category winners only after the applicable decisions are saved and validated, plus any separately confirmed local awards.
 
 ---
 
@@ -198,13 +204,14 @@ Complete these required tasks within 24–48 hours of event closing:
 
 | Item | Decision Needed | Assigned To | Status |
 |---|---|---|---|
-| **1. Categories in OrganizerHQ** | Both categories are publicly listed. Verify Best Open-Source AI Project and Best Use of Gemma 4 in authenticated HQ; confirm eligibility, API evidence and multiple-category winner policy. | Lead Organizer | Pending HQ Check |
+| **1. Categories in OrganizerHQ** | The two AI categories have public MLH listings. Verify them and add/verify Best Project Deployed on PrimeCloud through the authorised MLH process; confirm eligibility, public URL evidence, submission window and multiple-category winner policy. | Lead Organizer | Pending HQ Check |
 | **2. Physical Awards for Local Top 3** | Confirm trophies, medals, certificates, or swag packs designated for the local 1st, 2nd, and 3rd Place Overall teams. | iTech Club Exec | Pending |
 | **3. Open-Ended Format & Teams** | No track declaration. Record actual project and entered categories; confirm team-size/local-award policy and announce it. | Registration Lead | Pending Policy Confirmation |
 | **4. Final Judge Roster** | Confirm roster of 3–5 faculty, mentor, and alumni judges and assign Judge IDs. | Judge Coordinator | Pending Roster |
 | **5. Schedule & Winner Controls** | Reconcile public 6:00 AM close with demos/event end; confirm build start/stop, submission opening, timezone, winner saving and publication. Announce one approved schedule. | OrganizerHQ Winner Lead | Pending HQ Check |
 | **6. Demo Capacity & Calibration** | Rehearse the rubric and sample sheets; confirm non-conflicted assignments. Calculate capacity from confirmed demo/Q&A allowances plus transitions and scoring time. Publish the approved format and any fair parallel-session plan to everyone. | Judge Coordinator | Pending |
 | **7. MLH Prizes & Onboarding** | Confirm DEV account collection, any swag availability and assigned partner conditions against MLH onboarding; confirm local awards separately. | Lead Organizer | Pending HQ / Onboarding Check |
+| **8. PrimeCloud sponsor details** | Confirm Production prize redemption/activation, eligibility and billing terms; obtain exact runtime/deployment guidance. Preserve the supplied three-month prize without invented credits or allowances. | Sponsor Liaison | Pending Sponsor Guidance |
 
 ---
 

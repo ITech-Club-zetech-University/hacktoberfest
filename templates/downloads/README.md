@@ -12,8 +12,8 @@ describe unbuilt features or unrun tests as completed.
 - **Current alternative:** [How the user solves it today.]
 - **Why it matters:** [Evidence or clearly labelled assumptions.]
 - **Solution:** For [specific user] who needs [specific outcome], we are building
-  [solution]. The AI component will [specific role], helping the user to
-  [measurable or observable benefit].
+  [solution], helping the user to [measurable or observable benefit].
+  [If using AI, explain its specific role.]
 
 ## Features and screenshots
 
@@ -29,8 +29,8 @@ describe unbuilt features or unrun tests as completed.
 outputs and stored data travel. Identify anything sent to an external provider.
 Document retrieval, databases and tools only if used.]
 
-- **AI role and importance:** [The specific model task and why a rule or ordinary query is insufficient.]
-- **Open-model choice:** [Why this open-source/open-weight model fits the problem.]
+- **AI role and importance (if used):** [The specific model task and why a rule or ordinary query is insufficient.]
+- **Open-model choice (if used):** [Why this open-source/open-weight model fits the problem.]
 - **Human control:** [Decisions/actions the model cannot take without review.]
 - **Trade-offs:** [Capability, latency, cost, connectivity, hardware and data sensitivity.]
 
@@ -38,7 +38,7 @@ Document retrieval, databases and tools only if used.]
 
 | Component | Exact name, variant and version | Provider/runtime and role | Licence/terms and source URL |
 |---|---|---|---|
-| Primary model | [Actual model ID and variant] | [Hosted/local, provider/runtime and task] | [Model licence URL and hosted terms if applicable] |
+| Primary model, if used | [Actual model ID and variant] | [Hosted/local, provider/runtime and task] | [Model licence URL and hosted terms if applicable] |
 | Other model, if used | [Actual ID/version] | [Embedding/safety/etc.] | [Licence/terms URL] |
 | Libraries/services | [Names and pinned versions] | [Purpose] | [Dependency licences and service terms] |
 
@@ -59,14 +59,34 @@ Available weights alone do not establish that a model is open source.
 
 ## Intended prize categories
 
-- **Categories:** [Best Open-Source AI Project and/or Best Use of Gemma 4, only where eligible.]
+- **Categories:** [Best Open-Source AI Project, Best Use of Gemma 4 and/or Best Project Deployed on PrimeCloud, only where eligible.]
 - **Open-source AI contribution:** [Important functional AI role and original contribution, if entering that category.]
 - **Gemma evidence:** [Actual Gemma 4 integration and published category conditions, if entering that category.]
+- **PrimeCloud evidence:** [Working public deployment URL, actual platform use, architecture and deployment instructions, if entering that category.]
 - **Conditional requirements:** [Agent Skills standard conformance if a skill; original implementation or meaningful changes if a harness.]
 
 Entering categories in this README does not complete official submission.
-One project may enter both when eligible; do not assume that dual entry
-guarantees permission to receive both prizes. DigitalOcean is optional.
+One project may enter multiple categories when eligible; entry does not
+guarantee permission to receive multiple prizes. DigitalOcean is optional.
+Gemma 4 is required only for its category. PrimeCloud deployment is required
+only for its category, which does not require AI. If a category is missing
+from the submission form, contact staff before the deadline.
+
+## PrimeCloud deployment (if entering)
+
+- **Public deployment URL:** [Working public URL, not a dashboard link.]
+- **PrimeCloud usage:** [How the platform genuinely deploys/runs this application.]
+- **Technologies and frameworks:** [Actual stack, versions and services used.]
+- **Deployment architecture:** [Components, connections, storage and public request path.]
+- **Deployment configuration:** [Actual non-secret build/start/runtime configuration.]
+- **Environment variables:** [Names and purposes only; safe placeholders, never credentials.]
+- **Setup and deployment steps:** [Steps actually used, including prerequisites and verification.]
+- **Live demonstration:** [Safe user journey or sample API request and expected result.]
+- **Operational limits:** [Known issues, errors, persistence and realistic scaling constraints.]
+- **Team contributions:** [Who implemented the application and deployment.]
+
+A deployment-dashboard screenshot alone is not evidence of working software.
+Keep configuration secrets private; do not claim unrun deployment steps as verified.
 
 ## Setup and configuration
 
@@ -109,7 +129,7 @@ provider/runtime setup rather than requiring providers the project does not use.
 
 - **Demo URL:** [Public URL, or Not available.]
 - **Video URL:** [Optional recording URL, or Not available.]
-- **Demo steps:** [Problem/user, live journey, actual model call, normal case, limitation and code.]
+- **Demo steps:** [Problem/user, live journey, any actual model call, normal case, limitation and code; show the public deployment if entering PrimeCloud.]
 
 Label recordings, fallbacks and edited examples honestly. Follow the
 organiser-confirmed presentation format and time limit.

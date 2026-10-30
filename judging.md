@@ -7,7 +7,7 @@ description: "Prize-category criteria, proposed scoring weights and how winners 
 # Judging
 {: .no_toc }
 
-Prepare to show **what works, where AI contributes and what your team built**.
+Prepare to show **what works, what your team built and the evidence for each entered category**.
 
 1. TOC
 {: toc }
@@ -23,6 +23,7 @@ Prepare to show **what works, where AI contributes and what your team built**.
 }
 .judging-card h3 { margin-top: 0; }
 .judging-card--gemma { border-top-color: #47b8bf; }
+.judging-card--primecloud { border-top-color: #f0ad4e; }
 .judging-rubric { overflow-x: auto; }
 .judging-rubric table { width: 100%; min-width: 30rem; }
 .judging-rubric th:nth-child(2),
@@ -47,9 +48,9 @@ Eligibility is checked separately from marks. Only categories a team enters and 
 {: #category-specific-evaluation-lenses }
 
 {: .important }
-> **Proposed local scoring criteria — not official MLH-published scoring weights.** Use this guide to prepare your evidence and follow the event's published judging briefing for the criteria in use.
+> **Proposed organiser scoring criteria — not official MLH-published scoring weights or sponsor-published weights.** Use this guide to prepare your evidence and follow the event's published judging briefing for the criteria in use.
 
-The two confirmed MLH categories are distinct. **One submission may enter both when it meets both sets of requirements**; no duplicate project or repository is needed.
+The three event categories are distinct. **One submission may enter multiple categories when it meets each set of requirements**; no duplicate project or repository is needed. Gemma 4 is required only for its category; PrimeCloud deployment only for its category. DigitalOcean use is optional.
 
 <section class="judging-card" markdown="1">
 
@@ -112,6 +113,33 @@ For this award, follow the [published MLH Gemini API guidance](https://hacktober
 
 </section>
 
+<section class="judging-card judging-card--primecloud" markdown="1">
+
+### Category 3: Best Project Deployed on PrimeCloud
+
+**PrimeCloud. Build. Launch. Grow.** Demonstrate an original software application genuinely running on PrimeCloud. AI and Gemma 4 are not required.
+
+- **Live deployment:** Open the submitted public URL and demonstrate the intended application functionality.
+- **Platform evidence:** Explain and show how PrimeCloud runs the project, its deployment architecture and relevant configuration, without exposing secrets.
+- **Repository:** Provide public licensed GitHub source, a useful README, setup and deployment instructions, technologies and team contributions.
+
+A dashboard screenshot or a mention of PrimeCloud alone is **not sufficient evidence** of a working deployment. See the [entry requirements and confirmed prize]({{ site.baseurl }}/challenges/#best-project-deployed-on-primecloud).
+
+<div class="judging-rubric" role="region" aria-label="Best Project Deployed on PrimeCloud scoring criteria" tabindex="0" markdown="1">
+
+| Criterion | Weight | What judges assess |
+|---|:---:|---|
+| Innovation and problem relevance | 20 | An original contribution addressing a clear, real user need. |
+| Successful PrimeCloud deployment | 25 | A genuinely PrimeCloud-hosted application, accessible through the submitted public URL, demonstrating its intended functionality. |
+| Technical execution and software architecture | 20 | Sound implementation, understandable components and deployment configuration, with appropriate error handling and test evidence. |
+| Practical impact and scalability | 15 | Useful outcomes and a credible path to growth, with current limits and unmeasured assumptions stated honestly. |
+| Open-source quality and documentation | 20 | Public licensed code, attribution, team contributions and clear setup/deployment instructions another developer can follow. |
+| **TOTAL** | **100** | |
+
+</div>
+
+</section>
+
 ### Fair assessment across projects
 {: #fair-cross-track-evaluation }
 
@@ -140,7 +168,7 @@ Each criterion receives an **integer rating from 0 to 5**.
 
 **Weighted score = (Judge rating / 5) × Criterion weight.**
 
-For example, a rating of **4** on a **20-point** criterion earns **16 points**. Add the six weighted scores for a **category total out of 100 points**. A project entered in both categories receives separate evaluations, not a combined 200-point score.
+For example, a rating of **4** on a **20-point** criterion earns **16 points**. Add the weighted scores for that category: six criteria for each AI category, five for PrimeCloud. Each **category total is out of 100 points**. Multi-category entries receive separate evaluations; scores are never combined into a 300-point or overall category score.
 
 ## D. Final selection
 
@@ -158,14 +186,14 @@ Within each eligible category, the highest consolidated score under the approved
 ### Tie-breaking
 {: #deterministic-tie-breaking-protocol }
 
-For an MLH category tie, the non-conflicted panel reviews the tied projects' evidence against that category's published criteria and reaches a consensus under the approved category rules. No extra criteria or unpublished bonuses are added.
+For a prize-category tie, the non-conflicted panel reviews the tied projects' evidence against that category's published criteria and reaches a consensus under the approved category rules. No extra criteria or unpublished bonuses are added.
 
 For **local overall assessment only**, the existing order remains: higher average meaningful AI integration score, then higher average technical execution score, then panel consensus against the local rubric. This is not an official MLH category tie-breaker.
 
 ### Award structure
 {: #local-overall-awards }
 
-The two MLH category awards are separate from **iTech Club local awards**. Local overall recognition, where offered, uses these designations:
+The three category awards are separate from **iTech Club local awards** for overall recognition. The categories are not first, second and third places. Local overall recognition, where offered, uses these designations:
 
 - **First Place - Overall Winner**
 - **Second Place - Overall Runner-up**
@@ -175,4 +203,4 @@ Follow the event's award announcement for local recognition, eligibility and pri
 
 For local overall assessment, the separate weights are **problem relevance 15, AI integration 20, technical execution 25, originality 15, responsible AI 10 and open-source quality/reproducibility 15** (100 total), using the same rating scale and averaging method. The proposed category tables above do not replace that local rubric.
 
-One project may enter both MLH categories when eligible. Entry does not guarantee multiple prizes; the applicable published award rules govern prize allocation.
+One project may enter multiple categories when eligible. Entry does not guarantee multiple prizes; the applicable published award rules govern prize allocation.

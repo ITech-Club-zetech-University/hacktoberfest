@@ -15,10 +15,11 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 ## 1. Pre-Event Setup & Verification (T-Minus 24 Hours)
 
 - [ ] **Verify Event Listing:** Confirm venue, timing (**Friday 30 Oct 2026, 7:00 PM – Saturday 31 Oct 2026, 6:00 AM EAT**), and registration at [events.mlh.com/events/14735](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
-- [ ] **OrganizerHQ Configuration Check:** Both **Best Open-Source AI Project** and **Best Use of Gemma 4** are publicly listed. Verify them in authenticated HQ, including actual requirements and multiple-category winner policy.
+- [ ] **OrganizerHQ Configuration Check:** The two AI categories have public MLH listings. Verify them and add/verify **Best Project Deployed on PrimeCloud** through the authorised MLH process, including actual requirements, live URL, window/timezone, winner controls and multiple-category winner policy. A website change does not configure HQ.
+- [ ] **PrimeCloud Sponsor Briefing:** Confirm exact runtime/deployment guidance and prize redemption/account/billing terms. Preserve **PrimeCloud Production Plan – 3 Months**: the winning developer will receive three months of PrimeCloud Production, with access to the standard Production plan features and allowances. No invented credits or extra resources.
 - [ ] **Test Automated Checker:** Run `python3 -m unittest discover -s tests -v` on the organiser workstation; all tests must pass.
-- [ ] **Prepare Private Judge Sheets:** Use the [category score sheet](./_internal/organiser/category-score-sheet.md) for approved category scoring. Use the [37-column CSV](./_internal/organiser/judge-score-sheet.csv) only for separate local overall scores; delete its fictional examples and duplicate the blank row. Keep all completed reviews private and independent.
-- [ ] **Approve Judging Guidance:** Review/publish the [proposed category lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses). These and the retained local 100-point rubric are not an official MLH numerical rubric. Confirm separate local Top Three eligibility/prizes and the unresolved dual-prize policy.
+- [ ] **Prepare Private Judge Sheets:** Use the [AI category score sheet](./_internal/organiser/category-score-sheet.md) and separate [PrimeCloud sheet](./_internal/organiser/primecloud-score-sheet.md) for approved category scoring. Use the [37-column CSV](./_internal/organiser/judge-score-sheet.csv) only for separate local overall scores; delete its fictional examples and duplicate the blank row. Keep all completed reviews private and independent.
+- [ ] **Approve Judging Guidance:** Review/publish the [three proposed category rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses). These are not official sponsor- or MLH-published weights. Confirm separate local Top Three eligibility/prizes and the unresolved multiple-prize policy.
 - [ ] **Reconcile Schedule:** Public categories close at **6:00 AM EAT on 31 October**, also the event end. Confirm coding start/stop, submission opening and feasible demos/awards with the lead and in HQ; announce one schedule. Do not enforce the previous 5:00 AM cutoff or assume eight coding hours.
 - [ ] **Emergency Offline USB Drives:** Pre-load 2–3 USB drives with Ollama installers, quantized GGUF weights (`gemma4:e2b`, `gemma2:2b`), and common Python wheels.
 - [ ] **Confirm Judge Panel:** Confirm 3–5 faculty, mentor, or alumni judges and distribute rubric scoring anchors.
@@ -39,7 +40,7 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 
 - [ ] **7:00 PM:** Open venue doors; check in registered students on OrganizerHQ.
 - [ ] **Team Formation:** Match collaborators by interests and skills; confirm numerical limits and any separate local award restrictions.
-- [ ] **Opening Remarks:** Explain own-problem projects, the idea worksheet, optional inspiration, both prize categories and approved lenses, meaningful open AI, the separate local rubric and code of conduct. No primary track.
+- [ ] **Opening Remarks:** Explain own-problem projects, the idea worksheet, optional inspiration, all three prize categories and approved rubrics, the separate local rubric and code of conduct. Gemma is required only for its category, PrimeCloud only for its category and DigitalOcean is optional. PrimeCloud projects need no AI. No primary track.
 - [ ] **8:00 PM (Gemma Clinic):** Walk through Gemini API key creation, safe `.env` management, and local Ollama setup using the [Starter Kit]({{ site.baseurl }}/starter-kit/).
 
 ---
@@ -56,14 +57,16 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 
 - [ ] **Deadline Warnings:** Announce only timings verified against the saved live window.
 - [ ] **Submission Reminder:** One team member submits once and selects every qualifying category:
-  - **Best Open-Source AI Project** and/or **Best Use of Gemma 4**, as eligible.
+  - **Best Open-Source AI Project**, **Best Use of Gemma 4** and/or **Best Project Deployed on PrimeCloud**, as eligible.
   - Repository must be public with an OSI-approved `LICENSE` file.
   - README describes the problem, user, models, licences, setup, original contribution and test evidence; no track declaration.
+  - PrimeCloud entrants provide the working public URL, actual platform usage, architecture/configuration, deployment instructions, technologies and team contributions. No AI requirement.
+  - If PrimeCloud is absent from the actual form, resolve the official route with MLH and inform entrants before the deadline; no duplicate entry or assumed extension.
 - [ ] **Before cutoff:** Run administrative repository checker:
   ```bash
   python3 scripts/check_submission.py <repo-urls...>
   ```
-- [ ] **Manual Review:** Resolve actual hygiene issues; a legacy missing-Gemma warning does not exclude other open models from the broad category.
+- [ ] **Manual Review:** Resolve actual hygiene issues; legacy missing-Gemma/AI warnings do not exclude other open models from the broad category or non-AI software from PrimeCloud. The checker does not verify the new deployment category.
 - [ ] **Cutoff:** Verify the saved submissions and enforce only the reconciled, announced window.
 
 ---
@@ -71,6 +74,7 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 ## 6. Live Project Demos (Confirmed Session)
 
 - [ ] **Judge Briefing:** Review each category's requirements and approved lens, **Eligible/Pending/Ineligible/Not Entered** statuses, evidence and recusal. Show that text-only Gemma tools may qualify, DigitalOcean is optional and local inference capability does not establish API-prize eligibility.
+- [ ] **PrimeCloud Evidence:** Open the public URL, demonstrate intended functionality, verify actual PrimeCloud deployment and architecture plus README deployment steps. Dashboard screenshots alone are insufficient. Each category is out of 100; never combine three totals.
 - [ ] **Local Rubric:** Brief the six-criterion 100-point anchors only for confirmed local assessment. Mark **Scored** or **Not Assessed** explicitly; never insert zero for an unentered category.
 - [ ] **Timekeeping:** Confirm and announce the demo/Q&A allowance, then enforce it equally (working software, not slides in place of a demo).
 - [ ] **Submission guidance:** Verify the authenticated host window/timezone, categories and required fields against the [submission guide]({{ site.baseurl }}/submission/) before final publication.
@@ -81,7 +85,7 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 ## 7. Score Tabulation & Winner Marking (After Evaluation)
 
 - [ ] **Audit Sheets:** Follow the [tabulation procedure]({{ site.baseurl }}/judging/#score-tabulation-process): ask original judges to correct missing fields or arithmetic; exclude conflicted, duplicate or uncorrected incomplete sheets with a reason. Arrange another independent evaluation if fewer than two valid sheets remain (three preferred).
-- [ ] **Category Decisions:** Compare each eligible pool separately; resolve pending status and record human rationale with at least two valid independent reviews per contender. Confirm dual-prize policy; a local top score does not automatically win a category.
+- [ ] **Category Decisions:** Compare each eligible pool separately; resolve pending status and record human rationale with at least two valid independent reviews per contender. Confirm multiple-prize policy; a local top score does not automatically win a category.
 - [ ] **Local Averages Only:** Manually check valid **Scored** local totals; exclude **Not Assessed** blocks. Compare full precision and round displayed means only. No AI judge, automated aggregation service, ranking software or winner-selection algorithm.
 - [ ] **Local Tie-Breakers Only (if needed):**
   1. Higher average Meaningful open-source/open-weight AI integration score (out of 20)
@@ -91,7 +95,8 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
   1. Set **Announce Winners** toggle to **PRIVATE**.
   2. Filter by **Best Open-Source AI Project**, select winner, click **Mark Winner → Winner**, verify gold badge and **Winner saved**.
   3. Verify and mark **Best Use of Gemma 4** separately, following the confirmed multiple-category winner policy.
-  4. Preview the public view, switch to **PUBLIC**, and verify the published gallery before announcing in the room.
+  4. Review and save the **Best Project Deployed on PrimeCloud** decision separately using the configured, authorised controls; contact MLH if the category is missing.
+  5. Preview the public view, switch to **PUBLIC**, and verify the published gallery before announcing in the room.
 - [ ] **Local Awards:** Confirm whether separate Top Three recognition/prizes remain before recording or announcing them.
 - [ ] **Closing Ceremony:** Announce winners live; present awards and certificates.
 

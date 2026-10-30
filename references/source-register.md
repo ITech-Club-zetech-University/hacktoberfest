@@ -17,6 +17,42 @@ This repository-only document serves as the source-of-truth register for event o
 
 ## 1. Primary Sources & Verification Status
 
+### PrimeCloud third-category integration
+
+- The event organiser confirmed **Best Project Deployed on PrimeCloud** as the
+  third event category and identified [primecloud.cloud](https://primecloud.cloud).
+  This confirmation does not establish that MLH/OrganizerHQ is configured.
+  The earlier two-category observations below are retained as dated history.
+- The supplied prize is **PrimeCloud Production Plan – 3 Months**. The winning
+  developer will receive three months of PrimeCloud Production, with access
+  to the standard Production plan features and allowances. Prize redemption,
+  activation and account/billing conditions require sponsor confirmation.
+- Opened the official [documentation](https://primecloud.cloud/docs),
+  [quickstart](https://primecloud.cloud/docs/quickstart),
+  [signup](https://primecloud.cloud/signup),
+  [pricing](https://primecloud.cloud/pricing) and
+  [support](https://primecloud.cloud/support) destinations linked by the homepage.
+  Rendered browser content was used because simplified extraction omitted
+  most instructions.
+- The quickstart describes account/workspace, application preparation, services,
+  Console/CLI deployment and verification. Its CLI commands are explicitly
+  **illustrative**; no installer was executed and no account or deployment was
+  created. The [features](https://primecloud.cloud/features) page describes
+  Git/container/source deployment and resource monitoring.
+- Exact runtime/version support, repository connection, secrets, build/start,
+  public routing, persistence and monitoring controls are not verified technical
+  recipes. The participant guide provides general preparation and directs these
+  details to sponsor support rather than inventing commands or configuration.
+- PrimeCloud alone requires neither AI nor Gemma; its deployment requirement
+  does not extend to other categories. All three proposed organiser rubrics
+  remain separate from sponsor/MLH-published requirements and local overall scores.
+- Authenticated HQ category setup, closing window, official entry/winner controls,
+  multiple-prize policy and rubric approval remain in the
+  [publication decisions](../_internal/organiser/publication-decisions.md).
+- No tests, QA scripts, Jekyll builds or deployment checks were run for this
+  documentation update, as requested. Earlier validation records below do not
+  certify the PrimeCloud changes.
+
 ### Open-ended transition verification — 30 October 2026
 
 - The [live event](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club) lists **Best Open-Source AI Project** and **Best Use of Gemma 4**. See [both individual category links]({{ site.baseurl }}/challenges/#the-official-mlh-challenge). One submission may enter every qualifying category; whether one project may win both requires confirmation.

@@ -12,23 +12,56 @@ description: "Answers about original ideas, models, teams, prize categories, hum
 
 ## How do we turn an idea into a feasible project?
 
-Use the [seven-step framework]({{ site.baseurl }}/challenges/#develop-an-idea-quickly) and [problem statement worksheet]({{ site.baseurl }}/templates/problem-statement/). Define one primary user, one use case, one important AI role and one working journey. Reserve time for tests, documentation and rehearsal within the confirmed build period.
+Use the [seven-step framework]({{ site.baseurl }}/challenges/#develop-an-idea-quickly) and [problem statement worksheet]({{ site.baseurl }}/templates/problem-statement/). Define one primary user, one use case and one working journey; identify an important AI role if entering an AI category. Reserve time for tests, documentation, any required deployment and rehearsal within the confirmed build period.
 
 ## Do I need to be an AI expert?
 
-No. Start small and ask mentors for help. The [starter kit]({{ site.baseurl }}/starter-kit/) covers Gemma setup; you may choose another suitable open model for the broad category.
+No. Start small and ask mentors for help. The [starter kit]({{ site.baseurl }}/starter-kit/) covers Gemma setup; you may choose another suitable open model for the broad category. A PrimeCloud entry does not need AI.
 
 ## Can I come without a team?
 
 Yes. Solo hackers and teams are welcome, and staff can help match collaborators. Follow the team requirements provided at registration and the event briefing. See [team formation]({{ site.baseurl }}/rules/#team-size-formation).
 
-## Can one project enter both categories?
+## How many prize categories are available?
 
-**Yes, if it meets both sets of requirements.** Submit once through the event's [Challenges area](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges), selecting every qualifying category. The two are **Best Open-Source AI Project** and **Best Use of Gemma 4**. They are awards, not technical tracks. Entering both does not guarantee multiple prizes.
+**Three:** Best Open-Source AI Project (DigitalOcean), Best Use of Gemma 4 (Google DeepMind / Gemma), and Best Project Deployed on PrimeCloud (PrimeCloud). These are awards, not mandatory project tracks.
 
-## Must we use Gemma 4 or DigitalOcean?
+## Can my project compete in more than one category?
 
-For **Best Open-Source AI Project**, use Gemma 4 or another suitable open-source/open-weight model as an important functional component. **Best Use of Gemma 4** requires meaningful Gemma 4 use and its published conditions. **DigitalOcean is optional**, not mandatory hosting or a scoring advantage. See [both official category links and evidence requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
+**Yes, if it meets each set of requirements.** Submit once through the event's [Challenges area](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges), selecting every qualifying category. Use the same project and repository. Multiple-category entry does not guarantee multiple prizes. If PrimeCloud is missing from the form, ask staff before the deadline.
+
+## Do I need to use Gemma 4 for every category?
+
+**No.** Gemma 4 is required only for **Best Use of Gemma 4**, with its published API conditions. Best Open-Source AI Project can use another suitable open-source/open-weight model. PrimeCloud requires neither AI nor Gemma 4.
+
+## Do I need to use DigitalOcean for every category?
+
+**No. DigitalOcean is optional**, including for Best Open-Source AI Project. It is not mandatory hosting or a scoring advantage. See the [category requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
+
+## Do I need to deploy on PrimeCloud?
+
+**Only if entering Best Project Deployed on PrimeCloud.** PrimeCloud deployment is not required for either AI category.
+
+## What is required to qualify for Best Project Deployed on PrimeCloud?
+
+An original software application, public GitHub source with an appropriate open-source licence, a genuine working PrimeCloud deployment and public URL. Explain the technologies, PrimeCloud usage, architecture, setup/deployment steps and team contributions in the README. See the [full requirements and prize]({{ site.baseurl }}/challenges/#best-project-deployed-on-primecloud).
+
+## Must my PrimeCloud application have a publicly accessible URL?
+
+**Yes.** Judges must be able to open the submitted URL and see the intended functionality. A dashboard screenshot alone is insufficient. Do not expose secrets or private data.
+
+## Can an AI-powered application compete for the PrimeCloud prize?
+
+**Yes.** AI applications are welcome, as are non-AI web apps, APIs, SaaS products and developer tools. An AI application may also enter the AI categories if independently eligible.
+
+## Can I use other frameworks and technologies?
+
+**Yes.** Choose what fits your project and the category requirements. Before committing to a deployment stack, use the [PrimeCloud guide]({{ site.baseurl }}/starter-kit/#deploying-your-project-with-primecloud) and ask sponsor support about the exact runtime/version. Do not assume every technology is supported.
+
+## What is the PrimeCloud prize?
+
+**PrimeCloud Production Plan – 3 Months**  
+The winning developer will receive three months of PrimeCloud Production, with access to the standard Production plan features and allowances.
 
 ## What makes a strong Best Open-Source AI Project entry?
 
@@ -54,9 +87,9 @@ The event runs **30 October 2026, 7:00 PM → 31 October, 6:00 AM EAT**, at **Ze
 
 ## How are projects judged?
 
-Appointed humans review your implementation, demo and repository. The [judging guide]({{ site.baseurl }}/judging/) explains the proposed local 100-point category rubrics, rating scale and selection process. These are **not official MLH-published scoring weights**. Each category is evaluated separately; a local overall score does not automatically win either category.
+Appointed humans review your implementation, demo and repository. The [judging guide]({{ site.baseurl }}/judging/) explains the proposed organiser 100-point category rubrics, rating scale and selection process. These are **not official sponsor- or MLH-published scoring weights**. Each category is evaluated separately; scores are not combined, and a local overall score does not automatically win a category.
 
-Any **iTech Club local awards** are separate from the MLH categories. Follow the event's award announcement for local recognition and prize arrangements.
+Any **iTech Club local overall awards** are separate from the three category awards. Follow the event's award announcement for local recognition and prize arrangements.
 
 ## What if we do not qualify for one category?
 
@@ -91,4 +124,4 @@ Test your chosen runtime early. Local models need downloaded weights and suffici
 - [Submission Checklist]({{ site.baseurl }}/templates/submission-checklist/)
 - [Demo Preparation Guide]({{ site.baseurl }}/templates/demo-script/) — use the organiser-confirmed time limit.
 
-Follow the [OrganizerHQ submission guide]({{ site.baseurl }}/submission/) after preparing them. The templates do not replace the official form; authenticated host fields and timings still need organiser verification.
+Follow the [OrganizerHQ submission guide]({{ site.baseurl }}/submission/) after preparing them. The templates do not replace the official form; follow its current fields and the event briefing, and contact staff before the deadline if a category is missing.

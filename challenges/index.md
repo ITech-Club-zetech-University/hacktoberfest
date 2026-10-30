@@ -18,14 +18,15 @@ There are **no fixed project prompts, mandatory tracks or required application d
 ## Prize categories are awards, not project prompts
 {: #the-official-mlh-challenge }
 
-The live MLH event lists two categories:
+The event has three prize categories. The first two have public MLH category pages; PrimeCloud's event requirements are below. Select all applicable categories in the actual submission form; [contact staff if an option is missing]({{ site.baseurl }}/submission/).
 
 | Official category | What your project needs to demonstrate |
 |---|---|
 | **[Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3)** — DigitalOcean-supported | An original project with open-source/open-weight AI central to a useful working solution; public GitHub source and a suitable open-source code licence. Using an AI coding assistant alone is not enough. Agent skills must follow the Agent Skills Open Standard; a model harness must be original or a meaningful extension. Those conditions apply only if you build that type of project. |
 | **[Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d)** — Gemma / Google DeepMind | Meaningful, working **Gemma 4** integration. Explain its role and show the actual model call in code and the demo. Follow the [MLH partner Gemini API guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma); local-only inference or an older Gemma model does not by itself establish eligibility. |
+| **[Best Project Deployed on PrimeCloud](#best-project-deployed-on-primecloud)** — PrimeCloud | An original software application with public licensed GitHub source, a genuine working PrimeCloud deployment, a publicly accessible URL and clear setup/deployment documentation. AI and Gemma 4 are not required. |
 
-**One project can qualify for both categories. Submit once and select every category it qualifies for.** Do not submit duplicate forms or create duplicate repositories for the same project. Entry does not guarantee multiple prizes.
+**One project can qualify for multiple categories. Submit once and select every category it qualifies for.** Meet each category's requirements independently. Do not submit duplicate forms or create duplicate repositories for the same project. Entry does not guarantee multiple prizes.
 
 **DigitalOcean is a supported resource, not a mandatory technology choice.** You may build locally or use suitable hosting elsewhere. Provider choice alone does not establish open-source AI eligibility. Check [optional deployment and pricing resources]({{ site.baseurl }}/resources/#optional-digitalocean-resources) before incurring costs; no universal free-credit entitlement is promised.
 
@@ -65,11 +66,37 @@ Model variants differ. Consult the [current model card](https://ai.google.dev/ge
 
 Hosted-service terms are separate from the model licence. The current Gemini API terms include age/audience and permitted-use restrictions; unpaid services must not receive sensitive, confidential or personal information. Review the [starter kit's API terms check]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check) before choosing that route.
 
+### Best Project Deployed on PrimeCloud
+{: #best-project-deployed-on-primecloud }
+
+**Sponsor: [PrimeCloud](https://primecloud.cloud). Build. Launch. Grow.**
+
+Build an original software project and bring it to life with PrimeCloud. A web application, API, SaaS platform, AI application, developer tool or another creative software project can enter. **AI is optional.**
+
+To enter:
+
+1. Develop an original application that addresses a real problem.
+2. Publish its source in a **public GitHub repository** with an appropriate open-source code licence.
+3. **Deploy the application using PrimeCloud** and provide a working, publicly accessible deployment URL.
+4. Demonstrate the intended functionality at that URL. A deployment dashboard screenshot alone is insufficient.
+5. Explain how PrimeCloud runs the project, including deployment architecture and configuration.
+6. Include the technologies, setup and deployment instructions, team members and contributions in the README.
+7. Submit the repository and live URL using the [submission instructions]({{ site.baseurl }}/submission/#primecloud-entry-details).
+
+Show innovation, useful functionality, sound implementation and architecture, practical value and a credible path to growth. Document what works and any limitations; do not claim unmeasured scale.
+
+**PrimeCloud Production Plan – 3 Months**  
+The winning developer will receive three months of PrimeCloud Production, with access to the standard Production plan features and allowances.
+
+PrimeCloud deployment is compulsory **only for this category**. An AI application may also enter either AI category when it meets that category's distinct conditions. Gemma 4 is required only for its own award; DigitalOcean remains optional.
+
+Start with [Deploying Your Project with PrimeCloud]({{ site.baseurl }}/starter-kit/#deploying-your-project-with-primecloud) and the [official PrimeCloud resources]({{ site.baseurl }}/resources/#primecloud-resources).
+
 ### How the awards are judged
 
-Appointed **human judges** review each entered category separately. The [judging guide]({{ site.baseurl }}/judging/) explains the proposed local 100-point category rubrics, evidence, scoring scale and selection process. These are **not official MLH-published scoring weights**.
+Appointed **human judges** review each entered category separately. The [judging guide]({{ site.baseurl }}/judging/) explains the proposed organiser 100-point category rubrics, evidence, scoring scale and selection process. These are **not official sponsor- or MLH-published scoring weights**.
 
-Any **iTech Club local awards** are separate from the MLH categories. Follow the event's award announcement for local recognition and prize arrangements.
+Any **iTech Club local overall awards** are separate from these category awards. Follow the event's award announcement for local recognition and prize arrangements.
 
 ## Develop an idea quickly
 
@@ -98,11 +125,11 @@ Describe **one primary user and one specific use case**. Name the task, context 
 - Could a normal rule, form, database query or conventional application solve the problem more reliably and cheaply?
 - What will the model do, and what must remain under human control?
 
-Do not add a chatbot or LLM just to appear AI-powered. Use conventional software for deterministic tasks. If the idea does not need AI, narrow or reconsider the idea before entering an AI prize category. Define human review for uncertain or consequential outputs.
+Do not add a chatbot or LLM just to appear AI-powered. Use conventional software for deterministic tasks. If the idea does not need AI, it can enter the PrimeCloud category without a model; only enter an AI prize category when AI has a meaningful role. Define human review for uncertain or consequential outputs.
 
 ### Step 4 — Choose the model and architecture
 
-For **Best Open-Source AI Project**, choose Gemma 4 or another suitable open-source/open-weight model. For **Best Use of Gemma 4**, use Gemma 4 meaningfully and follow its category requirements above.
+Choose the simplest architecture for your project. For **Best Open-Source AI Project**, choose Gemma 4 or another suitable open-source/open-weight model. For **Best Use of Gemma 4**, use Gemma 4 meaningfully and follow its category requirements above. **PrimeCloud-only projects may skip model selection** and focus on their application runtime and deployment.
 
 | Decision | Trade-offs to check before committing |
 |---|---|
@@ -119,12 +146,12 @@ The [starter kit]({{ site.baseurl }}/starter-kit/) explains hosted Gemma through
 Choose:
 
 - **One core user journey.**
-- **One important AI capability.**
-- **One working application flow**, from input through validation/model use to a useful output.
+- **One important product capability**, including a meaningful AI role if entering an AI category.
+- **One working application flow**, from input through validation and any model use to a useful output.
 - **A small test dataset or realistic test scenarios**, using public, permitted or synthetic data.
 - **One demonstrable outcome achievable in the organiser-confirmed hack period.**
 
-Aim for a focused, demonstrable minimum viable product, not an unfinished commercial platform. Cut extra personas, dashboards, integrations and deployment work before cutting the core flow or testing.
+Aim for a focused, demonstrable minimum viable product, not an unfinished commercial platform. Cut extra personas, dashboards and optional integrations before cutting the core flow or testing. Reserve deployment time if entering PrimeCloud.
 
 ### Step 6 — Build, test and document
 
@@ -139,7 +166,7 @@ Compare actual results with expected behaviour and explain failures honestly. **
 ### Step 7 — Publish and submit
 
 - Publish your work in a **public GitHub repository** with a suitable [OSI-approved code licence](https://opensource.org/licenses).
-- Write a useful README: problem, primary user, original contribution, selected prize categories, architecture, exact model/version/runtime, model and dependency licences, data permissions, setup commands, tests and known limitations.
+- Write a useful README: problem, primary user, original contribution, selected prize categories, architecture, dependencies/licences, data permissions, setup commands, tests and limitations. Identify exact models and their terms if used; include the live URL, PrimeCloud usage, configuration and deployment steps if entering PrimeCloud.
 - Disclose AI coding tools separately from models used by the running application.
 - Keep secrets and personal/sensitive data out of the repository. Provide placeholder configuration and reproducible setup instructions.
 - Prepare a working demo and explain what is implemented versus planned. Use the [README template]({{ site.baseurl }}/templates/project-readme-template/), [submission checklist]({{ site.baseurl }}/templates/submission-checklist/) and [demo guide]({{ site.baseurl }}/templates/demo-script/).

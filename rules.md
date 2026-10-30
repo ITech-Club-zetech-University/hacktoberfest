@@ -47,7 +47,9 @@ Using Copilot, Gemini CLI or another coding tool alone does not qualify an ordin
 
 For **Best Open-Source AI Project**, Gemma 4 or another suitable open-source/open-weight model may be used. For **Best Use of Gemma 4**, demonstrate meaningful Gemma 4 use and follow the [category's API/evidence requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
 
-## Official category requirements and participant evidence
+## Official event categories and participant evidence
+
+Enter any of the **three categories** whose requirements your project meets. One project and repository may enter multiple categories; each is evaluated separately. Gemma 4 is required only for its own category, PrimeCloud deployment only for its own category, and DigitalOcean use is optional.
 
 ### Best Open-Source AI Project — DigitalOcean-supported
 
@@ -63,6 +65,14 @@ Text/image experiences, focused tools and rapid Gemini API prototyping are sugge
 
 Follow the [official category links, current model/API documentation and capability limits]({{ site.baseurl }}/challenges/#best-use-of-gemma-4). Variants differ in modality, hardware and performance. Check [service terms]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check) as well as model licensing.
 
+### Best Project Deployed on PrimeCloud — PrimeCloud
+
+Build an original software application, publish its source in a public GitHub repository under an appropriate open-source licence, and deploy it using PrimeCloud. Provide a **working, publicly accessible deployment URL** and demonstrate the intended functionality. A dashboard screenshot alone is insufficient.
+
+Explain how PrimeCloud was used, including deployment architecture/configuration. The README must include the technologies, setup and deployment instructions, team members and contributions. See the [complete requirements and confirmed prize]({{ site.baseurl }}/challenges/#best-project-deployed-on-primecloud).
+
+**AI and Gemma 4 are not required.** An AI application can also enter the AI categories if independently eligible. Other categories do not require PrimeCloud deployment.
+
 ## Code, model and data licences
 
 - **Open-weight is not automatically open-source:** downloadable weights may carry restrictions and do not establish that all model components are open source. Identify the actual model and link its licence/terms; the application licence does not relicense it.
@@ -76,7 +86,7 @@ Follow the [official category links, current model/API documentation and capabil
 | Item | Time |
 |---|---|
 | Event | Friday 30 October 2026, **7:00 PM** → Saturday 31 October, **6:00 AM EAT** |
-| Submission close | Saturday **31 October, 6:00 AM EAT**, on both official category pages |
+| Published MLH category close | Saturday **31 October, 6:00 AM EAT**, on the Open-Source AI and Gemma 4 category pages |
 
 Follow the event briefing for the coding period, workshops and your demo slot. Do not assume the entire event window is available for coding. Check the [official event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) and live category pages for updates; ask staff promptly if your submission window differs.
 
@@ -84,13 +94,13 @@ Scope one working user journey for the actual time remaining, reserving time for
 
 ## Submitting your project
 
-1. Publish a **public GitHub repository** with a suitable code licence and useful README. Include the problem, primary user, original contribution, selected prize categories, exact models, dependency/data disclosures, setup, tests and limitations.
+1. Publish a **public GitHub repository** with a suitable code licence and useful README. Include the problem, primary user, original contribution, selected prize categories, dependencies/data disclosures, setup, tests and limitations. Disclose exact models and their terms if used; include the live URL and deployment instructions if entering PrimeCloud.
 2. Test normal inputs, edge cases and at least one failure or uncertainty scenario. Prepare a working demo.
 3. Use the [README template]({{ site.baseurl }}/templates/project-readme-template/), [submission checklist]({{ site.baseurl }}/templates/submission-checklist/) and [demo guide]({{ site.baseurl }}/templates/demo-script/).
 4. One team member follows the [submission guide]({{ site.baseurl }}/submission/) through the event's [Challenges area](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges). Sign in and check that the project is saved.
-5. **Submit once and select every category the project qualifies for:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3) and/or [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d). No primary-track declaration is required.
+5. **Submit once and select every category the project qualifies for:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3), [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d) and/or [Best Project Deployed on PrimeCloud]({{ site.baseurl }}/challenges/#best-project-deployed-on-primecloud). No primary-track declaration is required. If a category is absent from the form, contact staff before the deadline.
 
-The public category close is **6:00 AM EAT on 31 October**, subject to a verified, clearly announced organiser change. Keep the repository public after submission.
+The two published MLH category pages close at **6:00 AM EAT on 31 October**, subject to a verified, clearly announced organiser change. Follow the actual form and event briefing for the PrimeCloud submission window; ask staff before that close if its category or deadline is missing. Do not assume extra time. Keep the repository public after submission.
 
 Provide evidence for each entered category in your repository and demo. An otherwise qualifying project using another suitable open model can enter Best Open-Source AI Project without using Gemma.
 
@@ -100,7 +110,7 @@ Appointed **human judges** review the implementation, working demo and repositor
 
 You are considered only for categories you enter and qualify for. An unmet condition in one category does not automatically exclude your project from another. Entering both does not require duplicate projects or repositories.
 
-Any **iTech Club local awards** are separate from both MLH categories. Follow the event's award announcement for local recognition and prize arrangements. Missing functionality affects the relevant criterion, not an unpublished fixed deduction.
+Any **iTech Club local overall awards** are separate from the three category awards. Follow the event's award announcement for local recognition and prize arrangements. Missing functionality affects the relevant criterion, not an unpublished fixed deduction.
 
 Entering multiple categories does not guarantee multiple prizes; the applicable published award rules govern prize allocation.
 

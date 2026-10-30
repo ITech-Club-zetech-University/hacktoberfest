@@ -2,7 +2,7 @@
 title: Project README Template
 nav_exclude: true
 permalink: /templates/project-readme-template/
-description: "Downloadable, stack-neutral Markdown README for an original AI project."
+description: "Downloadable, stack-neutral Markdown README for an original software or AI project."
 ---
 
 # Project README Template

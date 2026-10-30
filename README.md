@@ -8,10 +8,11 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 
 ## Event & Award Structure
 
-- **Open-ended projects:** Identify a real problem, choose your users and architecture, and build a focused original open-source AI MVP. No fixed prompts or primary tracks.
-- **Two live MLH categories:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3) (DigitalOcean-supported) and [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d) (Gemma / Google DeepMind). These are awards, not project prompts.
-- **Choice:** Other suitable open models are welcome in the broad category. DigitalOcean is optional. Follow Gemma 4/API requirements only when entering that category.
-- **Human judging:** Review both eligible category pools separately using the proposed local category rubrics, not official MLH-published weights. The retained local overall rubric is separate. Approval and award-policy decisions are tracked in [repository-only organiser documentation](./_internal/organiser/publication-decisions.md).
+- **Open-ended projects:** Identify a real problem, choose your users and architecture, and build a focused original software or AI MVP. No fixed prompts or primary tracks.
+- **Three event categories:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3) (DigitalOcean), [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d) (Google DeepMind / Gemma), and [Best Project Deployed on PrimeCloud](./challenges/index.md#best-project-deployed-on-primecloud) (PrimeCloud). The first two have verified public MLH listings; configure/verify PrimeCloud in authenticated HQ before accepting entries. These are awards, not project prompts.
+- **Choice:** Gemma 4 is required only for its category; PrimeCloud deployment only for its category, which does not require AI. Other suitable open models are welcome for Best Open-Source AI Project. DigitalOcean is optional.
+- **PrimeCloud prize:** **PrimeCloud Production Plan – 3 Months**. The winning developer will receive three months of PrimeCloud Production, with access to the standard Production plan features and allowances.
+- **Human judging:** Review each eligible category pool separately using proposed organiser rubrics, not official sponsor/MLH-published weights. Each category is out of 100; never combine three scores. The retained local overall rubric is separate. Approval and award-policy decisions are tracked in [repository-only organiser documentation](./_internal/organiser/publication-decisions.md).
 - **Submissions:** Submit once through OrganizerHQ and select every qualifying category. The live pages display **31 October, 6:00 AM EAT**; reconcile earlier local timings before publishing the coding/demo schedule. Team-size policy also requires confirmation.
 
 ---
@@ -22,9 +23,9 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 |---|---|
 | `index.md` | Home page and overview of the hack day |
 | `rules.md` | Official MLH rules, local award policies, teams, timeline, and submission guidelines |
-| `starter-kit.md` | Optional-stack guide: hosted/local Gemma 4, architecture, DigitalOcean, safe release and time-boxed workflow |
+| `starter-kit.md` | Optional-stack guide: hosted/local Gemma 4, architecture, DigitalOcean, PrimeCloud deployment preparation, safe release and time-boxed workflow |
 | `examples/gemma/` | Runnable Python/JavaScript hosted text/image examples, local Ollama client and scoped dependency manifests |
-| `resources.md` | Curated documentation links for Gemma, Agent Skills, and MLH |
+| `resources.md` | Official Gemma, DigitalOcean, PrimeCloud, Agent Skills, GitHub and MLH resources |
 | `challenges/` | Current open-ended participant project brief |
 | `_internal/archives/challenges/` | Five full historical briefs, preserved but excluded from publication |
 | `inspiration.md` | Optional problem-led examples, not mandatory tracks |
@@ -59,6 +60,7 @@ The runbook, organiser checklist, source register, QA report and `_internal/` ar
 - **[Source-of-Truth Register](./references/source-register.md):** Verified reference log for event policies, API endpoints, model tags, and license terms.
 - **[Publication decisions](./_internal/organiser/publication-decisions.md):** Outstanding approvals and confirmed public facts.
 - **[Category score sheet](./_internal/organiser/category-score-sheet.md):** Independent sheets matching the proposed category rubrics.
+- **[PrimeCloud score sheet](./_internal/organiser/primecloud-score-sheet.md):** Separate five-criterion proposed rubric and genuine deployment evidence.
 - **[Local score CSV](./_internal/organiser/judge-score-sheet.csv):** Retained local-only numerical template with fictional examples.
 - **Privacy & Access Control:** Completed judge scoring sheets, internal deliberation notes, and incident records must be maintained exclusively in an internal, access-controlled organizer drive. Never commit completed scores or private attendee data to git.
 
