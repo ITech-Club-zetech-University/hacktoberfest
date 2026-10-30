@@ -1,14 +1,14 @@
 ---
 title: "Source-of-Truth Register"
-parent: Organiser Runbook
-nav_order: 2
-permalink: /references/source-register/
+nav_exclude: true
+search_exclude: true
+published: false
 description: "Organiser source register, technical verification status, and review log."
 ---
 
 # Organiser Source Register & Technical Verification Log
 
-This public document serves as the source-of-truth register for event organisers and documentation maintainers. It records primary documentation sources, verification dates and review notes. It must not contain confidential judge records or account information.
+This repository-only document serves as the source-of-truth register for event organisers and documentation maintainers. It is excluded from the Jekyll website, but remains visible in the public repository. It records primary documentation sources, verification dates and review notes. It must not contain secrets, private contact information, confidential judge records or account information.
 
 {: .note }
 > **Maintainer Note:** This file is intended for organisers and site maintainers. Keep this updated whenever model families, API endpoints, SDK versions, or MLH event rules change.

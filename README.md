@@ -33,7 +33,7 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 | `judging.md` | Separate category eligibility/lenses, local 100-point rubric, independent reviews and human winner recording |
 | `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
 | `faq.md` | Frequently asked questions |
-| `organizer-runbook.md` | Public event runbook, operational checklists, staff roles, and MLH winner marking workflow |
+| `organizer-runbook.md` | Repository-only event runbook, excluded from the published Jekyll site |
 | `organizer-checklist.md` | Chronological quick-reference checklist for event leads and mentors |
 | `templates/project-readme-template.md` | Copy-and-fill `README.md` template for participant repositories |
 | `templates/demo-script.md` | Seven-part working demo flow using organiser-confirmed presentation/Q&A allowances |
@@ -50,6 +50,8 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 ## For Organisers
 
 Operational documentation and administrative tools for running the hackathon:
+
+The runbook, organiser checklist, source register and QA report are excluded from the Jekyll build. They do not appear in website navigation, search or published pages. Their sources remain in this public repository: exclusion does not make them confidential. Never add secrets or private operational data.
 
 - **[Organiser Runbook](./organizer-runbook.md):** Complete master timeline, staff roles, offline contingency procedures, score tabulation, and official MLH winner marking steps.
 - **[Organiser Quick-Reference Checklist](./organizer-checklist.md):** Chronological checklist from T-minus 24 hours through doors opening (6:30 PM) to post-event reporting.

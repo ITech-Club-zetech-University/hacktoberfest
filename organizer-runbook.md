@@ -1,8 +1,8 @@
 ---
 title: Organiser Runbook
-nav_order: 9
-has_children: true
-permalink: /organizer-runbook/
+nav_exclude: true
+search_exclude: true
+published: false
 description: "Operational event runbook, organizer checklists, roles, timeline, and winner marking workflow."
 ---
 
@@ -12,8 +12,8 @@ description: "Operational event runbook, organizer checklists, roles, timeline, 
 This document provides operational guidance for event organizers, mentors, and the judging committee for the **Hacktoberfest Hack Day Nairobi × iTech Club**.
 
 {: .note }
-> **Public Operational Guidance:**  
-> This runbook is published in the open repository to ensure community transparency in governance, timeline management, and scoring procedures. In compliance with event privacy standards, it contains **no private attendee data, personal phone numbers, secret API tokens, or unpublished judge marks**. Completed scoring records and incident logs are maintained exclusively in an internal, access-controlled organizer drive.
+> **Repository-only organiser documentation:**  
+> This runbook is excluded from the Jekyll website, but remains visible in the public GitHub repository. Exclusion is not access control. Do not add passwords, API keys, private contact information, attendee data or unpublished judge marks. Keep completed scoring records and incident logs in an access-controlled organiser drive.
 
 1. TOC
 {: toc }

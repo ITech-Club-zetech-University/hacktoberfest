@@ -1,8 +1,8 @@
 ---
 title: "Quick-Reference Checklist"
-parent: Organiser Runbook
-nav_order: 1
-permalink: /organizer-checklist/
+nav_exclude: true
+search_exclude: true
+published: false
 description: "Chronological operational checklist for event hosts, leads, and mentors running Hack Day."
 ---
 

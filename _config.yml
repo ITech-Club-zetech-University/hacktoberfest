@@ -58,6 +58,10 @@ kramdown:
       line_numbers: false
 
 exclude:
+  - organizer-runbook.md
+  - organizer-checklist.md
+  - references/source-register.md
+  - QA-REPORT.md
   - scripts/
   - tests/
   - README.md
