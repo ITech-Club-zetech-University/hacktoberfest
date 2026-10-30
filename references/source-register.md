@@ -28,6 +28,17 @@ This public document serves as the source-of-truth register for event organisers
 
 The dated table below retains historical verification notes; this transition update supersedes its earlier event-format, schedule and blanket licensing assumptions.
 
+### Practical starter verification — 30 October 2026
+
+- The [hosted Gemma guide](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api) still lists `gemma-4-31b-it` and `gemma-4-26b-a4b-it`; inline image request construction follows the official SDK/image documentation.
+- Published package metadata identifies **google-genai 2.34.0 (Python 3.11+)** and **@google/genai 2.32.0 (Node 20+ SDK requirement)**. The runnable Node example deliberately uses **Node 22+** for its environment-file command. Scoped manifests pin these SDKs; no event-wide language requirement is imposed.
+- The [Google Ollama guide](https://ai.google.dev/gemma/docs/integrations/ollama) documents `gemma4:e2b`, `gemma4:e4b`, `gemma4:26b` and `gemma4:31b`. Current E2B/E4B tag pages display approximately **7.5/9.5 GB**; these supersede older starter download estimates and are not memory/performance guarantees.
+- Google's older MLX page marks itself deprecated and points to **gemma.ai**. Current [MLX](https://gemma.ai/deployment/mlx/) and [vLLM](https://gemma.ai/deployment/vllm/) guidance was checked before linking; MLX targets Apple silicon, while vLLM is intended for concurrent/high-throughput serving.
+- DigitalOcean's current documentation separates [Inference](https://docs.digitalocean.com/products/inference/), [Managed Agents](https://docs.digitalocean.com/products/managed-agents/), [Knowledge Bases](https://docs.digitalocean.com/products/knowledge-bases/) and [GPU Droplets](https://docs.digitalocean.com/products/gpu-droplets/). [App Platform](https://docs.digitalocean.com/products/app-platform/) supports Git repositories/container images.
+- The public [My Hacktoberfest route](https://hacktoberfest.com/my/) responds, but the authenticated DigitalOcean offer was **not inspected**. No credit amount, expiry, account entitlement or free usage is certified. The guessed DigitalOcean `/hacktoberfest` promotion URL returned 404 and is not published as a resource.
+- [Responsible Generative AI Toolkit](https://ai.google.dev/responsible/docs) guidance was rechecked; its stated current focus is English text-to-text, not certification of every modality/application.
+- Real pinned SDKs are used with **offline mock HTTP transports** to check request construction and failure handling. No live paid inference, real image understanding, model download, hardware benchmark, promo redemption or authenticated HQ setting is certified. Run live smoke tests only with an eligible account/permitted data or a downloaded local model.
+
 ### Category and judging alignment — 30 October 2026
 
 The two individual MLH category descriptions, open-source prize requirements, Gemma partner winner guidance, hosted model guide, model card and local runtime guides were rechecked. The hosted guide still identifies **`gemma-4-31b-it`** and **`gemma-4-26b-a4b-it`**. This verifies documentation, not a live inference call, account quota or authenticated HQ setting.

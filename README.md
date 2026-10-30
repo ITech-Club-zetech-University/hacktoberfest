@@ -22,7 +22,8 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 |---|---|
 | `index.md` | Home page and overview of the hack day |
 | `rules.md` | Official MLH rules, local award policies, teams, timeline, and submission guidelines |
-| `starter-kit.md` | Step-by-step Gemma setup guide (Gemini API and local Ollama) |
+| `starter-kit.md` | Optional-stack guide: hosted/local Gemma 4, architecture, DigitalOcean, safe release and time-boxed workflow |
+| `examples/gemma/` | Runnable Python/JavaScript hosted text/image examples, local Ollama client and scoped dependency manifests |
 | `resources.md` | Curated documentation links for Gemma, Agent Skills, and MLH |
 | `challenges/` | Open-ended project brief and five preserved, nav/search-excluded historical briefs |
 | `inspiration.md` | Optional problem-led examples, not mandatory tracks |
@@ -96,6 +97,22 @@ bundle exec jekyll serve
 ```bash
 docker run --rm -v "$(pwd)":/app -w /app ruby:3.2-alpine sh -c "apk add --no-cache build-base && bundle install && bundle exec jekyll build"
 ```
+
+### Checking starter examples offline
+
+Install only the dependencies for the language being checked; do not install both stacks merely to attend the event:
+
+```bash
+# In an isolated Python environment:
+python -m pip install -r examples/gemma/requirements.txt
+PYTHONPATH=tests python -m unittest test_starter_examples test_site_qa -v
+
+# If checking the JavaScript example:
+npm ci --prefix examples/gemma
+node --test tests/starter_examples.test.mjs
+```
+
+These tests use fake credentials and mock transports, not paid API calls or model downloads. Python hosted checks explicitly skip if the optional SDK dependencies are absent; run with the declared dependencies to verify that path. The local example uses only the standard library. See the [starter kit](./starter-kit.md) for live smoke-test instructions and the verification boundary.
 
 ### Running the preliminary eligibility checker
 

@@ -5,6 +5,7 @@ import csv
 import re
 import os
 import sys
+import tempfile
 from pathlib import Path
 
 # Ensure repository root and scripts directory are on sys.path
@@ -166,6 +167,43 @@ class TestJekyllSiteQA(unittest.TestCase):
             "Open-weight and open-source are not interchangeable labels",
         ):
             self.assertIn(text, brief)
+
+    def test_starter_launchpad_uses_real_example_files_and_safe_configuration(self):
+        starter = (repo_root / "starter-kit.md").read_text(encoding="utf-8")
+        fm, _ = qa_site.parse_front_matter(starter)
+        self.assertEqual(fm["nav_order"], "3")
+        for name in ("hosted.py", "hosted.mjs", "ollama.py", ".env.example", ".gitignore"):
+            self.assertTrue((repo_root / "examples" / "gemma" / name).is_file())
+            self.assertIn(f"include_relative examples/gemma/{name}", starter)
+        self.assertEqual(
+            (repo_root / "examples" / "gemma" / ".env.example").read_text().strip(),
+            "GEMINI_API_KEY=replace_with_your_api_key",
+        )
+        ignore = (repo_root / "examples" / "gemma" / ".gitignore").read_text().splitlines()
+        self.assertIn(".env", ignore)
+        self.assertIn("!.env.example", ignore)
+        for section in (
+            "## 1. Prerequisites", "## 2. Choose an AI execution path",
+            "## 3. Choose an application architecture", "## 4. Optional DigitalOcean",
+            "## 5. Open-source release", "## 6. Responsible AI", "## 7. Time-boxed",
+        ):
+            self.assertIn(section, starter)
+        self.assertIn("https://hacktoberfest.com/my/", starter)
+        self.assertIn("not a RAM requirement or performance guarantee", starter)
+        self.assertIn("offline", starter)
+        config = (repo_root / "_config.yml").read_text()
+        self.assertIn("examples/gemma/node_modules/", config)
+        self.assertIn("examples/gemma/.venv/", config)
+
+    def test_site_qa_ignores_local_example_dependencies(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "index.md").write_text("---\ntitle: Home\n---\n# Home\n")
+            for name in ("node_modules", ".venv", "__pycache__"):
+                dependency = root / "examples" / "gemma" / name
+                dependency.mkdir(parents=True)
+                (dependency / "README.md").write_text("### Not a published page\n[bad](missing.md)")
+            self.assertEqual(qa_site.audit_repository(directory), 0)
 
 
 if __name__ == "__main__":

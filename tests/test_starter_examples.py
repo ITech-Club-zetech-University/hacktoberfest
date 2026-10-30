@@ -129,7 +129,7 @@ class TestHostedGemmaExample(unittest.TestCase):
                 )
         self.assertIn("gemma-4-31b-it:generateContent", str(requests[0].url))
         parts = json.loads(requests[0].content)["contents"][0]["parts"]
-        self.assertEqual(parts[1]["inlineData"]["mimeType"], "image/png")
+        self.assertEqual(parts[1]["inlineData"]["mime_type"], "image/png")
         self.assertTrue(parts[1]["inlineData"]["data"])
 
     def test_empty_model_text_is_not_success(self):
@@ -165,6 +165,20 @@ class TestHostedGemmaExample(unittest.TestCase):
                     with contextlib.redirect_stderr(errors):
                         self.assertEqual(self.example.main(), 1)
                     self.assertIn("connection failed", errors.getvalue())
+
+    def test_api_failure_has_nonzero_status_without_logging_key(self):
+        error = self.example.errors.APIError(
+            429, {"error": {"code": 429, "message": "offline quota test"}}
+        )
+        key = "offline-test-not-a-real-key"
+        with patch.dict(os.environ, {"GEMINI_API_KEY": key}, clear=True):
+            with patch.object(self.example, "load_dotenv"), patch("sys.argv", ["hosted.py"]):
+                with patch.object(self.example.genai, "Client", side_effect=error):
+                    errors = io.StringIO()
+                    with contextlib.redirect_stderr(errors):
+                        self.assertEqual(self.example.main(), 1)
+                    self.assertIn("status 429", errors.getvalue())
+                    self.assertNotIn(key, errors.getvalue())
 
 
 if __name__ == "__main__":

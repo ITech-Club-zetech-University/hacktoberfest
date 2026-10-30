@@ -63,6 +63,8 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 - **[Ollama Integration Guide](https://ai.google.dev/gemma/docs/integrations/ollama)** — Optional local inference; technical support does not prove partner-prize eligibility.
 - **[llama.cpp Integration Guide](https://ai.google.dev/gemma/docs/integrations/llamacpp)** — *Use this when* optimizing high-performance CPU/GPU local execution with GGUF checkpoints.
 - **[LM Studio Integration](https://ai.google.dev/gemma/docs/integrations/lmstudio)** — *Use this when* you prefer a visual desktop GUI runner to test prompts locally without writing code.
+- **[MLX on the current Gemma hub](https://gemma.ai/deployment/mlx/)** — Optional Apple-silicon/unified-memory inference; community checkpoint conversions vary.
+- **[vLLM on the current Gemma hub](https://gemma.ai/deployment/vllm/)** — Advanced concurrent/high-throughput serving, not required for a small local prototype.
 - **[LiteRT-LM Overview](https://ai.google.dev/edge/litert-lm/overview)** — *Use this when* deploying ultra-compact quantized models to mobile devices or embedded hardware.
 
 ---
@@ -103,6 +105,9 @@ DigitalOcean supports **Best Open-Source AI Project** but is **not mandatory**. 
 - [MLH DigitalOcean partner hub](https://www.mlh.com/partners/digitalocean) — General partner resources, not additional category rules.
 - [DigitalOcean Inference](https://docs.digitalocean.com/products/inference/) — Optional hosted model services; verify whether the selected model meets your category requirements.
 - [App Platform](https://docs.digitalocean.com/products/app-platform/) — Optional application deployment.
+- [Knowledge Bases](https://docs.digitalocean.com/products/knowledge-bases/) — Managed retrieval only if the problem needs grounded answers over permitted content.
+- [Managed Agents](https://docs.digitalocean.com/products/managed-agents/) and [GPU Droplets](https://docs.digitalocean.com/products/gpu-droplets/) — Optional advanced workflows/compute; check availability, maturity and cost.
+- [My Hacktoberfest](https://hacktoberfest.com/my/) — Sign in yourself to inspect the current DigitalOcean promo offer, eligibility, expiry, limits and billing terms. No credit amount is assumed.
 - [Inference pricing](https://docs.digitalocean.com/products/inference/details/pricing/) — Check usage charges, credit/balance requirements and account access before spending. Event credits are not assumed.
 
 ---
