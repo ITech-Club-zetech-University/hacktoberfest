@@ -68,27 +68,26 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 
 ## 6. Live Project Demos (5:00 AM – 5:45 AM EAT)
 
-- [ ] **Judge Briefing:** Review 100-point rubric anchors, time limits (2 min demo + 1 min Q&A), and conflict recusal rule.
+- [ ] **Judge Briefing:** Review 100-point rubric anchors (6 criteria, 0–5 scale, weighted conversion), time limits (2 min demo + 1 min Q&A), and mandatory conflict recusal rule.
 - [ ] **Timekeeping:** Enforce strict 2-minute demonstration limit per team (no slide decks; live code only).
-- [ ] **Independent Scoring:** Judges silently enter marks across the 5 categories on individual score sheets.
+- [ ] **Independent Scoring:** Judges silently enter ratings (0–5) across the 6 criteria on individual score sheets without discussing marks.
 
 ---
 
 ## 7. Score Tabulation & Winner Marking (5:45 AM – 6:00 AM EAT)
 
-- [ ] **Audit Sheets:** Ensure at least 2 completed score sheets per team; discard any incomplete sheets.
-- [ ] **Compute Averages:** Tabulate arithmetic mean of completed judge totals.
+- [ ] **Audit Sheets:** Ensure at least 3 completed independent score sheets per team where judging capacity allows (minimum 2 valid sheets required); discard any incomplete sheets.
+- [ ] **Compute Averages:** Tabulate arithmetic mean of completed judge totals in private organiser sheet (no automated ranking software).
 - [ ] **Apply Tie-Breakers (if needed):**
-  1. Use of Gemma (0–25)
-  2. Technical execution (0–25)
-  3. Problem & impact (0–20)
-  4. Open-source quality (0–15)
+  1. Higher Meaningful Gemma/open-weight AI integration score (out of 20)
+  2. Higher Technical execution and working demonstration score (out of 25)
+  3. Deliberation by the judging panel, with decision and rationale documented
 - [ ] **Mark Official MLH Winner in OrganizerHQ:**
   1. Set **Announce Winners** toggle to **PRIVATE**.
   2. Filter by **Best Open-Source AI Project**, select winner, click **Mark Winner → Winner**, verify gold badge.
-  3. If partner prize confirmed, mark partner winner.
+  3. If partner prize confirmed and active, mark partner winner.
   4. Switch toggle to **PUBLIC**.
-- [ ] **Record Local Top 3 Overall:** Note 1st, 2nd, and 3rd Place Overall for iTech Club awards.
+- [ ] **Record Local Top 3 Overall:** Note First Place – Overall Winner, Second Place – Overall Runner-up, and Third Place – Overall Third Place for iTech Club awards.
 - [ ] **Closing Ceremony:** Announce winners live; present awards and certificates.
 
 ---

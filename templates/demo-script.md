@@ -7,23 +7,27 @@ description: "Structured 2.5-minute presentation script and track-specific demo 
 
 # 2–3 Minute Live Demo Script Template
 
-This guide provides a time-boxed, structured script for presenting your hackathon project to the judge panel during the live demo session (5:00–5:45 AM EAT).
+This guide provides a time-boxed, structured script for presenting your hackathon project to the appointed human judge panel during the live demonstration session (proposed timing: 5:00–5:45 AM EAT; confirmed presentation schedules will be announced by organisers on the day).
 
 {: .important }
-> **No Slide Decks Required:** Judges want to see working software running live on screen, not pitch decks or pre-rendered marketing videos. Live execution, honest explanations of limitations, and deep code comprehension will score far higher than polished slides.
+> **Human-Led Evaluation & Live Software First:**
+> - **No Slide Decks Required:** Judges want to see working software running live on screen, not pitch decks or pre-rendered marketing videos. Live execution, honest explanations of limitations, and deep code comprehension will score far higher than polished slides.
+> - **Standardised 6-Criteria Rubric:** Each demo directly addresses the 6 criteria evaluated on the [Judge Score Sheet]({{ site.baseurl }}/judging/#the-100-point-score-sheet) (Problem relevance 15, Gemma integration 20, Technical execution 25, Originality 15, Responsible AI & safety 10, Open-source quality 15).
+> - **Time Management:** Presentations are strictly capped at 2 minutes of demonstration followed by 1 minute of judge Q&A. Proposed session times are subject to on-the-day room assignments and confirmed event scheduling.
 
 ---
 
 ## Universal 2.5-Minute Demo Flow
 
-| Timing | Phase | What to Say and Show |
-|---|---|---|
-| **0:00 – 0:30** (30s) | **Problem & Target User** | State the problem in one sentence, introduce your team, and declare your **single primary iTech Club challenge track**. |
-| **0:30 – 0:50** (20s) | **Gemma's Exact Role** | State exactly what Gemma does, which model variant is running, and whether inference is hosted (Gemini API) or local (Ollama). |
-| **0:50 – 1:35** (45s) | **Core Live Workflow** | Run a standard, normal end-to-end use case live. Show inputs, model processing, and the generated output on screen. |
-| **1:35 – 2:05** (30s) | **Track Acceptance Test** | Demonstrate the specific observable acceptance test matching your declared track (see track scenarios below). |
-| **2:05 – 2:25** (20s) | **Limitation & Safe Fallback** | Demonstrate an intentional edge case, failure state, or graceful fallback. Be completely honest about what doesn't work yet. |
-| **2:25 – 2:45** (20s) | **What We Built vs. Incomplete** | Summarize the substantial code written overnight vs. roadmap items, and open the floor for judge Q&A (1 minute). |
+| Timing | Phase | Evaluation Criterion Alignment | What to Say and Show |
+|---|---|---|---|
+| **0:00 – 0:30** (30s) | **Problem & Target User** | *Problem relevance & practical impact (15 pts)* | State the problem in one sentence, introduce your team, and declare your **single primary iTech Club challenge track**. |
+| **0:30 – 0:50** (20s) | **Gemma's Exact Role** | *Meaningful Gemma integration (20 pts)* | State exactly what Gemma does, which model variant is running, and whether inference is hosted (Gemini API) or local (Ollama). |
+| **0:50 – 1:35** (45s) | **Core Live Workflow** | *Technical execution & working demo (25 pts)* | Run a standard, normal end-to-end use case live. Show inputs, model processing, and generated output live on screen. |
+| **1:35 – 2:05** (30s) | **Track Acceptance Test & Originality** | *Originality (15 pts) & Technical execution* | Demonstrate the specific observable acceptance test matching your declared track (see track scenarios below) and highlight novel approaches. |
+| **2:05 – 2:25** (20s) | **Limitation, Safety & Fallback** | *Responsible AI, privacy & safety (10 pts)* | Demonstrate an intentional edge case, failure state, data boundary, or graceful fallback. Be completely honest about limitations. |
+| **2:25 – 2:45** (20s) | **What We Built vs. Incomplete** | *Open-source quality & reproducibility (15 pts)* | Summarize code written overnight vs. roadmap items, point to repository setup instructions, and transition to judge Q&A. |
+| **2:45 – 3:45** (60s) | **Judge Q&A** | *All Criteria* | Answer 1–2 technical questions from the judges focusing on code architecture and implementation details. |
 
 ---
 

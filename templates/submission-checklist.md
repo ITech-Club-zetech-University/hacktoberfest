@@ -30,7 +30,7 @@ Copy this checklist into your team repository's `README.md` or a tracking GitHub
 
 ## 2. Challenge-Specific Acceptance Criteria
 
-Complete the section matching your declared **primary** iTech Club challenge track. These checks provide direct evidence for judges evaluating **Technical execution & working demo** (0–25) and **Use of Gemma** (0–25) on the [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet) (they are not hidden bonus points):
+Complete the section matching your declared **primary** iTech Club challenge track. These checks provide direct evidence for judges evaluating **Technical execution & working demo** (Weight: 25), **Meaningful Gemma/open-weight AI integration** (Weight: 20), **Responsible AI & safety** (Weight: 10), and **Open-source quality** (Weight: 15) on the [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet) (they are not hidden bonus points):
 
 ### Track 1: Build a Gemma Agent Skill
 - [ ] `SKILL.md` present inside a dedicated skill folder (or repo root) adhering to the [Agent Skills Open Standard](https://agentskills.io/specification).

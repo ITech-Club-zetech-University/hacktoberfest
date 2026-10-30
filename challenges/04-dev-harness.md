@@ -104,7 +104,10 @@ These optional enhancements will distinguish advanced entries but are **not** re
 
 ## 11. Challenge-specific evaluation notes
 
-These notes supplement the 100-point rubric in [`judging.md`]({{ site.baseurl }}/judging/):
-- **Tool-calling integrity (under Technical Execution):** Judges will verify that a real tool executed and that Gemma dynamically chose the tool and arguments. Static responses or simulated text outputs will score poorly.
-- **Safety implementation (under Technical Execution):** Judges will test that the harness cannot be coerced into running dangerous arbitrary commands or writing files without confirmation.
-- **Substantial delta (for forks, under Originality):** If an existing harness was forked, judges will review git commits to verify that your team contributed substantive original logic during the event.
+These notes guide judges when assessing projects in this track against the general 100-point rubric in [`judging.md`]({{ site.baseurl }}/judging/). They do not constitute bonus points or separate scoring categories:
+
+- **What the team must demonstrate (under Technical Execution):** During the live demo, the team must demonstrate a closed tool-call loop: the user gives a development task (e.g., "run tests and fix the failure" or "lint this directory"), Gemma decides which bounded tool to call, generates valid arguments, pauses for user confirmation for modifying actions, executes the tool, and synthesizes the result.
+- **What evidence judges should inspect (under Technical Execution & Responsible AI):** Judges will inspect tool definitions (strict JSON/Pydantic schemas), execution logs proving tool dispatch, safety confirmation prompts before modifying files or running test runners, and git history (if forking an upstream framework, judges inspect git diffs to verify substantial original code written during the event).
+- **What constitutes a working implementation:** A functional agent harness that interfaces with a real local file tree, test runner, or git repository. Simulating tool calling by printing fake markdown code blocks without executing real actions fails the working implementation threshold.
+- **How Gemma must contribute to the solution (under Meaningful Gemma Integration):** Gemma must drive the autonomous decision-making (deciding which tool to use, constructing tool parameters, inspecting error logs, and deciding the next step). Hardcoded conditional trees that do not rely on Gemma's reasoning cannot achieve high marks.
+- **Relevant limitations and safety considerations (under Responsible AI & Safety):** Strict sandboxing and safety boundaries are mandatory: the harness must NEVER expose unvalidated `os.system()` or arbitrary shell execution. Destructive actions (overwriting files, resetting git) must require explicit confirmation. Teams must operate on synthetic test repositories rather than live production codebases.

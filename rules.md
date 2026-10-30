@@ -137,24 +137,34 @@ To be considered for awards, every team must complete **both** submission steps 
 
 ## How winners are chosen & award structure
 
+The hackathon operates under a **strictly human-led judging system**. There is no automated project evaluation, no AI-based project scoring, and no automated leaderboard. All projects are evaluated by an appointed panel of human judges using a published common rubric and standardised judge score sheets.
+
 1. **Local iTech Club Recognition (Top Three Overall):**
-   - Evaluated by a human judge panel using the published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet) during live, 2-minute demos.
-   - All eligible local submissions across all 5 preset tracks are ranked together on a single leaderboard using the common rubric.
-   - The top three highest-scoring teams are awarded **1st Place, 2nd Place, and 3rd Place Overall**.
-   - Preset track acceptance tests inform the rubric (specifically Technical Execution and Use of Gemma); they are **not** separate hidden bonus points.
+   - Evaluated by appointed human judges using the published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet) during live, 2-minute demos.
+   - Evaluated across six standardized criteria using a 0–5 rating scale converted to weighted points:
+     - Problem relevance and practical impact (Weight: 15)
+     - Meaningful Gemma/open-weight AI integration (Weight: 20)
+     - Technical execution and working demonstration (Weight: 25)
+     - Originality and creativity (Weight: 15)
+     - Responsible AI, privacy and safety (Weight: 10)
+     - Open-source quality and reproducibility (Weight: 15)
+   - All eligible local submissions across all 5 preset tracks are evaluated together in a single unified pool against this common rubric.
+   - The top three highest-scoring teams are awarded:
+     - **First Place – Overall Winner**
+     - **Second Place – Overall Runner-up**
+     - **Third Place – Overall Third Place**
+   - Preset track acceptance tests inform the rubric (specifically Technical Execution, Meaningful Gemma Integration, Responsible AI, and Open-Source Quality); they are **not** separate hidden bonus points.
 2. **Official MLH Challenge (Best Open-Source AI Project):**
    - The official [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) challenge has **one winning team**.
    - The winner is selected by the organizing panel according to [MLH Hack Day guidelines](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) and marked directly in OrganizerHQ.
-   - While the locally highest-scoring project is a very strong candidate, the MLH winner must be evaluated and marked in OrganizerHQ following official MLH requirements. The local #1 is not automatically guaranteed to be the MLH winner if MLH-specific eligibility requirements differ or if separate criteria apply.
+   - While the local First Place project is a very strong candidate, the MLH winner must be evaluated and marked in OrganizerHQ following official MLH requirements. The local #1 is not automatically guaranteed to be the MLH winner if MLH-specific eligibility requirements differ or if separate criteria apply.
 3. **Deterministic Tie-Breakers:**
-   - Ties in overall scores are broken deterministically in this order:
-     1. Use of Gemma / open-weight AI (out of 25)
-     2. Technical execution & working demo (out of 25)
-     3. Problem & impact (out of 20)
-     4. Open-source quality (out of 15)
-     5. Judge panel consensus conference
-4. **No Pull-Request Counting:**
-   - Per official MLH rules: **Hacktoberfest Hack Day does not use pull-request counts for judging or prizes.** Scoring is based entirely on project merit, technical execution, working demonstration, and open-source quality.
+   - If two or more teams tie in their overall average score, ties are resolved in this strict order:
+     1. Higher **Meaningful Gemma/open-weight AI integration** score (out of 20).
+     2. Higher **Technical execution and working demonstration** score (out of 25).
+     3. **Deliberation by the judging panel**, with the decision and rationale formally documented.
+4. **No Pull-Request Counting or Automated Scoring:**
+   - Per official MLH rules: **Hacktoberfest Hack Day does not use pull-request counts for judging or prizes.** Scoring is based entirely on project merit, technical execution, working demonstration, and open-source quality. No automated ranking software or leaderboard algorithm is used.
 5. **Confidentiality:**
    - Individual judge sheets, raw marks, and provisional rankings are internal and confidential. Only final validated winners and high-level constructive comments are published.
 
@@ -163,7 +173,7 @@ To be considered for awards, every team must complete **both** submission steps 
 ## Governance, disqualification & ownership
 {: #governance-disqualification-ownership #disqualification-ownership }
 
-- **Conflicts of Interest:** Judges recuse themselves from scoring any team they helped build, closely mentored, or have a direct interest in. Scores are computed from the remaining non-conflicted judges (minimum 2 valid scores per team).
+- **Conflicts of Interest:** Judges recuse themselves from scoring any team they helped build, closely mentored, or have a direct interest in. Scores are computed from the remaining non-conflicted judges (minimum 2 valid scores per team; 3 independent evaluations preferred wherever capacity allows).
 - **Disqualification:** Organizers reserve the right to disqualify any entry for Code of Conduct violations, plagiarism, pre-building code before the event, or misrepresenting model functionality.
-- **Appeals & Final Authority:** Teams flagged by the automated hygiene check have until 5:00 AM to resolve administrative issues. The Lead Event Organizer (Faculty/iTech Club advisor), in consultation with the MLH representative, holds final authority for resolving any rule interpretation, edge case, or dispute.
+- **Appeals & Final Authority:** Teams flagged by the administrative hygiene check have until 5:00 AM to resolve issues. The Lead Event Organizer (Faculty/iTech Club advisor), in consultation with the MLH representative, holds final authority for resolving any rule interpretation, edge case, or dispute.
 - **Ownership:** Teams retain full intellectual property ownership of their code. Open-sourcing under an OSI license allows the community to learn from your work without transferring ownership to iTech Club, MLH, or sponsors.

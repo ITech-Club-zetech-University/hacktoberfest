@@ -68,7 +68,7 @@ python3 scripts/check_submission.py --help
 ### B. Preparing Scoring Sheets
 - Create a private, access-controlled spreadsheet (Google Sheets or Excel) in the organizer drive.
 - Import [`templates/judge-score-sheet.csv`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/templates/judge-score-sheet.csv).
-- Pre-populate sheets for confirmed judges with columns for Team Name, Primary Track, Judge Name, the 5 rubric criteria, Total, Conflict of Interest, and Notes.
+- Pre-populate sheets for confirmed judges with columns matching [`templates/judge-score-sheet.csv`](https://github.com/ITech-Club-zetech-University/hacktoberfest/blob/main/templates/judge-score-sheet.csv) (Team Name, Track, Repo URL, Judge ID, Date, 6 criteria ratings 0–5, weighted scores, Total 0–100, observed strengths, areas for improvement, evidence notes, final recommendation, and Conflict of Interest declaration).
 - **Never store completed score sheets or personal judge notes in the public git repository.**
 
 ### C. Bandwidth & Offline Fallback Contingencies
@@ -126,16 +126,20 @@ Before demos begin, brief all judges on these core principles:
 ## 6. Score Tabulation, Tie-Breaking & Separation of Notes
 
 ### Aggregation Formula
-$$\text{Judge Total} = \sum (\text{5 Category Scores}) \quad [0 \dots 100]$$
-$$\text{Team Final Score} = \frac{1}{N} \sum_{i=1}^{N} \text{Judge Total}_i \quad (N \ge 2)$$
+$$\text{Judge Weighted Total} = \sum_{j=1}^{6} \left(\frac{\text{Rating}_j}{5} \times \text{Weight}_j\right) \quad [0 \dots 100]$$
+$$\text{Team Final Score} = \frac{1}{N} \sum_{i=1}^{N} \text{Judge Total}_i \quad (N \ge 3 \text{ preferred, } N \ge 2 \text{ minimum})$$
 
+- **Judging Capacity:** Each team should receive **at least three independent evaluations** from distinct panel members wherever judging capacity allows (minimum 2 valid sheets required).
+- **No Automated Ranking Software:** Organisers consolidate score sheets manually/arithmetically in an internal, access-controlled workbook. No automated ranking software or leaderboard algorithm is used.
 - **Missing Sheets:** If a judge cannot complete a sheet, discard the incomplete sheet. The score is the average of completed sheets, provided at least 2 valid sheets remain.
-- **Deterministic Tie-Breakers:** If team totals are tied, apply tie-breakers in this pre-published order:
-  1. Highest aggregated score in **Use of Gemma / open-weight AI** (out of 25)
-  2. Highest aggregated score in **Technical execution & working demo** (out of 25)
-  3. Highest aggregated score in **Problem & impact** (out of 20)
-  4. Highest aggregated score in **Open-source quality** (out of 15)
-  5. Panel consensus conference led by Lead Organizer
+- **Deterministic Tie-Breakers:** If team totals are tied, apply tie-breakers in this strict pre-published order:
+  1. Higher average score in **Meaningful Gemma/open-weight AI integration** (out of 20)
+  2. Higher average score in **Technical execution and working demonstration** (out of 25)
+  3. **Deliberation by the judging panel**, with the decision and rationale formally documented in organiser records
+- **Podium Designations:**
+  - **First Place – Overall Winner**
+  - **Second Place – Overall Runner-up**
+  - **Third Place – Overall Third Place**
 
 ### Confidentiality of Judge Notes
 - Individual judge score sheets, raw numerical points, internal deliberation notes, and provisional ranks are **strictly confidential internal records**.

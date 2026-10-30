@@ -32,18 +32,21 @@ On [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-
 
 ## How are winners selected and ranked?
 
-- **Local iTech Club Recognition:** All eligible local submissions are evaluated by a human judge panel during live 2-minute demos using the published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet). Scores are averaged across judges, and the top three highest-scoring teams are awarded **1st Place, 2nd Place, and 3rd Place Overall**.
-- **Official MLH Challenge:** The official [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) challenge has **one winning team** marked directly in OrganizerHQ according to official MLH requirements. While the top-ranked local project is a prime candidate, the MLH winner must be evaluated and marked in OrganizerHQ following official MLH requirements.
-- **Partner Prizes:** If an official Google Gemma partner prize is active and verified in OrganizerHQ, it will be awarded separately as confirmed on-site by organizers.
+The hackathon operates under a **strictly human-led judging system**. There is no automated project evaluation, no AI-based project scoring, and no automated leaderboard. All projects are evaluated by an appointed panel of human judges using a published common rubric and standardised judge score sheets.
+
+- **Local iTech Club Recognition:** All eligible local submissions across all 5 preset tracks are evaluated by appointed human judges during live 2-minute demos using the published [100-Point Rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet). Judges evaluate projects independently across 6 criteria (Problem Relevance 15, Meaningful Gemma Integration 20, Technical Execution 25, Originality 15, Responsible AI & Safety 10, Open-Source Quality 15) using a 0–5 rating scale converted to weighted points. Individual scores are averaged across judges (minimum 2 valid scores per team; 3 preferred where capacity allows). The top three highest-scoring teams are awarded:
+  - **First Place – Overall Winner**
+  - **Second Place – Overall Runner-up**
+  - **Third Place – Overall Third Place**
+- **Official MLH Challenge:** The official [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) challenge has **one winning team** marked directly in OrganizerHQ according to official MLH requirements. While the local First Place project is a prime candidate, the MLH winner must be evaluated and marked in OrganizerHQ following official MLH requirements.
+- **Partner Prizes:** If an official Google Gemma partner prize is active and verified in OrganizerHQ for event 14735, it will be awarded separately as confirmed on-site by organizers.
 
 ## What happens if there is a tie in scores?
 
-Ties in aggregated scores are broken deterministically in this pre-published order:
-1. Highest score in **Use of Gemma / open-weight AI** (out of 25).
-2. Highest score in **Technical execution & working demo** (out of 25).
-3. Highest score in **Problem & impact** (out of 20).
-4. Highest score in **Open-source quality** (out of 15).
-5. Structured judge panel consensus conference led by the Lead Organizer.
+If two or more teams tie in their overall consolidated average score, ties are resolved in this strict pre-published order:
+1. Higher score in **Meaningful Gemma/open-weight AI integration** (out of 20).
+2. Higher score in **Technical execution and working demonstration** (out of 25).
+3. **Deliberation by the judging panel**, with the decision and rationale formally documented in organiser records.
 
 ## How should our team disclose AI coding assistants?
 

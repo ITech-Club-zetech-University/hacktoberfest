@@ -9,7 +9,7 @@ Documentation site, rules, starter kit, and preset Gemma challenge tracks for th
 ## Event & Award Structure
 
 - **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official competition on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club), with **one winning team** marked across the event.
-- **Local iTech Club Recognition:** All eligible projects are evaluated during live demos using our published 100-point rubric, awarding the **Top Three Overall (1st, 2nd, and 3rd Place)**.
+- **Local iTech Club Recognition:** All eligible projects across the 5 preset tracks are evaluated by appointed human judges using our standardised 100-point rubric, awarding the **Top Three Overall: First Place – Overall Winner, Second Place – Overall Runner-up, and Third Place – Overall Third Place**.
 - **iTech Club Preset Tracks:** 5 guided technical tracks designed for an ~8-hour build on consumer laptops using Gemma. Teams declare **one primary track** for focused evaluation. Track acceptance tests inform rubric scoring (not hidden bonus points).
 - **Team Size:** Teams of **3–4 members** for local award eligibility; solo hackers and pairs are welcome to attend, build, and submit to the general MLH competition.
 - **Submissions:** All projects are submitted to "Best Open-Source AI Project" on OrganizerHQ by 5:00 AM EAT, with the declared primary preset track documented in the project `README.md`.
@@ -25,7 +25,7 @@ Documentation site, rules, starter kit, and preset Gemma challenge tracks for th
 | `starter-kit.md` | Step-by-step Gemma setup guide (Gemini API and local Ollama) |
 | `resources.md` | Curated documentation links for Gemma, Agent Skills, and MLH |
 | `challenges/` | The 5 preset challenge briefs and comparison index |
-| `judging.md` | The 100-point operational rubric, scoring anchors, tie-breakers, 5 AM workflow, and winner marking |
+| `judging.md` | The human-led 100-point rubric, 0–5 rating scales, scoring anchors, tie-breakers, 9-step judging workflow, and MLH winner recording |
 | `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
 | `faq.md` | Frequently asked questions |
 | `organizer-runbook.md` | Public event runbook, operational checklists, staff roles, and MLH winner marking workflow |

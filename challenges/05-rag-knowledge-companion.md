@@ -108,7 +108,10 @@ These optional enhancements will distinguish advanced entries but are **not** re
 
 ## 11. Challenge-specific evaluation notes
 
-These notes supplement the 100-point rubric in [`judging.md`]({{ site.baseurl }}/judging/):
-- **Verification of dynamic retrieval (under Technical Execution):** Judges will inspect code to verify that the query runs against an index and retrieves top chunks dynamically. Hardcoded prompts or static context will fail this test.
-- **Citation accuracy (under Open-Source Quality):** Judges will spot-check citations against the raw files in your `corpus/` folder to ensure citations are genuine and accurate.
-- **Handling unknown queries (under Problem & Impact):** The system must gracefully admit when it does not know something rather than hallucinating answers.
+These notes guide judges when assessing projects in this track against the general 100-point rubric in [`judging.md`]({{ site.baseurl }}/judging/). They do not constitute bonus points or separate scoring categories:
+
+- **What the team must demonstrate (under Technical Execution):** The team must submit a live user query against their index, show dynamic retrieval of relevant chunks, demonstrate Gemma synthesizing an accurate grounded response with source citations, and show how the system handles an out-of-domain query (demonstrating it admits what it doesn't know).
+- **What evidence judges should inspect (under Technical Execution & Open-Source Quality):** Judges will inspect the vector store / indexing logic (e.g. EmbeddingGemma, FAISS, ChromaDB, sqlite-vec), verify that query retrieval actually fetches documents dynamically, and spot-check citations against the raw files in the `corpus/` directory to confirm citations are genuine.
+- **What constitutes a working implementation:** An active, functioning retrieval-augmented generation loop. Hardcoding context chunks into the prompt, using static pre-baked responses, or running a plain text chat without an underlying document index fails the working implementation requirement.
+- **How Gemma must contribute to the solution (under Meaningful Gemma Integration):** Gemma must drive the intelligence: EmbeddingGemma powers semantic vectorization/retrieval, and generative Gemma synthesizes grounded answers strictly from retrieved documents. The team must defend their prompt structure and retrieval chunking strategy.
+- **Relevant limitations and safety considerations (under Responsible AI & Safety):** Strict privacy and safety compliance is mandatory: the corpus must NEVER include private student grades, disciplinary records, or non-public administrative correspondence. Grounding prompts must prevent hallucinations by instructing the model not to invent facts outside retrieved context. Transparent citations are required.

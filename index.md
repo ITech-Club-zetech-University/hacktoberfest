@@ -32,7 +32,7 @@ An overnight, open-source AI hack day hosted by **iTech Club, Zetech University*
 {: .important }
 > **Award Structure at a Glance:**
 > - **Official MLH Challenge:** [Best Open-Source AI Project](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) is the official MLH Hack Day competition on OrganizerHQ, with **one winning team** across the event.
-> - **Local iTech Club Recognition:** All eligible submissions across all 5 preset tracks are evaluated with our universal 100-point rubric during live demos, naming the **Top Three Overall (1st, 2nd, and 3rd Place)**.
+> - **Local iTech Club Recognition:** All eligible submissions across all 5 preset tracks are evaluated by appointed human judges using our standardised 100-point rubric during live demos, naming the **Top Three Overall: First Place – Overall Winner, Second Place – Overall Runner-up, and Third Place – Overall Third Place**.
 > - **iTech Club Preset Tracks:** The 5 tracks on this site are our local, guided approaches to that broader challenge. Teams declare **one primary track** for focused evaluation. Track acceptance tests inform rubric scoring (not hidden bonus points).
 > - **Submission:** All teams submit their project to "Best Open-Source AI Project" on [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) by 5:00 AM EAT and declare their primary track in `README.md`.
 
@@ -44,7 +44,7 @@ An overnight, open-source AI hack day hosted by **iTech Club, Zetech University*
 - **[Starter Kit]({{ site.baseurl }}/starter-kit/)** — step-by-step setup: get a Gemma API key, run Gemma locally, scaffold your repo.
 - **[Resources]({{ site.baseurl }}/resources/)** — curated, official Gemma and MLH documentation, organized by what you're trying to do.
 - **[Challenges]({{ site.baseurl }}/challenges/)** — 5 preset challenge tracks. Pick **one primary track** for local evaluation instead of inventing an idea from scratch.
-- **[Judging]({{ site.baseurl }}/judging/)** — the 100-point operational rubric, scoring anchors, tie-breakers, 5 AM judge workflow, and winner marking.
+- **[Judging]({{ site.baseurl }}/judging/)** — the human-led 100-point rubric, 0–5 rating scales, scoring anchors, deterministic tie-breakers, 9-step judging workflow, and MLH winner recording.
 - **[FAQ]({{ site.baseurl }}/faq/)** — quick answers to common questions.
 
 </div>
