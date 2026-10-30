@@ -77,13 +77,19 @@ If the hosted route is unsuitable, explore a permitted local/open-model path for
 `.env.example` contains **placeholders only**:
 
 ```dotenv
-{% include_relative examples/gemma/.env.example %}
+GEMINI_API_KEY=replace_with_your_api_key
 ```
 
 Merge these ignore rules into your project's `.gitignore` rather than overwriting existing rules:
 
 ```gitignore
-{% include_relative examples/gemma/.gitignore %}
+.env
+.env.*
+!.env.example
+.venv/
+node_modules/
+__pycache__/
+*.pyc
 ```
 
 Verify before committing:

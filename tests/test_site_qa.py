@@ -284,7 +284,13 @@ class TestJekyllSiteQA(unittest.TestCase):
         self.assertEqual(fm["nav_order"], "3")
         for name in ("hosted.py", "hosted.mjs", "ollama.py", ".env.example", ".gitignore"):
             self.assertTrue((repo_root / "examples" / "gemma" / name).is_file())
-            self.assertIn(f"include_relative examples/gemma/{name}", starter)
+            if not name.startswith("."):
+                self.assertIn(f"include_relative examples/gemma/{name}", starter)
+        for language, name in (("dotenv", ".env.example"), ("gitignore", ".gitignore")):
+            with self.subTest(snippet=name):
+                snippet = (repo_root / "examples" / "gemma" / name).read_text().strip()
+                self.assertIn(f"```{language}\n{snippet}\n```", starter)
+                self.assertNotIn(f"include_relative examples/gemma/{name}", starter)
         self.assertEqual(
             (repo_root / "examples" / "gemma" / ".env.example").read_text().strip(),
             "GEMINI_API_KEY=replace_with_your_api_key",
