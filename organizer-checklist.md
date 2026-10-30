@@ -39,7 +39,7 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 
 - [ ] **7:00 PM:** Open venue doors; check in registered students on OrganizerHQ.
 - [ ] **Team Formation:** Match collaborators by interests and skills; confirm numerical limits and any separate local award restrictions.
-- [ ] **Opening Remarks:** Explain own-problem projects, the idea worksheet, optional inspiration, both prize categories, meaningful open AI, the 100-point human rubric and code of conduct. No primary track.
+- [ ] **Opening Remarks:** Explain own-problem projects, the idea worksheet, optional inspiration, both prize categories and approved lenses, meaningful open AI, the separate local rubric and code of conduct. No primary track.
 - [ ] **8:00 PM (Gemma Clinic):** Walk through Gemini API key creation, safe `.env` management, and local Ollama setup using the [Starter Kit]({{ site.baseurl }}/starter-kit/).
 
 ---

@@ -91,7 +91,7 @@ python3 scripts/check_submission.py --help
 | Time (EAT) | Stage | Organizer Actions |
 |---|---|---|
 | **7:00 PM** | Public event start | Check in registered attendees and confirm collaborator/team policy |
-| **Confirm with lead** | Briefing and setup | Explain own-problem format, both categories, common rubric, safety and optional provider choices |
+| **Confirm with lead** | Briefing and setup | Explain own-problem format, both categories and their approved lenses, separate local rubric, safety and optional providers |
 | **Confirm start/stop** | Building | Mentors help narrow one user journey; reserve time for tests, documentation and publishing |
 | **Before verified close** | Submission review | One submission, every eligible category; public licensed repo; review flags manually |
 | **6:00 AM, 31 October** | Public category close / event end | Resolve this overlap with demos and awards in OrganizerHQ and announce the approved plan |

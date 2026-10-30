@@ -32,7 +32,7 @@ Hacktoberfest Hack Day Nairobi × iTech Club operates on a **strictly human-led 
 ### Why human judging is essential
 
 1. **Working substance over gaming:** Per official Major League Hacking (MLH) rules, **Hacktoberfest does not use pull-request counts, commit volume, or lines of code as the basis for judging or prizes.** Automated metrics reward artificial activity rather than practical utility.
-2. **Open-ended projects:** Teams choose their own users, problems, domains and architectures. Judges compare practical outcomes and evidence against the same rubric, not a prescribed technical track.
+2. **Open-ended projects:** Teams choose their own users, problems, domains and architectures. Judges compare practical outcomes against the published guidance applicable to each award, not a prescribed technical track.
 3. **Live demonstration verification:** A two-minute live demonstration and code walk-through answers crucial questions no script can evaluate: Does the software actually run? Does the chosen open-source/open-weight AI meaningfully power the product? Can the team explain what they built and where its limitations lie?
 
 ## Official eligibility vs. local judging guidance
@@ -105,7 +105,7 @@ Judging is conducted by an appointed panel of approximately **3–5 judges**, co
 - **Independent scoring:** Judges score independently on their own score sheets during and immediately following the demonstration, without discussing marks or attempting to influence fellow judges before score sheets are submitted.
 - **Evidence-based evaluation:** Judges must record brief qualitative comments, observed strengths, areas requiring improvement, and concrete supporting evidence for their ratings.
 - **Implementation over presentation:** Judges evaluate the actual running software, codebase, and technical execution rather than slide decks or rehearsed marketing pitches.
-- **Mandatory conflict recusal:** Any judge who directly mentored a team, contributed code, or has an academic/personal conflict of interest must declare the conflict and recuse themselves. The team's score is computed from the remaining non-conflicted judges (minimum 2 valid evaluations required).
+- **Mandatory conflict recusal:** Any judge who directly mentored a team, contributed code, or has an academic/personal conflict of interest must declare the conflict and recuse themselves. Obtain at least two valid independent non-conflicted category reviews; use only non-conflicted sheets for any local score calculation.
 - **Avoid favouritism:** All teams are granted equal presentation time and evaluated with impartial professional standards regardless of domain, model/provider choice or background.
 - **Strict confidentiality:** Individual score sheets, raw numerical marks, internal notes, and provisional tallies are **strictly confidential internal records**. They are never published on the website or disclosed to participants. Only final validated winners and high-level constructive feedback are announced.
 
@@ -225,6 +225,8 @@ To maintain fairness and objective scoring across all panel members, judges appl
 ---
 
 ## Project-specific evidence within the unified rubric
+
+This section applies to the **local overall rubric**, not separate official category eligibility or award decisions.
 
 ### Fair evaluation across different projects
 {: #fair-cross-track-evaluation }
