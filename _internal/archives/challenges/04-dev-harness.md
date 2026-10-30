@@ -2,6 +2,7 @@
 title: "4. Gemma-Powered Dev Harness"
 nav_exclude: true
 search_exclude: true
+published: false
 description: "Build or meaningfully extend an open-source agent harness with structured tool-calling and safety boundaries, powered by Gemma."
 ---
 

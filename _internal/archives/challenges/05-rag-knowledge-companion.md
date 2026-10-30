@@ -2,6 +2,7 @@
 title: "5. Campus Knowledge Companion (RAG)"
 nav_exclude: true
 search_exclude: true
+published: false
 description: "Build a retrieval-augmented generation (RAG) assistant that answers questions strictly grounded in a real, inspectable campus corpus with visible citations."
 ---
 

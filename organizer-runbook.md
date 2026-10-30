@@ -67,7 +67,8 @@ python3 scripts/check_submission.py --help
 
 ### B. Preparing Scoring Sheets
 - Create a private, access-controlled spreadsheet (Google Sheets or Excel) in the organizer drive.
-- Import the [judge score sheet CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv). Delete the **three fictional examples** and copy the blank row for each team/judge pair. The CSV has **37 columns and no formulas**, including category eligibility/evidence/notes and actual categories considered.
+- For approved category scoring, copy the [independent category sheet](./_internal/organiser/category-score-sheet.md) into private storage once per judge/project/category. It matches the two proposed category rubrics; approval is required before use.
+- For separate local overall assessment only, import the [retained judge CSV](./_internal/organiser/judge-score-sheet.csv). Delete the **three fictional examples** and copy the blank row for each team/judge pair. The CSV has **37 columns and no formulas**, including category eligibility/evidence/notes and actual categories considered; its numerical block is local-only.
 - Set up **Eligible / Pending / Ineligible / Not Entered** status choices per category and **Scored / Not Assessed** for local overall assessment. No category defaults to eligible. Do not force unentered projects into a pool or assign them zero.
 - Retain all evidence fields, wrap text and expand row heights. Keep judges' copies independent until submission. The category-only example has intentional blank numerical/criterion cells: do not confuse **Not Assessed** with an incomplete **Scored** block.
 - For confirmed local assessment only, manually enter weighted values from the conversion table and audit all totals. Category qualitative notes do not add points.

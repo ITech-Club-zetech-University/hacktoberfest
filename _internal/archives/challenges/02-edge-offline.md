@@ -2,6 +2,7 @@
 title: "2. Gemma Off the Grid"
 nav_exclude: true
 search_exclude: true
+published: false
 description: "Build an edge application that runs Gemma entirely on-device, with zero network connectivity required at runtime."
 ---
 

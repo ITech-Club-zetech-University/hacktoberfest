@@ -61,8 +61,9 @@ class TestJekyllSiteQA(unittest.TestCase):
         self.assertIn("not a mandatory technology choice", content)
         self.assertIn("failure or uncertainty scenario", content)
 
-    def test_former_briefs_are_archived_without_changing_urls(self):
-        briefs = sorted((repo_root / "challenges").glob("0*.md"))
+    def test_former_briefs_are_preserved_outside_publication(self):
+        self.assertEqual(list((repo_root / "challenges").glob("0*.md")), [])
+        briefs = sorted((repo_root / "_internal" / "archives" / "challenges").glob("0*.md"))
         self.assertEqual(len(briefs), 5)
         for brief in briefs:
             with self.subTest(brief=brief.name):
@@ -70,6 +71,7 @@ class TestJekyllSiteQA(unittest.TestCase):
                 fm, _ = qa_site.parse_front_matter(content)
                 self.assertEqual(fm.get("nav_exclude"), "true")
                 self.assertEqual(fm.get("search_exclude"), "true")
+                self.assertEqual(fm.get("published"), "false")
                 self.assertNotIn("parent", fm)
                 self.assertNotIn("permalink", fm)
                 self.assertIn("Historical brief", content)
@@ -121,7 +123,7 @@ class TestJekyllSiteQA(unittest.TestCase):
         ):
             self.assertIn(f"## {heading}", readme)
 
-    def test_submission_and_demo_guidance_preserve_verification_boundary(self):
+    def test_submission_and_demo_guidance_are_participant_facing(self):
         guide = (repo_root / "submission.md").read_text(encoding="utf-8")
         fm, _ = qa_site.parse_front_matter(guide)
         self.assertEqual(fm["permalink"], "/submission/")
@@ -129,11 +131,17 @@ class TestJekyllSiteQA(unittest.TestCase):
         for text in (
             "https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges",
             "One submission can enter every category it qualifies for",
-            "Authenticated host configuration is not verified",
-            "no separate licence-attestation field",
+            "6:00 AM EAT",
+            "Follow the current form if its wording differs",
+            "public link may first open the event overview",
             "demo URL if available",
         ):
             self.assertIn(text, guide)
+        for internal in (
+            "Verification status before publication", "Authenticated host configuration",
+            "Lead Organiser must", "Staff should reconcile",
+        ):
+            self.assertNotIn(internal, guide)
         demo = (repo_root / "templates" / "demo-script.md").read_text(encoding="utf-8")
         self.assertEqual(len(re.findall(r"^[1-7]\. \*\*", demo, flags=re.MULTILINE)), 7)
         for text in ("Working journey", "Actual AI role", "Normal test and limitation",
@@ -160,7 +168,7 @@ class TestJekyllSiteQA(unittest.TestCase):
             self.assertEqual(qa_site.audit_repository(directory), 0)
 
     def test_score_sheet_remains_project_neutral_and_arithmetically_valid(self):
-        with (repo_root / "templates" / "judge-score-sheet.csv").open(newline="", encoding="utf-8") as source:
+        with (repo_root / "_internal" / "organiser" / "judge-score-sheet.csv").open(newline="", encoding="utf-8") as source:
             rows = list(csv.reader(source))
         self.assertEqual(len(rows[0]), 37)
         self.assertEqual(rows[0][1], "Entered Prize Categories")
@@ -187,7 +195,7 @@ class TestJekyllSiteQA(unittest.TestCase):
             self.assertEqual(float(row[17]), total)
 
     def test_score_sheet_category_assignments_do_not_force_entry(self):
-        with (repo_root / "templates" / "judge-score-sheet.csv").open(newline="", encoding="utf-8") as source:
+        with (repo_root / "_internal" / "organiser" / "judge-score-sheet.csv").open(newline="", encoding="utf-8") as source:
             examples = [row for row in csv.DictReader(source) if row["Team Name"]]
         self.assertEqual(len(examples), 3)
         for row in examples:
@@ -220,7 +228,7 @@ class TestJekyllSiteQA(unittest.TestCase):
             "## D. Final selection",
             "not official MLH-published scoring weights",
             "Gemma 4 is not required, and DigitalOcean is optional",
-            "same team may receive both prizes still requires organiser/MLH confirmation",
+            "Entry does not guarantee multiple prizes",
             "A local overall score does not determine either MLH category winner",
             "iTech Club local awards",
             "Weighted score = (Judge rating / 5) × Criterion weight",
@@ -277,6 +285,60 @@ class TestJekyllSiteQA(unittest.TestCase):
             "Open-weight and open-source are not interchangeable labels",
         ):
             self.assertIn(text, brief)
+
+    def test_private_category_sheet_matches_participant_rubrics(self):
+        public = (repo_root / "judging.md").read_text(encoding="utf-8")
+        private = (repo_root / "_internal/organiser/category-score-sheet.md").read_text(encoding="utf-8")
+        self.assertIn("Use only after", private)
+        self.assertFalse((repo_root / "templates/judge-score-sheet.csv").exists())
+        for number, name in enumerate(("Best Open-Source AI Project", "Best Use of Gemma 4"), 1):
+            with self.subTest(category=name):
+                section = public.split(f"### Category {number}: {name}", 1)[1].split("</section>", 1)[0]
+                expected = re.findall(r"^\| ([^|]+) \| (\d+) \|", section, re.MULTILINE)
+                actual = private.split(f"## {name}\n", 1)[1].split("### Evidence", 1)[0]
+                self.assertEqual(
+                    re.findall(r"^\| ([^|]+) \| (\d+) \|", actual, re.MULTILINE), expected,
+                )
+                self.assertEqual(len(expected), 6)
+        self.assertEqual(private.count("   - Evidence:"), 12)
+        self.assertEqual(private.count("   - Comments:"), 12)
+
+    def test_public_pages_have_no_internal_editorial_instructions(self):
+        names = (
+            "index.md", "rules.md", "starter-kit.md", "resources.md",
+            "challenges/index.md", "inspiration.md", "judging.md", "faq.md",
+            "submission.md", "templates/problem-statement.md",
+            "templates/project-readme-template.md", "templates/submission-checklist.md",
+            "templates/demo-script.md",
+        )
+        for name in names:
+            with self.subTest(page=name):
+                content = (repo_root / name).read_text(encoding="utf-8")
+                self.assertNotRegex(
+                    content,
+                    r"(?i)organiser confirmation required|awaiting (?:lead|confirmation)|"
+                    r"verification status before publication|authenticated host configuration|"
+                    r"staff should reconcile|previous 5:00|pending confirmation",
+                )
+                self.assertNotIn("/templates/judge-score-sheet.csv", content)
+
+    def test_site_qa_respects_publication_exclusions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "_config.yml").write_text("exclude:\n  - organiser.md\n", encoding="utf-8")
+            home = root / "index.md"
+            home.write_text("---\ntitle: Home\n---\n# Home\n", encoding="utf-8")
+            (root / "organiser.md").write_text("# Internal\n[bad](missing.md)", encoding="utf-8")
+            (root / "draft.md").write_text(
+                "---\npublished: false\n---\n# Draft\n[bad](missing.md)", encoding="utf-8",
+            )
+            (root / "_internal").mkdir()
+            (root / "_internal/note.md").write_text("# Private\n[bad](missing.md)", encoding="utf-8")
+            self.assertEqual(qa_site.audit_repository(directory), 0)
+            for target in ("organiser.md", "draft.md", "_internal/note.md"):
+                with self.subTest(target=target):
+                    home.write_text(f"---\ntitle: Home\n---\n# Home\n[internal]({target})", encoding="utf-8")
+                    self.assertEqual(qa_site.audit_repository(directory), 1)
 
     def test_starter_launchpad_uses_real_example_files_and_safe_configuration(self):
         starter = (repo_root / "starter-kit.md").read_text(encoding="utf-8")

@@ -2,6 +2,7 @@
 title: "1. Build a Gemma Agent Skill"
 nav_exclude: true
 search_exclude: true
+published: false
 description: "Package a reusable capability for AI coding agents according to the Agent Skills open standard, powered by Gemma.
 "
 ---

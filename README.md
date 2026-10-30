@@ -1,6 +1,6 @@
 # Hacktoberfest Hack Day Nairobi x iTech Club
 
-Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi x iTech Club](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) — **Friday 30 October 2026, 7:00 PM – Saturday 31 October 2026, 6:00 AM EAT**. Hosted by iTech Club, Zetech University, in partnership with Major League Hacking (MLH). Venue, exact build period and demo schedule require organiser reconciliation; see [rules](./rules.md).
+Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi x iTech Club](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) — **Friday 30 October 2026, 7:00 PM – Saturday 31 October 2026, 6:00 AM EAT**, at **Zetech University, Ruiru Campus**. Hosted by iTech Club in partnership with Major League Hacking (MLH). Follow the [rules](./rules.md) and event briefing for coding and demo sessions.
 
 📖 **Live Site:** `https://itech-club-zetech-university.github.io/hacktoberfest/` (hosted via GitHub Pages)
 
@@ -11,7 +11,7 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 - **Open-ended projects:** Identify a real problem, choose your users and architecture, and build a focused original open-source AI MVP. No fixed prompts or primary tracks.
 - **Two live MLH categories:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3) (DigitalOcean-supported) and [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d) (Gemma / Google DeepMind). These are awards, not project prompts.
 - **Choice:** Other suitable open models are welcome in the broad category. DigitalOcean is optional. Follow Gemma 4/API requirements only when entering that category.
-- **Human judging:** Review both eligible category pools separately using proposed local lenses for organiser approval, not an official MLH numerical rubric. Retain the six-criterion 100-point process for iTech Club local overall assessment only. No AI judge, automated aggregation service, ranking or leaderboard. Confirm local awards and multiple-category winner policy.
+- **Human judging:** Review both eligible category pools separately using the proposed local category rubrics, not official MLH-published weights. The retained local overall rubric is separate. Approval and award-policy decisions are tracked in [repository-only organiser documentation](./_internal/organiser/publication-decisions.md).
 - **Submissions:** Submit once through OrganizerHQ and select every qualifying category. The live pages display **31 October, 6:00 AM EAT**; reconcile earlier local timings before publishing the coding/demo schedule. Team-size policy also requires confirmation.
 
 ---
@@ -25,12 +25,13 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 | `starter-kit.md` | Optional-stack guide: hosted/local Gemma 4, architecture, DigitalOcean, safe release and time-boxed workflow |
 | `examples/gemma/` | Runnable Python/JavaScript hosted text/image examples, local Ollama client and scoped dependency manifests |
 | `resources.md` | Curated documentation links for Gemma, Agent Skills, and MLH |
-| `challenges/` | Open-ended project brief and five preserved, nav/search-excluded historical briefs |
+| `challenges/` | Current open-ended participant project brief |
+| `_internal/archives/challenges/` | Five full historical briefs, preserved but excluded from publication |
 | `inspiration.md` | Optional problem-led examples, not mandatory tracks |
 | `templates/problem-statement.md` | Project proposal / idea canvas with a plain Markdown download |
 | `templates/downloads/` | Copy-ready Markdown canvas and README, without Jekyll front matter or Liquid tags |
-| `submission.md` | Official submission workflow, multiple-category entry and authenticated-host verification boundary |
-| `judging.md` | Separate category eligibility/lenses, local 100-point rubric, independent reviews and human winner recording |
+| `submission.md` | Participant submission workflow, multiple-category entry and saved-entry checking |
+| `judging.md` | Category rubrics, scoring scale, independent reviews and human selection |
 | `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
 | `faq.md` | Frequently asked questions |
 | `organizer-runbook.md` | Repository-only event runbook, excluded from the published Jekyll site |
@@ -38,7 +39,7 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 | `templates/project-readme-template.md` | Copy-and-fill `README.md` template for participant repositories |
 | `templates/demo-script.md` | Seven-part working demo flow using organiser-confirmed presentation/Q&A allowances |
 | `templates/submission-checklist.md` | Publishing, testing and category-specific submission checks |
-| `templates/judge-score-sheet.csv` | 37-column manual sheet: per-category eligibility/evidence/notes and optional local scores; three fictional examples and a blank row |
+| `_internal/organiser/` | Uncompleted category/local judge templates and non-sensitive publication decision records; excluded from Jekyll |
 | `references/source-register.md` | Organiser source register, verification status, and review log |
 | `scripts/check_submission.py` | Automated preliminary eligibility checker for baseline repo hygiene |
 | `scripts/data/osi-approved-licenses.json` | Canonical OSI-approved SPDX license database |
@@ -51,11 +52,14 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 
 Operational documentation and administrative tools for running the hackathon:
 
-The runbook, organiser checklist, source register and QA report are excluded from the Jekyll build. They do not appear in website navigation, search or published pages. Their sources remain in this public repository: exclusion does not make them confidential. Never add secrets or private operational data.
+The runbook, organiser checklist, source register, QA report and `_internal/` are excluded from the Jekyll build. Their sources remain in this public repository: exclusion does not make them confidential. Never add secrets or private operational data.
 
 - **[Organiser Runbook](./organizer-runbook.md):** Complete master timeline, staff roles, offline contingency procedures, score tabulation, and official MLH winner marking steps.
 - **[Organiser Quick-Reference Checklist](./organizer-checklist.md):** Chronological checklist from T-minus 24 hours through doors opening (6:30 PM) to post-event reporting.
 - **[Source-of-Truth Register](./references/source-register.md):** Verified reference log for event policies, API endpoints, model tags, and license terms.
+- **[Publication decisions](./_internal/organiser/publication-decisions.md):** Outstanding approvals and confirmed public facts.
+- **[Category score sheet](./_internal/organiser/category-score-sheet.md):** Independent sheets matching the proposed category rubrics.
+- **[Local score CSV](./_internal/organiser/judge-score-sheet.csv):** Retained local-only numerical template with fictional examples.
 - **Privacy & Access Control:** Completed judge scoring sheets, internal deliberation notes, and incident records must be maintained exclusively in an internal, access-controlled organizer drive. Never commit completed scores or private attendee data to git.
 
 ---
@@ -79,6 +83,12 @@ This documentation site is built with Jekyll and the [Just the Docs](https://git
    - In your repository on GitHub, navigate to **Settings → Pages**.
    - Under **Build and deployment → Source**, select **GitHub Actions** (do *not* select "Deploy from a branch").
    - Once selected, pushes to `main` automatically run the [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) workflow, run the test suite and QA link checks, compile the site, and publish the artifact.
+   - Before uploading, the workflow runs `python3 scripts/qa_publication.py _site`
+     against the exact generated output. It rejects internal/archived pages,
+     unintended download navigation/search entries, changed raw downloads,
+     duplicate headings/IDs and broken local links.
+   - Do not enable a simultaneous legacy branch build: its optional-front-matter
+     processing can turn raw Markdown downloads into extra navigation pages.
 4. **Site Address:**
    The site publishes at `https://itech-club-zetech-university.github.io/hacktoberfest/`.
 
@@ -142,7 +152,7 @@ python3 -m unittest discover -s tests -v
 - `2`: At least one repository is `NEEDS MANUAL REVIEW` or `CHECK UNAVAILABLE`.
 - `3`: Usage or syntax error.
 
-Inconclusive results (such as network timeouts or GitHub API 403/429 rate limits) must **never** be treated as noncompliance; organizers inspect repositories manually in a browser. See [`judging.md`](./judging.md#preliminary-eligibility-gate-vs-scoring) for complete operational details.
+Inconclusive results (such as network timeouts or GitHub API 403/429 rate limits) must **never** be treated as noncompliance; organisers inspect repositories manually in a browser. See the [runbook](./organizer-runbook.md) for operational details.
 
 ---
 

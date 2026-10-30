@@ -2,6 +2,7 @@
 title: "3. Multimodal Campus Companion"
 nav_exclude: true
 search_exclude: true
+published: false
 description: "Build an assistant that uses Gemma's native vision or audio understanding to solve a real physical campus challenge."
 ---
 

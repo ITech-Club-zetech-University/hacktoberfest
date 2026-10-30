@@ -18,6 +18,7 @@ import sys
 import os
 import re
 import glob
+from fnmatch import fnmatch
 from pathlib import Path
 
 
@@ -51,6 +52,38 @@ def parse_front_matter(content: str):
     return fm, body
 
 
+def publication_excludes(root_path: Path):
+    config = root_path / "_config.yml"
+    if not config.is_file():
+        return []
+    match = re.search(
+        r"^exclude:\s*\n((?:[ \t]+.*\n?)*)",
+        config.read_text(encoding="utf-8"),
+        re.MULTILINE,
+    )
+    if not match:
+        return []
+    return [
+        item.strip().strip("\"'").rstrip("/")
+        for item in re.findall(r"^\s+-\s+([^#\n]+)", match.group(1), re.MULTILINE)
+    ]
+
+
+def excluded_from_publication(path: Path, root_path: Path, excludes):
+    relative = path.relative_to(root_path).as_posix()
+    if any(part.startswith(("_", ".")) for part in path.relative_to(root_path).parts):
+        return True
+    if any(
+        relative == item or relative.startswith(item + "/") or fnmatch(relative, item)
+        for item in excludes
+    ):
+        return True
+    if path.suffix == ".md" and path.is_file():
+        fm, _ = parse_front_matter(path.read_text(encoding="utf-8"))
+        return fm.get("published") == "false"
+    return False
+
+
 def audit_repository(repo_root: str):
     root_path = Path(repo_root).resolve()
     errors = []
@@ -62,11 +95,14 @@ def audit_repository(repo_root: str):
         "node_modules", ".venv", "__pycache__",
     }
     exclude_files = {"README.md", "LICENSE"}
+    configured_excludes = publication_excludes(root_path)
 
     all_md_files = []
     for p in root_path.rglob("*.md"):
         rel_parts = p.relative_to(root_path).parts
         if any(part in exclude_dirs for part in rel_parts):
+            continue
+        if excluded_from_publication(p, root_path, configured_excludes):
             continue
         if rel_parts[:2] == ("templates", "downloads"):
             continue
@@ -245,13 +281,20 @@ def audit_repository(repo_root: str):
                 else:
                     direct_file = (root_path / curr_dir / clean_target).resolve()
 
-                if direct_file.is_file():
+                if (
+                    direct_file.is_relative_to(root_path)
+                    and direct_file.is_file()
+                    and not excluded_from_publication(direct_file, root_path, configured_excludes)
+                ):
                     # Valid existing file on filesystem
                     continue
 
                 # Check if file exists at repo root (e.g. templates referencing repo-root LICENSE)
                 root_direct_file = root_path / clean_target.lstrip("./")
-                if root_direct_file.is_file():
+                if (
+                    root_direct_file.is_file()
+                    and not excluded_from_publication(root_direct_file, root_path, configured_excludes)
+                ):
                     continue
 
                 errors.append(f"{rel_str} - Broken internal link '{target}' (text: '{text}'). Target file or page could not be resolved.")

@@ -17,6 +17,12 @@ defaults:
       type: pages
     values:
       layout: default
+  - scope:
+      path: "templates/downloads"
+    values:
+      layout: null
+      nav_exclude: true
+      search_exclude: true
 
 color_scheme: dark
 
@@ -58,6 +64,8 @@ kramdown:
       line_numbers: false
 
 exclude:
+  - _internal/
+  - templates/judge-score-sheet.csv
   - organizer-runbook.md
   - organizer-checklist.md
   - references/source-register.md
