@@ -32,6 +32,7 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 
 ## Core model documentation & specifications
 
+- **[Official Gemma Quickstart](https://gemma.ai/get-started/)** — Choose a model and execution route using the current Gemma documentation hub.
 - **[Gemma Models Overview](https://ai.google.dev/gemma/docs)** — *Use this when* reviewing model generations, architectural families, and general context windows.
 - **[Gemma 4 Core Documentation](https://ai.google.dev/gemma/docs/core)** — *Use this when* checking parameter sizes, official memory sizing tables, and quantization formats (BF16, SFP8, Q4_0, Mobile).
 - **[Gemma 4 Model Card](https://ai.google.dev/gemma/docs/core/model_card_4)** — *Use this when* reviewing technical benchmarks, training dataset distributions, and safety evaluations.
@@ -60,7 +61,8 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 
 ## Local runtimes & edge inference
 
-- **[Ollama Integration Guide](https://ai.google.dev/gemma/docs/integrations/ollama)** — Optional local inference; technical support does not prove partner-prize eligibility.
+- **[Current Gemma with Ollama Guide](https://gemma.ai/deployment/ollama/)** and [Ollama documentation](https://docs.ollama.com/) — Current tags, downloads and local API setup; technical support does not prove partner-prize eligibility.
+- **[Hugging Face Transformers](https://huggingface.co/docs/transformers/index)** — Optional model integration; verify support for the exact checkpoint and hardware.
 - **[llama.cpp Integration Guide](https://ai.google.dev/gemma/docs/integrations/llamacpp)** — *Use this when* optimizing high-performance CPU/GPU local execution with GGUF checkpoints.
 - **[LM Studio Integration](https://ai.google.dev/gemma/docs/integrations/lmstudio)** — *Use this when* you prefer a visual desktop GUI runner to test prompts locally without writing code.
 - **[MLX on the current Gemma hub](https://gemma.ai/deployment/mlx/)** — Optional Apple-silicon/unified-memory inference; community checkpoint conversions vary.
@@ -85,16 +87,20 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 - **[Agent Skills Specification](https://agentskills.io/specification)** — Required conformance if your entry is an agent skill, not a requirement to build a skill.
 - **[Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart)** — *Use this when* creating, testing, and packaging your first reusable agent skill.
 - **[OpenCode Architecture](https://github.com/sst/opencode)** — An optional reference for bounded harness designs; attribute upstream work and document your original contribution.
+- **[llama.cpp](https://github.com/ggml-org/llama.cpp)** and [vLLM documentation](https://docs.vllm.ai/) — Optional runtime references; neither is a required participant dependency.
 
 ---
 
 ## Official MLH policies & licensing references
 
+- **[MLH Open-Source AI Guide](https://www.mlh.com/opensource-ai)** — Original project expectations, public licensed source, model disclosures and skill/harness conditions.
 - **[MLH Open Source Prize Categories](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories)** — *Use this when* reviewing the exact evaluation criteria for the official Best Open-Source AI Project challenge.
 - **[MLH Submissions & Winner Selection](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day)** — *Use this when* checking official submission rules and OrganizerHQ winner marking.
 - **[MLH Standard Hackathon Rules](https://github.com/MLH/mlh-policies/blob/main/standard-hackathon-rules.md)** — *Use this when* verifying event integrity, timing guidelines, and team conduct.
 - **[MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf)** — *Use this when* reviewing community standards and safety reporting procedures.
 - **[Open Source Initiative (OSI) Approved Licenses](https://opensource.org/licenses)** — *Use this when* choosing an open-source license (such as MIT, Apache-2.0, or GPL-3.0) for your team's application code.
+- **[GitHub: Licensing a Repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)** — Add a code licence; publishing code without one does not automatically grant open-source reuse rights.
+- **[Responsible Generative AI Toolkit](https://ai.google.dev/responsible/docs)** — Practical responsible-AI guidance alongside the chosen model's card and service terms.
 - **[Gemma 4 Model Card and Apache 2.0 Licence](https://ai.google.dev/gemma/docs/core/model_card_4)** — Verify Gemma 4 licensing separately from your code and hosted-service terms.
 - **[Earlier Gemma Terms](https://ai.google.dev/gemma/terms)** — Check applicability for older model generations; do not apply these terms indiscriminately to Gemma 4.
 
@@ -103,9 +109,10 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 DigitalOcean supports **Best Open-Source AI Project** but is **not mandatory**. Use any suitable deployment approach, including a working local application. No provider use alone establishes open-source AI eligibility or earns bonus points.
 
 - [MLH DigitalOcean partner hub](https://www.mlh.com/partners/digitalocean) — General partner resources, not additional category rules.
-- [DigitalOcean Inference](https://docs.digitalocean.com/products/inference/) — Optional hosted model services; verify whether the selected model meets your category requirements.
+- [DigitalOcean Inference](https://docs.digitalocean.com/products/inference/) — The former Gradient AI Platform documentation URL redirects here. Optional hosted model services; verify whether the selected model meets your category requirements.
 - [App Platform](https://docs.digitalocean.com/products/app-platform/) — Optional application deployment.
 - [Knowledge Bases](https://docs.digitalocean.com/products/knowledge-bases/) — Managed retrieval only if the problem needs grounded answers over permitted content.
 - [Managed Agents](https://docs.digitalocean.com/products/managed-agents/) and [GPU Droplets](https://docs.digitalocean.com/products/gpu-droplets/) — Optional advanced workflows/compute; check availability, maturity and cost.
 - [My Hacktoberfest](https://hacktoberfest.com/my/) — Sign in yourself to inspect the current DigitalOcean promo offer, eligibility, expiry, limits and billing terms. No credit amount is assumed.
 - [Inference pricing](https://docs.digitalocean.com/products/inference/details/pricing/) — Check usage charges, credit/balance requirements and account access before spending. Event credits are not assumed.
+- [General DigitalOcean documentation](https://docs.digitalocean.com/) — Storage, databases and networking only where your project needs them.

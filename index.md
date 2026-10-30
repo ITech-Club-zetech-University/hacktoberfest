@@ -30,7 +30,7 @@ Use the [seven-step idea framework]({{ site.baseurl }}/challenges/#develop-an-id
 
 These are **award categories, not project prompts or technology tracks**. Submit once to every category your project qualifies for. DigitalOcean is an optional supported resource, not mandatory hosting. See the [category requirements and submission steps]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
 
-**Judging is human-led.** Judges review each eligible category separately with [proposed category-specific lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) for organiser approval. The existing 100-point rubric and retained Top Three recognition are **iTech Club local awards**, separate from both MLH categories and pending confirmation. There is no AI judge, automated scoring/aggregation service, ranking or leaderboard.
+**Judging is human-led.** Judges independently assess each eligible category using the [proposed category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses), subject to organiser approval. The existing local overall rubric and retained Top Three recognition are **iTech Club local awards**, separate from both MLH categories and pending confirmation. There is no AI judge, automated scoring/aggregation service, ranking or leaderboard.
 
 ## Event details
 

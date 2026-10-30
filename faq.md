@@ -54,9 +54,9 @@ The public event runs **30 October, 7:00 PM → 31 October, 6:00 AM EAT**. Both 
 
 ## How are projects judged?
 
-Appointed humans review each eligible entered category separately using [proposed category-specific lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses), subject to organiser approval. These are local guidance, **not an official MLH numerical rubric**. A local overall score does not automatically win either category.
+Appointed humans review each eligible entered category separately using [proposed category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses), subject to organiser approval. These weights are local guidance, **not an official MLH numerical rubric**. Each category is scored separately; a local overall score does not automatically win either category.
 
-The existing 100-point rubric and tie-breakers belong to **iTech Club local overall assessment**, separate from the two MLH awards. Local Top Three continuation and prizes need confirmation, not silent removal or new promises. There is no AI judge, automated scoring, score aggregation service, leaderboard or automated winner selection.
+The existing local overall rubric and its tie-breakers belong to **iTech Club local overall assessment**, separate from the proposed category rubrics and the two MLH awards. Local Top Three continuation and prizes need confirmation, not silent removal or new promises. There is no AI judge, automated scoring, score aggregation service, leaderboard or automated winner selection.
 
 ## What if we do not qualify for one category?
 

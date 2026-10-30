@@ -67,7 +67,7 @@ Hosted-service terms are separate from the model licence. The current Gemini API
 
 ### How the awards are judged
 
-Appointed **human judges** review each entered category separately using [proposed category-specific lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses). These lenses and the existing local numerical rubric are **local judging guidance for organiser review, not an official MLH numerical rubric**. There is no AI judge, automated project scoring, automated score aggregation service, ranking service or leaderboard.
+Appointed **human judges** review each entered category separately using [proposed category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses). These category weights and the separate local overall rubric are **local judging guidance for organiser review, not an official MLH numerical rubric**. There is no AI judge, automated project scoring, automated score aggregation service, ranking service, leaderboard or automated winner selection.
 
 The retained **iTech Club local Top Three awards** are separate from the two MLH categories; their continuation, eligibility and prize inventory need organiser confirmation. Entering both official categories requires neither duplicate projects nor duplicate repositories. Whether one team may receive both prizes remains an explicit organiser/MLH confirmation item.
 

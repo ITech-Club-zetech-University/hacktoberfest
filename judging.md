@@ -163,6 +163,7 @@ For an MLH category tie, the non-conflicted panel reviews the tied projects' evi
 For **local overall assessment only**, the existing order remains: higher average meaningful AI integration score, then higher average technical execution score, then panel consensus against the local rubric. This is not an official MLH category tie-breaker.
 
 ### Award structure
+{: #local-overall-awards }
 
 The two MLH category awards remain separate from the retained **iTech Club local awards**:
 

@@ -102,15 +102,15 @@ Organisers may run administrative repository checks, but they do not score or ra
 
 ## How winners are chosen & award structure
 
-Appointed **human judges** review each entered category separately. The [category-specific evaluation lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) are **proposed local guidance for organiser review**, not an official MLH numerical rubric. No AI judge, automated scoring, score aggregation service, ranking service, leaderboard or automated winner selection is used.
+Appointed **human judges** review each entered category separately. The [category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) are **proposed local guidance for organiser review**, not an official MLH numerical rubric. No AI judge, automated scoring, score aggregation service, ranking service, leaderboard or automated winner selection is used.
 
 Official requirements determine **Eligible**, **Pending**, **Ineligible** or **Not Entered** status for each category. Only entered, verified eligible projects enter its merit comparison. An unmet condition in one category does not automatically exclude the project from another. Do not assign zero for an unentered category or require duplicate projects/repositories to enter both.
 
-The retained **iTech Club local Top Three awards** and [six-criterion, 100-point local rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet) are separate from both official awards. Organisers must confirm local continuation, eligibility and prize inventory; this update neither cancels nor invents prizes. Missing implementation evidence informs local scores, not hidden gates or automatic deductions.
+The retained **iTech Club local Top Three awards** and [six-criterion, 100-point local rubric]({{ site.baseurl }}/judging/#local-overall-awards) are separate from both official awards and their proposed category rubrics. Organisers must confirm local continuation, eligibility and prize inventory; this update neither cancels nor invents prizes. Missing implementation evidence informs scores, not hidden gates or automatic deductions.
 
 **Whether the same team may receive both official prizes remains unconfirmed.** Entering both does not answer that question. Confirm it against MLH/onboarding/HQ before marking winners; do not assume a ban or an automatic dual win.
 
-Judge sheets and provisional scores remain private. Manually check local averages and apply the [existing local tie-breakers]({{ site.baseurl }}/judging/#deterministic-tie-breaking-protocol) only to local overall scores. Official category decisions require separate human rationale against the approved lenses and published requirements.
+Judge sheets and provisional scores remain private. Organisers manually consolidate independent category scores. Apply the [existing local tie-breakers]({{ site.baseurl }}/judging/#deterministic-tie-breaking-protocol) only to local overall scores. Official category decisions use their own approved criteria and published requirements.
 
 <a id="disqualification-ownership"></a>
 
