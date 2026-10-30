@@ -211,20 +211,61 @@ class TestJekyllSiteQA(unittest.TestCase):
         self.assertEqual(examples[2]["Best Open-Source AI Project Eligibility"], "Not Entered")
         self.assertEqual(examples[2]["Local Overall Assessment (Scored/Not Assessed)"], "Not Assessed")
 
-    def test_category_lenses_are_distinct_from_official_requirements_and_local_scores(self):
+    def test_category_rubrics_are_distinct_from_official_requirements_and_local_scores(self):
         guide = (repo_root / "judging.md").read_text(encoding="utf-8")
         for text in (
-            "## Official eligibility vs. local judging guidance",
-            "## Category-specific evaluation lenses",
-            "### Best Open-Source AI Project",
-            "### Best Use of Gemma 4",
-            "not an official MLH numerical rubric",
-            "No AI judge or automated score aggregation service",
-            "Entry permission is not a dual-prize winner policy",
-            "A strong local total neither guarantees an MLH award",
+            "## A. How judging works",
+            "## B. Prize categories and judging criteria",
+            "## C. Scoring scale",
+            "## D. Final selection",
+            "not official MLH-published scoring weights",
+            "Gemma 4 is not required, and DigitalOcean is optional",
+            "same team may receive both prizes still requires organiser/MLH confirmation",
+            "A local overall score does not determine either MLH category winner",
             "iTech Club local awards",
+            "Weighted score = (Judge rating / 5) × Criterion weight",
+            "sum of valid judge category totals / number of valid judges",
         ):
             self.assertIn(text, guide)
+        for removed in ("Why human judging is essential", "Competition Management Decision", "automated leaderboard"):
+            self.assertNotIn(removed, guide)
+        rubrics = (
+            ("Best Open-Source AI Project", (
+                ("Problem relevance and practical impact", 15),
+                ("Meaningful use of open-source/open-weight AI", 20),
+                ("Technical execution and working demonstration", 20),
+                ("Originality and innovation", 15),
+                ("Open-source quality, licensing and documentation", 20),
+                ("Responsible AI, privacy and safety", 10),
+            )),
+            ("Best Use of Gemma 4", (
+                ("Meaningful integration of Gemma 4", 25),
+                ("Effective use of Gemma 4 capabilities", 20),
+                ("Technical execution and working demonstration", 20),
+                ("Problem relevance and usefulness", 15),
+                ("Originality and innovation", 10),
+                ("Responsible AI, privacy and safety", 10),
+            )),
+        )
+        for number, (category, expected) in enumerate(rubrics, 1):
+            with self.subTest(category=category):
+                section = guide.split(f"### Category {number}: {category}", 1)[1].split("</section>", 1)[0]
+                rows = re.findall(r"^\| ([^|]+) \| (\d+) \| ([^|]+) \|$", section, re.MULTILINE)
+                self.assertEqual([(name, int(weight)) for name, weight, _ in rows], list(expected))
+                self.assertTrue(all(description.strip() for _, _, description in rows))
+                weights = [int(weight) for _, weight, _ in rows]
+                self.assertEqual(sum(weights), 100)
+                self.assertIn("| **TOTAL** | **100** |", section)
+                for rating in range(6):
+                    self.assertEqual(sum(rating / 5 * weight for weight in weights), rating * 20)
+        scale = guide.split("## C. Scoring scale", 1)[1].split("### Weighted points", 1)[0]
+        self.assertEqual(
+            re.findall(r"^\| ([0-5]) \| ([^|]+) \|$", scale, re.MULTILINE),
+            list(zip("012345", (
+                "Not demonstrated", "Very poor", "Below expectations",
+                "Meets expectations", "Very good", "Excellent",
+            ))),
+        )
         brief = (repo_root / "challenges" / "index.md").read_text(encoding="utf-8")
         for text in (
             "gemma-4-31b-it",
