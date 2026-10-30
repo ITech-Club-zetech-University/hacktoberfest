@@ -28,6 +28,22 @@ class TestJekyllSiteQA(unittest.TestCase):
         self.assertEqual(qa_site.kramdown_slug("Team size & formation"), "team-size-formation")
         self.assertEqual(qa_site.kramdown_slug("Option A: Hosted Gemma [API]"), "option-a-hosted-gemma-api")
 
+    def test_config_layout_defaults(self):
+        """Verify _config.yml defines front-matter defaults for pages to use the default layout."""
+        config_path = repo_root / "_config.yml"
+        self.assertTrue(config_path.is_file(), "_config.yml must exist")
+        content = config_path.read_text(encoding="utf-8")
+        self.assertIn("defaults:", content)
+        self.assertRegex(content, r"layout:\s*['\"]?default['\"]?")
+
+    def test_homepage_preserves_home_layout(self):
+        """Verify index.md explicitly preserves layout: home."""
+        index_path = repo_root / "index.md"
+        self.assertTrue(index_path.is_file(), "index.md must exist")
+        content = index_path.read_text(encoding="utf-8")
+        fm, _ = qa_site.parse_front_matter(content)
+        self.assertEqual(fm.get("layout"), "home", "Homepage index.md must explicitly specify layout: home")
+
 
 if __name__ == "__main__":
     unittest.main()
