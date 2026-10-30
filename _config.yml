@@ -66,3 +66,6 @@ exclude:
   - Gemfile.lock
   - vendor/
   - .bundle/
+  - examples/gemma/node_modules/
+  - examples/gemma/.venv/
+  - examples/gemma/__pycache__/

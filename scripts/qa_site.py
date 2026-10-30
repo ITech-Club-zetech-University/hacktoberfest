@@ -57,7 +57,10 @@ def audit_repository(repo_root: str):
     warnings = []
 
     # Excluded directories and files
-    exclude_dirs = {"scripts", "tests", "vendor", ".bundle", "_site", ".git", ".github"}
+    exclude_dirs = {
+        "scripts", "tests", "vendor", ".bundle", "_site", ".git", ".github",
+        "node_modules", ".venv", "__pycache__",
+    }
     exclude_files = {"README.md", "LICENSE"}
 
     all_md_files = []
