@@ -30,25 +30,25 @@ Use the [seven-step idea framework]({{ site.baseurl }}/challenges/#develop-an-id
 
 These are **award categories, not project prompts or technology tracks**. Submit once to every category your project qualifies for. DigitalOcean is an optional supported resource, not mandatory hosting. See the [category requirements and submission steps]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
 
-**Judging is human-led.** Judges independently assess each eligible category using the [proposed category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses), subject to organiser approval. The existing local overall rubric and retained Top Three recognition are **iTech Club local awards**, separate from both MLH categories and pending confirmation. There is no AI judge, automated scoring/aggregation service, ranking or leaderboard.
+**Judging is human-led.** Judges independently assess each eligible category using the [published judging guide]({{ site.baseurl }}/judging/). Each category is considered separately; Gemma 4 is required only for its own award.
 
 ## Event details
 
 | | |
 |---|---|
 | **When** | Friday, 30 October 2026, 7:00 PM → Saturday, 31 October 2026, 6:00 AM EAT |
-| **Where** | The live MLH listing names Ruiru Campus; earlier local material names Mang'u Campus. Confirm the venue with organisers before travelling. |
-| **Format** | Open-ended, problem-driven AI hack day; build period and demo schedule require organiser confirmation |
-| **Teams** | Solo hackers and teams are welcome; confirm team-size and any separate local award policies with organisers |
-| **Submission close** | Live category pages display 31 October, **6:00 AM EAT**; organisers must reconcile the previous 5:00 AM schedule |
+| **Where** | Zetech University, **Ruiru Campus**, Off Thika Road, Nairobi |
+| **Format** | Open-ended, problem-driven AI hack day |
+| **Teams** | Build solo or collaborate; follow the team requirements given at registration and the event briefing |
+| **Submission close** | Saturday, 31 October, **6:00 AM EAT**, as displayed on the official category pages |
 
-Public listing checked **30 October 2026**. The eleven-hour event duration is not a confirmed coding allowance. See [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline) and follow a confirmed announcement if organisers update the live window.
+Register through the [official MLH event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club). Follow the event briefing for coding start/stop, workshops and demo slots; the event's opening hours are not all coding time.
 
 ## What's on this site
 
 - **[Build Your Own Open-Source AI Project]({{ site.baseurl }}/challenges/)** — problem discovery, model choice, MVP scope, testing, publishing and both prize categories.
 - **[Project Inspiration]({{ site.baseurl }}/inspiration/)** — optional examples across different domains.
-- **[Rules & Regulations]({{ site.baseurl }}/rules/)** — integrity, teams, schedule status and submission instructions.
+- **[Rules & Regulations]({{ site.baseurl }}/rules/)** — integrity, teams, event timing and submission instructions.
 - **[Submit Your Project]({{ site.baseurl }}/submission/)** — downloadable planning/README templates, demo preparation and official submission workflow.
 - **[Starter Kit]({{ site.baseurl }}/starter-kit/)** — Gemma hosted/local setup; other suitable open models are welcome for the broad category.
 - **[Resources]({{ site.baseurl }}/resources/)** — official MLH, model, licensing and optional DigitalOcean documentation.

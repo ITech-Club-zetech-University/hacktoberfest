@@ -9,11 +9,12 @@ description: "A downloadable planning canvas for a user, problem, model, achieva
 
 [Download the Markdown canvas]({{ site.baseurl }}/templates/downloads/project-proposal.md), copy it into your team notes and answer briefly. Use the [seven-step idea framework]({{ site.baseurl }}/challenges/#develop-an-idea-quickly) to refine it. This is a planning aid, not an additional submission form or idea-approval gate.
 
-The [submission guide]({{ site.baseurl }}/submission/) separates handbook-documented fields from unverified host settings. Complete any fields required by the actual OrganizerHQ form; this canvas does not replace it.
+Follow the [submission guide]({{ site.baseurl }}/submission/) and complete the fields required by the official form; this canvas does not replace it.
 
 The downloadable canvas is shown below:
 
-{% include_relative downloads/project-proposal.md %}
+{% capture proposal %}{% include_relative downloads/project-proposal.md %}{% endcapture %}
+{{ proposal | remove_first: "# Project Proposal / Idea Canvas" }}
 
 ## Quick feasibility check
 

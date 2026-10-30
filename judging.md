@@ -47,7 +47,7 @@ Eligibility is checked separately from marks. Only categories a team enters and 
 {: #category-specific-evaluation-lenses }
 
 {: .important }
-> **Proposed organiser scoring criteria — not official MLH-published scoring weights.** Approval and alignment with the event's OrganizerHQ category settings remain pending confirmation before judging.
+> **Proposed local scoring criteria — not official MLH-published scoring weights.** Use this guide to prepare your evidence and follow the event's published judging briefing for the criteria in use.
 
 The two confirmed MLH categories are distinct. **One submission may enter both when it meets both sets of requirements**; no duplicate project or repository is needed.
 
@@ -92,7 +92,7 @@ Agent skills must follow the [Agent Skills open standard](https://agentskills.io
 - **Useful capabilities:** Show how the supported capabilities of your chosen variant help solve the user's problem.
 - **Flexible scope:** A strong text-only tool is welcome. Neither multimodal features nor a particular application domain are compulsory.
 
-Follow the [published MLH Gemini API winner guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma). Local inference support alone does not establish prize eligibility; confirm any local-only entry with organisers. Consult the current [model card and capabilities](https://ai.google.dev/gemma/docs/core/model_card_4).
+For this award, follow the [published MLH Gemini API guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma). Local inference support alone does not establish prize eligibility. Consult the current [model card and capabilities](https://ai.google.dev/gemma/docs/core/model_card_4).
 
 <div class="judging-rubric" role="region" aria-label="Best Use of Gemma 4 scoring criteria" tabindex="0" markdown="1">
 
@@ -165,14 +165,14 @@ For **local overall assessment only**, the existing order remains: higher averag
 ### Award structure
 {: #local-overall-awards }
 
-The two MLH category awards remain separate from the retained **iTech Club local awards**:
+The two MLH category awards are separate from **iTech Club local awards**. Local overall recognition, where offered, uses these designations:
 
 - **First Place - Overall Winner**
 - **Second Place - Overall Runner-up**
 - **Third Place - Overall Third Place**
 
-Local awards, eligibility and prizes remain subject to organiser confirmation.
+Follow the event's award announcement for local recognition, eligibility and prize arrangements.
 
-If local overall assessment is confirmed, its existing weights remain **problem relevance 15, AI integration 20, technical execution 25, originality 15, responsible AI 10 and open-source quality/reproducibility 15** (100 total), using the same rating scale and averaging method. The proposed category tables above do not replace that separate local rubric.
+For local overall assessment, the separate weights are **problem relevance 15, AI integration 20, technical execution 25, originality 15, responsible AI 10 and open-source quality/reproducibility 15** (100 total), using the same rating scale and averaging method. The proposed category tables above do not replace that local rubric.
 
-One project may enter both MLH categories, but **whether the same team may receive both prizes still requires organiser/MLH confirmation**.
+One project may enter both MLH categories when eligible. Entry does not guarantee multiple prizes; the applicable published award rules govern prize allocation.

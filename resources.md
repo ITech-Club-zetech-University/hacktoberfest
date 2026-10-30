@@ -67,7 +67,7 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 - **[LM Studio Integration](https://ai.google.dev/gemma/docs/integrations/lmstudio)** — *Use this when* you prefer a visual desktop GUI runner to test prompts locally without writing code.
 - **[MLX on the current Gemma hub](https://gemma.ai/deployment/mlx/)** — Optional Apple-silicon/unified-memory inference; community checkpoint conversions vary.
 - **[vLLM on the current Gemma hub](https://gemma.ai/deployment/vllm/)** — Advanced concurrent/high-throughput serving, not required for a small local prototype.
-- **[LiteRT-LM Overview](https://ai.google.dev/edge/litert-lm/overview)** — *Use this when* deploying ultra-compact quantized models to mobile devices or embedded hardware.
+- **[LiteRT-LM Overview](https://developers.google.com/edge/litert-lm/overview)** — *Use this when* deploying ultra-compact quantized models to mobile devices or embedded hardware.
 
 ---
 
@@ -77,7 +77,7 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 - **[FunctionGemma Model Card](https://ai.google.dev/gemma/docs/functiongemma)** — Optional specialised function calling; an older model is not a substitute for Gemma 4 prize evidence.
 - **[ShieldGemma 2 Documentation](https://ai.google.dev/gemma/docs/shieldgemma)** — *Use this when* evaluating prompt safety and filtering abusive or harmful model outputs.
 - **[PaliGemma 2 Overview](https://ai.google.dev/gemma/docs/paligemma)** — *Use this when* needing fine-grained visual question answering and spatial image captioning.
-- **[Gemma 3n Architecture](https://ai.google.dev/gemma/docs/3n)** — *Use this when* exploring mobile-first, edge-optimized models from Google's earlier release wave.
+- **[Gemma 3n Architecture](https://ai.google.dev/gemma/docs/gemma-3n)** — *Use this when* exploring mobile-first, edge-optimized models from Google's earlier release wave.
 
 ---
 
@@ -86,7 +86,7 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 - **[Agent Skills Open Standard](https://agentskills.io/)** — *Use this when* understanding the principles and ecosystem behind portable agent skills.
 - **[Agent Skills Specification](https://agentskills.io/specification)** — Required conformance if your entry is an agent skill, not a requirement to build a skill.
 - **[Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart)** — *Use this when* creating, testing, and packaging your first reusable agent skill.
-- **[OpenCode Architecture](https://github.com/sst/opencode)** — An optional reference for bounded harness designs; attribute upstream work and document your original contribution.
+- **[OpenCode Architecture](https://github.com/anomalyco/opencode)** — An optional reference for bounded harness designs; attribute upstream work and document your original contribution.
 - **[llama.cpp](https://github.com/ggml-org/llama.cpp)** and [vLLM documentation](https://docs.vllm.ai/) — Optional runtime references; neither is a required participant dependency.
 
 ---
@@ -97,7 +97,7 @@ These four verified links were provided directly by MLH for this Hacktoberfest H
 - **[MLH Open Source Prize Categories](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories)** — *Use this when* reviewing the exact evaluation criteria for the official Best Open-Source AI Project challenge.
 - **[MLH Submissions & Winner Selection](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day)** — *Use this when* checking official submission rules and OrganizerHQ winner marking.
 - **[MLH Standard Hackathon Rules](https://github.com/MLH/mlh-policies/blob/main/standard-hackathon-rules.md)** — *Use this when* verifying event integrity, timing guidelines, and team conduct.
-- **[MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf)** — *Use this when* reviewing community standards and safety reporting procedures.
+- **[MLH Code of Conduct](https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md)** — *Use this when* reviewing community standards and safety reporting procedures.
 - **[Open Source Initiative (OSI) Approved Licenses](https://opensource.org/licenses)** — *Use this when* choosing an open-source license (such as MIT, Apache-2.0, or GPL-3.0) for your team's application code.
 - **[GitHub: Licensing a Repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)** — Add a code licence; publishing code without one does not automatically grant open-source reuse rights.
 - **[Responsible Generative AI Toolkit](https://ai.google.dev/responsible/docs)** — Practical responsible-AI guidance alongside the chosen model's card and service terms.

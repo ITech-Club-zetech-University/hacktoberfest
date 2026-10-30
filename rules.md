@@ -1,7 +1,7 @@
 ---
 title: Rules & Regulations
 nav_order: 2
-description: "Open-ended project rules, schedule confirmation, integrity and official MLH submission guidance."
+description: "Open-ended project rules, event timing, integrity and official MLH submission guidance."
 ---
 
 # Rules & Regulations
@@ -20,14 +20,14 @@ Help others, build something useful and explain honestly what works. Optional in
 
 Register through the [official MLH event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) and check in at the venue for prize eligibility. Organisers, judges, mentors and sponsor representatives must not judge their own competitive work.
 
-The listing's audience tags and local membership wording need organiser reconciliation. Confirm attendance eligibility and the venue with staff; the live listing names Ruiru Campus while earlier local material names Mang'u Campus.
+The event takes place at **Zetech University, Ruiru Campus, Off Thika Road, Nairobi**. Follow the registration requirements on the official event listing. Contact the host through that listing if you need help with attendance or access.
 
 ## Team size & formation
 {: #team-size-formation }
 
 Solo hackers and teams are welcome to build. Ask organisers for team matching based on interests, skills and availability, not a required track.
 
-**Organiser confirmation required:** the previous local awards policy required 3–4 members. The final team-size limits and any separate local award restrictions must be confirmed and announced for the new format; do not treat that old local rule as a universal MLH requirement.
+Follow the team requirements provided at registration and the event briefing.
 
 List every contributor and their role. Every member should understand the application and be able to explain their own contribution. Do not split one codebase into duplicate submissions to gain extra entries.
 
@@ -59,7 +59,7 @@ An agent skill must follow the [Agent Skills open standard](https://agentskills.
 
 Gemma 4 must meaningfully power the actual product, not just appear in dependencies, configuration or a README. Demonstrate its exact model ID and inference path. A Gemini model is not Gemma 4.
 
-Text/image experiences, focused tools and rapid Gemini API prototyping are suggestions from the category description, not compulsory modalities or domains. A text-only tool can be appropriate. Hosted Gemma 4 and supported local runtimes are technical options, but MLH winner guidance calls for the **Gemini API**; organisers must resolve any different event-specific instruction before promising local-only eligibility.
+Text/image experiences, focused tools and rapid Gemini API prototyping are suggestions from the category description, not compulsory modalities or domains. A text-only tool can be appropriate. For this prize, follow MLH's published **Gemini API** guidance. Local inference remains a technical option for suitable projects, but does not by itself establish eligibility for this award.
 
 Follow the [official category links, current model/API documentation and capability limits]({{ site.baseurl }}/challenges/#best-use-of-gemma-4). Variants differ in modality, hardware and performance. Check [service terms]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check) as well as model licensing.
 
@@ -73,18 +73,12 @@ Follow the [official category links, current model/API documentation and capabil
 
 ## The hacking timeline
 
-**Checked against the public MLH listing on 30 October 2026:**
-
-| Item | Current status |
+| Item | Time |
 |---|---|
-| Event | Friday 30 October, **7:00 PM** → Saturday 31 October, **6:00 AM EAT** |
-| Public submission close | Both official category pages display **31 October, 6:00 AM EAT** |
-| Coding start/stop and setup allowances | **Awaiting Lead Organiser confirmation** |
-| Submission opening, demos and judging | **Awaiting confirmation and reconciliation with the public close** |
+| Event | Friday 30 October 2026, **7:00 PM** → Saturday 31 October, **6:00 AM EAT** |
+| Submission close | Saturday **31 October, 6:00 AM EAT**, on both official category pages |
 
-The event lasts eleven hours, but that is not eleven confirmed coding hours. Earlier local instructions used a 5:00 AM cutoff and an eight-hour building session. **Those timings are superseded pending reconciliation and must not be used as current instructions.**
-
-Organisers must verify the live OrganizerHQ window, confirm the build period and announce the same schedule to everyone. Do not silently close submissions an hour before the published deadline or promise a demo timetable that cannot fit. Consult the live category pages and confirmed staff announcement if the schedule changes.
+Follow the event briefing for the coding period, workshops and your demo slot. Do not assume the entire event window is available for coding. Check the [official event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) and live category pages for updates; ask staff promptly if your submission window differs.
 
 Scope one working user journey for the actual time remaining, reserving time for testing, documentation, submission and rehearsal. The [idea framework]({{ site.baseurl }}/challenges/#develop-an-idea-quickly) helps cut scope.
 
@@ -93,24 +87,24 @@ Scope one working user journey for the actual time remaining, reserving time for
 1. Publish a **public GitHub repository** with a suitable code licence and useful README. Include the problem, primary user, original contribution, selected prize categories, exact models, dependency/data disclosures, setup, tests and limitations.
 2. Test normal inputs, edge cases and at least one failure or uncertainty scenario. Prepare a working demo.
 3. Use the [README template]({{ site.baseurl }}/templates/project-readme-template/), [submission checklist]({{ site.baseurl }}/templates/submission-checklist/) and [demo guide]({{ site.baseurl }}/templates/demo-script/).
-4. One team member follows the [OrganizerHQ submission guide]({{ site.baseurl }}/submission/) through the event's [Challenges page](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges). It distinguishes handbook-documented fields and controls from authenticated event settings still requiring organiser verification.
+4. One team member follows the [submission guide]({{ site.baseurl }}/submission/) through the event's [Challenges area](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges). Sign in and check that the project is saved.
 5. **Submit once and select every category the project qualifies for:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3) and/or [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d). No primary-track declaration is required.
 
 The public category close is **6:00 AM EAT on 31 October**, subject to a verified, clearly announced organiser change. Keep the repository public after submission.
 
-Organisers may run administrative repository checks, but they do not score or rank projects. A checker PASS does not guarantee category eligibility. Missing-Gemma warnings from the legacy checker do not exclude non-Gemma projects from the broad category; staff must review the actual model evidence. Network/rate-limit failures must never penalise a team.
+Provide evidence for each entered category in your repository and demo. An otherwise qualifying project using another suitable open model can enter Best Open-Source AI Project without using Gemma.
 
 ## How winners are chosen & award structure
 
-Appointed **human judges** review each entered category separately. The [category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) are **proposed local guidance for organiser review**, not an official MLH numerical rubric. No AI judge, automated scoring, score aggregation service, ranking service, leaderboard or automated winner selection is used.
+Appointed **human judges** review the implementation, working demo and repository separately for each eligible category. See the [judging guide]({{ site.baseurl }}/judging/) for the proposed local 100-point category rubrics, rating scale and selection process. These are not official MLH-published scoring weights.
 
-Official requirements determine **Eligible**, **Pending**, **Ineligible** or **Not Entered** status for each category. Only entered, verified eligible projects enter its merit comparison. An unmet condition in one category does not automatically exclude the project from another. Do not assign zero for an unentered category or require duplicate projects/repositories to enter both.
+You are considered only for categories you enter and qualify for. An unmet condition in one category does not automatically exclude your project from another. Entering both does not require duplicate projects or repositories.
 
-The retained **iTech Club local Top Three awards** and [six-criterion, 100-point local rubric]({{ site.baseurl }}/judging/#local-overall-awards) are separate from both official awards and their proposed category rubrics. Organisers must confirm local continuation, eligibility and prize inventory; this update neither cancels nor invents prizes. Missing implementation evidence informs scores, not hidden gates or automatic deductions.
+Any **iTech Club local awards** are separate from both MLH categories. Follow the event's award announcement for local recognition and prize arrangements. Missing functionality affects the relevant criterion, not an unpublished fixed deduction.
 
-**Whether the same team may receive both official prizes remains unconfirmed.** Entering both does not answer that question. Confirm it against MLH/onboarding/HQ before marking winners; do not assume a ban or an automatic dual win.
+Entering multiple categories does not guarantee multiple prizes; the applicable published award rules govern prize allocation.
 
-Judge sheets and provisional scores remain private. Organisers manually consolidate independent category scores. Apply the [existing local tie-breakers]({{ site.baseurl }}/judging/#deterministic-tie-breaking-protocol) only to local overall scores. Official category decisions use their own approved criteria and published requirements.
+Independent scores are consolidated separately for each category. Judge sheets and provisional scores remain private; final winners are announced after eligibility and results are validated.
 
 <a id="disqualification-ownership"></a>
 
@@ -118,6 +112,6 @@ Judge sheets and provisional scores remain private. Organisers manually consolid
 {: #governance-disqualification-ownership }
 
 - **Conflicts:** Judges recuse from projects they helped build, closely mentored or have a personal interest in. At least two valid independent evaluations are required; three are preferred where capacity allows.
-- **Disqualification:** Published eligibility/conduct failures, plagiarism, prohibited pre-building and deliberately misrepresented functionality are handled by the Lead Organiser, not an automated checker.
-- **Appeals:** Raise administrative flags promptly before the confirmed deadline. The Lead Organiser, consulting the MLH representative where necessary, resolves disputes and records the rationale.
+- **Disqualification:** Published eligibility/conduct failures, plagiarism, prohibited pre-building and deliberately misrepresented functionality may lead to disqualification.
+- **Appeals:** Raise submission, eligibility or conduct concerns promptly with the Lead Organiser, who can involve the MLH representative where appropriate.
 - **Ownership:** Teams retain ownership of their work. Open-source licensing grants reuse rights without transferring ownership to the organisers or sponsors.

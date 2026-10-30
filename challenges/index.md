@@ -23,9 +23,9 @@ The live MLH event lists two categories:
 | Official category | What your project needs to demonstrate |
 |---|---|
 | **[Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3)** — DigitalOcean-supported | An original project with open-source/open-weight AI central to a useful working solution; public GitHub source and a suitable open-source code licence. Using an AI coding assistant alone is not enough. Agent skills must follow the Agent Skills Open Standard; a model harness must be original or a meaningful extension. Those conditions apply only if you build that type of project. |
-| **[Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d)** — Gemma / Google DeepMind | Meaningful, working **Gemma 4** integration. Explain its role and show the actual model call in code and the demo. The [MLH partner winner guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma) requires Gemma use through the **Gemini API**; do not assume local-only inference or an older Gemma model qualifies. Ask organisers to resolve any exception against event onboarding. |
+| **[Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d)** — Gemma / Google DeepMind | Meaningful, working **Gemma 4** integration. Explain its role and show the actual model call in code and the demo. Follow the [MLH partner Gemini API guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma); local-only inference or an older Gemma model does not by itself establish eligibility. |
 
-**One project can qualify for both categories. Submit once and select every category it qualifies for.** Permission to enter both does not establish permission to win both; organisers must confirm that policy. Do not submit duplicate forms for the same project.
+**One project can qualify for both categories. Submit once and select every category it qualifies for.** Do not submit duplicate forms or create duplicate repositories for the same project. Entry does not guarantee multiple prizes.
 
 **DigitalOcean is a supported resource, not a mandatory technology choice.** You may build locally or use suitable hosting elsewhere. Provider choice alone does not establish open-source AI eligibility. Check [optional deployment and pricing resources]({{ site.baseurl }}/resources/#optional-digitalocean-resources) before incurring costs; no universal free-credit entitlement is promised.
 
@@ -59,7 +59,7 @@ The [live MLH description](https://www.mlh.com/events/hacktoberfest-hack-day-nai
 | **Hosted Gemini API** | The [current official hosted guide](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api), rechecked **30 October 2026**, lists `gemma-4-31b-it` and `gemma-4-26b-a4b-it`. Check current model availability, account access, quotas and [API terms](https://ai.google.dev/gemini-api/terms) before publishing or running examples. A Gemini-branded model is not Gemma 4. |
 | **Local inference** | Official routes include [Ollama](https://ai.google.dev/gemma/docs/integrations/ollama), [llama.cpp](https://ai.google.dev/gemma/docs/integrations/llamacpp), [Transformers](https://ai.google.dev/gemma/docs/core/huggingface_inference) and [LM Studio](https://ai.google.dev/gemma/docs/integrations/lmstudio). Check support for the exact checkpoint, quantisation and input type, and test actual memory and latency. Technical availability does not establish prize eligibility. |
 
-The [MLH partner winner guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma) instructs organisers to confirm Gemma through the **Gemini API**. Follow that published route for this award unless MLH confirms different event-specific instructions. Do not promise local-only eligibility; ask organisers to resolve it against onboarding before selecting a winner.
+For this award, follow the [MLH partner Gemini API guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma). Technical support for local inference does not by itself establish prize eligibility.
 
 Model variants differ. Consult the [current model card](https://ai.google.dev/gemma/docs/core/model_card_4), [model sizing/capabilities](https://ai.google.dev/gemma/docs/core), [image guide](https://ai.google.dev/gemma/docs/capabilities/vision/image) and [audio guide](https://ai.google.dev/gemma/docs/capabilities/audio). Native audio is listed for E2B, E4B and 12B, not every size; model capability also does not guarantee endpoint/runtime support. Larger models, extra modalities and expensive hardware are not inherently better for your use case.
 
@@ -67,9 +67,9 @@ Hosted-service terms are separate from the model licence. The current Gemini API
 
 ### How the awards are judged
 
-Appointed **human judges** review each entered category separately using [proposed category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses). These category weights and the separate local overall rubric are **local judging guidance for organiser review, not an official MLH numerical rubric**. There is no AI judge, automated project scoring, automated score aggregation service, ranking service, leaderboard or automated winner selection.
+Appointed **human judges** review each entered category separately. The [judging guide]({{ site.baseurl }}/judging/) explains the proposed local 100-point category rubrics, evidence, scoring scale and selection process. These are **not official MLH-published scoring weights**.
 
-The retained **iTech Club local Top Three awards** are separate from the two MLH categories; their continuation, eligibility and prize inventory need organiser confirmation. Entering both official categories requires neither duplicate projects nor duplicate repositories. Whether one team may receive both prizes remains an explicit organiser/MLH confirmation item.
+Any **iTech Club local awards** are separate from the MLH categories. Follow the event's award announcement for local recognition and prize arrangements.
 
 ## Develop an idea quickly
 
@@ -147,12 +147,12 @@ Compare actual results with expected behaviour and explain failures honestly. **
 
 ## Time and feasibility
 
-**Public listing checked: 30 October 2026.** The [official event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) gives **Friday 30 October, 7:00 PM → Saturday 31 October, 6:00 AM EAT**. Both live category pages display **31 October, 6:00 AM EAT** as the submission close.
+The [official event listing](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) gives **Friday 30 October 2026, 7:00 PM → Saturday 31 October, 6:00 AM EAT**. Both live category pages display **31 October, 6:00 AM EAT** as the submission close.
 
 {: .important }
-> **Event duration is not a confirmed build window.** Earlier local instructions used a 5:00 AM deadline and an eight-hour building session. Those timings conflict with the live submission close and must not be used as current instructions. The Lead Organiser must confirm and announce the coding start/stop, submission window, demo schedule and any approved change to OrganizerHQ. Consult the [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline) before planning; do not assume that all eleven event hours are available for coding.
+> **Plan around your session schedule.** Follow the event briefing for coding start/stop and your demo slot. Do not assume all event hours are available for coding.
 
-Once the remaining build time is confirmed, work backwards from it. Reserve time for tests, README/setup verification, publishing, submitting and demo rehearsal. Get a thin end-to-end flow running early, then improve reliability. If time is short, reduce features rather than promising a complete platform. Agree a fallback demonstration and disclose what it cannot prove.
+Work backwards from the time available. Reserve time for tests, README/setup verification, publishing, submitting and demo rehearsal. Get a thin end-to-end flow running early, then improve reliability. If time is short, reduce features rather than promising a complete platform. Prepare a fallback demonstration and disclose what it cannot prove.
 
 ## Need a starting point?
 

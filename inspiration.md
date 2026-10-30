@@ -28,6 +28,6 @@ For any idea, identify one user, one AI role, one working flow, test scenarios a
 
 Technical patterns such as retrieval, local inference, multimodal inputs, reusable agent skills and bounded developer tools may help, but none is compulsory. An effective small CLI can be as valuable as a web or mobile app.
 
-## About the former five briefs
+## Choose your own direction
 
-The former numbered briefs are retained at their original URLs as **historical archives**, outside active navigation and search. Their old team sizes, time estimates, mandatory Gemma rules and acceptance checklists are not current event requirements. Use the [current project brief]({{ site.baseurl }}/challenges/) and [rules]({{ site.baseurl }}/rules/) instead.
+These examples are not an eligibility checklist. Use the [current project brief]({{ site.baseurl }}/challenges/) and [rules]({{ site.baseurl }}/rules/) to plan your original project.

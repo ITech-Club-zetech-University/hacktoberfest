@@ -6,9 +6,9 @@ description: "Answers about original ideas, models, teams, prize categories, hum
 
 # FAQ
 
-## Do I have to select one of the former five challenges?
+## Do I have to select a predefined challenge?
 
-**No.** Choose your own problem, users, domain, product concept and implementation. The former briefs are historical archives, not active tracks. [Project Inspiration]({{ site.baseurl }}/inspiration/) is entirely optional.
+**No.** Choose your own problem, users, domain, product concept and implementation. [Project Inspiration]({{ site.baseurl }}/inspiration/) is entirely optional.
 
 ## How do we turn an idea into a feasible project?
 
@@ -20,11 +20,11 @@ No. Start small and ask mentors for help. The [starter kit]({{ site.baseurl }}/s
 
 ## Can I come without a team?
 
-Yes. Solo hackers and teams are welcome to build, and staff can help match collaborators. Confirm numerical limits and any separate local award restrictions with organisers; the previous 3–4-member local policy is not a universal MLH requirement. See [team formation]({{ site.baseurl }}/rules/#team-size-formation).
+Yes. Solo hackers and teams are welcome, and staff can help match collaborators. Follow the team requirements provided at registration and the event briefing. See [team formation]({{ site.baseurl }}/rules/#team-size-formation).
 
 ## Can one project enter both categories?
 
-**Yes, if it meets both sets of requirements.** Submit once through the event's [OrganizerHQ Challenges page](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges), selecting every qualifying category. The two are **Best Open-Source AI Project** and **Best Use of Gemma 4**. They are awards, not technical tracks. Whether one project may **win** both needs organiser confirmation.
+**Yes, if it meets both sets of requirements.** Submit once through the event's [Challenges area](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges), selecting every qualifying category. The two are **Best Open-Source AI Project** and **Best Use of Gemma 4**. They are awards, not technical tracks. Entering both does not guarantee multiple prizes.
 
 ## Must we use Gemma 4 or DigitalOcean?
 
@@ -42,7 +42,7 @@ The [hosted guide](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api) cu
 
 ## Does local Gemma inference qualify for the Gemma 4 prize?
 
-Do not assume so. Local inference is a valid technical option for suitable projects, but MLH's Gemma partner winner guidance calls for Gemma through the **Gemini API**. Confirm any exception with organisers against onboarding. Older Gemma versions or using Gemini CLI only to write code do not prove Gemma 4 integration.
+Local inference is a valid technical option for suitable projects, but for this award follow MLH's published **Gemini API** guidance. Local inference alone, older Gemma versions or using Gemini CLI only to write code do not establish eligibility.
 
 ## Is Gemini API the same as a Gemini model?
 
@@ -50,17 +50,17 @@ No. The API can host **Gemma** models selected explicitly by model ID. A proprie
 
 ## What are the timing and submission deadline?
 
-The public event runs **30 October, 7:00 PM → 31 October, 6:00 AM EAT**. Both category pages display a **31 October, 6:00 AM EAT** submission close. The build window and demo schedule still need organiser reconciliation with earlier local timings. Do not assume an eight-hour build or the former 5:00 AM cutoff. See [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline).
+The event runs **30 October 2026, 7:00 PM → 31 October, 6:00 AM EAT**, at **Zetech University, Ruiru Campus**. Both category pages display a **31 October, 6:00 AM EAT** submission close. Follow the event briefing for coding start/stop and demo slots; not all event hours are coding time. See [event timing]({{ site.baseurl }}/rules/#the-hacking-timeline).
 
 ## How are projects judged?
 
-Appointed humans review each eligible entered category separately using [proposed category-specific 100-point rubrics]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses), subject to organiser approval. These weights are local guidance, **not an official MLH numerical rubric**. Each category is scored separately; a local overall score does not automatically win either category.
+Appointed humans review your implementation, demo and repository. The [judging guide]({{ site.baseurl }}/judging/) explains the proposed local 100-point category rubrics, rating scale and selection process. These are **not official MLH-published scoring weights**. Each category is evaluated separately; a local overall score does not automatically win either category.
 
-The existing local overall rubric and its tie-breakers belong to **iTech Club local overall assessment**, separate from the proposed category rubrics and the two MLH awards. Local Top Three continuation and prizes need confirmation, not silent removal or new promises. There is no AI judge, automated scoring, score aggregation service, leaderboard or automated winner selection.
+Any **iTech Club local awards** are separate from the MLH categories. Follow the event's award announcement for local recognition and prize arrangements.
 
 ## What if we do not qualify for one category?
 
-Judges record **Eligible**, **Pending**, **Ineligible** or **Not Entered** separately for each award. Resolve pending evidence with organisers. A project can remain eligible for another category; unentered/ineligible categories are not zero scores. The [judge sheet]({{ site.baseurl }}/templates/judge-score-sheet.csv) records actual considered categories and separate evidence/notes. No duplicate project or repository is needed for dual entry.
+Your project can still be considered for another category whose requirements it meets. You are not assigned a zero score for a category you did not enter. Use the same project and repository for all eligible categories, and ask staff if you need help understanding a requirement.
 
 ## What if our project is unfinished?
 
@@ -82,7 +82,7 @@ No. Completed sheets, individual marks, conflicts and provisional results remain
 
 ## What if connectivity or an API fails?
 
-Test your chosen runtime early. Local models need downloaded weights and sufficient hardware; hosted APIs need connectivity, account access and quota. Prepare a safe failure path, not a hidden model substitution. A network failure in the administrative checker must not penalise a team.
+Test your chosen runtime early. Local models need downloaded weights and sufficient hardware; hosted APIs need connectivity, account access and quota. Prepare a safe failure path, not a hidden model substitution. Tell judges what failed and show your actual test evidence honestly.
 
 ## Which templates can we copy?
 

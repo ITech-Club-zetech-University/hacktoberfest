@@ -281,7 +281,7 @@ DigitalOcean's MLH material refers to **Gradient AI / Agentic Cloud**. Current p
 | [Droplets](https://docs.digitalocean.com/products/droplets/) / [GPU Droplets](https://docs.digitalocean.com/products/gpu-droplets/) | Only when runtime/compute control warrants VM/GPU administration, setup time and cost |
 | [General DigitalOcean documentation](https://docs.digitalocean.com/) | Select storage, databases or networking only as needed |
 
-Open the **current DigitalOcean promo offer in [My Hacktoberfest](https://hacktoberfest.com/my/)** and check the official event/MLH instructions. Confirm account eligibility, offer availability, expiry, usage limits, billing verification and covered products **before creating resources**. The authenticated offer terms were not inspected here; no credit amount, free use or past-year promotion is promised.
+Open the **current DigitalOcean promo offer in [My Hacktoberfest](https://hacktoberfest.com/my/)** and check the official event/MLH instructions. Check account eligibility, offer availability, expiry, usage limits, billing verification and covered products **before creating resources**. Do not assume a fixed credit amount, free use or a past-year promotion applies to your account.
 
 **Billable cloud resources can continue to incur costs after promotional credits expire or are exhausted.** Review [current inference pricing](https://docs.digitalocean.com/products/inference/details/pricing/) and each chosen product's pricing. Serverless inference has its own prepaid-balance rules; do not assume other services stop automatically. Monitor usage, understand whether alerts are hard spending limits, and remove unneeded resources and retained storage after testing.
 
@@ -312,9 +312,9 @@ Consult Google's [Responsible Generative AI Toolkit](https://ai.google.dev/respo
 
 ## 7. Time-boxed build workflow
 
-The public event is **30 October, 7:00 PM → 31 October, 6:00 AM EAT**. Both category pages display a **6:00 AM submission close**, but the coding period, demos and closing still need [organiser confirmation/reconciliation]({{ site.baseurl }}/rules/#the-hacking-timeline). **Do not assume eight hours or that all event hours are coding time.**
+The event is **30 October 2026, 7:00 PM → 31 October, 6:00 AM EAT**, with a **6:00 AM submission close** on both category pages. Follow the [event briefing]({{ site.baseurl }}/rules/#the-hacking-timeline) for coding start/stop and demo slots; not all event hours are coding time.
 
-Once organisers confirm the time available, work backwards:
+Work backwards from the time available:
 
 1. **Problem and scope:** one primary user, task, AI role and observable success check; complete the [worksheet]({{ site.baseurl }}/templates/problem-statement/).
 2. **Minimal model test:** choose one execution path and prove a non-empty response with safe test input; check latency, account/hardware and failure behaviour.
@@ -323,8 +323,8 @@ Once organisers confirm the time available, work backwards:
 5. **Testing and refinement:** run the small evaluation set, edge cases, at least one failure/uncertainty case and relevant misuse tests.
 6. **Release and demo preparation:** stop adding features early enough to verify setup, README, licences, configuration, public repo, official submission and rehearsal. Deployment is optional; do not trade a working demonstration for last-minute infrastructure.
 
-## Example verification boundary
+## Before relying on an example
 
-Source documentation and published SDK requirements were checked **30 October 2026**. The example manifests pin **`google-genai 2.34.0`** and **`@google/genai 2.32.0`**. Repository tests exercise text/image request construction, non-empty output checks and failure handling **offline**. They are development checks, not project scoring.
+The example manifests pin **`google-genai 2.34.0`** and **`@google/genai 2.32.0`**. Use the committed dependencies and current provider documentation for your chosen route.
 
-**No paid API call, authenticated promo redemption, model download or real-device inference is certified by those tests.** Run your chosen smoke test with your own eligible account or downloaded model, then evaluate the application outcome. A green mock test cannot establish live model availability, image accuracy or hardware performance.
+Run the connection test with your own eligible account or downloaded model, then evaluate the application outcome. Mock tests do not establish live model availability, image accuracy or hardware performance. Measure latency and memory on your actual device, inspect outputs and practise the failure path before your demo.

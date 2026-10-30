@@ -7,7 +7,7 @@ description: "Project-neutral publishing, testing and category submission checks
 
 # Hack Day Submission Checklist
 
-Copy this into your team notes. Check the live category close and [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline) for a verified organiser announcement. No primary track is required. The [submission guide]({{ site.baseurl }}/submission/) identifies handbook-documented fields and the host settings still requiring confirmation.
+Copy this into your team notes. Follow the [event timing]({{ site.baseurl }}/rules/#the-hacking-timeline), live category close and [submission guide]({{ site.baseurl }}/submission/). Choose your own project; no primary track is required.
 
 ## Project and evidence
 
@@ -48,9 +48,9 @@ Complete only the conditions relevant to the category/project you are entering. 
 - [ ] Verify the saved submission before the confirmed close; keep the repository public.
 - [ ] Open the saved repository/demo links and check the entered categories. A canvas or README alone is not official submission.
 
-## Human demo and administrative review
+## Demo preparation
 
 - [ ] Rehearse the [demo flow]({{ site.baseurl }}/templates/demo-script/) within the organiser-confirmed presentation and Q&A allowance.
 - [ ] Show the real model workflow, one boundary/failure and the relevant code.
-- [ ] Ask staff to resolve administrative flags promptly. A legacy checker missing-Gemma warning does not exclude other open models from the broad category.
-- [ ] Treat checker PASS as preliminary hygiene only, not a score or guaranteed category eligibility. Network/rate-limit failures must never penalise a team.
+- [ ] Ask staff for help before the deadline if you cannot access or save your submission.
+- [ ] Keep your repository and demo accessible, with evidence for each entered category.

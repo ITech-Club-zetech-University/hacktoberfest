@@ -7,7 +7,7 @@ description: "A project-neutral working demonstration, test evidence and judge Q
 
 # Demo Preparation Guide
 
-Rehearse one real user journey for human judges. Use the **final presentation format, demo duration and Q&A allowance announced by organisers**, not a time limit inferred from this guide. The [session schedule still requires confirmation]({{ site.baseurl }}/rules/#the-hacking-timeline).
+Rehearse one real user journey for human judges. Use the **presentation format, demo duration and Q&A allowance given at the event briefing**. Follow the [session instructions]({{ site.baseurl }}/rules/#the-hacking-timeline), not a time limit inferred from this guide.
 
 Show what actually runs. Slides, recordings and mock outputs do not establish working functionality; label any fallback, edited example or unfinished feature honestly. A recording or demo URL can help explain your project but does not replace the required working demonstration.
 
