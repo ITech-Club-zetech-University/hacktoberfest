@@ -1,30 +1,27 @@
 ---
-title: Demo Script Template
+title: Demo Preparation Guide
 nav_exclude: true
 permalink: /templates/demo-script/
-description: "A project-neutral two-minute working demonstration and one-minute judge Q&A."
+description: "A project-neutral working demonstration, test evidence and judge Q&A preparation."
 ---
 
-# 2-Minute Live Demo + 1-Minute Judge Q&A Template
+# Demo Preparation Guide
 
-Rehearse one real user journey for human judges. The session schedule requires [organiser confirmation]({{ site.baseurl }}/rules/#the-hacking-timeline); do not rely on the former 5:00–5:45 AM slot.
+Rehearse one real user journey for human judges. Use the **final presentation format, demo duration and Q&A allowance announced by organisers**, not a time limit inferred from this guide. The [session schedule still requires confirmation]({{ site.baseurl }}/rules/#the-hacking-timeline).
 
-Slides or prerecorded video do not replace working software. Show what actually runs, identify your model and disclose any fallback, edited example or unfinished feature.
+Show what actually runs. Slides, recordings and mock outputs do not establish working functionality; label any fallback, edited example or unfinished feature honestly. A recording or demo URL can help explain your project but does not replace the required working demonstration.
 
-Use one project, repository and demo for every category it qualifies for. Human judges keep [distinct category notes]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses); those proposed lenses are local guidance for organiser review, not an official MLH numerical rubric. The retained 100-point block applies only to separately confirmed **iTech Club local overall assessment**.
+## Seven-part demo flow
 
-## Universal demo flow
+1. **Problem and user:** Name one specific user, the task they struggle with and the outcome you want to improve.
+2. **Working journey:** Start with a realistic input and show the core application flow through to its useful result. Prefer a focused working MVP over a tour of unfinished features.
+3. **Actual AI role:** Point out exactly where the model is called and what it contributes. Show the relevant code or request path; distinguish dynamic inference from cached or mocked output.
+4. **Model and technical decisions:** Identify the exact model/variant, provider/runtime, architecture and important trade-offs. Explain why the approach fits the problem. A Gemini model is not Gemma 4.
+5. **Normal test and limitation:** Show one normal case and one edge case or limitation. Explain expected versus observed results, uncertainty, safe failure and any human next step. Keep recorded failure/uncertainty tests available too.
+6. **Built versus unfinished:** Explain the team's original work during the confirmed hack period, what was reused, and what remains incomplete. Do not present roadmap features as built.
+7. **Reproduce and contribute:** Open the public repository, code licence and README. Show how another developer can configure, run, test and contribute to the project.
 
-| Timing | What to show | Evidence for category review / local rubric |
-|---|---|---|
-| **0:00–0:15** (15s) | One specific user, problem and desired outcome | Problem relevance |
-| **0:15–0:30** (15s) | Exact model/runtime and why AI helps; entered prize categories | Meaningful open-source/open-weight AI integration |
-| **0:30–1:15** (45s) | Realistic input through the working application to a useful output; your original contribution | Technical execution and originality |
-| **1:15–1:45** (30s) | An edge case, failure or uncertainty; safety boundary and human next step | Responsible AI, privacy and safety |
-| **1:45–2:00** (15s) | Public repo, licence, setup/tests, model/dependency disclosures and limitations | Open-source quality |
-| **2:00–3:00** (60s) | Judge Q&A and relevant code | All six criteria |
-
-The demonstration totals **120 seconds**, followed by **60 seconds** of Q&A. See the [proposed category lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) and, where applicable, the [separate local rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet).
+Keep the core flow short enough for the organiser-confirmed slot, leaving the announced time for questions. Cut optional features from the presentation before cutting the evidence needed to understand the project.
 
 ## Adapt evidence to your actual project
 
@@ -39,6 +36,12 @@ No technical pattern below is mandatory:
 
 These are evidence suggestions, not archived acceptance gates, fixed deductions or extra points. Other architectures and domains are welcome.
 
-## Q&A preparation
+## Rehearsal and Q&A
 
-Be ready to show the actual model call, explain original versus reused work, describe test results and limitations, and answer what happens when inference fails. A response appearing on screen does not establish correctness; explain the observable benefit to the user.
+- Test the demo on the actual device and chosen inference path; check connectivity, downloaded models, account access and permitted sample data.
+- Prepare an honest failure path for unavailable inference; never silently substitute a different model or a canned answer.
+- Be ready to explain model choice, original versus reused work, test outcomes, privacy, costs, limitations and what happens when inference fails.
+- Keep secrets and personal data out of terminals, screenshots, logs and recordings.
+- Use one project, repository and demo for all categories it qualifies for. Human judges keep [distinct category notes]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses); the local 100-point assessment is separate from the MLH awards.
+
+A model response appearing on screen does not establish correctness. Explain the observable benefit and what your test evidence does and does not prove. Finish with the [pre-submission checklist]({{ site.baseurl }}/templates/submission-checklist/).

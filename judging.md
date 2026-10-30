@@ -33,7 +33,7 @@ Hacktoberfest Hack Day Nairobi × iTech Club operates on a **strictly human-led 
 
 1. **Working substance over gaming:** Per official Major League Hacking (MLH) rules, **Hacktoberfest does not use pull-request counts, commit volume, or lines of code as the basis for judging or prizes.** Automated metrics reward artificial activity rather than practical utility.
 2. **Open-ended projects:** Teams choose their own users, problems, domains and architectures. Judges compare practical outcomes against the published guidance applicable to each award, not a prescribed technical track.
-3. **Live demonstration verification:** A two-minute live demonstration and code walk-through answers crucial questions no script can evaluate: Does the software actually run? Does the chosen open-source/open-weight AI meaningfully power the product? Can the team explain what they built and where its limitations lie?
+3. **Live demonstration verification:** A live demonstration and code walk-through within the organiser-confirmed allowance answers crucial questions no script can evaluate: Does the software actually run? Does the chosen open-source/open-weight AI meaningfully power the product? Can the team explain what they built and where its limitations lie?
 
 ## Official eligibility vs. local judging guidance
 
@@ -305,7 +305,7 @@ The CSV is a **manual-entry template with no spreadsheet formulas**. It contains
 
 1. Enter your Judge ID, team, repository and entered categories. Declare conflicts first; if conflicted, stop, leave merit/numerical fields blank and request reassignment.
 2. Record separate category eligibility statuses and evidence; refer unresolved cases to the lead. Only list eligible assigned categories under **Categories Considered By This Judge**.
-3. Watch the two-minute demo and one-minute Q&A. Record distinct qualitative notes for each category actually reviewed, against its approved lens.
+3. Watch the demo and Q&A within the organiser-confirmed allowance. Record distinct qualitative notes for each category actually reviewed, against its approved lens.
 4. Set **Local Overall Assessment**. If **Scored**, fill every integer rating, weighted score, six criterion-evidence fields and total; verify arithmetic. If **Not Assessed**, leave that entire numerical/criterion block blank, not zero.
 5. Submit privately without discussing marks or notes with peers. The coordinator audits category assignments/statuses independently of local arithmetic and asks the original judge to correct inconsistencies.
 
@@ -335,7 +335,7 @@ The complete judging workflow is conducted in nine sequential steps:
 
 ### Step 3: Each team presents its working application
 - **Time window:** The Lead Organiser must announce a feasible demo session; the previous 5:00–5:45 AM slot is not confirmed.
-- **Presentation Time:** Strictly **2 minutes for demonstration** + **1 minute for judge Q&A** (total 3 minutes per team).
+- **Presentation Time:** The Lead Organiser must confirm and announce the demonstration and Q&A allowances before presentations; apply the same limits fairly to every team.
 - **Time Management:** Timekeepers enforce strict cutoffs. Slide decks and pre-recorded videos are prohibited; teams must demonstrate running software live on screen.
 
 ### Step 4: Judges inspect the repository and demonstration
@@ -407,7 +407,7 @@ The legacy checker can flag a valid non-Gemma project for manual review. **Absen
 
 ## Standard demo checklist for judges
 
-Judges use this 6-point checklist during each 2-minute demonstration (participants should follow the [Live Demo Script Template]({{ site.baseurl }}/templates/demo-script/)):
+Judges use this 6-point checklist during each demonstration within the confirmed allowance (participants should follow the [Demo Preparation Guide]({{ site.baseurl }}/templates/demo-script/)):
 
 - [ ] **Live software demonstration:** Project runs live on screen (not slides or pre-rendered video).
 - [ ] **Meaningful AI integration verified:** Exact open model/runtime and real input/output evidence are shown. Check Gemma 4/API evidence only where that category is entered.

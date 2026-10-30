@@ -68,6 +68,8 @@ def audit_repository(repo_root: str):
         rel_parts = p.relative_to(root_path).parts
         if any(part in exclude_dirs for part in rel_parts):
             continue
+        if rel_parts[:2] == ("templates", "downloads"):
+            continue
         all_md_files.append(p)
 
     all_md_files.sort()

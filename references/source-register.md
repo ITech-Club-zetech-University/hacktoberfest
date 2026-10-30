@@ -100,6 +100,14 @@ Model/API identifiers, SDK execution, hardware benchmarks and model licensing cl
 
 ### Previously recorded operational limits
 
+### Participant submission pack verification — 30 October 2026
+
+Both public category pages were reopened in the browser and display the two category names, a 31 October 6:00 AM EAT close and "One submission can enter every category it qualifies for." The event's `/challenges` route redirects to its overview/prize-category area. Opening `/submissions/new` redirects to MLH sign-in; no authenticated form or host configuration was inspected and no submission was created.
+
+The [current official submission handbook](https://hacktoberfest-handbook.mlh.com/project-submissions-and-judging-for-hacktoberfest-hack-day) documents registration/check-in, one submitting team member, project link/name/description/technologies, optional demo URL, selecting every eligible challenge, and saving with Submit Project. It explicitly says there is no separate licence-attestation field. These are handbook facts, not verified event-specific field configuration.
+
+Before final publication, organisers must inspect the actual window/timezone, category options, required fields and demo/Q&A allowances. The [submission guide]({{ site.baseurl }}/submission/) carries that boundary. The canvas/README are planning/documentation aids, not substitutes for the official form or newly required uploads. No presentation duration or replacement deadline is prescribed.
+
 The following operations were validated by authoritative documentation inspection and syntax verification, but intentionally excluded from live automated CI/QA to avoid paid account consumption, API rate exhaustion, or gigabyte-scale network downloads during repository maintenance:
 1. **Live Paid API Inference:** Live calls to `client.models.generate_content()` against the Gemini API were not executed during testing; syntax was verified against the official `google-genai` SDK reference.
 2. **Multi-Gigabyte Weight Downloads:** Commands such as `ollama pull gemma4:31b` or downloading unquantized 70 GB checkpoints were not executed on the local runner; official Ollama tags and file sizes were verified against the public Ollama registry.

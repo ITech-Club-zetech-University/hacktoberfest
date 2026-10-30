@@ -49,6 +49,7 @@ Public listing checked **30 October 2026**. The eleven-hour event duration is no
 - **[Build Your Own Open-Source AI Project]({{ site.baseurl }}/challenges/)** — problem discovery, model choice, MVP scope, testing, publishing and both prize categories.
 - **[Project Inspiration]({{ site.baseurl }}/inspiration/)** — optional examples across different domains.
 - **[Rules & Regulations]({{ site.baseurl }}/rules/)** — integrity, teams, schedule status and submission instructions.
+- **[Submit Your Project]({{ site.baseurl }}/submission/)** — downloadable planning/README templates, demo preparation and official submission workflow.
 - **[Starter Kit]({{ site.baseurl }}/starter-kit/)** — Gemma hosted/local setup; other suitable open models are welcome for the broad category.
 - **[Resources]({{ site.baseurl }}/resources/)** — official MLH, model, licensing and optional DigitalOcean documentation.
 - **[Judging]({{ site.baseurl }}/judging/)** — human evaluation, evidence, scoring and conflicts.

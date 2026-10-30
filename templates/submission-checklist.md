@@ -7,7 +7,7 @@ description: "Project-neutral publishing, testing and category submission checks
 
 # Hack Day Submission Checklist
 
-Copy this into your team notes. The public category close is **31 October 2026, 6:00 AM EAT**; check [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline) for a verified organiser announcement. No primary track is required.
+Copy this into your team notes. Check the live category close and [schedule status]({{ site.baseurl }}/rules/#the-hacking-timeline) for a verified organiser announcement. No primary track is required. The [submission guide]({{ site.baseurl }}/submission/) identifies handbook-documented fields and the host settings still requiring confirmation.
 
 ## Project and evidence
 
@@ -23,6 +23,7 @@ Copy this into your team notes. The public category close is **31 October 2026, 
 - [ ] Public GitHub repository with a suitable OSI-approved application-code licence.
 - [ ] Useful [README]({{ site.baseurl }}/templates/project-readme-template/): problem, user, selected categories, architecture, model/dependency/data disclosures and permissions.
 - [ ] Tested installation/run commands and placeholder environment configuration.
+- [ ] A different developer can follow the setup and test instructions; record any unverified steps honestly.
 - [ ] Team contributions and proportionate AI coding-tool disclosure.
 - [ ] No credentials, private records or unpermitted data in files or Git history.
 - [ ] Exact model licence linked: Gemma 4 uses Apache 2.0; check other generations/models separately.
@@ -40,14 +41,16 @@ Complete only the conditions relevant to the category/project you are entering. 
 ## Official submission
 
 - [ ] Register and check in.
+- [ ] Confirm team details and contributions; follow the actual form and organiser-confirmed team policy without publishing private registration information.
 - [ ] One team member submits on behalf of the team through the event's [OrganizerHQ Challenges page](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges).
 - [ ] Provide project name, public repository URL, description, technologies and optional demo URL.
 - [ ] Submit **once** and select **every category the project qualifies for**.
 - [ ] Verify the saved submission before the confirmed close; keep the repository public.
+- [ ] Open the saved repository/demo links and check the entered categories. A canvas or README alone is not official submission.
 
 ## Human demo and administrative review
 
-- [ ] Rehearse the [two-minute demo and one-minute Q&A]({{ site.baseurl }}/templates/demo-script/).
+- [ ] Rehearse the [demo flow]({{ site.baseurl }}/templates/demo-script/) within the organiser-confirmed presentation and Q&A allowance.
 - [ ] Show the real model workflow, one boundary/failure and the relevant code.
 - [ ] Ask staff to resolve administrative flags promptly. A legacy checker missing-Gemma warning does not exclude other open models from the broad category.
 - [ ] Treat checker PASS as preliminary hygiene only, not a score or guaranteed category eligibility. Network/rate-limit failures must never penalise a team.

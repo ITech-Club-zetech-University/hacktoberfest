@@ -86,7 +86,9 @@ Test your chosen runtime early. Local models need downloaded weights and suffici
 
 ## Which templates can we copy?
 
-- [Problem Statement Worksheet]({{ site.baseurl }}/templates/problem-statement/)
+- [Project Proposal / Idea Canvas]({{ site.baseurl }}/templates/problem-statement/) — includes a plain Markdown download.
 - [Project README Template]({{ site.baseurl }}/templates/project-readme-template/)
 - [Submission Checklist]({{ site.baseurl }}/templates/submission-checklist/)
-- [Live Demo Script]({{ site.baseurl }}/templates/demo-script/)
+- [Demo Preparation Guide]({{ site.baseurl }}/templates/demo-script/) — use the organiser-confirmed time limit.
+
+Follow the [OrganizerHQ submission guide]({{ site.baseurl }}/submission/) after preparing them. The templates do not replace the official form; authenticated host fields and timings still need organiser verification.

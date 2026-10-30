@@ -1,33 +1,19 @@
 ---
-title: Problem Statement Worksheet
+title: Project Proposal / Idea Canvas
 nav_exclude: true
 permalink: /templates/problem-statement/
-description: "A quick, reusable worksheet for defining a user, problem, AI role and achievable MVP."
+description: "A downloadable planning canvas for a user, problem, model, achievable MVP and intended awards."
 ---
 
-# Problem Statement Worksheet
+# Project Proposal / Idea Canvas
 
-Copy this into your team notes or README and answer briefly. Use the [seven-step idea framework]({{ site.baseurl }}/challenges/#develop-an-idea-quickly) to refine it. This is a planning aid, not an additional submission form or idea-approval gate.
+[Download the Markdown canvas]({{ site.baseurl }}/templates/downloads/project-proposal.md), copy it into your team notes and answer briefly. Use the [seven-step idea framework]({{ site.baseurl }}/challenges/#develop-an-idea-quickly) to refine it. This is a planning aid, not an additional submission form or idea-approval gate.
 
-```text
-Project name:
-Problem:
-Primary user:
-Why the problem matters:
-Current alternative or workaround:
-Proposed solution:
-What the AI model will do:
-Why an open model is appropriate:
-Why Gemma 4 is being used (if applicable):
-Data and tools required:
-Main risks or limitations:
-MVP features for the hack period:
-How the team will demonstrate success:
-```
+The [submission guide]({{ site.baseurl }}/submission/) separates handbook-documented fields from unverified host settings. Complete any fields required by the actual OrganizerHQ form; this canvas does not replace it.
 
-## Concise solution statement
+The downloadable canvas is shown below:
 
-“For [specific user] who needs [specific outcome], we are building [solution]. The AI component will [specific role], helping the user to [measurable or observable benefit].”
+{% include_relative downloads/project-proposal.md %}
 
 ## Quick feasibility check
 

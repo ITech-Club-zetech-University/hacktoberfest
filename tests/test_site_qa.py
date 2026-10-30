@@ -76,7 +76,7 @@ class TestJekyllSiteQA(unittest.TestCase):
                 self.assertIn("{{ site.baseurl }}/challenges/", content)
 
     def test_worksheet_and_optional_inspiration(self):
-        worksheet = (repo_root / "templates" / "problem-statement.md").read_text(encoding="utf-8")
+        worksheet = (repo_root / "templates" / "downloads" / "project-proposal.md").read_text(encoding="utf-8")
         for field in (
             "Project name:", "Problem:", "Primary user:", "Why the problem matters:",
             "Current alternative or workaround:", "Proposed solution:",
@@ -89,6 +89,75 @@ class TestJekyllSiteQA(unittest.TestCase):
         inspiration = (repo_root / "inspiration.md").read_text(encoding="utf-8")
         self.assertIn("optional starting points", inspiration)
         self.assertIn("No unsupported diagnosis", inspiration)
+
+    def test_participant_downloads_are_copy_ready_and_embedded(self):
+        pairs = (
+            ("problem-statement.md", "project-proposal.md"),
+            ("project-readme-template.md", "README.md"),
+        )
+        for page_name, download_name in pairs:
+            with self.subTest(template=download_name):
+                page = (repo_root / "templates" / page_name).read_text(encoding="utf-8")
+                download = (repo_root / "templates" / "downloads" / download_name).read_text(encoding="utf-8")
+                self.assertIn(f"include_relative downloads/{download_name}", page)
+                self.assertIn(f"/templates/downloads/{download_name}", page)
+                self.assertFalse(download.startswith("---"))
+                self.assertNotIn("{{", download)
+                self.assertNotIn("{%", download)
+        canvas = (repo_root / "templates" / "downloads" / "project-proposal.md").read_text(encoding="utf-8")
+        for text in (
+            "Team name:", "Exact model name and variant:", "Inference method, provider and runtime:",
+            "Data sources and permission/licence status:", "Safety and privacy considerations",
+            "How we will test normal inputs", "- [ ] Best Open-Source AI Project",
+            "- [ ] Best Use of Gemma 4", "does not replace",
+        ):
+            self.assertIn(text, canvas)
+        readme = (repo_root / "templates" / "downloads" / "README.md").read_text(encoding="utf-8")
+        for heading in (
+            "Features and screenshots", "Architecture and data flow", "Models, dependencies and terms",
+            "Gemma 4 implementation (if applicable)", "Environment variables", "Run and test",
+            "Demo", "Data sources and licences", "Known limitations, safety and privacy",
+            "Team contributions", "Project source-code licence", "Acknowledgements",
+        ):
+            self.assertIn(f"## {heading}", readme)
+
+    def test_submission_and_demo_guidance_preserve_verification_boundary(self):
+        guide = (repo_root / "submission.md").read_text(encoding="utf-8")
+        fm, _ = qa_site.parse_front_matter(guide)
+        self.assertEqual(fm["permalink"], "/submission/")
+        self.assertIn("nav_order", fm)
+        for text in (
+            "https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges",
+            "One submission can enter every category it qualifies for",
+            "Authenticated host configuration is not verified",
+            "no separate licence-attestation field",
+            "demo URL if available",
+        ):
+            self.assertIn(text, guide)
+        demo = (repo_root / "templates" / "demo-script.md").read_text(encoding="utf-8")
+        self.assertEqual(len(re.findall(r"^[1-7]\. \*\*", demo, flags=re.MULTILINE)), 7)
+        for text in ("Working journey", "Actual AI role", "Normal test and limitation",
+                     "Built versus unfinished", "Reproduce and contribute"):
+            self.assertIn(text, demo)
+        for filename in (
+            "templates/demo-script.md", "templates/submission-checklist.md",
+            "judging.md", "organizer-runbook.md", "organizer-checklist.md",
+        ):
+            content = (repo_root / filename).read_text(encoding="utf-8")
+            self.assertNotRegex(
+                content,
+                r"(?i)(?:two|one|three|[123])[- ]minute|120 seconds|60 seconds",
+                filename,
+            )
+
+    def test_plain_markdown_downloads_are_not_treated_as_jekyll_pages(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "index.md").write_text("---\ntitle: Home\n---\n# Home\n", encoding="utf-8")
+            downloads = root / "templates" / "downloads"
+            downloads.mkdir(parents=True)
+            (downloads / "proposal.md").write_text("# A plain planning aid\n", encoding="utf-8")
+            self.assertEqual(qa_site.audit_repository(directory), 0)
 
     def test_score_sheet_remains_project_neutral_and_arithmetically_valid(self):
         with (repo_root / "templates" / "judge-score-sheet.csv").open(newline="", encoding="utf-8") as source:

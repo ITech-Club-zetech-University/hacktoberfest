@@ -72,7 +72,8 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 
 - [ ] **Judge Briefing:** Review each category's requirements and approved lens, **Eligible/Pending/Ineligible/Not Entered** statuses, evidence and recusal. Show that text-only Gemma tools may qualify, DigitalOcean is optional and local inference capability does not establish API-prize eligibility.
 - [ ] **Local Rubric:** Brief the six-criterion 100-point anchors only for confirmed local assessment. Mark **Scored** or **Not Assessed** explicitly; never insert zero for an unentered category.
-- [ ] **Timekeeping:** Enforce strict 2-minute demonstration limit per team (no slide decks; live code only).
+- [ ] **Timekeeping:** Confirm and announce the demo/Q&A allowance, then enforce it equally (working software, not slides in place of a demo).
+- [ ] **Submission guidance:** Verify the authenticated host window/timezone, categories and required fields against the [submission guide]({{ site.baseurl }}/submission/) before final publication.
 - [ ] **Independent Reviews:** Judges record distinct notes only for eligible assigned categories, without discussing them before submission. Fill local ratings only if **Scored**.
 
 ---

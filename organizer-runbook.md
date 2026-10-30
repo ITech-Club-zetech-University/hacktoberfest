@@ -47,7 +47,7 @@ To ensure smooth overnight operations, assign staff members to these distinct ro
 | **Safety & Conduct Officer** | First point of contact for MLH Code of Conduct concerns, manages attendee wellbeing and venue safety | Quiet Space / Desk |
 | **Timekeeper & Operations Lead** | Enforces published schedule, manages announcements, coordinates power strips and venue Wi-Fi | AV Desk |
 | **Submission & Eligibility Checker** | Reviews repository hygiene and actual category evidence before the confirmed deadline; never excludes a broad-category project merely for lacking Gemma | Judge Desk |
-| **Judge Panel Coordinator** | Distributes score sheets, briefs judges on rubric anchors, times 2-minute live demos and 1-minute Q&A | Judging Area |
+| **Judge Panel Coordinator** | Distributes score sheets, briefs judges on rubric anchors, times demos/Q&A to the confirmed allowance | Judging Area |
 | **Score Tabulator** | Consolidates judge sheets, computes averages, applies deterministic tie-breakers, verifies Top 3 | Private Tabulation Room |
 | **OrganizerHQ Winner Lead** | Executes private/public winner marking in OrganizerHQ following official MLH workflow | Private Tabulation Room |
 
@@ -95,7 +95,7 @@ python3 scripts/check_submission.py --help
 | **Confirm start/stop** | Building | Mentors help narrow one user journey; reserve time for tests, documentation and publishing |
 | **Before verified close** | Submission review | One submission, every eligible category; public licensed repo; review flags manually |
 | **6:00 AM, 31 October** | Public category close / event end | Resolve this overlap with demos and awards in OrganizerHQ and announce the approved plan |
-| **Confirmed feasible session** | Demos, judging and awards | Equal two-minute demos plus one-minute Q&A; validate scores and save category winners before announcement |
+| **Confirmed feasible session** | Demos, judging and awards | Equal, announced demo/Q&A allowances; validate scores and save category winners before announcement |
 
 ---
 
@@ -116,7 +116,8 @@ Before demos begin, brief all judges on these core principles:
 1. **Reward Working Substance Over Polish:** A functional terminal prototype using a suitable open model provides stronger evidence than a glossy UI with hardcoded responses. Verify Gemma 4/API evidence separately where entered.
 2. **Independent Scoring:** Judges enter marks on their individual sheets without discussing scores during the demo.
 3. **Mandatory Conflict Recusal:** Judges must recuse themselves from scoring any team they directly mentored or contributed code to.
-4. **Time Limits:** Enforce strict time limits: exactly 2 minutes for demo, 1 minute for Q&A.
+4. **Time Limits:** Confirm and announce feasible demo/Q&A allowances before presentations, then enforce them equally.
+5. **Submission instructions:** Verify the actual host window/timezone, category choices and required form fields against the [draft submission guide]({{ site.baseurl }}/submission/) before publishing final instructions. The public route was checked; authenticated settings were not. The idea canvas and README are aids, not extra required form uploads.
 
 ### Distinct category review — organiser approval required
 
@@ -201,7 +202,7 @@ Complete these required tasks within 24–48 hours of event closing:
 | **3. Open-Ended Format & Teams** | No track declaration. Record actual project and entered categories; confirm team-size/local-award policy and announce it. | Registration Lead | Pending Policy Confirmation |
 | **4. Final Judge Roster** | Confirm roster of 3–5 faculty, mentor, and alumni judges and assign Judge IDs. | Judge Coordinator | Pending Roster |
 | **5. Schedule & Winner Controls** | Reconcile public 6:00 AM close with demos/event end; confirm build start/stop, submission opening, timezone, winner saving and publication. Announce one approved schedule. | OrganizerHQ Winner Lead | Pending HQ Check |
-| **6. Demo Capacity & Calibration** | Rehearse the rubric and sample sheets; confirm non-conflicted assignments. A single 45-minute demo session fits at most 15 three-minute slots before transitions or scoring time; publish any fair parallel-session plan or approved timing change to everyone. | Judge Coordinator | Pending |
+| **6. Demo Capacity & Calibration** | Rehearse the rubric and sample sheets; confirm non-conflicted assignments. Calculate capacity from confirmed demo/Q&A allowances plus transitions and scoring time. Publish the approved format and any fair parallel-session plan to everyone. | Judge Coordinator | Pending |
 | **7. MLH Prizes & Onboarding** | Confirm DEV account collection, any swag availability and assigned partner conditions against MLH onboarding; confirm local awards separately. | Lead Organizer | Pending HQ / Onboarding Check |
 
 ---

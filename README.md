@@ -27,14 +27,16 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 | `resources.md` | Curated documentation links for Gemma, Agent Skills, and MLH |
 | `challenges/` | Open-ended project brief and five preserved, nav/search-excluded historical briefs |
 | `inspiration.md` | Optional problem-led examples, not mandatory tracks |
-| `templates/problem-statement.md` | Quick idea-development worksheet |
+| `templates/problem-statement.md` | Project proposal / idea canvas with a plain Markdown download |
+| `templates/downloads/` | Copy-ready Markdown canvas and README, without Jekyll front matter or Liquid tags |
+| `submission.md` | Official submission workflow, multiple-category entry and authenticated-host verification boundary |
 | `judging.md` | Separate category eligibility/lenses, local 100-point rubric, independent reviews and human winner recording |
 | `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
 | `faq.md` | Frequently asked questions |
 | `organizer-runbook.md` | Public event runbook, operational checklists, staff roles, and MLH winner marking workflow |
 | `organizer-checklist.md` | Chronological quick-reference checklist for event leads and mentors |
 | `templates/project-readme-template.md` | Copy-and-fill `README.md` template for participant repositories |
-| `templates/demo-script.md` | Project-neutral 2-minute live demo and 1-minute Q&A |
+| `templates/demo-script.md` | Seven-part working demo flow using organiser-confirmed presentation/Q&A allowances |
 | `templates/submission-checklist.md` | Publishing, testing and category-specific submission checks |
 | `templates/judge-score-sheet.csv` | 37-column manual sheet: per-category eligibility/evidence/notes and optional local scores; three fictional examples and a blank row |
 | `references/source-register.md` | Organiser source register, verification status, and review log |
