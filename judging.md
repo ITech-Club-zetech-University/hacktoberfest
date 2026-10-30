@@ -47,7 +47,7 @@ Eligibility is checked separately from marks. Only categories a team enters and 
 {: #category-specific-evaluation-lenses }
 
 {: .important }
-> **Proposed organiser scoring criteria:** These are **not official MLH-published scoring weights**. Final approval and confirmation against the event's OrganizerHQ category settings are pending; the approved criteria will be published before judging.
+> **Proposed organiser scoring criteria — not official MLH-published scoring weights.** Approval and alignment with the event's OrganizerHQ category settings remain pending confirmation before judging.
 
 The two confirmed MLH categories are distinct. **One submission may enter both when it meets both sets of requirements**; no duplicate project or repository is needed.
 
@@ -57,7 +57,10 @@ The two confirmed MLH categories are distinct. **One submission may enter both w
 
 **DigitalOcean-supported.** Build an original, functional and useful solution in which open-source/open-weight AI makes an important contribution. **Gemma 4 is not required, and DigitalOcean is optional.**
 
-Your public GitHub repository must include an appropriate open-source code licence and a README explaining the project, setup, model and key dependencies. Identify the model and link its licence or terms: **open-weight and open-source are not interchangeable labels**. Demonstrate the AI contribution in the running product.
+- **Repository:** Publish your code on GitHub with an appropriate open-source code licence.
+- **README:** Explain what you built, how to run it, which model it uses and its key dependencies.
+- **Model disclosure:** Name the model and link its licence or terms. **Open-weight and open-source are not interchangeable labels.**
+- **Demonstration:** Show the AI contribution in the running product.
 
 Agent skills must follow the [Agent Skills open standard](https://agentskills.io/). Model harnesses need original implementation or meaningful changes, not just a new name. These are examples of eligible project forms, not required architectures.
 
@@ -85,7 +88,9 @@ Agent skills must follow the [Agent Skills open standard](https://agentskills.io
 
 **Gemma / Google DeepMind.** Show how effectively Gemma 4 contributes to the actual product. An unused dependency, model configuration or README mention does not demonstrate integration.
 
-Identify the exact Gemma 4 variant, inference route and model terms in your code and README. **A Gemini model is not Gemma 4.** Choose capabilities appropriate to your problem and supported by your variant; a strong text-only tool is welcome. Neither multimodal features nor a particular application domain are compulsory.
+- **Model evidence:** Identify the exact Gemma 4 variant, inference route and model terms in your code and README. **A Gemini model is not Gemma 4.**
+- **Useful capabilities:** Show how the supported capabilities of your chosen variant help solve the user's problem.
+- **Flexible scope:** A strong text-only tool is welcome. Neither multimodal features nor a particular application domain are compulsory.
 
 Follow the [published MLH Gemini API winner guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma). Local inference support alone does not establish prize eligibility; confirm any local-only entry with organisers. Consult the current [model card and capabilities](https://ai.google.dev/gemma/docs/core/model_card_4).
 
