@@ -47,8 +47,25 @@ Using Copilot, Gemini CLI or another coding tool alone does not qualify an ordin
 
 For **Best Open-Source AI Project**, Gemma 4 or another suitable open-source/open-weight model may be used. For **Best Use of Gemma 4**, demonstrate meaningful Gemma 4 use and follow the [category's API/evidence requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
 
+## Official category requirements and participant evidence
+
+### Best Open-Source AI Project — DigitalOcean-supported
+
+Build an original project with open-source/open-weight AI as an important functional component. Publish public GitHub source with an appropriate open-source code licence. Provide a README explaining what was built, how to run or try it, the exact model and its licence/terms link, key dependencies and original team contribution. Show the AI contribution in a working demo.
+
+An agent skill must follow the [Agent Skills open standard](https://agentskills.io/specification). A harness must be original or contain meaningful changes to an existing open-source harness; renaming alone is insufficient. These are eligible forms, not the only permitted kinds of application or tool. **DigitalOcean is optional** for hosting, APIs, model workflows, infrastructure or supporting services, not an eligibility gate.
+
+### Best Use of Gemma 4 — Gemma / Google DeepMind
+
+Gemma 4 must meaningfully power the actual product, not just appear in dependencies, configuration or a README. Demonstrate its exact model ID and inference path. A Gemini model is not Gemma 4.
+
+Text/image experiences, focused tools and rapid Gemini API prototyping are suggestions from the category description, not compulsory modalities or domains. A text-only tool can be appropriate. Hosted Gemma 4 and supported local runtimes are technical options, but MLH winner guidance calls for the **Gemini API**; organisers must resolve any different event-specific instruction before promising local-only eligibility.
+
+Follow the [official category links, current model/API documentation and capability limits]({{ site.baseurl }}/challenges/#best-use-of-gemma-4). Variants differ in modality, hardware and performance. Check [service terms]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check) as well as model licensing.
+
 ## Code, model and data licences
 
+- **Open-weight is not automatically open-source:** downloadable weights may carry restrictions and do not establish that all model components are open source. Identify the actual model and link its licence/terms; the application licence does not relicense it.
 - Publish application source under a suitable [OSI-approved licence](https://opensource.org/licenses), with a root licence file.
 - Identify each exact model/version, its licence, runtime and any hosted-service terms. [Gemma 4 is Apache 2.0 licensed](https://ai.google.dev/gemma/docs/core/model_card_4); older Gemma generations may have different terms. Do not apply one generation's licence to all models.
 - Attribute dependencies, datasets and upstream work. Public availability alone does not grant permission to redistribute data or code.
@@ -85,13 +102,15 @@ Organisers may run administrative repository checks, but they do not score or ra
 
 ## How winners are chosen & award structure
 
-Appointed **human judges** independently evaluate projects using the [six-criterion, 100-point rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet). There is no automated scoring, ranking or leaderboard; pull-request counts and commit volume do not determine merit.
+Appointed **human judges** review each entered category separately. The [category-specific evaluation lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) are **proposed local guidance for organiser review**, not an official MLH numerical rubric. No AI judge, automated scoring, score aggregation service, ranking service, leaderboard or automated winner selection is used.
 
-The two live MLH categories are awards, not fixed project prompts. Category eligibility is checked separately from common rubric scores. Open-source AI integration is assessed without favouring a particular provider or imposing archived technical baselines. Missing implementation evidence informs rubric scores; incomplete prototypes are not automatically disqualified.
+Official requirements determine **Eligible**, **Pending**, **Ineligible** or **Not Entered** status for each category. Only entered, verified eligible projects enter its merit comparison. An unmet condition in one category does not automatically exclude the project from another. Do not assign zero for an unentered category or require duplicate projects/repositories to enter both.
 
-Organisers must confirm whether any separate local Top Three awards remain, their prizes and whether a project may win both official categories. Do not infer prize inventory from partner marketing.
+The retained **iTech Club local Top Three awards** and [six-criterion, 100-point local rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet) are separate from both official awards. Organisers must confirm local continuation, eligibility and prize inventory; this update neither cancels nor invents prizes. Missing implementation evidence informs local scores, not hidden gates or automatic deductions.
 
-Judge sheets and provisional scores remain private. Compare unrounded averages and use the [published tie-breaking procedure]({{ site.baseurl }}/judging/#deterministic-tie-breaking-protocol).
+**Whether the same team may receive both official prizes remains unconfirmed.** Entering both does not answer that question. Confirm it against MLH/onboarding/HQ before marking winners; do not assume a ban or an automatic dual win.
+
+Judge sheets and provisional scores remain private. Manually check local averages and apply the [existing local tie-breakers]({{ site.baseurl }}/judging/#deterministic-tie-breaking-protocol) only to local overall scores. Official category decisions require separate human rationale against the approved lenses and published requirements.
 
 <a id="disqualification-ownership"></a>
 

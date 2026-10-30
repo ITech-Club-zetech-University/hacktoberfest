@@ -17,7 +17,8 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 - [ ] **Verify Event Listing:** Confirm venue, timing (**Friday 30 Oct 2026, 7:00 PM – Saturday 31 Oct 2026, 6:00 AM EAT**), and registration at [events.mlh.com/events/14735](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
 - [ ] **OrganizerHQ Configuration Check:** Both **Best Open-Source AI Project** and **Best Use of Gemma 4** are publicly listed. Verify them in authenticated HQ, including actual requirements and multiple-category winner policy.
 - [ ] **Test Automated Checker:** Run `python3 -m unittest discover -s tests -v` on the organiser workstation; all tests must pass.
-- [ ] **Prepare Private Judge Sheets:** Import the [judge score sheet CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv), delete fictional examples and duplicate the blank row. It has no formulas; verify manual arithmetic using the conversion table. Wrap and expand criterion evidence cells and keep judges' scores independent.
+- [ ] **Prepare Private Judge Sheets:** Import the [37-column CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv), delete its three fictional examples and duplicate the blank row. Retain category status/evidence/notes and categories considered. No formulas; local numerical blanks are intentional only when **Not Assessed**. Wrap evidence cells and keep reviewers independent.
+- [ ] **Approve Judging Guidance:** Review/publish the [proposed category lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses). These and the retained local 100-point rubric are not an official MLH numerical rubric. Confirm separate local Top Three eligibility/prizes and the unresolved dual-prize policy.
 - [ ] **Reconcile Schedule:** Public categories close at **6:00 AM EAT on 31 October**, also the event end. Confirm coding start/stop, submission opening and feasible demos/awards with the lead and in HQ; announce one schedule. Do not enforce the previous 5:00 AM cutoff or assume eight coding hours.
 - [ ] **Emergency Offline USB Drives:** Pre-load 2–3 USB drives with Ollama installers, quantized GGUF weights (`gemma4:e2b`, `gemma2:2b`), and common Python wheels.
 - [ ] **Confirm Judge Panel:** Confirm 3–5 faculty, mentor, or alumni judges and distribute rubric scoring anchors.
@@ -69,17 +70,19 @@ A chronological operational checklist for event hosts, leads, and mentors runnin
 
 ## 6. Live Project Demos (Confirmed Session)
 
-- [ ] **Judge Briefing:** Review 100-point rubric anchors (6 criteria, 0–5 scale, weighted conversion), time limits (2 min demo + 1 min Q&A), and mandatory conflict recusal rule.
+- [ ] **Judge Briefing:** Review each category's requirements and approved lens, **Eligible/Pending/Ineligible/Not Entered** statuses, evidence and recusal. Show that text-only Gemma tools may qualify, DigitalOcean is optional and local inference capability does not establish API-prize eligibility.
+- [ ] **Local Rubric:** Brief the six-criterion 100-point anchors only for confirmed local assessment. Mark **Scored** or **Not Assessed** explicitly; never insert zero for an unentered category.
 - [ ] **Timekeeping:** Enforce strict 2-minute demonstration limit per team (no slide decks; live code only).
-- [ ] **Independent Scoring:** Judges silently enter ratings (0–5) across the 6 criteria on individual score sheets without discussing marks.
+- [ ] **Independent Reviews:** Judges record distinct notes only for eligible assigned categories, without discussing them before submission. Fill local ratings only if **Scored**.
 
 ---
 
 ## 7. Score Tabulation & Winner Marking (After Evaluation)
 
 - [ ] **Audit Sheets:** Follow the [tabulation procedure]({{ site.baseurl }}/judging/#score-tabulation-process): ask original judges to correct missing fields or arithmetic; exclude conflicted, duplicate or uncorrected incomplete sheets with a reason. Arrange another independent evaluation if fewer than two valid sheets remain (three preferred).
-- [ ] **Compute Averages:** Average valid judge totals privately; use the same sheets for criterion averages and tie-breakers. Compare full precision and round only displayed means to two decimals. No automated ranking software.
-- [ ] **Apply Tie-Breakers (if needed):**
+- [ ] **Category Decisions:** Compare each eligible pool separately; resolve pending status and record human rationale with at least two valid independent reviews per contender. Confirm dual-prize policy; a local top score does not automatically win a category.
+- [ ] **Local Averages Only:** Manually check valid **Scored** local totals; exclude **Not Assessed** blocks. Compare full precision and round displayed means only. No AI judge, automated aggregation service, ranking software or winner-selection algorithm.
+- [ ] **Local Tie-Breakers Only (if needed):**
   1. Higher average Meaningful open-source/open-weight AI integration score (out of 20)
   2. Higher average Technical execution and working demonstration score (out of 25)
   3. Deliberation by the judging panel, with decision and rationale documented

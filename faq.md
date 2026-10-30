@@ -30,6 +30,16 @@ Yes. Solo hackers and teams are welcome to build, and staff can help match colla
 
 For **Best Open-Source AI Project**, use Gemma 4 or another suitable open-source/open-weight model as an important functional component. **Best Use of Gemma 4** requires meaningful Gemma 4 use and its published conditions. **DigitalOcean is optional**, not mandatory hosting or a scoring advantage. See [both official category links and evidence requirements]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
 
+## What makes a strong Best Open-Source AI Project entry?
+
+Show an original, useful AI contribution in working software, public GitHub source with an appropriate code licence, and a README explaining what was built, how to run it, the exact model and model-licence link, dependencies and limitations. Agent skills must follow the open standard; harnesses need original implementation or meaningful changes, not just a rename. Other AI applications and tools are welcome too.
+
+## Must a Gemma 4 entry be multimodal or use a prescribed domain?
+
+No. The official text/image, focused-tool and rapid-prototyping examples are suggestions. A useful text-only tool can be appropriate. Gemma 4 must do actual product work, not merely appear in an unused configuration or README.
+
+The [hosted guide](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api) currently lists `gemma-4-31b-it` and `gemma-4-26b-a4b-it`; check availability and service terms before use. Local routes include Ollama, llama.cpp, Transformers and LM Studio. Check the [model card and capability/runtime links]({{ site.baseurl }}/challenges/#best-use-of-gemma-4): modality, memory and performance vary, and local technical support does not establish prize eligibility.
+
 ## Does local Gemma inference qualify for the Gemma 4 prize?
 
 Do not assume so. Local inference is a valid technical option for suitable projects, but MLH's Gemma partner winner guidance calls for Gemma through the **Gemini API**. Confirm any exception with organisers against onboarding. Older Gemma versions or using Gemini CLI only to write code do not prove Gemma 4 integration.
@@ -44,7 +54,13 @@ The public event runs **30 October, 7:00 PM → 31 October, 6:00 AM EAT**. Both 
 
 ## How are projects judged?
 
-Appointed humans use the [published 100-point rubric]({{ site.baseurl }}/judging/), independent evidence-based ratings and private score sheets. There is no automated scoring or leaderboard. The common rubric evaluates meaningful open-source/open-weight AI use, not a mandatory Gemma integration for every project. Category eligibility remains separate. Score averaging, recusal and tie-breakers are documented in the guide.
+Appointed humans review each eligible entered category separately using [proposed category-specific lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses), subject to organiser approval. These are local guidance, **not an official MLH numerical rubric**. A local overall score does not automatically win either category.
+
+The existing 100-point rubric and tie-breakers belong to **iTech Club local overall assessment**, separate from the two MLH awards. Local Top Three continuation and prizes need confirmation, not silent removal or new promises. There is no AI judge, automated scoring, score aggregation service, leaderboard or automated winner selection.
+
+## What if we do not qualify for one category?
+
+Judges record **Eligible**, **Pending**, **Ineligible** or **Not Entered** separately for each award. Resolve pending evidence with organisers. A project can remain eligible for another category; unentered/ineligible categories are not zero scores. The [judge sheet]({{ site.baseurl }}/templates/judge-score-sheet.csv) records actual considered categories and separate evidence/notes. No duplicate project or repository is needed for dual entry.
 
 ## What if our project is unfinished?
 
@@ -57,6 +73,8 @@ Normal inputs, edge cases and **at least one failure or uncertainty scenario**. 
 ## What licence and disclosures do we need?
 
 Use a suitable OSI-approved application-code licence and document exact models, their licences, dependencies and data permissions. [Gemma 4 uses Apache 2.0](https://ai.google.dev/gemma/docs/core/model_card_4); older models can have different terms. Disclose AI coding tools separately and explain your team's original contribution. Never publish credentials or private data.
+
+Open-weight and open-source are not interchangeable: available weights do not automatically mean every model component is open source or unrestricted. Hosted API terms are separate too; see the [age/audience, data and permitted-use check]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check).
 
 ## Are judge notes public?
 

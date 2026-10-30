@@ -29,7 +29,47 @@ The live MLH event lists two categories:
 
 **DigitalOcean is a supported resource, not a mandatory technology choice.** You may build locally or use suitable hosting elsewhere. Provider choice alone does not establish open-source AI eligibility. Check [optional deployment and pricing resources]({{ site.baseurl }}/resources/#optional-digitalocean-resources) before incurring costs; no universal free-credit entitlement is promised.
 
-Appointed **human judges** assess the working project and evidence using the [published rubric]({{ site.baseurl }}/judging/). There is no automated project scoring, ranking or leaderboard. Optional examples and archived briefs do not add eligibility gates, bonus points or mandatory technology choices.
+### Best Open-Source AI Project — DigitalOcean-supported
+{: #best-open-source-ai-project }
+
+The [official MLH requirements](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) concern the project's actual contribution, not its application domain:
+
+- Build an **original project** where open-source or open-weight AI is an **important functional part** of how it works. An unused model setting or an AI coding assistant used only during development is insufficient.
+- Publish the project in a **public GitHub repository** with an appropriate open-source licence for the application code.
+- If you submit an **agent skill**, follow the [Agent Skills open standard](https://agentskills.io/specification).
+- If you submit a **model harness**, show an original implementation or meaningful changes to an existing open-source harness. Link upstream, describe your changes and preserve attribution; merely renaming a project is insufficient.
+
+Skills and harnesses are eligible forms, **not the only possible forms**. Another useful AI application or tool is equally welcome.
+
+Make the evidence easy to inspect: include a README explaining what you built, how to run or try it, the exact model/version, its role, key dependencies and your original contribution. **Link the model's actual licence or terms**, separately from your code licence. Demonstrate the AI contribution in a working user flow, and describe test results and limitations honestly.
+
+**Open-weight and open-source are not interchangeable labels.** Available weights do not automatically mean every part of a model is open source or that there are no use restrictions. Check the actual model terms; an open-source code licence does not relicense its models, datasets or hosted services.
+
+DigitalOcean can optionally support hosting, APIs, model workflows, AI infrastructure or other services. **You do not have to use it**, and neither using it nor paying for infrastructure earns extra points.
+
+### Best Use of Gemma 4 — Gemma / Google DeepMind
+{: #best-use-of-gemma-4 }
+
+**Gemma 4 must do meaningful work in the actual product**, not merely appear in a README, dependency list or unused configuration. Show the exact model identifier, inference code/path and its contribution to the working demo.
+
+The [live MLH description](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d) suggests text/image experiences where useful, focused tools for learning, creativity, productivity or communities, and rapid prototyping through the Gemini API. These are possibilities, **not mandatory domains or a requirement to build a multimodal project**. A well-designed text-only tool may be the right solution.
+
+| Approach | What to verify |
+|---|---|
+| **Hosted Gemini API** | The [current official hosted guide](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api), rechecked **30 October 2026**, lists `gemma-4-31b-it` and `gemma-4-26b-a4b-it`. Check current model availability, account access, quotas and [API terms](https://ai.google.dev/gemini-api/terms) before publishing or running examples. A Gemini-branded model is not Gemma 4. |
+| **Local inference** | Official routes include [Ollama](https://ai.google.dev/gemma/docs/integrations/ollama), [llama.cpp](https://ai.google.dev/gemma/docs/integrations/llamacpp), [Transformers](https://ai.google.dev/gemma/docs/core/huggingface_inference) and [LM Studio](https://ai.google.dev/gemma/docs/integrations/lmstudio). Check support for the exact checkpoint, quantisation and input type, and test actual memory and latency. Technical availability does not establish prize eligibility. |
+
+The [MLH partner winner guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma) instructs organisers to confirm Gemma through the **Gemini API**. Follow that published route for this award unless MLH confirms different event-specific instructions. Do not promise local-only eligibility; ask organisers to resolve it against onboarding before selecting a winner.
+
+Model variants differ. Consult the [current model card](https://ai.google.dev/gemma/docs/core/model_card_4), [model sizing/capabilities](https://ai.google.dev/gemma/docs/core), [image guide](https://ai.google.dev/gemma/docs/capabilities/vision/image) and [audio guide](https://ai.google.dev/gemma/docs/capabilities/audio). Native audio is listed for E2B, E4B and 12B, not every size; model capability also does not guarantee endpoint/runtime support. Larger models, extra modalities and expensive hardware are not inherently better for your use case.
+
+Hosted-service terms are separate from the model licence. The current Gemini API terms include age/audience and permitted-use restrictions; unpaid services must not receive sensitive, confidential or personal information. Review the [starter kit's API terms check]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check) before choosing that route.
+
+### How the awards are judged
+
+Appointed **human judges** review each entered category separately using [proposed category-specific lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses). These lenses and the existing local numerical rubric are **local judging guidance for organiser review, not an official MLH numerical rubric**. There is no AI judge, automated project scoring, automated score aggregation service, ranking service or leaderboard.
+
+The retained **iTech Club local Top Three awards** are separate from the two MLH categories; their continuation, eligibility and prize inventory need organiser confirmation. Entering both official categories requires neither duplicate projects nor duplicate repositories. Whether one team may receive both prizes remains an explicit organiser/MLH confirmation item.
 
 ## Develop an idea quickly
 

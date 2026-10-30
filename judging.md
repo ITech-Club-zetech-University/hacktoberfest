@@ -1,7 +1,7 @@
 ---
 title: Judging
 nav_order: 6
-description: "Human-led hackathon judging system: standardised 100-point rubric, 0–5 rating scale, 9-step workflow, score consolidation, and winner selection."
+description: "Separate human reviews for both MLH categories, proposed evaluation lenses, local scoring and private judge records."
 ---
 
 # Judging
@@ -25,14 +25,68 @@ Hacktoberfest Hack Day Nairobi × iTech Club operates on a **strictly human-led 
 > - **No automated leaderboard** displayed or operating during the hackathon.
 > - **No script that assigns project scores** or generates competitive standings.
 > - **No automated winner-selection algorithm**.
+> - **No AI judge or automated score aggregation service**.
 >
-> All projects are evaluated by appointed human judges using a published common rubric and standardised judge score sheets. Event organisers consolidate the completed score sheets and determine the final rankings.
+> Appointed human judges review each project's actual entered categories separately. Organisers manually check evidence, consolidate private records and make winner decisions. The existing numerical rubric is local guidance, not an official MLH scoring system.
 
 ### Why human judging is essential
 
 1. **Working substance over gaming:** Per official Major League Hacking (MLH) rules, **Hacktoberfest does not use pull-request counts, commit volume, or lines of code as the basis for judging or prizes.** Automated metrics reward artificial activity rather than practical utility.
 2. **Open-ended projects:** Teams choose their own users, problems, domains and architectures. Judges compare practical outcomes and evidence against the same rubric, not a prescribed technical track.
 3. **Live demonstration verification:** A two-minute live demonstration and code walk-through answers crucial questions no script can evaluate: Does the software actually run? Does the chosen open-source/open-weight AI meaningfully power the product? Can the team explain what they built and where its limitations lie?
+
+## Official eligibility vs. local judging guidance
+
+The two live awards are **Best Open-Source AI Project — DigitalOcean-supported** and **Best Use of Gemma 4 — Gemma / Google DeepMind**. They are distinct awards, not the former five project tracks. Read the [official requirements, model routes and live category links]({{ site.baseurl }}/challenges/#the-official-mlh-challenge).
+
+**Official MLH requirements determine eligibility.** The lenses below are **proposed local judging guidance for organiser review**, not an official MLH numerical rubric. The Lead Organiser must approve and publish their use before evaluation. No new weights, compulsory modalities, provider bonuses or domain restrictions are introduced.
+
+### Category eligibility review
+
+For each project, record its **entered categories** from the saved submission and one status for each category:
+
+| Status | Meaning and action |
+|---|---|
+| **Eligible** | A human reviewer has verified the published requirements and recorded supporting evidence. Only then include the project in that category's merit comparison. |
+| **Pending** | Evidence or an event-specific interpretation needs clarification. Record what is missing and refer it to the lead; do not mark a winner until resolved. |
+| **Ineligible** | A human reviewer has confirmed an unmet published requirement and recorded the reason. Exclude only from that category, not automatically from another category or local recognition. |
+| **Not Entered** | The team did not select this category. Leave that category's evaluation notes blank; do not assign zero or enter the project automatically. |
+
+Review broad-category originality, functional open AI, public GitHub code, licence and any applicable skill/harness conditions. For Gemma, verify **Gemma 4's actual model ID and inference path**, not a README keyword. Follow the published Gemini API winner guidance unless MLH confirms different event-specific instructions; unresolved local-only claims remain pending for lead/MLH clarification, not a promised eligible entry.
+
+One submission and repository may enter both when qualified. **Entry permission is not a dual-prize winner policy.** Confirm whether the same team may receive both prizes before final winner decisions; do not invent an exclusion, automatic sweep or selection order.
+
+## Category-specific evaluation lenses
+
+These are **proposed local lenses for organiser review**. Use evidence and qualitative notes, not additional numerical scores or hidden bonuses. Neither category is automatically awarded to the highest local overall score.
+
+### Best Open-Source AI Project — proposed lens
+
+- **Important AI contribution:** What does the open-source/open-weight AI do in the running solution? A coding assistant used only to write code is insufficient.
+- **Problem relevance and usefulness:** Is the target user and task clear, and does the demonstrated outcome help?
+- **Technical quality and working demo:** Does the core flow work with realistic inputs, and can the team explain its engineering and failures?
+- **Originality and meaningful contribution:** What did the team build? For a harness, inspect original implementation or meaningful upstream changes; renaming is not enough. For a skill, inspect the open standard.
+- **Open-source quality and reproducibility:** Inspect public GitHub source, appropriate code licence, README/run instructions, exact model and model-licence link, key dependencies and attribution. Open-weight is not automatically equivalent to open-source.
+- **Responsible use:** Check data permissions, privacy, proportionate safety, tested limitations and honest uncertainty.
+
+DigitalOcean is optional. Skills and harnesses are eligible forms, not required architectures; another AI application or tool can be equally strong.
+
+### Best Use of Gemma 4 — proposed lens
+
+- **Meaningful Gemma 4 integration:** Identify its actual product role in code and the live demonstration. An unused dependency, configuration or README mention is not integration.
+- **Appropriate variant and inference route:** Verify the exact model ID, hosted/local path, supported runtime, hardware, latency, cost and the award's published API requirement.
+- **Capabilities matched to the problem:** Assess text, images or other supported modalities only where useful. A strong text-only tool is appropriate; no mandatory multimodal feature or application domain.
+- **Quality and usefulness of the demo:** Follow a real user task through inputs, Gemma processing and a useful outcome.
+- **Reliability and responsible AI:** Inspect normal, edge and failure/uncertainty tests, privacy, service-term compliance, human control and disclosed limitations.
+- **Verifiable documentation:** README and code must identify the actual Gemma 4 variant, runtime/API, licence and dependencies sufficiently for a judge to verify them.
+
+Google's [hosted guide](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api) currently lists `gemma-4-31b-it` and `gemma-4-26b-a4b-it` (checked 30 October 2026). A Gemini model is not Gemma 4. Consult the [model card](https://ai.google.dev/gemma/docs/core/model_card_4) and [capability documentation](https://ai.google.dev/gemma/docs/core): modalities, memory and performance vary by variant and runtime. Re-check [API terms](https://ai.google.dev/gemini-api/terms), availability and account access; local technical support does not override MLH's prize requirements.
+
+### Separate human decisions
+
+Use the same demo for both eligible categories; no duplicate project, repository or performance is required. Each assigned non-conflicted judge records independent notes for the categories they actually review. Obtain at least two valid independent reviews per category contender, with three preferred where capacity allows.
+
+After independent sheets are submitted, the panel reviews each eligible pool separately against the approved lenses and official requirements. Record the selected project, participating judges, supporting evidence and category-specific rationale privately. Resolve close category decisions by documented human deliberation against those same lenses, not by borrowing an unannounced numerical tie-breaker. Resolve the dual-prize policy before saving results.
 
 ---
 
@@ -47,7 +101,7 @@ Judging is conducted by an appointed panel of approximately **3–5 judges**, co
 
 ### Core judge responsibilities & ethical standards
 
-- **Evaluate against the published rubric:** Judges assess every project strictly against the published 100-point rubric and scoring anchors.
+- **Evaluate the assigned award:** Verify eligibility and use approved category lenses for official award reviews. Use the existing 100-point rubric for local overall assessment only; do not substitute that total for a category decision.
 - **Independent scoring:** Judges score independently on their own score sheets during and immediately following the demonstration, without discussing marks or attempting to influence fellow judges before score sheets are submitted.
 - **Evidence-based evaluation:** Judges must record brief qualitative comments, observed strengths, areas requiring improvement, and concrete supporting evidence for their ratings.
 - **Implementation over presentation:** Judges evaluate the actual running software, codebase, and technical execution rather than slide decks or rehearsed marketing pitches.
@@ -59,10 +113,12 @@ Judging is conducted by an appointed panel of approximately **3–5 judges**, co
 
 <a id="the-100-point-operational-rubric"></a>
 
-## Standardised 100-point judging rubric
+## Existing iTech Club local 100-point judging rubric
 {: #the-100-point-score-sheet }
 
-Every project is evaluated out of **100 total weighted points** across six core criteria:
+The retained **iTech Club local overall rubric** evaluates a project out of **100 total weighted points** across six criteria. Its weights and scoring mechanics are unchanged. It is **not an official MLH numerical rubric** and must not force a project into an unentered or ineligible category.
+
+If organisers confirm local overall assessment, complete this numerical block for that purpose. Otherwise mark **Local Overall Assessment = Not Assessed** and leave all rating, weighted-score, total and six criterion-evidence cells blank. Those intentional blanks are **not zero scores or incomplete official category reviews**. Complete the applicable category evidence/notes instead.
 
 | Evaluation criterion | Weight | Core question for judges |
 |---|:---:|---|
@@ -185,7 +241,7 @@ To maintain fairness and objective scoring across all panel members, judges appl
 
 ## Selecting the top three projects
 
-If organisers confirm separate local Top Three recognition, the designations are:
+The retained **iTech Club local awards** are separate from both official MLH categories. They are not cancelled or newly promised by this guide; organisers must confirm their continuation, eligibility and prize inventory. If confirmed, the designations are:
 
 - **First Place – Overall Winner**
 - **Second Place – Overall Runner-up**
@@ -193,16 +249,16 @@ If organisers confirm separate local Top Three recognition, the designations are
 
 ### Score tabulation process
 
-1. The organisers collect all completed judge score sheets following demonstrations.
+1. For local overall assessment, collect sheets marked **Scored**. Do not mix in **Not Assessed** numerical blocks or use category-review notes as numerical ratings.
 2. For each team, average valid independent judge totals (0–100): **Final score = sum of valid judge totals / number of valid judges** (3 preferred, 2 minimum). Each judge has equal weight; use the same valid sheets for criterion averages and tie-breakers.
 3. Teams are ranked from highest to lowest according to their consolidated average score.
-4. **No automated ranking software is used:** Organisers perform calculations transparently in a private workbook.
+4. **No automated ranking software or score aggregation service is used:** Organisers manually enter/check arithmetic in a private workbook; humans compare totals and make decisions. Do not add ranking formulas, scripts, AI judges or winner-selection services.
 5. Check every rating is an integer from 0 to 5, every weighted value matches the conversion table, and every total matches its six weighted values. Return incomplete or inconsistent sheets to the original judge for correction without discussing other judges' scores; never treat blanks as zero. Exclude conflicted, duplicate, or still-incomplete sheets and record why. If fewer than two valid independent sheets remain, arrange another non-conflicted evaluation before finalising results.
 6. Preserve full precision for comparisons and tie-breakers; round only displayed averages to two decimal places. For example, totals of 80, 89 and 86 yield 85.00; with only 80 and 89 valid, the mean is 84.50. Display rounding must not create a tie.
 
 ### Deterministic tie-breaking protocol
 
-If two or more teams tie in their overall consolidated average score, ties are resolved using this pre-established hierarchy:
+For the **local overall rubric only**, if teams tie in their consolidated average score, use this existing hierarchy. It is not an official MLH category tie-breaker:
 
 1. **Higher Meaningful AI Integration Score:** The team with the higher average score in *Meaningful open-source/open-weight AI integration* (out of 20) takes precedence.
 2. **Higher Technical Execution Score:** If still tied, the team with the higher average score in *Technical execution and working demonstration* (out of 25) takes precedence.
@@ -222,32 +278,34 @@ One project may enter every category it qualifies for. Review eligibility and re
 
 Judges use a standardised scoring sheet to evaluate each project. [Download the judge score sheet CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv) and import it into a private workbook.
 
-The CSV is a **manual-entry template with no spreadsheet formulas**. It contains two clearly labelled fictional examples followed by a blank row to copy for each team/judge pair. Delete the examples from the operational workbook; never include them in averages. Use the conversion table above to fill weighted scores and verify totals. Enable text wrapping and expand row heights for evidence; each criterion has its own unrestricted text field. Keep all completed copies private.
+The CSV is a **manual-entry template with no spreadsheet formulas**. It contains three clearly labelled fictional examples followed by a blank row to copy for each team/judge pair. Delete examples before operational use. The third illustrates a Gemma-only category review with the local numerical block intentionally blank. Use the conversion table only for local blocks marked **Scored**. Enable text wrapping and expand row heights; all evidence/notes fields are unrestricted text. Keep completed copies private.
 
 ### Required fields on each score sheet
 
 - **Team Name & Entered Prize Categories:** Identified before the demo begins; no primary track.
+- **Categories Considered By This Judge:** Only the entered categories with verified **Eligible** status that this judge is assigned to review. Leave blank for pending, ineligible, unentered or conflicted reviews.
+- **Per-category Eligibility, Eligibility Evidence and Category Notes:** Record **Eligible**, **Pending**, **Ineligible** or **Not Entered** separately for each award. Cite model ID/runtime, licence/repository links and applicable code/demo evidence. Category notes address the proposed lens, not extra points; leave merit notes blank unless that category is eligible and reviewed.
+- **Local Overall Assessment:** Enter **Scored** only for an assigned, confirmed local assessment; otherwise **Not Assessed**. Do not infer this from which MLH categories are entered.
 - **Repository URL:** Inspected during the evaluation.
 - **Judge Identification & Date:** Name or assigned judge ID, and evaluation date.
-- **Criteria Ratings (0–5):** Integer rating for each of the 6 criteria.
+- **Criteria Ratings (0–5):** Integer ratings for all six criteria only when local overall assessment is **Scored**.
 - **Weighted Criteria Scores:** Calculated via `(Rating / 5) * Weight`.
 - **Criterion evidence and comments:** A separate free-text field for each of the six criteria; record observations and missing or failed checks, not just the overall impression.
 - **Total Score (0–100):** Sum of the six weighted scores.
 - **Qualitative Feedback:**
   - *Strengths observed:* What impressed the judge about the code, demo, or problem-solving.
   - *Areas requiring improvement:* Specific suggestions for technical or documentation growth.
-  - *Evidence / demonstration notes:* Actual model/runtime, working user flow and observed test outcomes; record category-specific eligibility evidence separately in private organiser records.
+  - *Evidence / demonstration notes:* Actual model/runtime, working user flow and observed tests. The per-category fields capture eligibility and distinct award rationale on the same private sheet.
   - *Judge final recommendation:* Overall qualitative recommendation or remarks.
 - **Conflict of Interest Declaration (Yes/No):** Enter **No** only when there is no conflict. Enter **Yes** and stop scoring if conflicted; notify the coordinator for reassignment. A conflicted sheet is excluded from all calculations.
 
 ### Instructions for judges completing score sheets
 
-1. Enter your assigned Judge ID, Team Name, and entered prize categories before the demo starts.
-2. Watch the live 2-minute demonstration and participate in the 1-minute Q&A.
-3. Assign an integer rating from 0 to 5 for each criterion based on the scoring anchors.
-4. Record brief, concrete evidence in each criterion's evidence/comments field (e.g., *"Offline demo verified with external adapters disabled; Ollama local inference ran in 4s"*). General notes and recommendations supplement evidence; they do not add points or override the rubric.
-5. Verify that your weighted scores sum correctly out of 100.
-6. Submit completed sheets directly to the Lead Organiser immediately after the demo session.
+1. Enter your Judge ID, team, repository and entered categories. Declare conflicts first; if conflicted, stop, leave merit/numerical fields blank and request reassignment.
+2. Record separate category eligibility statuses and evidence; refer unresolved cases to the lead. Only list eligible assigned categories under **Categories Considered By This Judge**.
+3. Watch the two-minute demo and one-minute Q&A. Record distinct qualitative notes for each category actually reviewed, against its approved lens.
+4. Set **Local Overall Assessment**. If **Scored**, fill every integer rating, weighted score, six criterion-evidence fields and total; verify arithmetic. If **Not Assessed**, leave that entire numerical/criterion block blank, not zero.
+5. Submit privately without discussing marks or notes with peers. The coordinator audits category assignments/statuses independently of local arithmetic and asks the original judge to correct inconsistencies.
 
 ---
 
@@ -270,7 +328,7 @@ The complete judging workflow is conducted in nine sequential steps:
 
 ### Step 2: Judges receive project list and judging materials
 - **Time window:** Confirm before demos, consistently with the saved submission close.
-- Organisers distribute the final project demo queue, entered categories, repository links, scoring anchors, and judge score sheets to confirmed panel members.
+- Organisers distribute the demo queue, entered categories, human eligibility statuses/evidence, approved category lenses, repository links and private sheets. Include local scoring anchors only if local assessment is confirmed.
 - Judges declare any conflicts of interest; organisers reassign judging duties as needed so every team has at least 3 independent evaluations where capacity allows.
 
 ### Step 3: Each team presents its working application
@@ -282,15 +340,15 @@ The complete judging workflow is conducted in nine sequential steps:
 - Judges actively observe the live workflow, verify that inputs yield dynamic model outputs, and inspect repository structure, code contributions, and AI tool disclosures.
 
 ### Step 5: Judges independently complete their score sheets
-- Immediately following each team's demo and Q&A, judges assign ratings (0–5), calculate weighted scores, record brief supporting evidence, and finalize individual score sheets without discussing marks with peers.
+- Judges independently record category evidence/notes only for eligible assigned entries. Complete the numerical block only for a local assessment marked **Scored**; do not turn unentered/ineligible categories into zero marks.
 
 ### Step 6: Organisers consolidate the scores
-- Organisers follow the score tabulation process above: correct arithmetic and missing fields with the original judge, exclude invalid sheets with a recorded reason, obtain at least two valid independent evaluations, and calculate full-precision averages in an access-controlled workbook.
+- Audit category assignments, eligibility evidence, conflicts and independent notes. Keep the two category pools separate. For local sheets marked **Scored** only, follow the tabulation process above and manually check full-precision averages; **Not Assessed** blocks do not enter a denominator.
 
-### Step 7: Judging panel reviews provisional top three and resolves ties
-- Organisers present the provisional top three ranked teams to the panel.
-- If score ties exist among contenders, the panel applies the published tie-breaking protocol (open-source/open-weight AI Integration score &rarr; Technical Execution score &rarr; documented panel deliberation).
-- The panel conducts a final integrity check to confirm that winning projects were built during the event and adhere to open-source guidelines.
+### Step 7: Panel makes separate category decisions and reviews local results
+- Compare eligible entries for each official award against its approved lens and record the human rationale; resolve pending eligibility and the dual-prize policy before marking winners.
+- Only if local Top Three recognition is confirmed, review local averages and apply the existing local tie-breaking protocol.
+- A strong local total neither guarantees an MLH award nor overrides an official requirement. Conduct a final integrity check against each applicable category.
 
 ### Step 8: Record and publish the official MLH winner before the room announcement
 - **Time window:** After completed evaluation and score review, before announcing results.

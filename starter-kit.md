@@ -72,6 +72,15 @@ If you plan to run models locally (Option B), verify free disk space:
 
 The hosted path avoids local GPU requirements. Check current account availability, quotas and pricing; do not assume unlimited free inference. Use permitted or synthetic inputs, and understand what data leaves your device.
 
+### Hosted API terms check
+
+The [official hosted Gemma guide](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api), rechecked **30 October 2026**, lists `gemma-4-31b-it` and `gemma-4-26b-a4b-it`. Re-check availability and the [Gemini API terms](https://ai.google.dev/gemini-api/terms) before using or publishing examples.
+
+- API users must be **18 or older**; the terms also restrict clients directed towards or likely to be accessed by under-18s. This is a service restriction, **not a newly invented event attendance rule**.
+- Do not send sensitive, confidential or personal information to unpaid services. Use public, permitted or synthetic test inputs and review data handling, region, account and paid-service conditions.
+- The API terms prohibit clinical practice and medical advice. Do not treat a model licence or a disclaimer as permission to bypass service restrictions.
+- If this route is unsuitable, explore a permitted local approach for the broader open-source AI category. Do not assume it also qualifies for the Gemma award; obtain organiser/MLH clarification instead of bypassing API terms.
+
 ### Step 1: Obtain your API key
 1. Sign in to [Google AI Studio](https://aistudio.google.com/apikey) with your Google account.
 2. Click **Create API Key**.

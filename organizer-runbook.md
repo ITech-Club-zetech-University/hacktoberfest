@@ -67,8 +67,10 @@ python3 scripts/check_submission.py --help
 
 ### B. Preparing Scoring Sheets
 - Create a private, access-controlled spreadsheet (Google Sheets or Excel) in the organizer drive.
-- Import the [judge score sheet CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv). Delete the two fictional examples and copy the blank row for each team/judge pair. The CSV has no formulas: enter weighted values from the rubric conversion table and check all totals.
-- Retain all fields, including separate evidence/comments for each criterion. Enable text wrapping and expand row heights. Give each judge a private copy or otherwise prevent access to other judges' scores until submission.
+- Import the [judge score sheet CSV]({{ site.baseurl }}/templates/judge-score-sheet.csv). Delete the **three fictional examples** and copy the blank row for each team/judge pair. The CSV has **37 columns and no formulas**, including category eligibility/evidence/notes and actual categories considered.
+- Set up **Eligible / Pending / Ineligible / Not Entered** status choices per category and **Scored / Not Assessed** for local overall assessment. No category defaults to eligible. Do not force unentered projects into a pool or assign them zero.
+- Retain all evidence fields, wrap text and expand row heights. Keep judges' copies independent until submission. The category-only example has intentional blank numerical/criterion cells: do not confuse **Not Assessed** with an incomplete **Scored** block.
+- For confirmed local assessment only, manually enter weighted values from the conversion table and audit all totals. Category qualitative notes do not add points.
 - **Never store completed score sheets or personal judge notes in the public git repository.**
 
 ### C. Bandwidth & Offline Fallback Contingencies
@@ -116,17 +118,30 @@ Before demos begin, brief all judges on these core principles:
 3. **Mandatory Conflict Recusal:** Judges must recuse themselves from scoring any team they directly mentored or contributed code to.
 4. **Time Limits:** Enforce strict time limits: exactly 2 minutes for demo, 1 minute for Q&A.
 
+### Distinct category review — organiser approval required
+
+Approve and announce the [proposed category lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) before judging. They are local guidance, **not an official MLH numerical rubric**.
+
+- **Best Open-Source AI Project:** verify originality, important functional open AI, public GitHub code, code licence and applicable skill/harness conditions. Review usefulness, technical demo, meaningful contribution, README/setup, exact model/model-licence/dependency disclosure, reproducibility and responsible data/limitations. DigitalOcean is optional; skills/harnesses are not the only eligible forms.
+- **Best Use of Gemma 4:** verify actual Gemma 4 model ID and inference path, meaningful product use and the published API requirement. Review variant/route fit, useful capabilities, demo, reliability/tests, privacy, safety and documentation. No mandatory multimodal feature or domain; no credit for a README keyword alone.
+- Record each category status and its evidence. **Pending** requires lead clarification; **Not Entered** and **Ineligible** stay out of that pool. Do not automatically remove an entry from the other pool.
+- Assign category reviews only where eligible; obtain independent non-conflicted notes before discussion. Use one project/demo/repository for dual entry. Confirm whether one team may receive both prizes before decisions.
+- Re-check [hosted model availability and API terms]({{ site.baseurl }}/starter-kit/#hosted-api-terms-check). Local runtime capability does not override published partner requirements.
+- **iTech Club local Top Three awards** retain their own rubric and rules; confirm continuation and inventory rather than silently deleting or inventing prizes. Never award an official category solely from the local total.
+
 ---
 
 ## 6. Score Tabulation, Tie-Breaking & Separation of Notes
 
-### Aggregation Formula
+### Local overall aggregation formula
+
+Use this section only for a confirmed **iTech Club local overall assessment**. It is not the decision rule for either official MLH category. Exclude **Not Assessed** numerical blocks rather than treating blanks as zero.
 **Judge total = sum of the six (integer rating / 5 × criterion weight) values**, out of 100.
 
 **Team final score = sum of valid judge totals / number of valid independent judges**, with 3 preferred and 2 required. Use the same valid sheets for criterion averages and tie-breakers. Preserve full precision for comparisons; round displayed averages only, to two decimal places.
 
 - **Judging Capacity:** Each team should receive **at least three independent evaluations** from distinct panel members wherever judging capacity allows (minimum 2 valid sheets required).
-- **No Automated Ranking Software:** Organisers consolidate score sheets manually/arithmetically in an internal, access-controlled workbook. No automated ranking software or leaderboard algorithm is used.
+- **Human-only Decisions:** Organisers manually enter/check arithmetic in a private workbook. No AI judge, automated score aggregation service, ranking software, leaderboard or automated winner selection. Compare each official category's eligible pool separately using independent notes and a documented human rationale.
 - **Sheet Validation:** Follow the [published tabulation procedure]({{ site.baseurl }}/judging/#score-tabulation-process). Return missing fields or arithmetic errors to the original judge without revealing other scores. Never substitute zero for a blank. Exclude conflicted, duplicate or uncorrected incomplete sheets with a recorded reason. If fewer than two valid independent sheets remain, arrange another non-conflicted evaluation before finalising results.
 - **Deterministic Tie-Breakers:** If team totals are tied, apply tie-breakers in this strict pre-published order:
   1. Higher average score in **Meaningful open-source/open-weight AI integration** (out of 20)
@@ -150,9 +165,9 @@ Confirm the live controls in event `14735` and follow this procedure **before an
 1. Log in to [MLH OrganizerHQ](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club).
 2. Ensure the **Announce Winners** toggle is set to **PRIVATE**.
 3. Navigate to **Manage Submissions**.
-4. Filter submissions by **Best Open-Source AI Project**.
+4. Confirm and record the dual-prize policy, then review the eligible **Best Open-Source AI Project** pool against official requirements and approved local lenses. Filter that category in HQ.
 5. Select the winning project, click **Mark Winner → Winner**, and verify the gold **WINNER** badge and **Winner saved** confirmation.
-6. Review **Best Use of Gemma 4** against its actual requirements and mark its winner separately, following the confirmed multiple-category winner policy. Contact MLH if an expected category is missing; do not create a replacement.
+6. Separately review the eligible **Best Use of Gemma 4** pool and save its human decision/rationale. Mark its winner after checking the actual model/API evidence and confirmed dual-prize policy. Pending eligibility must be resolved first. Contact MLH if an expected category is missing; do not create a replacement.
 7. Use **Preview public view**, check all projects, then switch **Announce Winners** from **PRIVATE** to **PUBLIC**. Verify **WINNERS ANNOUNCED**, **Submissions are public** and the public gallery. This publishes non-winning submissions too, but never upload confidential judge sheets.
 8. Announce both saved official category winners and only any separately confirmed local awards.
 
