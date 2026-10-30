@@ -111,7 +111,7 @@ python3 scripts/check_submission.py <repo-url-1> <repo-url-2> ...
 - **`CLEARLY INELIGIBLE`**: Reported baseline failure (e.g. invalid URL, confirmed private visibility, or missing root README/license). Confirm manually with the Lead Organizer; the checker does not inspect working code.
 - **`CHECK UNAVAILABLE`**: In case of GitHub API rate limit (403/429) or network timeout, **do not penalize the team**. Open the repository in a browser to visually verify baseline hygiene.
 
-### Judge Briefing Checklist (4:50 AM)
+### Judge Briefing Checklist (Before the Confirmed Demo Session)
 Before demos begin, brief all judges on these core principles:
 1. **Reward Working Substance Over Polish:** A functional terminal prototype using a suitable open model provides stronger evidence than a glossy UI with hardcoded responses. Verify Gemma 4/API evidence separately where entered.
 2. **Independent Scoring:** Judges enter marks on their individual sheets without discussing scores during the demo.

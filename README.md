@@ -11,7 +11,7 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 - **Open-ended projects:** Identify a real problem, choose your users and architecture, and build a focused original open-source AI MVP. No fixed prompts or primary tracks.
 - **Two live MLH categories:** [Best Open-Source AI Project](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a0d987-0c41-12ea-13ac-5b85755dc2f3) (DigitalOcean-supported) and [Best Use of Gemma 4](https://www.mlh.com/events/hacktoberfest-hack-day-nairobi-x-itech-club/challenges/01a03b87-be22-9180-5e2d-b3beeb66666d) (Gemma / Google DeepMind). These are awards, not project prompts.
 - **Choice:** Other suitable open models are welcome in the broad category. DigitalOcean is optional. Follow Gemma 4/API requirements only when entering that category.
-- **Human judging:** Preserve the six-criterion, 100-point process; no automated project scoring, ranking or leaderboard. Confirm separate local awards and multiple-category winner policy.
+- **Human judging:** Review both eligible category pools separately using proposed local lenses for organiser approval, not an official MLH numerical rubric. Retain the six-criterion 100-point process for iTech Club local overall assessment only. No AI judge, automated aggregation service, ranking or leaderboard. Confirm local awards and multiple-category winner policy.
 - **Submissions:** Submit once through OrganizerHQ and select every qualifying category. The live pages display **31 October, 6:00 AM EAT**; reconcile earlier local timings before publishing the coding/demo schedule. Team-size policy also requires confirmation.
 
 ---
@@ -27,7 +27,7 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 | `challenges/` | Open-ended project brief and five preserved, nav/search-excluded historical briefs |
 | `inspiration.md` | Optional problem-led examples, not mandatory tracks |
 | `templates/problem-statement.md` | Quick idea-development worksheet |
-| `judging.md` | The human-led 100-point rubric, 0–5 rating scales, scoring anchors, tie-breakers, 9-step judging workflow, and MLH winner recording |
+| `judging.md` | Separate category eligibility/lenses, local 100-point rubric, independent reviews and human winner recording |
 | `code-of-conduct.md` | MLH Code of Conduct and local reporting procedures |
 | `faq.md` | Frequently asked questions |
 | `organizer-runbook.md` | Public event runbook, operational checklists, staff roles, and MLH winner marking workflow |
@@ -35,7 +35,7 @@ Documentation for an open-ended, problem-driven [Hacktoberfest Hack Day Nairobi 
 | `templates/project-readme-template.md` | Copy-and-fill `README.md` template for participant repositories |
 | `templates/demo-script.md` | Project-neutral 2-minute live demo and 1-minute Q&A |
 | `templates/submission-checklist.md` | Publishing, testing and category-specific submission checks |
-| `templates/judge-score-sheet.csv` | Ready-to-import scoring sheet for judges (keep completed scores in private drive) |
+| `templates/judge-score-sheet.csv` | 37-column manual sheet: per-category eligibility/evidence/notes and optional local scores; three fictional examples and a blank row |
 | `references/source-register.md` | Organiser source register, verification status, and review log |
 | `scripts/check_submission.py` | Automated preliminary eligibility checker for baseline repo hygiene |
 | `scripts/data/osi-approved-licenses.json` | Canonical OSI-approved SPDX license database |

@@ -92,13 +92,21 @@ class TestJekyllSiteQA(unittest.TestCase):
     def test_score_sheet_remains_project_neutral_and_arithmetically_valid(self):
         with (repo_root / "templates" / "judge-score-sheet.csv").open(newline="", encoding="utf-8") as source:
             rows = list(csv.reader(source))
-        self.assertEqual(len(rows[0]), 29)
+        self.assertEqual(len(rows[0]), 37)
         self.assertEqual(rows[0][1], "Entered Prize Categories")
         self.assertNotIn("Gemma Integration", ",".join(rows[0]))
+        self.assertEqual(rows[-1], [""] * 37)
+        self.assertEqual(len(rows[1:-1]), 3)
         for row in rows[1:]:
-            self.assertEqual(len(row), 29)
+            self.assertEqual(len(row), 37)
             if not any(row):
                 continue
+            if row[36] == "Not Assessed":
+                self.assertEqual(row[5:18], [""] * 13)
+                self.assertEqual(row[23:29], [""] * 6)
+                continue
+            self.assertEqual(row[36], "Scored")
+            self.assertTrue(all(row[23:29]))
             total = 0
             for rating_index, weight in zip((5, 7, 9, 11, 13, 15), (15, 20, 25, 15, 10, 15)):
                 rating = int(row[rating_index])
@@ -107,6 +115,57 @@ class TestJekyllSiteQA(unittest.TestCase):
                 self.assertEqual(float(row[rating_index + 1]), weighted)
                 total += weighted
             self.assertEqual(float(row[17]), total)
+
+    def test_score_sheet_category_assignments_do_not_force_entry(self):
+        with (repo_root / "templates" / "judge-score-sheet.csv").open(newline="", encoding="utf-8") as source:
+            examples = [row for row in csv.DictReader(source) if row["Team Name"]]
+        self.assertEqual(len(examples), 3)
+        for row in examples:
+            entered = {name.strip() for name in row["Entered Prize Categories"].split(";")}
+            considered = {name.strip() for name in row["Categories Considered By This Judge"].split(";")}
+            self.assertTrue(considered <= entered)
+            for category in ("Best Open-Source AI Project", "Best Use of Gemma 4"):
+                with self.subTest(team=row["Team Name"], category=category):
+                    status = row[f"{category} Eligibility"]
+                    self.assertIn(status, ("Eligible", "Pending", "Ineligible", "Not Entered"))
+                    if category not in entered:
+                        self.assertEqual(status, "Not Entered")
+                        self.assertEqual(row[f"{category} Eligibility Evidence"], "")
+                    if category in considered:
+                        self.assertEqual(status, "Eligible")
+                        self.assertTrue(row[f"{category} Eligibility Evidence"])
+                        self.assertTrue(row[f"{category} Category Notes"])
+                    else:
+                        self.assertEqual(row[f"{category} Category Notes"], "")
+        self.assertEqual(examples[1]["Best Use of Gemma 4 Eligibility"], "Not Entered")
+        self.assertEqual(examples[2]["Best Open-Source AI Project Eligibility"], "Not Entered")
+        self.assertEqual(examples[2]["Local Overall Assessment (Scored/Not Assessed)"], "Not Assessed")
+
+    def test_category_lenses_are_distinct_from_official_requirements_and_local_scores(self):
+        guide = (repo_root / "judging.md").read_text(encoding="utf-8")
+        for text in (
+            "## Official eligibility vs. local judging guidance",
+            "## Category-specific evaluation lenses",
+            "### Best Open-Source AI Project",
+            "### Best Use of Gemma 4",
+            "not an official MLH numerical rubric",
+            "No AI judge or automated score aggregation service",
+            "Entry permission is not a dual-prize winner policy",
+            "A strong local total neither guarantees an MLH award",
+            "iTech Club local awards",
+        ):
+            self.assertIn(text, guide)
+        brief = (repo_root / "challenges" / "index.md").read_text(encoding="utf-8")
+        for text in (
+            "gemma-4-31b-it",
+            "gemma-4-26b-a4b-it",
+            "https://ai.google.dev/gemini-api/terms",
+            "https://ai.google.dev/gemma/docs/core/model_card_4",
+            "not mandatory domains or a requirement to build a multimodal project",
+            "merely renaming a project is insufficient",
+            "Open-weight and open-source are not interchangeable labels",
+        ):
+            self.assertIn(text, brief)
 
 
 if __name__ == "__main__":

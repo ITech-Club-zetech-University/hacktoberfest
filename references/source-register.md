@@ -28,6 +28,16 @@ This public document serves as the source-of-truth register for event organisers
 
 The dated table below retains historical verification notes; this transition update supersedes its earlier event-format, schedule and blanket licensing assumptions.
 
+### Category and judging alignment — 30 October 2026
+
+The two individual MLH category descriptions, open-source prize requirements, Gemma partner winner guidance, hosted model guide, model card and local runtime guides were rechecked. The hosted guide still identifies **`gemma-4-31b-it`** and **`gemma-4-26b-a4b-it`**. This verifies documentation, not a live inference call, account quota or authenticated HQ setting.
+
+- [Official open-source requirements](https://hacktoberfest-handbook.mlh.com/fest-planning-guide/open-source-prize-categories) distinguish open-weight from open-source, require public licensed GitHub source and condition skill/harness requirements on the actual project form. DigitalOcean is not mandatory.
+- [Gemma partner guidance](https://hacktoberfest-handbook.mlh.com/hack-days-partner-modules/partner-challenge-google-gemma) calls for Gemini API winner verification. Local Ollama, llama.cpp, Transformers and LM Studio support is a technical capability, not a verified partner-prize exception.
+- [Gemini API terms](https://ai.google.dev/gemini-api/terms), effective 23 March 2026, include **18+ API-user and under-18 audience restrictions**, regional/permitted-use conditions, a prohibition on clinical practice/medical advice, and a warning not to send sensitive/confidential/personal information to unpaid services. These are service terms, not an event-wide age policy. Re-check before publishing examples.
+- [Category lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) are **proposed local judging guidance for organiser approval**, not an official MLH numerical rubric. The existing weights and tie-breakers belong to iTech Club local overall assessment; official category decisions are separate human reviews.
+- Dual-category entry is permitted; **whether the same team may receive both prizes remains unconfirmed**. Verify MLH/onboarding/HQ policy before decisions, along with local Top Three continuation, eligibility and prize inventory.
+
 | Resource Title | Primary URL | Publisher / Authority | What Claim / Guidance It Supports | Date Checked | Verification Status | Next Review Note |
 |---|---|---|---|---|---|---|
 | **MLH Event Listing (14735)** | [events.mlh.com/.../14735](https://events.mlh.com/events/14735-hacktoberfest-hack-day-nairobi-x-itech-club) | Major League Hacking | Event date, venue, overnight schedule, student-only eligibility | 19 Oct 2026 | **Verified** | Check for last-minute venue or timing notices |

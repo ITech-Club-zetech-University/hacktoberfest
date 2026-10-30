@@ -11,9 +11,11 @@ Rehearse one real user journey for human judges. The session schedule requires [
 
 Slides or prerecorded video do not replace working software. Show what actually runs, identify your model and disclose any fallback, edited example or unfinished feature.
 
+Use one project, repository and demo for every category it qualifies for. Human judges keep [distinct category notes]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses); those proposed lenses are local guidance for organiser review, not an official MLH numerical rubric. The retained 100-point block applies only to separately confirmed **iTech Club local overall assessment**.
+
 ## Universal demo flow
 
-| Timing | What to show | Rubric evidence |
+| Timing | What to show | Evidence for category review / local rubric |
 |---|---|---|
 | **0:00–0:15** (15s) | One specific user, problem and desired outcome | Problem relevance |
 | **0:15–0:30** (15s) | Exact model/runtime and why AI helps; entered prize categories | Meaningful open-source/open-weight AI integration |
@@ -22,7 +24,7 @@ Slides or prerecorded video do not replace working software. Show what actually 
 | **1:45–2:00** (15s) | Public repo, licence, setup/tests, model/dependency disclosures and limitations | Open-source quality |
 | **2:00–3:00** (60s) | Judge Q&A and relevant code | All six criteria |
 
-The demonstration totals **120 seconds**, followed by **60 seconds** of Q&A. See the [common rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet).
+The demonstration totals **120 seconds**, followed by **60 seconds** of Q&A. See the [proposed category lenses]({{ site.baseurl }}/judging/#category-specific-evaluation-lenses) and, where applicable, the [separate local rubric]({{ site.baseurl }}/judging/#the-100-point-score-sheet).
 
 ## Adapt evidence to your actual project
 
